@@ -17,6 +17,10 @@ This is intended for my father, as he is an avid fly fisherman.
 
 * Different locations inside the app: one for logging past trips, and one for future trips
 
+* The application should be connected to a database to save all of the information for each trip.
+
+* The user should be able to log in and out of the application.
+
 * Each past trip logged in the app should include the following info:
 
 	· Fishing Destination: Domestic or International?
@@ -105,27 +109,23 @@ This is intended for my father, as he is an avid fly fisherman.
 
 * Webpack
 
-* Redux
+* Firebase
 
-* Jest
+* Firestore
 
 #### If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
 
 In order of importance:
 
-1. Save trip information to database. The user should be able to store all of the information that they log for their trips so that they can access it later.
+1. Import this app to a mobile application. The docs on Ionic Framework make this sound like a fairly simple task.
 
-2. Import this app to a mobile application. The docs on Ionic Framework make this sound like a fairly simple task.
-
-3. Use weather API data to display the weather conditions for a past trip, and/or the forecast for an upcoming trip. When the user logs a past trip, they should be able to include the weather conditions from that trip. They should be able to do the same for a future trip, although this may not be possible if the trip is scheduled far in advance.
+2. Use weather API data to display the weather conditions for a past trip, and/or the forecast for an upcoming trip. When the user logs a past trip, they should be able to include the weather conditions from that trip. They should be able to do the same for a future trip, although this may not be possible if the trip is scheduled far in advance.
 
 #### What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
 
-1. Plan to use NoSQL and Firebase to save the users data for their past/future trips.
+1. Will use Ionic Framework to port the app over to a mobile application.
 
-2. Will use Ionic Framework to port the app over to a mobile application.
-
-3. Will use OpenWeatherMap API to display weather conditions for past and future trips.
+2. Will use OpenWeatherMap API to display weather conditions for past and future trips.
 
 #### Is there anything else you'd like your instructor to know?
 
