@@ -25,3 +25,8 @@
 * 9:00am - 10:00am: Read about Firebase and using OpenWeatherMap API with React.
 
 * 10:00am - 11:00am: Write up capstone proposal.
+
+# Work Log (4.4.5.1 React NoSQL Independent Project)
+
+#### Monday, 4/22/24
+
