@@ -31,3 +31,5 @@
 #### Monday, 4/22/24
 
 * 1:00pm - 3:00pm: Create basic application template and draw components diagram.
+
+* 3:00pm - : Begin application development.
