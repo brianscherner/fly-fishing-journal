@@ -1,0 +1,644 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3351px" height="1101px" viewBox="-0.5 -0.5 3351 1101" content="&lt;mxfile&gt;&lt;diagram id=&quot;YGDjGopetWaHU4nbopor&quot; name=&quot;Page-1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="0" width="3350" height="1100" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 3348px; height: 1px; padding-top: 7px; margin-left: 1px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 24px;">
+                                    App
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1675" y="19" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    App
+                </text>
+            </switch>
+        </g>
+        <rect x="10" y="50" width="3330" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 3328px; height: 1px; padding-top: 80px; margin-left: 11px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 20px;">
+                                    Header
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1675" y="84" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Header
+                </text>
+            </switch>
+        </g>
+        <rect x="10" y="120" width="1660" height="970" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 1658px; height: 1px; padding-top: 127px; margin-left: 11px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                PastTripsControl
+                                <br/>
+                                <font style="font-size: 16px;">
+                                    All components related to past trips will live in this component.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="840" y="147" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    PastTripsControl...
+                </text>
+            </switch>
+        </g>
+        <rect x="1680" y="120" width="1660" height="970" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 1658px; height: 1px; padding-top: 127px; margin-left: 1681px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                FutureTripsControl
+                                <br/>
+                                <font style="font-size: 16px;">
+                                    All components related to future trips will live inside this component.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2510" y="147" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    FutureTripsControl...
+                </text>
+            </switch>
+        </g>
+        <rect x="20" y="180" width="360" height="790" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 358px; height: 1px; padding-top: 187px; margin-left: 21px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 20px;">
+                                    PastTripsList
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="200" y="199" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    PastTripsList
+                </text>
+            </switch>
+        </g>
+        <rect x="30" y="270" width="340" height="180" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 338px; height: 1px; padding-top: 360px; margin-left: 31px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                PastTrip
+                                <br/>
+                                <font style="font-size: 16px;">
+                                    Clicking a trip will show its details.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="200" y="366" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    PastTrip...
+                </text>
+            </switch>
+        </g>
+        <rect x="30" y="530" width="340" height="170" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 338px; height: 1px; padding-top: 615px; margin-left: 31px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                PastTrip
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="200" y="621" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    PastTrip
+                </text>
+            </switch>
+        </g>
+        <rect x="30" y="800" width="340" height="160" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 338px; height: 1px; padding-top: 880px; margin-left: 31px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                PastTrip
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="200" y="886" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    PastTrip
+                </text>
+            </switch>
+        </g>
+        <rect x="20" y="980" width="360" height="100" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 358px; height: 1px; padding-top: 987px; margin-left: 21px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="">
+                                    <span style="font-size: 20px;">
+                                        Add a Trip
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <font style="font-size: 14px;">
+                                        Clicking this button will show a form where a user can add a past trip to their journal.
+                                    </font>
+                                    <br/>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="200" y="1003" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    Add a Trip...
+                </text>
+            </switch>
+        </g>
+        <rect x="390" y="180" width="330" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 328px; height: 1px; padding-top: 187px; margin-left: 391px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="">
+                                    <span style="font-size: 20px;">
+                                        NewPastTripForm
+                                        <br/>
+                                    </span>
+                                    <br/>
+                                    <font style="font-size: 14px;">
+                                        Each trip should have the following info:
+                                        <br/>
+                                        <br/>
+                                    </font>
+                                    * Fishing destination (domestic/int'l)
+                                    <br/>
+                                    <br/>
+                                    * Freshwater or Saltwater
+                                    <br/>
+                                    <br/>
+                                    * River or Lake
+                                    <br/>
+                                    <br/>
+                                    * Fish species: trout, salmon, bass, etc
+                                    <br/>
+                                    <br/>
+                                    * Location: Country, state, county
+                                    <br/>
+                                    <br/>
+                                    * Access: vehicle type/boat/plane/hiking
+                                    <br/>
+                                    <br/>
+                                    * Fishing method: wading, raft, etc
+                                    <br/>
+                                    <br/>
+                                    * Regulations and Licenses
+                                    <br/>
+                                    <br/>
+                                    * Private or public water fees?
+                                    <br/>
+                                    <br/>
+                                    * Time of year
+                                    <br/>
+                                    <br/>
+                                    *Time of day
+                                    <br/>
+                                    <br/>
+                                    * Travel time to destination
+                                    <br/>
+                                    <br/>
+                                    *River flow levels in cfs or gauge height in feet
+                                    <br/>
+                                    <br/>
+                                    * Fly fishing tackle used: rod weight &amp; length, reel size, fly line and leader
+                                    <br/>
+                                    <br/>
+                                    * Flies used: name, size and color
+                                    <br/>
+                                    <br/>
+                                    * Fish caught: species, amount, size
+                                    <br/>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="555" y="201" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    NewPastTripForm...
+                </text>
+            </switch>
+        </g>
+        <rect x="400" y="980" width="310" height="90" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 308px; height: 1px; padding-top: 987px; margin-left: 401px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Submit
+                                <br/>
+                                <font style="font-size: 14px;">
+                                    Clicking this button will add a past trip and show the PastTripsList component
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="555" y="1007" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    Submit...
+                </text>
+            </switch>
+        </g>
+        <rect x="730" y="180" width="380" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 378px; height: 1px; padding-top: 187px; margin-left: 731px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 20px;">
+                                    PastTripDetail
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="920" y="201" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    PastTripDetail
+                </text>
+            </switch>
+        </g>
+        <rect x="740" y="980" width="360" height="90" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 358px; height: 1px; padding-top: 1025px; margin-left: 741px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Update/Delete
+                                <br/>
+                                <font style="font-size: 14px;">
+                                    Clicking this button allows user to update or delete a past trip.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="920" y="1031" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    Update/Delete...
+                </text>
+            </switch>
+        </g>
+        <rect x="1120" y="180" width="270" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 268px; height: 1px; padding-top: 187px; margin-left: 1121px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="">
+                                    <span style="font-size: 20px;">
+                                        EditPastTripForm
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <font style="font-size: 16px;">
+                                        Edit a past trip's details here.
+                                    </font>
+                                    <br/>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1255" y="201" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    EditPastTripForm...
+                </text>
+            </switch>
+        </g>
+        <rect x="1400" y="180" width="260" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 258px; height: 1px; padding-top: 187px; margin-left: 1401px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 20px;">
+                                    ReusablePastTripForm
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1530" y="201" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    ReusablePastTripForm
+                </text>
+            </switch>
+        </g>
+        <rect x="1690" y="180" width="410" height="770" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 408px; height: 1px; padding-top: 187px; margin-left: 1691px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                FutureTripsList
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1895" y="207" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    FutureTripsList
+                </text>
+            </switch>
+        </g>
+        <rect x="1690" y="960" width="410" height="120" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 408px; height: 1px; padding-top: 1020px; margin-left: 1691px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 20px;">
+                                    Add a Future Trip
+                                    <br/>
+                                </font>
+                                <br/>
+                                Clicking this button will show a form where a user can add future trips to their journal.
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1895" y="1025" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    Add a Future Trip...
+                </text>
+            </switch>
+        </g>
+        <rect x="1700" y="260" width="390" height="180" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 388px; height: 1px; padding-top: 350px; margin-left: 1701px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                FutureTrip
+                                <br/>
+                                <br/>
+                                <font style="font-size: 16px;">
+                                    Clicking a future trip will show its details.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1895" y="356" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    FutureTrip...
+                </text>
+            </switch>
+        </g>
+        <rect x="1700" y="520" width="390" height="180" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 388px; height: 1px; padding-top: 610px; margin-left: 1701px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                FutureTrip
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1895" y="616" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    FutureTrip
+                </text>
+            </switch>
+        </g>
+        <rect x="1700" y="780" width="390" height="160" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 388px; height: 1px; padding-top: 860px; margin-left: 1701px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                FutureTrip
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1895" y="866" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    FutureTrip
+                </text>
+            </switch>
+        </g>
+        <rect x="2110" y="180" width="330" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 328px; height: 1px; padding-top: 187px; margin-left: 2111px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="">
+                                    <span style="font-size: 20px;">
+                                        NewFutureTripForm
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <font style="font-size: 14px;">
+                                        Each future trip should have the following info:
+                                        <br/>
+                                    </font>
+                                    <br/>
+                                    * Domestic or International
+                                    <br/>
+                                    <br/>
+                                    * Guided or unguided
+                                    <br/>
+                                    <br/>
+                                    * Freshwater or saltwater
+                                    <br/>
+                                    <br/>
+                                    * Fish species: trout, salmon, steelhead, bass, etc.
+                                    <br/>
+                                    <br/>
+                                    * Air travel costs
+                                    <br/>
+                                    <br/>
+                                    * Passport or Visa
+                                    <br/>
+                                    <br/>
+                                    * Fishing and lodging expenses
+                                    <br/>
+                                    <br/>
+                                    * Deposit payment terms
+                                    <br/>
+                                    <br/>
+                                    * Refund cancellation policies
+                                    <br/>
+                                    <br/>
+                                    * Clothing requirements
+                                    <br/>
+                                    <br/>
+                                    * Climate info
+                                    <br/>
+                                    <br/>
+                                    * Fishing tackle requirements: rod, reel, line, leader
+                                    <br/>
+                                    <br/>
+                                    * Required flies list
+                                    <br/>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2275" y="203" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    NewFutureTripForm...
+                </text>
+            </switch>
+        </g>
+        <rect x="2120" y="960" width="310" height="110" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 308px; height: 1px; padding-top: 1015px; margin-left: 2121px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Submit
+                                <br/>
+                                <br/>
+                                <font style="font-size: 16px;">
+                                    Clicking this button will add a future trip and show the FutureTripsList component.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2275" y="1021" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    Submit...
+                </text>
+            </switch>
+        </g>
+        <rect x="2450" y="180" width="350" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 348px; height: 1px; padding-top: 187px; margin-left: 2451px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                FutureTripDetail
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2625" y="207" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    FutureTripDetail
+                </text>
+            </switch>
+        </g>
+        <rect x="2460" y="960" width="330" height="110" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 328px; height: 1px; padding-top: 1015px; margin-left: 2461px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Update/Delete
+                                <br/>
+                                <br/>
+                                <font style="font-size: 16px;">
+                                    Clicking this button will allow a user to edit or delete a future trip.
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2625" y="1021" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="20px" text-anchor="middle">
+                    Update/Delete...
+                </text>
+            </switch>
+        </g>
+        <rect x="2810" y="180" width="270" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 268px; height: 1px; padding-top: 187px; margin-left: 2811px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="">
+                                    <span style="font-size: 20px;">
+                                        EditFutureTripForm
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <font style="font-size: 16px;">
+                                        Edit a future trip's details here.
+                                    </font>
+                                    <br/>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="2945" y="203" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    EditFutureTripForm...
+                </text>
+            </switch>
+        </g>
+        <rect x="3090" y="180" width="240" height="900" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 187px; margin-left: 3091px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <font style="font-size: 20px;">
+                                    ReusableFutureTripForm
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="3210" y="203" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    ReusableFutureTripForm
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>
