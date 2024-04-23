@@ -28,12 +28,19 @@ function PastTripsControl() {
     setSelectedPastTrip(pastTripSelection);
   }
 
+  const handleDeletingPastTrip = (id) => {
+    const newMainPastTripList = mainPastTripsList.filter(pastTrip => pastTrip.id !== id);
+    setMainPastTripsList(newMainPastTripList);
+    setSelectedPastTrip(null);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
   if (selectedPastTrip != null) {
     currentlyVisibleState = <PastTripDetails
-      pastTrip = {selectedPastTrip}/>
+      pastTrip = {selectedPastTrip}
+      onClickingDelete = {handleDeletingPastTrip}/>
     buttonText = "Return to Past Trips";
   } else if (formVisibleOnPage) {
     currentlyVisibleState = <NewPastTripsForm

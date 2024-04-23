@@ -46,4 +46,6 @@
 
 * 2:30pm - 3:00pm : Add "Read" functionality for past trip details.
 
-* 3:00pm - : Add "Delete" functionality for past trips.
+* 3:00pm - 3:20pm : Add "Delete" functionality for past trips.
+
+* 3:25pm - : Add "Edit" functionality for past trips.
