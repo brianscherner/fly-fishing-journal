@@ -38,6 +38,6 @@
 
 * 9:10am - 10:15am: Work on building functionality for a user to submit a form for a "Past Trip", and toggle state between the past trips list and form.
 
-* 10:15am - 11:35am: Edit app diagram to include a "Home" component, where PastTripsControl and FutureTripsControl components will live.
+* 10:15am - 11:35am: Edit app diagram to include a "TripsControl" component, where PastTripsControl and FutureTripsControl components will live.
 
-* 11:40am - :
+* 11:40am - 12:00pm: Work on refactoring app so that PastTripsControl will live inside TripsControl component.
