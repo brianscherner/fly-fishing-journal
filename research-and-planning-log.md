@@ -44,4 +44,6 @@
 
 * 1:00pm - 2:30pm: After working on changing state, realized I was overcomplicating component structure and backtracked to my original state.
 
-* 2:30pm - : Begin working on "Read" functionality for past trips.
+* 2:30pm - 3:00pm : Add "Read" functionality for past trip details.
+
+* 3:00pm - : Add "Delete" functionality for past trips.
