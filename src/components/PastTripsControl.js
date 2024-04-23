@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import NewPastTripsForm from './NewPastTripsForm';
 import PastTripsList from './PastTripsList';
+import PastTripDetails from './PastTripDetails';
 
 function PastTripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainPastTripsList, setMainPastTripsList] = useState([]);
+  const [selectedPastTrip, setSelectedPastTrip] = useState(null);
 
   const handleClick = () => {
-    setFormVisibleOnPage(!formVisibleOnPage);
+    if (selectedPastTrip != null) {
+      setFormVisibleOnPage(false);
+      setSelectedPastTrip(null);
+    } else {
+      setFormVisibleOnPage(!formVisibleOnPage);
+    }
   }
 
   const handleCreatingNewPastTrip = (newPastTrip) => {
@@ -16,15 +23,25 @@ function PastTripsControl() {
     setFormVisibleOnPage(false);
   }
 
+  const handleChangingSelectedPastTrip = (id) => {
+    const pastTripSelection = mainPastTripsList.filter(pastTrip => pastTrip.id === id)[0];
+    setSelectedPastTrip(pastTripSelection);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
-  if (formVisibleOnPage) {
+  if (selectedPastTrip != null) {
+    currentlyVisibleState = <PastTripDetails
+      pastTrip = {selectedPastTrip}/>
+    buttonText = "Return to Past Trips";
+  } else if (formVisibleOnPage) {
     currentlyVisibleState = <NewPastTripsForm
       onNewPastTripCreation={handleCreatingNewPastTrip}/>
     buttonText = "Return to Past Trips";
   } else {
     currentlyVisibleState = <PastTripsList
+      onPastTripSelection={handleChangingSelectedPastTrip}
       pastTripsList={mainPastTripsList}/>
     buttonText = "Add a Trip";
   }

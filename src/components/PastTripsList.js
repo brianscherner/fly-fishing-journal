@@ -5,19 +5,22 @@ import PropTypes from 'prop-types';
 function PastTripsList(props) {
   return (
     <React.Fragment>
-      {props.pastTripsList.map((pastTrip, index) =>
+      {props.pastTripsList.map((pastTrip) =>
         <PastTrip
+          whenPastTripClicked={props.onPastTripSelection}
           location={pastTrip.location}
           timeOfYear={pastTrip.timeOfYear}
           waterType={pastTrip.waterType}
-          key={index}/>
+          id={pastTrip.id}
+          key={pastTrip.id}/>
       )}
     </React.Fragment>
   );
 }
 
 PastTripsList.propTypes = {
-  pastTripsList: PropTypes.array
+  pastTripsList: PropTypes.array,
+  onPastTripSelection: PropTypes.func
 }
 
 export default PastTripsList;

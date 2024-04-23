@@ -43,3 +43,5 @@
 * 11:40am - 12:00pm: Work on refactoring app so that PastTripsControl will live inside TripsControl component.
 
 * 1:00pm - 2:30pm: After working on changing state, realized I was overcomplicating component structure and backtracked to my original state.
+
+* 2:30pm - : Begin working on "Read" functionality for past trips.
