@@ -1,14 +1,17 @@
 import React from 'react';
 import Header from './Header';
-import TripsControl from './TripsControl';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PastTripsControl from './PastTripsControl';
 
 function App() {
   return (
     <Router>
       <React.Fragment>
-        <Header/>
-        <TripsControl/>
-      </React.Fragment>
+      <Header/>
+      <Routes>
+        <Route path="/past-trips" element={<PastTripsControl/>}/>
+      </Routes>
+    </React.Fragment>
     </Router>
   );
 }

@@ -41,3 +41,5 @@
 * 10:15am - 11:35am: Edit app diagram to include a "TripsControl" component, where PastTripsControl and FutureTripsControl components will live.
 
 * 11:40am - 12:00pm: Work on refactoring app so that PastTripsControl will live inside TripsControl component.
+
+* 1:00pm - 2:30pm: After working on changing state, realized I was overcomplicating component structure and backtracked to my original state.

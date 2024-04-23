@@ -7,6 +7,7 @@ function PastTrip(props) {
       <h3>{props.location}</h3>
       <p>{props.timeOfYear}</p>
       <p>{props.waterType}</p>
+      <hr/>
     </React.Fragment>
   );
 }

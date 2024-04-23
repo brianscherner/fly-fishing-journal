@@ -25,6 +25,7 @@ function ReusablePastTripForm(props) {
         <br/>
         <button type="submit">{props.buttonText}</button>
       </form>
+      <br/>
     </React.Fragment>
   )
 }
