@@ -36,4 +36,8 @@
 
 #### Tuesday, 4/23/24
 
-* 9:10am - : Work on building functionality for a user to submit a form for a "Past Trip", and toggle state between the past trips list and form.
+* 9:10am - 10:15am: Work on building functionality for a user to submit a form for a "Past Trip", and toggle state between the past trips list and form.
+
+* 10:15am - 11:35am: Edit app diagram to include a "Home" component, where PastTripsControl and FutureTripsControl components will live.
+
+* 11:40am - :
