@@ -2,19 +2,26 @@ import React, { useState } from 'react';
 import NewPastTripsForm from './NewPastTripsForm';
 import PastTripsList from './PastTripsList';
 import PastTripDetails from './PastTripDetails';
+import EditPastTripForm from './EditPastTripForm';
 
 function PastTripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainPastTripsList, setMainPastTripsList] = useState([]);
   const [selectedPastTrip, setSelectedPastTrip] = useState(null);
+  const [editing, setEditing] = useState(false);
 
   const handleClick = () => {
     if (selectedPastTrip != null) {
       setFormVisibleOnPage(false);
       setSelectedPastTrip(null);
+      setEditing(false);
     } else {
       setFormVisibleOnPage(!formVisibleOnPage);
     }
+  }
+
+  const handleEditClick = () => {
+    setEditing(true);
   }
 
   const handleCreatingNewPastTrip = (newPastTrip) => {
@@ -34,13 +41,28 @@ function PastTripsControl() {
     setSelectedPastTrip(null);
   }
 
+  const handleEditingPastTrip = (pastTripToEdit) => {
+    const editedMainPastTripList = mainPastTripsList
+    .filter(pastTrip => pastTrip.id !== selectedPastTrip.id)
+    .concat(pastTripToEdit);
+    setMainPastTripsList(editedMainPastTripList);
+    setEditing(false);
+    setSelectedPastTrip(null);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
-  if (selectedPastTrip != null) {
+  if (editing) {
+    currentlyVisibleState = <EditPastTripForm
+      pastTrip={selectedPastTrip}
+      onEditingPastTrip={handleEditingPastTrip}/>
+    buttonText = "Return to Past Trips";
+  } else if (selectedPastTrip != null) {
     currentlyVisibleState = <PastTripDetails
       pastTrip = {selectedPastTrip}
-      onClickingDelete = {handleDeletingPastTrip}/>
+      onClickingEdit={handleEditClick}
+      onClickingDelete={handleDeletingPastTrip}/>
     buttonText = "Return to Past Trips";
   } else if (formVisibleOnPage) {
     currentlyVisibleState = <NewPastTripsForm

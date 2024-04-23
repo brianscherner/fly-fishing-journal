@@ -48,4 +48,4 @@
 
 * 3:00pm - 3:20pm : Add "Delete" functionality for past trips.
 
-* 3:25pm - : Add "Edit" functionality for past trips.
+* 3:25pm - 3:50pm: Add "Edit" functionality for past trips.
