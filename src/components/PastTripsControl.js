@@ -10,14 +10,22 @@ function PastTripsControl() {
     setFormVisibleOnPage(!formVisibleOnPage);
   }
 
+  const handleCreatingNewPastTrip = (newPastTrip) => {
+    const newMainPastTripList = mainPastTripsList.concat(newPastTrip);
+    setMainPastTripsList(newMainPastTripList);
+    setFormVisibleOnPage(false);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
   if (formVisibleOnPage) {
-    currentlyVisibleState = <NewPastTripsForm/>
+    currentlyVisibleState = <NewPastTripsForm
+      onNewPastTripCreation={handleCreatingNewPastTrip}/>
     buttonText = "Return to Past Trips";
   } else {
-    currentlyVisibleState = <PastTripsList/>
+    currentlyVisibleState = <PastTripsList
+      pastTripsList={mainPastTripsList}/>
     buttonText = "Add a Trip";
   }
 

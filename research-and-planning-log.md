@@ -33,3 +33,7 @@
 * 1:00pm - 3:00pm: Create basic application template and draw components diagram.
 
 * 3:00pm - 4:00pm: Begin application development, starting with "Past Trips" section.
+
+#### Tuesday, 4/23/24
+
+* 9:10am - : Work on building functionality for a user to submit a form for a "Past Trip", and toggle state between the past trips list and form.
