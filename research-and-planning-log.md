@@ -53,3 +53,5 @@
 #### Wednesday, 4/24/24
 
 * 9:15am - 10:45am: Add 'Create' functionality for "Future Trips", and toggling state between future trips list and the form to submit a future trip.
+
+<!-- Next work session: Add RUD functionality for "Future Trips", and work on managing shared state between "Past Trips" and "Future Trips" section, as the data for both sections currently disappears after toggling between the two sections. -->
