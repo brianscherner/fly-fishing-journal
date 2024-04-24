@@ -52,4 +52,4 @@
 
 #### Wednesday, 4/24/24
 
-* 9:15am - 10:45am: aDD 'Create' functionality for "Future Trips", and toggling state between future trips list and the form to submit a future trip.
+* 9:15am - 10:45am: Add 'Create' functionality for "Future Trips", and toggling state between future trips list and the form to submit a future trip.
