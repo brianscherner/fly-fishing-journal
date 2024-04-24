@@ -18,7 +18,7 @@ function NewPastTripsForm(props) {
     <React.Fragment>
       <ReusablePastTripForm
         formSubmissionHandler={handleNewPastTripFormSubmission}
-        buttonText={"Add Trip"}/>
+        buttonText={"Add Past Trip"}/>
     </React.Fragment>
   )
 }

@@ -72,7 +72,7 @@ function PastTripsControl() {
     currentlyVisibleState = <PastTripsList
       onPastTripSelection={handleChangingSelectedPastTrip}
       pastTripsList={mainPastTripsList}/>
-    buttonText = "Add a Trip";
+    buttonText = "Add a Past Trip";
   }
 
   return (

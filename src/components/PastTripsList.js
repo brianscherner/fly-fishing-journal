@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 function PastTripsList(props) {
   return (
     <React.Fragment>
+      <h2>Past Trips</h2>
+      <br/>
       {props.pastTripsList.map((pastTrip) =>
         <PastTrip
           whenPastTripClicked={props.onPastTripSelection}
