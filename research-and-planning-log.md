@@ -49,3 +49,7 @@
 * 3:00pm - 3:20pm : Add "Delete" functionality for past trips.
 
 * 3:25pm - 3:50pm: Add "Edit" functionality for past trips.
+
+#### Wednesday, 4/24/24
+
+* 9:15am - 10:45am: aDD 'Create' functionality for "Future Trips", and toggling state between future trips list and the form to submit a future trip.
