@@ -62,6 +62,8 @@
 
 * 3:15pm - 3:45pm: Add Firebase to project.
 
+* 3:45pm - 4:00pm: Think about adding Firebase to CRUD functionality for Past Trips, or adding Authentication and Authorization first.
+
 <!-- Changing a future trip to a past trip approach:
 
 - Take info for future trip
