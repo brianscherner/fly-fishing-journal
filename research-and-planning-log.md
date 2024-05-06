@@ -54,4 +54,16 @@
 
 * 9:15am - 10:45am: Add 'Create' functionality for "Future Trips", and toggling state between future trips list and the form to submit a future trip.
 
-<!-- Next work session: Add RUD functionality for "Future Trips", and work on managing shared state between "Past Trips" and "Future Trips" section, as the data for both sections currently disappears after toggling between the two sections. -->
+#### Monday, 5/6/24
+
+* 10:30am - 12:00pm: Work on managing shared state between "Past Trips" and "Future Trips".
+
+* 1:00pm - 3:00pm: Worked on trying to share state between "Past Trips" and "Future Trips". Decided to abandon approach and instead work on adding Firebase to handle app's state vs handling it locally.
+
+<!-- Changing a future trip to a past trip:
+
+- Take info for future trip
+- Prefill past trip form
+- Change whatever they want
+- Change trip type
+- Delete from future trips database -->
