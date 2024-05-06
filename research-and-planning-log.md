@@ -60,7 +60,9 @@
 
 * 1:00pm - 3:00pm: Worked on trying to share state between "Past Trips" and "Future Trips". Decided to abandon approach and instead work on adding Firebase to handle app's state vs handling it locally.
 
-<!-- Changing a future trip to a past trip:
+* 3:15pm - 3:45pm: Add Firebase to project.
+
+<!-- Changing a future trip to a past trip approach:
 
 - Take info for future trip
 - Prefill past trip form
