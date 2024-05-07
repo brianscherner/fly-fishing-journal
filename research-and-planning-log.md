@@ -64,6 +64,10 @@
 
 * 3:45pm - 4:00pm: Think about adding Firebase to CRUD functionality for Past Trips, or adding Authentication and Authorization first.
 
+#### Tuesday, 5/7/24
+
+* 9:00am - 10:45am: Add authentication with Firebase.
+
 <!-- Changing a future trip to a past trip approach:
 
 - Take info for future trip

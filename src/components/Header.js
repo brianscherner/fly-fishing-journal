@@ -8,6 +8,7 @@ function Header() {
       <p>Keep track of past and future fly fishing trips!</p>
       <p><Link to="/past-trips">Manage Past Trips</Link></p>
       <p><Link to="/future-trips">Manage Future Trips</Link></p>
+      <p><Link to="/sign-in">Sign In</Link></p>
       <hr/>
     </React.Fragment>
   )

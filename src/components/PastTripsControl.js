@@ -3,6 +3,7 @@ import NewPastTripsForm from './NewPastTripsForm';
 import PastTripsList from './PastTripsList';
 import PastTripDetails from './PastTripDetails';
 import EditPastTripForm from './EditPastTripForm';
+import { db } from './../firebase.js';
 
 function PastTripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
