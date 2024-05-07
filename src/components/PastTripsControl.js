@@ -3,7 +3,7 @@ import NewPastTripsForm from './NewPastTripsForm';
 import PastTripsList from './PastTripsList';
 import PastTripDetails from './PastTripDetails';
 import EditPastTripForm from './EditPastTripForm';
-import { db } from './../firebase.js';
+import { db, auth } from './../firebase.js';
 
 function PastTripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -51,37 +51,45 @@ function PastTripsControl() {
     setSelectedPastTrip(null);
   }
 
-  let currentlyVisibleState = null;
-  let buttonText = null;
+  if (auth.currentUser == null) {
+    return (
+      <React.Fragment>
+        <h2>You must be signed in to access the fly fishing journal.</h2>
+      </React.Fragment>
+    )
+  } else if (auth.currentUser != null) {
+    let currentlyVisibleState = null;
+    let buttonText = null;
 
-  if (editing) {
-    currentlyVisibleState = <EditPastTripForm
-      pastTrip={selectedPastTrip}
-      onEditingPastTrip={handleEditingPastTrip}/>
-    buttonText = "Return to Past Trips";
-  } else if (selectedPastTrip != null) {
-    currentlyVisibleState = <PastTripDetails
-      pastTrip = {selectedPastTrip}
-      onClickingEdit={handleEditClick}
-      onClickingDelete={handleDeletingPastTrip}/>
-    buttonText = "Return to Past Trips";
-  } else if (formVisibleOnPage) {
-    currentlyVisibleState = <NewPastTripsForm
-      onNewPastTripCreation={handleCreatingNewPastTrip}/>
-    buttonText = "Return to Past Trips";
-  } else {
-    currentlyVisibleState = <PastTripsList
-      onPastTripSelection={handleChangingSelectedPastTrip}
-      pastTripsList={mainPastTripsList}/>
-    buttonText = "Add a Past Trip";
+    if (editing) {
+      currentlyVisibleState = <EditPastTripForm
+        pastTrip={selectedPastTrip}
+        onEditingPastTrip={handleEditingPastTrip}/>
+      buttonText = "Return to Past Trips";
+    } else if (selectedPastTrip != null) {
+      currentlyVisibleState = <PastTripDetails
+        pastTrip = {selectedPastTrip}
+        onClickingEdit={handleEditClick}
+        onClickingDelete={handleDeletingPastTrip}/>
+      buttonText = "Return to Past Trips";
+    } else if (formVisibleOnPage) {
+      currentlyVisibleState = <NewPastTripsForm
+        onNewPastTripCreation={handleCreatingNewPastTrip}/>
+      buttonText = "Return to Past Trips";
+    } else {
+      currentlyVisibleState = <PastTripsList
+        onPastTripSelection={handleChangingSelectedPastTrip}
+        pastTripsList={mainPastTripsList}/>
+      buttonText = "Add a Past Trip";
+    }
+
+    return (
+      <React.Fragment>
+        {currentlyVisibleState}
+        <button onClick={handleClick}>{buttonText}</button>
+      </React.Fragment>
+    );
   }
-
-  return (
-    <React.Fragment>
-      {currentlyVisibleState}
-      <button onClick={handleClick}>{buttonText}</button>
-    </React.Fragment>
-  );
 
 }
 

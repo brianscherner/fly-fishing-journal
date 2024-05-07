@@ -68,6 +68,8 @@
 
 * 9:00am - 10:45am: Add authentication with Firebase.
 
+* 10:45am - 11:00am: Add functionality so that only an authorized user can access Past Trips.
+
 <!-- Changing a future trip to a past trip approach:
 
 - Take info for future trip
