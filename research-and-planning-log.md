@@ -72,7 +72,7 @@
 
 * 11:00am - 12:00pm: Add functionality to view Past Trips from Firestore in application's UI.
 
-* 1:00pm - 3:00pm: Work on adding extra layer of error handling, and add Update functionality for Past Trips from Firestore.
+* 1:00pm - 3:00pm: Work on adding extra layer of error handling, and add Update and Delete functionality for Past Trips from Firestore.
 
 <!-- NOTES:
 

@@ -60,9 +60,8 @@ function PastTripsControl() {
     setSelectedPastTrip(pastTripSelection);
   }
 
-  const handleDeletingPastTrip = (id) => {
-    const newMainPastTripList = mainPastTripsList.filter(pastTrip => pastTrip.id !== id);
-    setMainPastTripsList(newMainPastTripList);
+  const handleDeletingPastTrip = async (id) => {
+    await deleteDoc(doc(db, "Past Trips", id));
     setSelectedPastTrip(null);
   }
 
