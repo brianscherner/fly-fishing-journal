@@ -70,6 +70,8 @@
 
 * 10:45am - 11:00am: Add functionality so that only an authorized user can access Past Trips.
 
+* 11:00am - 12:00pm: Add functionality to view Past Trips from Firestore in application's UI.
+
 <!-- Changing a future trip to a past trip approach:
 
 - Take info for future trip

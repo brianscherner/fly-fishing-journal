@@ -1,15 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NewPastTripsForm from './NewPastTripsForm';
 import PastTripsList from './PastTripsList';
 import PastTripDetails from './PastTripDetails';
 import EditPastTripForm from './EditPastTripForm';
 import { db, auth } from './../firebase.js';
+import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
 function PastTripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainPastTripsList, setMainPastTripsList] = useState([]);
   const [selectedPastTrip, setSelectedPastTrip] = useState(null);
   const [editing, setEditing] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const unSubscribe = onSnapshot(
+      collection(db, "Past Trips"),
+      (collectionSnapshot) => {
+        const pastTrips = [];
+        collectionSnapshot.forEach((doc) => {
+          pastTrips.push({
+            location: doc.data().location,
+            timeOfYear: doc.data().timeOfYear,
+            waterType: doc.data().waterType,
+            id: doc.id
+          });
+        });
+        setMainPastTripsList(pastTrips);
+      },
+      (error) => {
+        setError(error.message);
+      }
+    );
+
+    return () => unSubscribe();
+  }, []);
 
   const handleClick = () => {
     if (selectedPastTrip != null) {
@@ -25,9 +50,8 @@ function PastTripsControl() {
     setEditing(true);
   }
 
-  const handleCreatingNewPastTrip = (newPastTrip) => {
-    const newMainPastTripList = mainPastTripsList.concat(newPastTrip);
-    setMainPastTripsList(newMainPastTripList);
+  const handleCreatingNewPastTrip = async (newPastTripData) => {
+    await addDoc(collection(db, "Past Trips"), newPastTripData);
     setFormVisibleOnPage(false);
   }
 
@@ -61,7 +85,9 @@ function PastTripsControl() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (editing) {
+    if (error) {
+      currentlyVisibleState = <p>There was an error: {error}</p>
+    } else if (editing) {
       currentlyVisibleState = <EditPastTripForm
         pastTrip={selectedPastTrip}
         onEditingPastTrip={handleEditingPastTrip}/>
@@ -86,7 +112,7 @@ function PastTripsControl() {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={handleClick}>{buttonText}</button>
+        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
       </React.Fragment>
     );
   }
