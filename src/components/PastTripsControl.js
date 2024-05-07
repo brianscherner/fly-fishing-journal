@@ -66,11 +66,9 @@ function PastTripsControl() {
     setSelectedPastTrip(null);
   }
 
-  const handleEditingPastTrip = (pastTripToEdit) => {
-    const editedMainPastTripList = mainPastTripsList
-    .filter(pastTrip => pastTrip.id !== selectedPastTrip.id)
-    .concat(pastTripToEdit);
-    setMainPastTripsList(editedMainPastTripList);
+  const handleEditingPastTrip = async (pastTripToEdit) => {
+    const pastTrip = doc(db, "Past Trips", pastTripToEdit.id);
+    await updateDoc(pastTrip, pastTripToEdit);
     setEditing(false);
     setSelectedPastTrip(null);
   }

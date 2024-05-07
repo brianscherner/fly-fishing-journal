@@ -72,10 +72,12 @@
 
 * 11:00am - 12:00pm: Add functionality to view Past Trips from Firestore in application's UI.
 
-<!-- Changing a future trip to a past trip approach:
+* 1:00pm - 3:00pm: Work on adding extra layer of error handling, and add Update functionality for Past Trips from Firestore.
 
-- Take info for future trip
-- Prefill past trip form
-- Change whatever they want
-- Change trip type
-- Delete from future trips database -->
+<!-- NOTES:
+
+Refactor application to show all trips in one list.
+Conditionally render trips by having a toggle feature.
+Past Trips/Future Trips will display based on type.
+Conditionally render different form fields based on trip type.
+Conditionally render different trip details based on trip type. -->

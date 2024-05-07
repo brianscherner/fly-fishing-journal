@@ -70,7 +70,7 @@ function SignIn() {
           placeholder="email"/>
         <br/>
         <input
-          type="text"
+          type="password"
           name="signInPassword"
           placeholder="Password"/>
         <br/>
