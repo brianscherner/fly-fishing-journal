@@ -74,6 +74,8 @@
 
 * 1:00pm - 3:00pm: Work on adding extra layer of error handling, and add Update and Delete functionality for Past Trips from Firestore.
 
+* 3:00pm - 3:45pm: Redraw diagram to include new component structure, which consolidates all past/future trip components into trip components.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
