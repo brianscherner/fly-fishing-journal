@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function PastTrip(props) {
+function Trip(props) {
   return (
     <React.Fragment>
-      <div onClick={() => props.whenPastTripClicked(props.id)}>
+      <div onClick={() => props.whenTripClicked(props.id)}>
         <h3>{props.location}</h3>
         <p>{props.timeOfYear}</p>
         <p>{props.waterType}</p>
@@ -14,12 +14,12 @@ function PastTrip(props) {
   );
 }
 
-PastTrip.propTypes = {
+Trip.propTypes = {
   location: PropTypes.string.isRequired,
   timeOfYear: PropTypes.string.isRequired,
   waterType: PropTypes.string.isRequired,
   id: PropTypes.string,
-  whenPastTripClicked: PropTypes.func
+  whenTripClicked: PropTypes.func
 }
 
-export default PastTrip;
+export default Trip;

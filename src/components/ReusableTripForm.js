@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ReusablePastTripForm(props) {
+function ReusableTripForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
@@ -30,9 +30,9 @@ function ReusablePastTripForm(props) {
   )
 }
 
-ReusablePastTripForm.propTypes = {
+ReusableTripForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 }
 
-export default ReusablePastTripForm;
+export default ReusableTripForm;

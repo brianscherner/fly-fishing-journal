@@ -1,8 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PastTripsControl from './PastTripsControl';
-import FutureTripsControl from './FutureTripsControl';
+import TripsControl from './TripsControl';
 import SignIn from './SignIn';
 
 function App() {
@@ -11,8 +10,7 @@ function App() {
       <React.Fragment>
       <Header/>
       <Routes>
-        <Route path="/past-trips" element={<PastTripsControl/>}/>
-        <Route path="/future-trips" element={<FutureTripsControl/>}/>
+        <Route path="/trips" element={<TripsControl/>}/>
         <Route path="/sign-in" element={<SignIn/>}/>
       </Routes>
     </React.Fragment>

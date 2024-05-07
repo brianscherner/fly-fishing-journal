@@ -76,6 +76,8 @@
 
 * 3:00pm - 3:45pm: Redraw diagram to include new component structure, which consolidates all past/future trip components into trip components.
 
+* 3:45pm - 4:00pm: Begin renaming components and removing components related to "Future Trips".
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.

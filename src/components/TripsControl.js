@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import NewPastTripsForm from './NewPastTripsForm';
-import PastTripsList from './PastTripsList';
-import PastTripDetails from './PastTripDetails';
-import EditPastTripForm from './EditPastTripForm';
-import { db, auth } from './../firebase.js';
+import NewTripsForm from './NewTripsForm.js';
+import TripsList from './TripsList.js';
+import TripDetails from './TripDetails.js';
+import EditTripForm from './EditTripForm.js';
+import { db, auth } from '../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
-function PastTripsControl() {
+function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
-  const [mainPastTripsList, setMainPastTripsList] = useState([]);
-  const [selectedPastTrip, setSelectedPastTrip] = useState(null);
+  const [mainTripsList, setMainTripsList] = useState([]);
+  const [selectedTrip, setSelectedTrip] = useState(null);
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
 
@@ -17,16 +17,16 @@ function PastTripsControl() {
     const unSubscribe = onSnapshot(
       collection(db, "Past Trips"),
       (collectionSnapshot) => {
-        const pastTrips = [];
+        const trips = [];
         collectionSnapshot.forEach((doc) => {
-          pastTrips.push({
+          trips.push({
             location: doc.data().location,
             timeOfYear: doc.data().timeOfYear,
             waterType: doc.data().waterType,
             id: doc.id
           });
         });
-        setMainPastTripsList(pastTrips);
+        setMainTripsList(trips);
       },
       (error) => {
         setError(error.message);
@@ -61,15 +61,15 @@ function PastTripsControl() {
   }
 
   const handleDeletingPastTrip = async (id) => {
-    await deleteDoc(doc(db, "Past Trips", id));
-    setSelectedPastTrip(null);
+    await deleteDoc(doc(db, "PTrips", id));
+    setSelectedTrip(null);
   }
 
-  const handleEditingPastTrip = async (pastTripToEdit) => {
-    const pastTrip = doc(db, "Past Trips", pastTripToEdit.id);
-    await updateDoc(pastTrip, pastTripToEdit);
+  const handleEditingTrip = async (TripToEdit) => {
+    const Trip = doc(db, "Past Trips", TripToEdit.id);
+    await updateDoc(Trip, TripToEdit);
     setEditing(false);
-    setSelectedPastTrip(null);
+    setSelectedTrip(null);
   }
 
   if (auth.currentUser == null) {
@@ -85,24 +85,24 @@ function PastTripsControl() {
     if (error) {
       currentlyVisibleState = <p>There was an error: {error}</p>
     } else if (editing) {
-      currentlyVisibleState = <EditPastTripForm
-        pastTrip={selectedPastTrip}
-        onEditingPastTrip={handleEditingPastTrip}/>
+      currentlyVisibleState = <EditTripForm
+        Trip={selectedTrip}
+        onEditingTrip={handleEditingTrip}/>
       buttonText = "Return to Past Trips";
-    } else if (selectedPastTrip != null) {
-      currentlyVisibleState = <PastTripDetails
-        pastTrip = {selectedPastTrip}
+    } else if (selectedTrip != null) {
+      currentlyVisibleState = <TripDetails
+        Trip = {selectedTrip}
         onClickingEdit={handleEditClick}
-        onClickingDelete={handleDeletingPastTrip}/>
+        onClickingDelete={handleDeletingTrip}/>
       buttonText = "Return to Past Trips";
     } else if (formVisibleOnPage) {
-      currentlyVisibleState = <NewPastTripsForm
-        onNewPastTripCreation={handleCreatingNewPastTrip}/>
+      currentlyVisibleState = <NewTripsForm
+        onNewTripCreation={handleCreatingNewTrip}/>
       buttonText = "Return to Past Trips";
     } else {
-      currentlyVisibleState = <PastTripsList
-        onPastTripSelection={handleChangingSelectedPastTrip}
-        pastTripsList={mainPastTripsList}/>
+      currentlyVisibleState = <TripsList
+        onTripSelection={handleChangingSelectedTrip}
+        TripsList={mainTripsList}/>
       buttonText = "Add a Past Trip";
     }
 
@@ -116,4 +116,4 @@ function PastTripsControl() {
 
 }
 
-export default PastTripsControl;
+export default TripsControl;
