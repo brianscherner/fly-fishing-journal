@@ -82,10 +82,15 @@
 
 * 9:00am - 9:30am: Finish refactoring application to only have "Trips"-related components distinguished by a "type" property vs separate components.
 
+* 9:40am - 12:00pm: Work on conditionally rendering different form fields based on the type of trip.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
 Conditionally render trips by having a toggle feature.
 Past Trips/Future Trips will display based on type.
 Conditionally render different form fields based on trip type.
-Conditionally render different trip details based on trip type. -->
+Conditionally render different trip details based on trip type.
+Consider adding unique ID's to each trip
+
+-->
