@@ -15,7 +15,7 @@ function TripsControl() {
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
-      collection(db, "Past Trips"),
+      collection(db, "Trips"),
       (collectionSnapshot) => {
         const trips = [];
         collectionSnapshot.forEach((doc) => {
@@ -37,9 +37,9 @@ function TripsControl() {
   }, []);
 
   const handleClick = () => {
-    if (selectedPastTrip != null) {
+    if (selectedTrip != null) {
       setFormVisibleOnPage(false);
-      setSelectedPastTrip(null);
+      setSelectedTrip(null);
       setEditing(false);
     } else {
       setFormVisibleOnPage(!formVisibleOnPage);
@@ -50,24 +50,24 @@ function TripsControl() {
     setEditing(true);
   }
 
-  const handleCreatingNewPastTrip = async (newPastTripData) => {
-    await addDoc(collection(db, "Past Trips"), newPastTripData);
+  const handleCreatingNewTrip = async (newTripData) => {
+    await addDoc(collection(db, "Trips"), newTripData);
     setFormVisibleOnPage(false);
   }
 
-  const handleChangingSelectedPastTrip = (id) => {
-    const pastTripSelection = mainPastTripsList.filter(pastTrip => pastTrip.id === id)[0];
-    setSelectedPastTrip(pastTripSelection);
+  const handleChangingSelectedTrip = (id) => {
+    const tripSelection = mainTripsList.filter(trip => trip.id === id)[0];
+    setSelectedTrip(tripSelection);
   }
 
-  const handleDeletingPastTrip = async (id) => {
-    await deleteDoc(doc(db, "PTrips", id));
+  const handleDeletingTrip = async (id) => {
+    await deleteDoc(doc(db, "Trips", id));
     setSelectedTrip(null);
   }
 
-  const handleEditingTrip = async (TripToEdit) => {
-    const Trip = doc(db, "Past Trips", TripToEdit.id);
-    await updateDoc(Trip, TripToEdit);
+  const handleEditingTrip = async (tripToEdit) => {
+    const trip = doc(db, "Trips", tripToEdit.id);
+    await updateDoc(trip, tripToEdit);
     setEditing(false);
     setSelectedTrip(null);
   }
@@ -86,24 +86,24 @@ function TripsControl() {
       currentlyVisibleState = <p>There was an error: {error}</p>
     } else if (editing) {
       currentlyVisibleState = <EditTripForm
-        Trip={selectedTrip}
+        trip={selectedTrip}
         onEditingTrip={handleEditingTrip}/>
-      buttonText = "Return to Past Trips";
+      buttonText = "Return to Trips List";
     } else if (selectedTrip != null) {
       currentlyVisibleState = <TripDetails
-        Trip = {selectedTrip}
+        trip = {selectedTrip}
         onClickingEdit={handleEditClick}
         onClickingDelete={handleDeletingTrip}/>
-      buttonText = "Return to Past Trips";
+      buttonText = "Return to Trips List";
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewTripsForm
         onNewTripCreation={handleCreatingNewTrip}/>
-      buttonText = "Return to Past Trips";
+      buttonText = "Return to Trips List";
     } else {
       currentlyVisibleState = <TripsList
         onTripSelection={handleChangingSelectedTrip}
-        TripsList={mainTripsList}/>
-      buttonText = "Add a Past Trip";
+        tripsList={mainTripsList}/>
+      buttonText = "Add a Trip";
     }
 
     return (

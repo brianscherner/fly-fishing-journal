@@ -21,7 +21,7 @@ function NewTripsForm(props) {
   )
 }
 
-NewPastTripsForm.propTypes = {
+NewTripsForm.propTypes = {
   onNewTripCreation: PropTypes.func
 }
 

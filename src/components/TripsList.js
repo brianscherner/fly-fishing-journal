@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 function TripsList(props) {
   return (
     <React.Fragment>
-      <h2>Past Trips</h2>
+      <h2>Trips</h2>
       <br/>
       {props.tripsList.map((trip) =>
-        <PastTrip
+        <Trip
           whenTripClicked={props.onTripSelection}
           location={trip.location}
           timeOfYear={trip.timeOfYear}

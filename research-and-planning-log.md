@@ -78,6 +78,10 @@
 
 * 3:45pm - 4:00pm: Begin renaming components and removing components related to "Future Trips".
 
+#### Wednesday, 5/8/24
+
+* 9:00am - 9:30am: Finish renaming "Past Trips"-related components and relevant code.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
