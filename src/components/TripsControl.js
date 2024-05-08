@@ -20,8 +20,14 @@ function TripsControl() {
         const trips = [];
         collectionSnapshot.forEach((doc) => {
           trips.push({
-            location: doc.data().location,
-            timeOfYear: doc.data().timeOfYear,
+            destination: doc.data().destination,
+            destinationType: doc.data().destinationType,
+            country: doc.data().country,
+            licenses: doc.data().licenses,
+            season: doc.data().season,
+            species: doc.data().species,
+            timeOfDay: doc.data().timeOfDay,
+            tripType: doc.data().tripType,
             waterType: doc.data().waterType,
             id: doc.id
           });

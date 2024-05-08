@@ -5,11 +5,29 @@ import ReusableTripForm from "./ReusableTripForm";
 function NewTripsForm(props) {
   function handleNewTripFormSubmission(event) {
     event.preventDefault();
-    props.onNewTripCreation({
-      location: event.target.location.value,
-      timeOfYear: event.target.timeOfYear.value,
-      waterType: event.target.waterType.value,
-    });
+    const tripType = event.target.tripType.value;
+    const destinationType = event.target.destinationType.value;
+    const waterType = event.target.waterType.value;
+    const season = event.target.season.value;
+
+    const tripFormData = {
+      tripType: tripType,
+      destination: event.target.destination.value,
+      destinationType: destinationType,
+      waterType: waterType,
+      country: event.target.country.value,
+      species: event.target.species.value,
+      season: season,
+      licenses: event.target.licenses.value,
+    }
+
+    if (tripType === "Past") {
+      tripFormData.timeOfDay = event.target.timeOfDay.value;
+    } else if (tripType === "Future") {
+      tripFormData.climate = event.target.climate.value;
+    }
+
+    props.onNewTripCreation(tripFormData);
   }
 
   return (

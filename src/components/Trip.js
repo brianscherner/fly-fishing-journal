@@ -5,9 +5,8 @@ function Trip(props) {
   return (
     <React.Fragment>
       <div onClick={() => props.whenTripClicked(props.id)}>
-        <h3>{props.location}</h3>
-        <p>{props.timeOfYear}</p>
-        <p>{props.waterType}</p>
+        <h3>{props.destination}</h3>
+        <p>{props.tripType}</p>
         <hr/>
       </div>
     </React.Fragment>
@@ -15,9 +14,8 @@ function Trip(props) {
 }
 
 Trip.propTypes = {
-  location: PropTypes.string.isRequired,
-  timeOfYear: PropTypes.string.isRequired,
-  waterType: PropTypes.string.isRequired,
+  destination: PropTypes.string.isRequired,
+  tripType: PropTypes.string.isRequired,
   id: PropTypes.string,
   whenTripClicked: PropTypes.func
 }

@@ -6,16 +6,17 @@ function ReusableTripForm(props) {
 
   // both types of fishing trips still need several more shared props //
   // might be a good idea to have shared props as their own component and import to this component //
+
   const destination = <input type="text" name="destination" placeholder="Destination" required/>
 
   const destinationType =
-  <select>
+  <select name="destinationType">
     <option value="domestic">Domestic</option>
     <option value="international">International</option>
   </select>
 
   const waterType =
-  <select>
+  <select name="waterType">
     <option value="freshwater">Freshwater</option>
     <option value="saltwater">Saltwater</option>
   </select>
@@ -25,7 +26,7 @@ function ReusableTripForm(props) {
   const species = <input type="text" name="species" placeholder="Fish Species" required/>
 
   const season =
-  <select>
+  <select name="season">
     <option value="winter">Winter</option>
     <option value="spring">Spring</option>
     <option value="summer">Summer</option>

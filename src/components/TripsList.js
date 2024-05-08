@@ -7,12 +7,12 @@ function TripsList(props) {
     <React.Fragment>
       <h2>Trips</h2>
       <br/>
+      <hr/>
       {props.tripsList.map((trip) =>
         <Trip
           whenTripClicked={props.onTripSelection}
-          location={trip.location}
-          timeOfYear={trip.timeOfYear}
-          waterType={trip.waterType}
+          destination={trip.destination}
+          tripType={trip.tripType}
           id={trip.id}
           key={trip.id}/>
       )}

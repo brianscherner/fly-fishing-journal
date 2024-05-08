@@ -6,9 +6,8 @@ function TripDetails(props) {
 
   return (
     <React.Fragment>
-      <h3>Location: {trip.location}</h3>
-      <p>Time of year: {trip.timeOfYear}</p>
-      <p>Water type: {trip.waterType}</p>
+      <h3>{trip.destination}</h3>
+      <p>{trip.tripType}</p>
       <button onClick={() => onClickingEdit(trip.id)}>Edit</button>
       <br/>
       <button onClick={() => onClickingDelete(trip.id)}>Delete</button>
