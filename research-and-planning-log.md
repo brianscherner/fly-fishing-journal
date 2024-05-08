@@ -84,7 +84,9 @@
 
 * 9:40am - 12:00pm: Worked on conditionally rendering different form fields based on the type of trip.
 
-* 1:00pm - 2:30pm : Worked on conditional rendering of form fields. Also worked on displaying newly created properties in list of trips and trip details.
+* 1:00pm - 2:30pm: Worked on conditional rendering of form fields. Also worked on displaying newly created properties in list of trips and trip details.
+
+* 2:30pm - 2:50pm: Added greyed out option to dropdown menu's in form to show user what the menu's are supposed to be for.
 
 <!-- NOTES:
 

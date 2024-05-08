@@ -11,12 +11,14 @@ function ReusableTripForm(props) {
 
   const destinationType =
   <select name="destinationType">
+    <option value="" disabled selected>Destination Type</option>
     <option value="domestic">Domestic</option>
     <option value="international">International</option>
   </select>
 
   const waterType =
   <select name="waterType">
+    <option value="" disabled selected>Water Type</option>
     <option value="freshwater">Freshwater</option>
     <option value="saltwater">Saltwater</option>
   </select>
@@ -27,6 +29,7 @@ function ReusableTripForm(props) {
 
   const season =
   <select name="season">
+    <option value="" disabled selected>Season</option>
     <option value="winter">Winter</option>
     <option value="spring">Spring</option>
     <option value="summer">Summer</option>
@@ -43,7 +46,7 @@ function ReusableTripForm(props) {
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
         <select defaultValue="" name="tripType" onChange={(event) => setTripType(event.target.value)}>
-          <option hidden value="">Trip Type</option>
+          <option value="" disabled selected>Trip Type</option>
           <option value="Past">Past</option>
           <option value="Future">Future</option>
         </select>
