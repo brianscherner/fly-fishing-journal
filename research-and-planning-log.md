@@ -80,7 +80,7 @@
 
 #### Wednesday, 5/8/24
 
-* 9:00am - 9:30am: Finish renaming "Past Trips"-related components and relevant code.
+* 9:00am - 9:30am: Finish refactoring application to only have "Trips"-related components distinguished by a "type" property vs separate components.
 
 <!-- NOTES:
 
