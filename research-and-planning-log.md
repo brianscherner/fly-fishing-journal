@@ -90,6 +90,8 @@
 
 * 2:50pm - 3:15pm: Updated 'Update' functionality for editing a trip's details to work with the updated new/reusable forms.
 
+* 3:15pm - 3:55pm: Worked on completing the conditional rendering for all forms. Added additional form fields for "past trips" type.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
