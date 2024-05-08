@@ -88,6 +88,8 @@
 
 * 2:30pm - 2:50pm: Added greyed out option to dropdown menu's in form to show user what the menu's are supposed to be for.
 
+* 2:50pm - 3:15pm: Updated 'Update' functionality for editing a trip's details to work with the updated new/reusable forms.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
