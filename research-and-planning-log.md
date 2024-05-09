@@ -100,6 +100,8 @@
 
 * 9:00am - 10:20am: Finished adding specific form fields and updating 'Create' and 'Update' functionality for "past trips".
 
+* 10:30am - 11:00am: Worked on adding form fields that conditionally render for "future trips".
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.

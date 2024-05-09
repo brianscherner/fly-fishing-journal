@@ -80,6 +80,40 @@ function ReusableTripForm(props) {
 
   const climate = <input type="text" name="climate" placeholder="Climate" required/>
 
+  const guidedOrNot =
+  <select name="guidedOrNot">
+    <option value="" disabled selected>Guided?</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+
+  const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs"/>
+
+  const travelDocs =
+  <select name="travelDocs">
+    <option value="" disabled selected>Travel Documents</option>
+    <option value="passport">Passport</option>
+    <option value="visa">Visa</option>
+  </select>
+
+  const tripExpenses = <input type="text" name="tripExpenses" placeholder="Trip Expenses"/>
+
+  const depositTerms = <input type="text" name="depositTerms" placeholder="Deposit Terms"/>
+
+  const cancellationPolicy = <input type="text" name="cancellationPolicy" placeholder="Cancellation Policy"/>
+
+  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements"/>
+
+  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements"/>
+
+  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements"/>
+
+  const baggageLuggage = <input type="text"
+  name="baggageLuggage" placeholder="Baggage/Luggage Policy"/>
+
+  const tripInsurance = <input type="text"
+  name="tripInsurance" placeholder="Trip Insurance"/>
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
@@ -136,6 +170,28 @@ function ReusableTripForm(props) {
         {tripType === "Future" && (
           <React.Fragment>
             {climate}
+            <br/>
+            {guidedOrNot}
+            <br/>
+            {travelDocs}
+            <br/>
+            {travelCosts}
+            <br/>
+            {tripExpenses}
+            <br/>
+            {depositTerms}
+            <br/>
+            {cancellationPolicy}
+            <br/>
+            {clothingRequirements}
+            <br/>
+            {gearRequirements}
+            <br/>
+            {flyRequirements}
+            <br/>
+            {baggageLuggage}
+            <br/>
+            {tripInsurance}
             <br/>
           </React.Fragment>
         )}
