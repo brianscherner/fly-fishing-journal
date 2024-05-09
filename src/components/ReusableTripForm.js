@@ -120,6 +120,10 @@ function ReusableTripForm(props) {
 
   const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines"/>
 
+  // button which renders when a trip type is selected //
+
+  const createButton = <button type="submit">{props.buttonText}</button>
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
@@ -128,34 +132,32 @@ function ReusableTripForm(props) {
           <option value="Past">Past</option>
           <option value="Future">Future</option>
         </select>
-        <React.Fragment>
-          <br/>
-          {destinationType}
-          <br/>
-          {waterType}
-          <br/>
-          {season}
-          <br/>
-          {waterBodyType}
-          <br/>
-          {destination}
-          <br/>
-          {country}
-          <br/>
-          {access}
-          <br/>
-          {species}
-          <br/>
-          {licenses}
-          <br/>
-        </React.Fragment>
+        <br/>
         {tripType === "Past" && (
           <React.Fragment>
+            {destination}
+            <br/>
+            {destinationType}
+            <br/>
+            {season}
+            <br/>
+            {waterType}
+            <br/>
+            {waterBodyType}
+            <br/>
             {waterFees}
+            <br/>
+            {species}
             <br/>
             {state}
             <br/>
             {county}
+            <br/>
+            {country}
+            <br/>
+            {access}
+            <br/>
+            {licenses}
             <br/>
             {timeOfDay}
             <br/>
@@ -171,13 +173,30 @@ function ReusableTripForm(props) {
             <br/>
             {travelTime}
             <br/>
+            {createButton}
           </React.Fragment>
         )}
         {tripType === "Future" && (
           <React.Fragment>
+            {destination}
+            <br/>
+            {destinationType}
+            <br/>
+            {season}
+            <br/>
+            {waterType}
+            <br/>
+            {waterBodyType}
+            <br/>
+            {species}
+            <br/>
+            {country}
+            <br/>
             {climate}
             <br/>
             {guidedOrNot}
+            <br/>
+            {licenses}
             <br/>
             {travelDocs}
             <br/>
@@ -205,9 +224,9 @@ function ReusableTripForm(props) {
             <br/>
             {gratuity}
             <br/>
+            {createButton}
           </React.Fragment>
         )}
-        <button type="submit">{props.buttonText}</button>
       </form>
       <br/>
     </React.Fragment>

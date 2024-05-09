@@ -108,7 +108,7 @@
 
 * 2:00pm - 2:30pm: Retrieved info from all properties from database to display in UI (Display functionality will be updated later).
 
-* 2:30pm - :
+* 2:30pm - 3:20pm: Updated reusable form to only render a form after a trip type is selected.
 
 <!-- NOTES:
 
