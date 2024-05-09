@@ -1,5 +1,7 @@
 # Research and Planning Log
 
+### Work Log (4.3.5.1 React with Redux Independent Project)
+
 #### Thursday, 4/4/24
 
 * 9:40am to 12:00pm: Created basic idea for application with minimum features. Researched info about fly fishing to learn about details that I could include in app.
@@ -26,7 +28,7 @@
 
 * 10:00am - 11:00am: Wrote up capstone proposal.
 
-# Work Log (4.4.5.1 React NoSQL Independent Project)
+### Work Log (4.4.5.1 React NoSQL Independent Project)
 
 #### Monday, 4/22/24
 
@@ -53,6 +55,8 @@
 #### Wednesday, 4/24/24
 
 * 9:15am - 10:45am: Added 'Create' functionality for "Future Trips", and toggling state between future trips list and the form to submit a future trip.
+
+### Work Log (4.5.5.1 React with APIs Independent Project)
 
 #### Monday, 5/6/24
 
