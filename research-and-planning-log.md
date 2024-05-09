@@ -102,6 +102,10 @@
 
 * 10:30am - 11:00am: Worked on adding form fields that conditionally render for "future trips".
 
+* 11:00am - 12:00pm - Met with Ethel.
+
+* 1:00pm - 1:45pm: Finished adding form fields that conditionally render for "future trips". Updated 'Create' and 'Update' functionality to work with new fields.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.

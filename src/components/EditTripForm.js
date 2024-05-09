@@ -34,6 +34,20 @@ function EditTripForm(props) {
       editTripFormData.travelTime = event.target.travelTime.value;
     } else if (editTripFormData.tripType === "Future") {
       editTripFormData.climate = event.target.climate.value;
+      editTripFormData.guidedOrNot = event.target.guidedOrNot.value;
+      editTripFormData.travelCosts = event.target.travelCosts.value;
+      editTripFormData.travelDocs = event.target.travelDocs.value;
+      editTripFormData.tripExpenses = event.target.tripExpenses.value;
+      editTripFormData.depositTerms = event.target.depositTerms.value;
+      editTripFormData.cancellationPolicy = event.target.cancellationPolicy.value;
+      editTripFormData.clothingRequirements = event.target.clothingRequirements.value;
+      editTripFormData.gearRequirements = event.target.gearRequirements.value;
+      editTripFormData.flyRequirements = event.target.flyRequirements.value;
+      editTripFormData.baggageLuggage = event.target.baggageLuggage.value;
+      editTripFormData.tripInsurance = event.target.tripInsurance.value;
+      editTripFormData.evacInsurance = event.target.evacInsurance.value;
+      editTripFormData.communications = event.target.communications.value;
+      editTripFormData.gratuity = event.target.gratuity.value;
     }
 
     props.onEditingTrip(editTripFormData);

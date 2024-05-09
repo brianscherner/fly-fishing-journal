@@ -114,6 +114,12 @@ function ReusableTripForm(props) {
   const tripInsurance = <input type="text"
   name="tripInsurance" placeholder="Trip Insurance"/>
 
+  const evacInsurance = <input type="text" name="evacInsurance" placeholder="Medical Evacuation Insurance"/>
+
+  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service"/>
+
+  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines"/>
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
@@ -192,6 +198,12 @@ function ReusableTripForm(props) {
             {baggageLuggage}
             <br/>
             {tripInsurance}
+            <br/>
+            {evacInsurance}
+            <br/>
+            {communications}
+            <br/>
+            {gratuity}
             <br/>
           </React.Fragment>
         )}

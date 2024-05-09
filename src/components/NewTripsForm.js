@@ -10,7 +10,6 @@ function NewTripsForm(props) {
     const waterType = event.target.waterType.value;
     const season = event.target.season.value;
     const waterBodyType = event.target.waterBodyType.value;
-    const waterFees = event.target.waterFees.value;
 
     const tripFormData = {
       tripType: tripType,
@@ -26,7 +25,7 @@ function NewTripsForm(props) {
 
     if (tripType === "Past") {
       tripFormData.timeOfDay = event.target.timeOfDay.value;
-      tripFormData.waterFees = waterFees;
+      tripFormData.waterFees = event.target.waterFees.value;
       tripFormData.state = event.target.state.value;
       tripFormData.county = event.target.county.value;
       tripFormData.access = event.target.access.value;
@@ -38,6 +37,20 @@ function NewTripsForm(props) {
       tripFormData.travelTime = event.target.travelTime.value;
     } else if (tripType === "Future") {
       tripFormData.climate = event.target.climate.value;
+      tripFormData.guidedOrNot = event.target.guidedOrNot.value;
+      tripFormData.travelCosts = event.target.travelCosts.value;
+      tripFormData.travelDocs = event.target.travelDocs.value;
+      tripFormData.tripExpenses = event.target.tripExpenses.value;
+      tripFormData.depositTerms = event.target.depositTerms.value;
+      tripFormData.cancellationPolicy = event.target.cancellationPolicy.value;
+      tripFormData.clothingRequirements = event.target.clothingRequirements.value;
+      tripFormData.gearRequirements = event.target.gearRequirements.value;
+      tripFormData.flyRequirements = event.target.flyRequirements.value;
+      tripFormData.baggageLuggage = event.target.baggageLuggage.value;
+      tripFormData.tripInsurance = event.target.tripInsurance.value;
+      tripFormData.evacInsurance = event.target.evacInsurance.value;
+      tripFormData.communications = event.target.communications.value;
+      tripFormData.gratuity = event.target.gratuity.value;
     }
 
     props.onNewTripCreation(tripFormData);
