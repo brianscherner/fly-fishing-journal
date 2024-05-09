@@ -106,6 +106,10 @@
 
 * 1:00pm - 1:45pm: Finished adding form fields that conditionally render for "future trips". Updated 'Create' and 'Update' functionality to work with new fields.
 
+* 2:00pm - 2:30pm: Retrieved info from all properties from database to display in UI (Display functionality will be updated later).
+
+* 2:30pm - :
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
