@@ -96,6 +96,10 @@
 
 * 3:15pm - 3:55pm: Worked on completing the conditional rendering for all forms. Added additional form fields for "past trips" type.
 
+#### Thursday, 5/9/24
+
+* 9:00am - 10:20am: Finished adding specific form fields and updating 'Create' and 'Update' functionality for "past trips".
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.

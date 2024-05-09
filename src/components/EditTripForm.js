@@ -22,6 +22,16 @@ function EditTripForm(props) {
 
     if (editTripFormData.tripType === "Past") {
       editTripFormData.timeOfDay = event.target.timeOfDay.value;
+      editTripFormData.waterFees = event.target.waterFees.value;
+      editTripFormData.state = event.target.state.value;
+      editTripFormData.county = event.target.county.value;
+      editTripFormData.access = event.target.access.value;
+      editTripFormData.fishingMethod = event.target.fishingMethod.value;
+      editTripFormData.fliesUsed = event.target.fliesUsed.value;
+      editTripFormData.fishCaught = event.target.fishCaught.value;
+      editTripFormData.fishingTackleUsed = event.target.fishingTackleUsed.value;
+      editTripFormData.riverFlowLevels = event.target.riverFlowLevels.value;
+      editTripFormData.travelTime = event.target.travelTime.value;
     } else if (editTripFormData.tripType === "Future") {
       editTripFormData.climate = event.target.climate.value;
     }

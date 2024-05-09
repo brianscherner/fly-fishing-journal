@@ -47,7 +47,7 @@ function ReusableTripForm(props) {
 
   const fishingTackleUsed = <input type="text" name="fishingTackleUsed" placeholder="Fishing Tackle Used" required/>
 
-  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs or feet)"/>
+  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)"/>
 
   const travelTime = <input type="text"
   name="travelTime" placeholder="Travel Time"/>
@@ -59,6 +59,21 @@ function ReusableTripForm(props) {
     <option value="lake">Lake</option>
     <option value="ocean">Ocean</option>
     <option value="mix">Mix</option>
+  </select>
+
+  const state = <input type="text" name="state" placeholder="State"/>
+
+  const county = <input type="text" name="county" placeholder="County"/>
+
+  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)"/>
+
+  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)"/>
+
+  const waterFees =
+  <select name="waterFees">
+    <option value="" disabled selected>Water Fees</option>
+    <option value="private">Private</option>
+    <option value="public">Public</option>
   </select>
 
   // future trip props //
@@ -87,6 +102,8 @@ function ReusableTripForm(props) {
           <br/>
           {country}
           <br/>
+          {access}
+          <br/>
           {species}
           <br/>
           {licenses}
@@ -94,7 +111,15 @@ function ReusableTripForm(props) {
         </React.Fragment>
         {tripType === "Past" && (
           <React.Fragment>
+            {waterFees}
+            <br/>
+            {state}
+            <br/>
+            {county}
+            <br/>
             {timeOfDay}
+            <br/>
+            {fishingMethod}
             <br/>
             {fliesUsed}
             <br/>
