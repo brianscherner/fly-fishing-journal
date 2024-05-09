@@ -6,7 +6,7 @@ function ReusableTripForm(props) {
 
   // shared props for both trip types //
 
-  const destination = <input type="text" name="destination" placeholder="Destination" required/>
+  const destination = <input type="text" name="destination" placeholder="Destination" defaultValue={props.trip !== undefined ? props.trip.destination : ''} required/>
 
   const destinationType =
   <select name="destinationType">
@@ -22,9 +22,9 @@ function ReusableTripForm(props) {
     <option value="saltwater">Saltwater</option>
   </select>
 
-  const country = <input type="text" name="country" placeholder="Country" required/>
+  const country = <input type="text" name="country" placeholder="Country" defaultValue={props.trip !== undefined ? props.trip.country : ''} required/>
 
-  const species = <input type="text" name="species" placeholder="Fish Species" required/>
+  const species = <input type="text" name="species" placeholder="Fish Species" defaultValue={props.trip !== undefined ? props.trip.species : ''} required/>
 
   const season =
   <select name="season">
@@ -35,22 +35,22 @@ function ReusableTripForm(props) {
     <option value="fall">Fall</option>
   </select>
 
-  const licenses = <input type="text" name="licenses" placeholder="Licenses" required/>
+  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={props.trip !== undefined ? props.trip.licenses : ''} required/>
 
   // past trip props //
 
-  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" required/>
+  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={props.trip !== undefined ? props.trip.timeOfDay : ''} required/>
 
-  const fliesUsed = <input type="text" name="fliesUsed" placeholder="Flies Used" required/>
+  const fliesUsed = <input type="text" name="fliesUsed" placeholder="Flies Used" defaultValue={props.trip !== undefined ? props.trip.fliesUsed : ''} required/>
 
-  const fishCaught = <input type="text" name="fishCaught" placeholder="Fish Caught" required/>
+  const fishCaught = <input type="text" name="fishCaught" placeholder="Fish Caught" defaultValue={props.trip !== undefined ? props.trip.fishCaught : ''} required/>
 
-  const fishingTackleUsed = <input type="text" name="fishingTackleUsed" placeholder="Fishing Tackle Used" required/>
+  const fishingTackleUsed = <input type="text" name="fishingTackleUsed" placeholder="Fishing Tackle Used" defaultValue={props.trip !== undefined ? props.trip.fishingTackleUsed : ''} required/>
 
-  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)"/>
+  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)" defaultValue={props.trip !== undefined ? props.trip.riverFlowLevels : ''}/>
 
   const travelTime = <input type="text"
-  name="travelTime" placeholder="Travel Time"/>
+  name="travelTime" placeholder="Travel Time" defaultValue={props.trip !== undefined ? props.trip.travelTime : ''}/>
 
   const waterBodyType =
   <select name="waterBodyType">
@@ -61,13 +61,13 @@ function ReusableTripForm(props) {
     <option value="mix">Mix</option>
   </select>
 
-  const state = <input type="text" name="state" placeholder="State"/>
+  const state = <input type="text" name="state" placeholder="State" defaultValue={props.trip !== undefined ? props.trip.state : ''}/>
 
-  const county = <input type="text" name="county" placeholder="County"/>
+  const county = <input type="text" name="county" placeholder="County" defaultValue={props.trip !== undefined ? props.trip.county : ''}/>
 
-  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)"/>
+  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)" defaultValue={props.trip !== undefined ? props.trip.access : ''}/>
 
-  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)"/>
+  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)" defaultValue={props.trip !== undefined ? props.trip.fishingMethod : ''}/>
 
   const waterFees =
   <select name="waterFees">
@@ -78,7 +78,7 @@ function ReusableTripForm(props) {
 
   // future trip props //
 
-  const climate = <input type="text" name="climate" placeholder="Climate" required/>
+  const climate = <input type="text" name="climate" placeholder="Climate" defaultValue={props.trip !== undefined ? props.trip.climate : ''} required/>
 
   const guidedOrNot =
   <select name="guidedOrNot">
@@ -87,7 +87,7 @@ function ReusableTripForm(props) {
     <option value="no">No</option>
   </select>
 
-  const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs"/>
+  const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs" defaultValue={props.trip !== undefined ? props.trip.travelCosts : ''}/>
 
   const travelDocs =
   <select name="travelDocs">
@@ -96,29 +96,29 @@ function ReusableTripForm(props) {
     <option value="visa">Visa</option>
   </select>
 
-  const tripExpenses = <input type="text" name="tripExpenses" placeholder="Trip Expenses"/>
+  const tripExpenses = <input type="text" name="tripExpenses" placeholder="Trip Expenses" defaultValue={props.trip !== undefined ? props.trip.tripExpenses : ''}/>
 
-  const depositTerms = <input type="text" name="depositTerms" placeholder="Deposit Terms"/>
+  const depositTerms = <input type="text" name="depositTerms" placeholder="Deposit Terms" defaultValue={props.trip !== undefined ? props.trip.depositTerms : ''}/>
 
-  const cancellationPolicy = <input type="text" name="cancellationPolicy" placeholder="Cancellation Policy"/>
+  const cancellationPolicy = <input type="text" name="cancellationPolicy" placeholder="Cancellation Policy" defaultValue={props.trip !== undefined ? props.trip.cancellationPolicy : ''}/>
 
-  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements"/>
+  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={props.trip !== undefined ? props.trip.clothingRequirements : ''}/>
 
-  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements"/>
+  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={props.trip !== undefined ? props.trip.gearRequirements : ''}/>
 
-  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements"/>
+  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements" defaultValue={props.trip !== undefined ? props.trip.flyRequirements : ''}/>
 
   const baggageLuggage = <input type="text"
-  name="baggageLuggage" placeholder="Baggage/Luggage Policy"/>
+  name="baggageLuggage" placeholder="Baggage/Luggage Policy" defaultValue={props.trip !== undefined ? props.trip.baggageLuggage : ''}/>
 
   const tripInsurance = <input type="text"
-  name="tripInsurance" placeholder="Trip Insurance"/>
+  name="tripInsurance" placeholder="Trip Insurance" defaultValue={props.trip !== undefined ? props.trip.tripInsurance : ''}/>
 
-  const evacInsurance = <input type="text" name="evacInsurance" placeholder="Medical Evacuation Insurance"/>
+  const evacInsurance = <input type="text" name="evacInsurance" placeholder="Medical Evacuation Insurance" defaultValue={props.trip !== undefined ? props.trip.evacInsurance : ''}/>
 
-  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service"/>
+  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service" defaultValue={props.trip !== undefined ? props.trip.communications : ''}/>
 
-  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines"/>
+  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines" defaultValue={props.trip !== undefined ? props.trip.gratuity : ''}/>
 
   // button which renders when a trip type is selected //
 

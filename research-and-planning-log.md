@@ -110,6 +110,8 @@
 
 * 2:30pm - 3:20pm: Updated reusable form to only render a form after a trip type is selected.
 
+* 3:30pm - 3:50pm: Added functionality to pre-fill form fields with trip info when a user edits a trip.
+
 <!-- NOTES:
 
 Refactor application to show all trips in one list.
