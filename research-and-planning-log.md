@@ -116,7 +116,9 @@
 
 * 9:10am - 10:30am: Worked on conditionally rendering trip details based on the trip type.
 
+* 10:30am - 11:30am: Technical difficulties.
 
+* 1:00pm - 3:35pm : Worked on organizing trip details into different categories in UI.
 
 <!-- NOTES:
 
