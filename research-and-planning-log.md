@@ -118,15 +118,13 @@
 
 * 10:30am - 11:30am: Technical difficulties.
 
-* 1:00pm - 3:35pm : Worked on organizing trip details into different categories in UI.
+* 1:00pm - 3:35pm: Worked on organizing trip details into different categories in UI.
+
+* 3:40pm - 3:55pm: Planned out how to manage state of trip details and how to show/hide different categories.
 
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
-
-Past Trips/Future Trips will display based on type.
-
-Conditionally render different trip details based on trip type.
 
 Consider adding unique ID's to each trip
 

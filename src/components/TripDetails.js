@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// use useState hooks to hide and show categories in details based on which one the user clicks //
+
+// could set state to boolean values of false for each respective category, then set state to true when one is clicked //
 function TripDetails(props) {
   const { trip, onClickingDelete, onClickingEdit } = props;
 
