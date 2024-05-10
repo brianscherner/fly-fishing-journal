@@ -112,15 +112,17 @@
 
 * 3:30pm - 3:50pm: Added functionality to pre-fill form fields with trip info when a user edits a trip.
 
-<!-- NOTES:
+#### Friday, 5/10/24
 
-Refactor application to show all trips in one list.
+* 9:10am - 10:30am: Worked on conditionally rendering trip details based on the trip type.
+
+
+
+<!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
 
 Past Trips/Future Trips will display based on type.
-
-Conditionally render different form fields based on trip type.
 
 Conditionally render different trip details based on trip type.
 
