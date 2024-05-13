@@ -134,6 +134,8 @@
 
 * 2:00pm - 3:00pm: Organized trip details into tables for their respective categories.
 
+* 3:15pm - 4:00pm: Brainstormed possible ways to organize trip details and tables into separate components.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
