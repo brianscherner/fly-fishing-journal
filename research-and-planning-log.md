@@ -122,6 +122,14 @@
 
 * 3:40pm - 3:55pm: Planned out how to manage state of trip details and how to show/hide different categories.
 
+#### Monday, 5/13/24
+
+* 9:10am - 11:00am: Worked on managing state of trip details by hiding/showing categories.
+
+* 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00 - 1:15: Finished rendering different trip details when clicking on their respective category.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
