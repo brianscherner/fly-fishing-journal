@@ -132,7 +132,7 @@
 
 * 1:30pm - 2:00pm: Centered application text in middle of page and brainstormed how to organize trip details into tables.
 
-* 2:00pm - :
+* 2:00pm - 3:00pm: Organized trip details into tables for their respective categories.
 
 <!-- NOTES:
 

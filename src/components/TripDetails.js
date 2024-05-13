@@ -20,43 +20,70 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
+      <h3>Trip Details</h3>
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
           <a className="nav-link" aria-current="page" href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
           {destinationInfo === true && (
-            <React.Fragment>
-            <h4>Destination</h4>
-            <p>{trip.destination}</p>
-            <h4>Trip Type</h4>
-            <p>{trip.tripType}</p>
-            <h4>Season</h4>
-            <p>{trip.season}</p>
-            <h4>Water Type</h4>
-            <p>{trip.waterType}</p>
-            <h4>Water Body Type</h4>
-            <p>{trip.waterBodyType}</p>
-            <h4>Fish Species</h4>
-            <p>{trip.species}</p>
+            <div className="table-container">
+              <div className="row justify-content-center">
+                <div className="col-4">
+                  <table className="table">
+                    <tr className="dest-info-details">
+                      <th>Destination</th>
+                      <td>{trip.destination}</td>
+                    </tr>
+                    <tr className="dest-info-details">
+                      <th>Trip Type</th>
+                      <td>{trip.tripType}</td>
+                    </tr>
+                    <tr className="dest-info-details">
+                      <th>Season</th>
+                      <td>{trip.season}</td>
+                    </tr>
+                    <tr className="dest-info-details">
+                      <th>Water Type</th>
+                      <td>{trip.waterType}</td>
+                    </tr>
+                    <tr className="dest-info-details">
+                      <th>Water Body Type</th>
+                      <td>{trip.waterBodyType}</td>
+                    </tr>
+                    <tr className="dest-info-details">
+                      <th>Fish Species</th>
+                      <td>{trip.species}</td>
+                    </tr>
 
-            {trip.tripType === "Past" && (
-              <React.Fragment>
-                <h4>State</h4>
-                <p>{trip.state}</p>
-                <h4>County</h4>
-                <p>{trip.county}</p>
-              </React.Fragment>
-            )}
+                    {trip.tripType === "Past" && (
+                      <React.Fragment>
+                        <tr className="dest-info-details">
+                          <th>State</th>
+                          <td>{trip.state}</td>
+                        </tr>
+                        <tr className="dest-info-details">
+                          <th>County</th>
+                          <td>{trip.county}</td>
+                        </tr>
+                      </React.Fragment>
+                    )}
 
-            <h4>Country</h4>
-            <p>{trip.country}</p>
+                    <tr className="dest-info-details">
+                      <th>Country</th>
+                      <td>{trip.country}</td>
+                    </tr>
 
-            {trip.tripType === "Future" && (
-              <React.Fragment>
-                <h4>Climate</h4>
-                <p>{trip.climate}</p>
-              </React.Fragment>
-            )}
-            </React.Fragment>
+                    {trip.tripType === "Future" && (
+                      <React.Fragment>
+                        <tr className="dest-info-details">
+                          <th>Climate</th>
+                          <td>{trip.climate}</td>
+                        </tr>
+                      </React.Fragment>
+                    )}
+                  </table>
+                </div>
+              </div>
+            </div>
           )}
         </li>
 
@@ -65,38 +92,72 @@ function TripDetails(props) {
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
               {tripCosts === true && (
-                <React.Fragment>
-                  <h4>Travel Documents</h4>
-                  <p>{trip.travelDocs}</p>
-                  <h4>Travel Costs</h4>
-                  <p>{trip.travelCosts}</p>
-                  <h4>Trip Expenses</h4>
-                  <p>{trip.tripExpenses}</p>
-                  <h4>Baggage/Luggage Fees</h4>
-                  <p>{trip.baggageLuggage}</p>
-                  <h4>Trip Insurance Costs</h4>
-                  <p>{trip.tripInsurance}</p>
-                  <h4>Evacuation Insurance Costs</h4>
-                  <p>{trip.evacInsurance}</p>
-                  <h4>Deposit Terms</h4>
-                  <p>{trip.depositTerms}</p>
-                  <h4>Cancellation Policy</h4>
-                  <p>{trip.cancellationPolicy}</p>
-                </React.Fragment>
+                <div className="table-container">
+                  <div className="row justify-content-center">
+                    <div className="col-4">
+                      <table className="table">
+                        <tr className="trip-costs-table">
+                          <th>Travel Documents</th>
+                          <td>{trip.travelDocs}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Travel Costs</th>
+                          <td>{trip.travelCosts}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Trip Expenses</th>
+                          <td>{trip.tripExpenses}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Baggage/Luggage Fees</th>
+                          <td>{trip.baggageLuggage}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Trip Insurance Costs</th>
+                          <td>{trip.tripInsurance}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Evacuation Insurance Costs</th>
+                          <td>{trip.evacInsurance}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Deposit Terms</th>
+                          <td>{trip.depositTerms}</td>
+                        </tr>
+                        <tr className="trip-costs-table">
+                          <th>Cancellation Policy</th>
+                          <td>{trip.cancellationPolicy}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               )}
             </li>
 
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
               {gearRequirements === true && (
-                <React.Fragment>
-                  <h4>Clothing Requirements</h4>
-                  <p>{trip.clothingRequirements}</p>
-                  <h4>Gear Requirements</h4>
-                  <p>{trip.gearRequirements}</p>
-                  <h4>Fly Requirements</h4>
-                  <p>{trip.flyRequirements}</p>
-                </React.Fragment>
+                <div className='table-container'>
+                  <div className='row justify-content-center'>
+                    <div className='col-4'>
+                      <table className='table'>
+                        <tr className="gear-requir-table">
+                          <th>Clothing Requirements</th>
+                          <td>{trip.clothingRequirements}</td>
+                        </tr>
+                        <tr className="gear-requir-table">
+                          <th>Gear Requirements</th>
+                          <td>{trip.gearRequirements}</td>
+                        </tr>
+                        <tr className="gear-requir-table">
+                          <th>Fly Requirements</th>
+                          <td>{trip.flyRequirements}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               )}
             </li>
           </React.Fragment>
@@ -106,18 +167,34 @@ function TripDetails(props) {
           <li className="nav-item">
             <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
             {tripNotes === true && (
-              <React.Fragment>
-                <h4>Fishing Method</h4>
-                <p>{trip.fishingMethod}</p>
-                <h4>Flies Used</h4>
-                <p>{trip.fliesUsed}</p>
-                <h4>Fish Caught</h4>
-                <p>{trip.fishCaught}</p>
-                <h4>Fishing Tackle Used</h4>
-                <p>{trip.fishingTackleUsed}</p>
-                <h4>River Flow Levels</h4>
-                <p>{trip.riverFlowLevels}</p>
-              </React.Fragment>
+              <div className='table-container'>
+                <div className='row justify-content-center'>
+                  <div className='col-4'>
+                    <table className='table'>
+                      <tr className="trip-notes-table">
+                        <th>Fishing Method</th>
+                        <td>{trip.fishingMethod}</td>
+                      </tr>
+                      <tr className="trip-notes-table">
+                        <th>Flies Used</th>
+                        <td>{trip.fliesUsed}</td>
+                      </tr>
+                      <tr className="trip-notes-table">
+                        <th>Fish Caught</th>
+                        <td>{trip.fishCaught}</td>
+                      </tr>
+                      <tr className="trip-notes-table">
+                        <th>Fishing Tackle Used</th>
+                        <td>{trip.fishingTackleUsed}</td>
+                      </tr>
+                      <tr className="trip-notes-table">
+                        <th>River Flow Levels</th>
+                        <td>{trip.riverFlowLevels}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
             )}
           </li>
         )}
@@ -125,29 +202,51 @@ function TripDetails(props) {
         <li className="nav-item">
           <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
           {miscellaneous === true && (
-            <React.Fragment>
-              <h4>Required Licenses</h4>
-              <p>{trip.licenses}</p>
-              <h4>Water Fees</h4>
-              <p>{trip.waterFees}</p>
-              <h4>Access</h4>
-              <p>{trip.access}</p>
-              <h4>Time of Day</h4>
-              <p>{trip.timeOfDay}</p>
-              <h4>Travel Time</h4>
-              <p>{trip.travelTime}</p>
+            <div className='table-container'>
+              <div className='row justify-content-center'>
+                <div className='col-4'>
+                  <table className='table'>
+                    <tr className="misc-details">
+                      <th>Required Licenses</th>
+                      <td>{trip.licenses}</td>
+                    </tr>
+                    <tr className="misc-details">
+                      <th>Water Fees</th>
+                      <td>{trip.waterFees}</td>
+                    </tr>
+                    <tr className="misc-details">
+                      <th>Access</th>
+                      <td>{trip.access}</td>
+                    </tr>
+                    <tr className="misc-details">
+                      <th>Time of Day</th>
+                      <td>{trip.timeOfDay}</td>
+                    </tr>
+                    <tr className="misc-details">
+                      <th>Travel Time</th>
+                      <td>{trip.travelTime}</td>
+                    </tr>
 
-              {trip.tripType === "Future" && (
-                <React.Fragment>
-                  <h4>Guided?</h4>
-                  <p>{trip.guidedOrNot}</p>
-                  <h4>Cell and Wifi Service</h4>
-                  <p>{trip.communications}</p>
-                  <h4>Gratuity Guidelines</h4>
-                  <p>{trip.gratuity}</p>
-                </React.Fragment>
-              )}
-            </React.Fragment>
+                    {trip.tripType === "Future" && (
+                      <React.Fragment>
+                        <tr className="misc-details">
+                          <th>Guided?</th>
+                          <td>{trip.guidedOrNot}</td>
+                        </tr>
+                        <tr className="misc-details">
+                          <th>Cell and Wifi Service</th>
+                          <td>{trip.communications}</td>
+                        </tr>
+                        <tr className="misc-details">
+                          <th>Gratuity Guidelines</th>
+                          <td>{trip.gratuity}</td>
+                        </tr>
+                      </React.Fragment>
+                    )}
+                  </table>
+                </div>
+              </div>
+            </div>
           )}
         </li>
       </ul>
