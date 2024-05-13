@@ -130,6 +130,10 @@
 
 * 1:00 - 1:15: Finished rendering different trip details when clicking on their respective category.
 
+* 1:30pm - 2:00pm: Centered application text in middle of page and brainstormed how to organize trip details into tables.
+
+* 2:00pm - :
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
