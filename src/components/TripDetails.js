@@ -22,7 +22,7 @@ function TripDetails(props) {
     <div className="trip-details">
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
+          <a className="nav-link" aria-current="page" href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
           {destinationInfo === true && (
             <React.Fragment>
             <h4>Destination</h4>
