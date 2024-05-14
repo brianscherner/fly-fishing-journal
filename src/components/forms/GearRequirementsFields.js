@@ -1,7 +1,6 @@
 import React from "react";
 
 function GearRequirements(props) {
-
   const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={props.trip !== undefined ? props.trip.clothingRequirements : ''}/>
 
   const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={props.trip !== undefined ? props.trip.gearRequirements : ''}/>
