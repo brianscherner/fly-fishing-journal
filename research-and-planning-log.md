@@ -136,6 +136,10 @@
 
 * 3:15pm - 4:00pm: Brainstormed possible ways to organize trip details and tables into separate components.
 
+#### Tuesday, 5/14/24
+
+* 9:00am - 10:30am: Refactored trip details tables into separate components and imported into their main component.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
