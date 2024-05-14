@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import NewTripsForm from './NewTripsForm.js';
+import NewTripsForm from '../forms/NewTripsForm.js';
 import TripsList from './TripsList.js';
 import TripDetails from './TripDetails.js';
-import EditTripForm from './EditTripForm.js';
-import { db, auth } from '../firebase.js';
+import EditTripForm from '../forms/EditTripForm.js';
+import { db, auth } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 
 function TripsControl() {

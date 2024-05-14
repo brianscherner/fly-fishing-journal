@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TripsControl from './TripsControl';
+import TripsControl from './trips/TripsControl';
 import SignIn from './SignIn';
 
 function App() {
