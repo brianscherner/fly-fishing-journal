@@ -4,20 +4,11 @@ import DestinationInfoFields from "./DestinationInfoFields";
 import GearRequirementsFields from "./GearRequirementsFields";
 import MiscellaneousFields from "./MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
+import TripNotesFields from "./TripNotesFields";
 
 function ReusableTripForm(props) {
   const { trip } = props;
   const [tripType, setTripType] = useState('');
-
-  const fliesUsed = <input type="text" name="fliesUsed" placeholder="Flies Used" defaultValue={props.trip !== undefined ? props.trip.fliesUsed : ''} required/>
-
-  const fishCaught = <input type="text" name="fishCaught" placeholder="Fish Caught" defaultValue={props.trip !== undefined ? props.trip.fishCaught : ''} required/>
-
-  const fishingTackleUsed = <input type="text" name="fishingTackleUsed" placeholder="Fishing Tackle Used" defaultValue={props.trip !== undefined ? props.trip.fishingTackleUsed : ''} required/>
-
-  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)" defaultValue={props.trip !== undefined ? props.trip.riverFlowLevels : ''}/>
-
-  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)" defaultValue={props.trip !== undefined ? props.trip.fishingMethod : ''}/>
 
   const climate = <input type="text" name="climate" placeholder="Climate" defaultValue={props.trip !== undefined ? props.trip.climate : ''} required/>
 
@@ -36,6 +27,10 @@ function ReusableTripForm(props) {
         <br/>
         {tripType && (
           <DestinationInfoFields trip={trip} tripType={tripType}/>
+        )}
+
+        {tripType === "Past" && (
+          <TripNotesFields/>
         )}
 
         {tripType === "Future" && (
