@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import DestinationInfo from "../tables/DestinationInfo";
 import TripCosts from '../tables/TripCosts';
+import GearRequirements from '../tables/GearRequirements';
 
 function TripDetails(props) {
   const [destinationInfo, setDestinationInfo] = useState(false);
@@ -58,20 +59,7 @@ function TripDetails(props) {
                 <div className='table-container'>
                   <div className='row justify-content-center'>
                     <div className='col-4'>
-                      <table className='table'>
-                        <tr className="gear-requir-table">
-                          <th>Clothing Requirements</th>
-                          <td>{trip.clothingRequirements}</td>
-                        </tr>
-                        <tr className="gear-requir-table">
-                          <th>Gear Requirements</th>
-                          <td>{trip.gearRequirements}</td>
-                        </tr>
-                        <tr className="gear-requir-table">
-                          <th>Fly Requirements</th>
-                          <td>{trip.flyRequirements}</td>
-                        </tr>
-                      </table>
+                      <GearRequirements trip={trip}/>
                     </div>
                   </div>
                 </div>
