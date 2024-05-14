@@ -56,13 +56,7 @@ function TripDetails(props) {
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
               {gearRequirements === true && (
-                <div className='table-container'>
-                  <div className='row justify-content-center'>
-                    <div className='col-4'>
-                      <GearRequirements trip={trip}/>
-                    </div>
-                  </div>
-                </div>
+                <GearRequirements trip={trip}/>
               )}
             </li>
           </React.Fragment>
