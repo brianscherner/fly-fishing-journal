@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function MiscellaneousFields(props) {
-  const { trip, tripType } = props;
+  const { tripType } = props;
 
   const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service" defaultValue={props.trip !== undefined ? props.trip.communications : ''}/>
 
@@ -59,7 +59,6 @@ function MiscellaneousFields(props) {
 }
 
 MiscellaneousFields.propTypes = {
-  trip: PropTypes.object,
   tripType: PropTypes.string
 }
 

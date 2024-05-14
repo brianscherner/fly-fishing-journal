@@ -39,7 +39,7 @@ function ReusableTripForm(props) {
         )}
 
         {tripType && (
-          <MiscellaneousFields trip={trip} tripType={tripType}/>
+          <MiscellaneousFields tripType={tripType}/>
         )}
 
         {tripType && (
