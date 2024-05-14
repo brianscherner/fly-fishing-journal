@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import DestinationInfoFields from "./DestinationInfoFields";
+import GearRequirements from "./GearRequirementsFields";
 
 function ReusableTripForm(props) {
   const { trip } = props;
@@ -60,11 +61,7 @@ function ReusableTripForm(props) {
 
   const cancellationPolicy = <input type="text" name="cancellationPolicy" placeholder="Cancellation Policy" defaultValue={props.trip !== undefined ? props.trip.cancellationPolicy : ''}/>
 
-  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={props.trip !== undefined ? props.trip.clothingRequirements : ''}/>
 
-  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={props.trip !== undefined ? props.trip.gearRequirements : ''}/>
-
-  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements" defaultValue={props.trip !== undefined ? props.trip.flyRequirements : ''}/>
 
   const baggageLuggage = <input type="text"
   name="baggageLuggage" placeholder="Baggage/Luggage Policy" defaultValue={props.trip !== undefined ? props.trip.baggageLuggage : ''}/>
@@ -95,43 +92,9 @@ function ReusableTripForm(props) {
           <DestinationInfoFields trip={trip} tripType={tripType}/>
         )}
 
-        {/* {tripType === "Future" && (
-          <React.Fragment>
-            {climate}
-            <br/>
-            {guidedOrNot}
-            <br/>
-            {licenses}
-            <br/>
-            {travelDocs}
-            <br/>
-            {travelCosts}
-            <br/>
-            {tripExpenses}
-            <br/>
-            {depositTerms}
-            <br/>
-            {cancellationPolicy}
-            <br/>
-            {clothingRequirements}
-            <br/>
-            {gearRequirements}
-            <br/>
-            {flyRequirements}
-            <br/>
-            {baggageLuggage}
-            <br/>
-            {tripInsurance}
-            <br/>
-            {evacInsurance}
-            <br/>
-            {communications}
-            <br/>
-            {gratuity}
-            <br/>
-            {createButton}
-          </React.Fragment>
-        )} */}
+        {tripType === "Future" && (
+          <GearRequirements trip={trip} tripType={tripType}/>
+        )}
       </form>
       <br/>
     </React.Fragment>

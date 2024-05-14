@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 function DestinationInfoFields(props) {
@@ -48,6 +48,7 @@ function DestinationInfoFields(props) {
 
   return (
     <React.Fragment>
+      <h4>Destination Info</h4>
       {destination}
       <br/>
       {destinationType}
