@@ -142,7 +142,7 @@
 
 * 10:30am - 12:00: Worked on refactoring reusable form into multiple components for their respective categories.
 
-* 1:00pm - : Continued working on refactoring reusable form into multiple components for their respective categories.
+* 1:00pm - 4:00pm: Refactored reusable form into multiple components for their respective categories.
 
 <!-- NOTES:
 
