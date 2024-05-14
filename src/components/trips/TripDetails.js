@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import DestinationInfo from "../tables/DestinationInfo";
 import TripCosts from '../tables/TripCosts';
 import GearRequirements from '../tables/GearRequirements';
+import Miscellaneous from '../tables/Miscellaneous';
 
 function TripDetails(props) {
   const [destinationInfo, setDestinationInfo] = useState(false);
@@ -89,51 +90,7 @@ function TripDetails(props) {
         <li className="nav-item">
           <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
           {miscellaneous === true && (
-            <div className='table-container'>
-              <div className='row justify-content-center'>
-                <div className='col-4'>
-                  <table className='table'>
-                    <tr className="misc-details">
-                      <th>Required Licenses</th>
-                      <td>{trip.licenses}</td>
-                    </tr>
-                    <tr className="misc-details">
-                      <th>Water Fees</th>
-                      <td>{trip.waterFees}</td>
-                    </tr>
-                    <tr className="misc-details">
-                      <th>Access</th>
-                      <td>{trip.access}</td>
-                    </tr>
-                    <tr className="misc-details">
-                      <th>Time of Day</th>
-                      <td>{trip.timeOfDay}</td>
-                    </tr>
-                    <tr className="misc-details">
-                      <th>Travel Time</th>
-                      <td>{trip.travelTime}</td>
-                    </tr>
-
-                    {trip.tripType === "Future" && (
-                      <React.Fragment>
-                        <tr className="misc-details">
-                          <th>Guided?</th>
-                          <td>{trip.guidedOrNot}</td>
-                        </tr>
-                        <tr className="misc-details">
-                          <th>Cell and Wifi Service</th>
-                          <td>{trip.communications}</td>
-                        </tr>
-                        <tr className="misc-details">
-                          <th>Gratuity Guidelines</th>
-                          <td>{trip.gratuity}</td>
-                        </tr>
-                      </React.Fragment>
-                    )}
-                  </table>
-                </div>
-              </div>
-            </div>
+            <Miscellaneous trip={trip}/>
           )}
         </li>
       </ul>
