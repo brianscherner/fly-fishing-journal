@@ -46,6 +46,8 @@ function DestinationInfoFields(props) {
 
   const country = <input type="text" name="country" placeholder="Country" defaultValue={trip !== undefined ? trip.country : ''} required/>
 
+  const climate = <input type="text" name="climate" placeholder="Climate" defaultValue={props.trip !== undefined ? props.trip.climate : ''} required/>
+
   return (
     <React.Fragment>
       <h4>Destination Info</h4>
@@ -71,6 +73,12 @@ function DestinationInfoFields(props) {
       )}
       {country}
       <br/>
+      {tripType === "Future" && (
+        <React.Fragment>
+          {climate}
+          <br/>
+        </React.Fragment>
+      )}
     </React.Fragment>
   )
 }

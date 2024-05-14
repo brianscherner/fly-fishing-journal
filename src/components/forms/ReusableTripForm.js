@@ -10,8 +10,6 @@ function ReusableTripForm(props) {
   const { trip } = props;
   const [tripType, setTripType] = useState('');
 
-  const climate = <input type="text" name="climate" placeholder="Climate" defaultValue={props.trip !== undefined ? props.trip.climate : ''} required/>
-
   // button which renders when a trip type is selected //
 
   const createButton = <button type="submit">{props.buttonText}</button>
@@ -42,6 +40,13 @@ function ReusableTripForm(props) {
 
         {tripType && (
           <MiscellaneousFields trip={trip} tripType={tripType}/>
+        )}
+
+        {tripType && (
+          <React.Fragment>
+            <br/>
+            {createButton}
+          </React.Fragment>
         )}
       </form>
       <br/>
