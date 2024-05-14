@@ -4,6 +4,7 @@ import DestinationInfo from "../tables/DestinationInfo";
 import TripCosts from '../tables/TripCosts';
 import GearRequirements from '../tables/GearRequirements';
 import Miscellaneous from '../tables/Miscellaneous';
+import TripNotes from '../tables/TripNotes';
 
 function TripDetails(props) {
   const [destinationInfo, setDestinationInfo] = useState(false);
@@ -55,34 +56,7 @@ function TripDetails(props) {
           <li className="nav-item">
             <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
             {tripNotes === true && (
-              <div className='table-container'>
-                <div className='row justify-content-center'>
-                  <div className='col-4'>
-                    <table className='table'>
-                      <tr className="trip-notes-table">
-                        <th>Fishing Method</th>
-                        <td>{trip.fishingMethod}</td>
-                      </tr>
-                      <tr className="trip-notes-table">
-                        <th>Flies Used</th>
-                        <td>{trip.fliesUsed}</td>
-                      </tr>
-                      <tr className="trip-notes-table">
-                        <th>Fish Caught</th>
-                        <td>{trip.fishCaught}</td>
-                      </tr>
-                      <tr className="trip-notes-table">
-                        <th>Fishing Tackle Used</th>
-                        <td>{trip.fishingTackleUsed}</td>
-                      </tr>
-                      <tr className="trip-notes-table">
-                        <th>River Flow Levels</th>
-                        <td>{trip.riverFlowLevels}</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
+              <TripNotes trip={trip}/>
             )}
           </li>
         )}
