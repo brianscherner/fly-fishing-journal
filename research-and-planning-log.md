@@ -140,6 +140,10 @@
 
 * 9:00am - 10:30am: Refactored trip details tables into separate components and imported into their main component.
 
+* 10:30am - 12:00: Worked on refactoring reusable form into multiple components for their respective categories.
+
+* 1:00pm - : Continued working on refactoring reusable form into multiple components for their respective categories.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
