@@ -28,13 +28,7 @@ function TripDetails(props) {
         <li className="nav-item">
           <a className="nav-link" aria-current="page" href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
           {destinationInfo === true && (
-            <div className="table-container">
-              <div className="row justify-content-center">
-                <div className="col-4">
-                  <DestinationInfo trip={trip}/>
-                </div>
-              </div>
-            </div>
+            <DestinationInfo trip={trip}/>
           )}
         </li>
 
@@ -43,13 +37,7 @@ function TripDetails(props) {
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
               {tripCosts === true && (
-                <div className="table-container">
-                  <div className="row justify-content-center">
-                    <div className="col-4">
-                      <TripCosts trip={trip}/>
-                    </div>
-                  </div>
-                </div>
+                <TripCosts trip={trip}/>
               )}
             </li>
 
