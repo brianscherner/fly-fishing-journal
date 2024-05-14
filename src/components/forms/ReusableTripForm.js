@@ -10,8 +10,6 @@ function ReusableTripForm(props) {
   const { trip } = props;
   const [tripType, setTripType] = useState('');
 
-  // button which renders when a trip type is selected //
-
   const createButton = <button type="submit">{props.buttonText}</button>
 
   return (
