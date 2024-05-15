@@ -148,6 +148,12 @@
 
 * 9:00am - 10:30am: Worked on cleaning up code for form and form field components, added functionality to save values of dropdown menus when a user goes to edit a trip, and changed ordering of some form fields.
 
+* 10:30am - 12:00pm: Worked on building multi-step form using NPM package.
+
+* 1:00pm - 3:30pm: Worked on building multi-step form and abandoned NPM package for different approach.
+
+* 3:30pm - 4:00pm: Read article about creating a multi-step form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
