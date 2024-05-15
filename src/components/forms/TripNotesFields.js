@@ -12,7 +12,7 @@ function TripNotesFields(props) {
 
   const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)" defaultValue={trip !== undefined ? trip.riverFlowLevels : ''}/>
 
-  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)" defaultValue={trip !== undefined ? trip.fishingMethod : ''}/>
+  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)" defaultValue={trip !== undefined ? trip.fishingMethod : ''} required/>
 
   return (
     <React.Fragment>

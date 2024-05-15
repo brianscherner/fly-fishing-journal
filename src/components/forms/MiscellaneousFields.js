@@ -27,9 +27,9 @@ function MiscellaneousFields(props) {
   const travelTime = <input type="text"
   name="travelTime" placeholder="Travel Time" defaultValue={trip !== undefined ? trip.travelTime : ''}/>
 
-  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={trip !== undefined ? trip.timeOfDay : ''} required/>
+  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={trip !== undefined ? trip.timeOfDay : ''}/>
 
-  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={trip !== undefined ? trip.licenses : ''} required/>
+  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={trip !== undefined ? trip.licenses : ''}/>
 
   return (
     <React.Fragment>

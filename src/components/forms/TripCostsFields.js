@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 function TripCostsFields(props) {
   const { trip } = props;
+
   const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs" defaultValue={trip !== undefined ? trip.travelCosts : ''}/>
 
   const travelDocs =
