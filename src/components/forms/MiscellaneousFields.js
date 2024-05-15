@@ -9,14 +9,14 @@ function MiscellaneousFields(props) {
   const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines" defaultValue={trip !== undefined ? trip.gratuity : ''}/>
 
   const guidedOrNot =
-  <select name="guidedOrNot">
+  <select name="guidedOrNot" defaultValue={trip !== undefined ? trip.guidedOrNot : ''}>
     <option value="" disabled selected>Guided?</option>
     <option value="yes">Yes</option>
     <option value="no">No</option>
   </select>
 
   const waterFees =
-  <select name="waterFees">
+  <select name="waterFees" defaultValue={trip !== undefined ? trip.waterFees : ''}>
     <option value="" disabled selected>Water Fees</option>
     <option value="private">Private</option>
     <option value="public">Public</option>
