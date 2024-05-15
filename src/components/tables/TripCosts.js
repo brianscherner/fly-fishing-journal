@@ -27,11 +27,11 @@ function TripCosts(props) {
               <td>{trip.baggageLuggage}</td>
             </tr>
             <tr className="trip-costs-table">
-              <th>Trip Insurance Costs</th>
+              <th>Trip Insurance</th>
               <td>{trip.tripInsurance}</td>
             </tr>
             <tr className="trip-costs-table">
-              <th>Evacuation Insurance Costs</th>
+              <th>Evacuation Insurance</th>
               <td>{trip.evacInsurance}</td>
             </tr>
             <tr className="trip-costs-table">

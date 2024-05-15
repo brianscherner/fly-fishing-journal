@@ -11,15 +11,15 @@ function GearRequirements(props) {
           <div className='col-4'>
             <table className='table'>
               <tr className="gear-requir-table">
-                <th>Clothing Requirements</th>
+                <th>Clothing</th>
                 <td>{trip.clothingRequirements}</td>
               </tr>
               <tr className="gear-requir-table">
-                <th>Gear Requirements</th>
+                <th>Fishing Gear</th>
                 <td>{trip.gearRequirements}</td>
               </tr>
               <tr className="gear-requir-table">
-                <th>Fly Requirements</th>
+                <th>Flies</th>
                 <td>{trip.flyRequirements}</td>
               </tr>
             </table>
