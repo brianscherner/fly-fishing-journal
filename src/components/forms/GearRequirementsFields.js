@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 function GearRequirements(props) {
   const { trip } = props;
 
-  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={trip !== undefined ? trip.clothingRequirements : ''}/>
+  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={trip !== undefined ? trip.clothingRequirements : ''} required/>
 
-  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={trip !== undefined ? trip.gearRequirements : ''}/>
+  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={trip !== undefined ? trip.gearRequirements : ''} required/>
 
-  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements" defaultValue={trip !== undefined ? trip.flyRequirements : ''}/>
+  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements" defaultValue={trip !== undefined ? trip.flyRequirements : ''} required/>
 
   return (
     <React.Fragment>
