@@ -144,6 +144,10 @@
 
 * 1:00pm - 4:00pm: Refactored reusable form into multiple components for their respective categories.
 
+#### Wednesday, 5/15/24
+
+* 9:00am - : Worked on cleaning up code for form and form field components, and adding functionality to save values of dropdown menus when a user goes to edit a trip.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.

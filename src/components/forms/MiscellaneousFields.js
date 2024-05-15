@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function MiscellaneousFields(props) {
-  const { tripType } = props;
+  const { trip, tripType } = props;
 
-  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service" defaultValue={props.trip !== undefined ? props.trip.communications : ''}/>
+  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service" defaultValue={trip !== undefined ? trip.communications : ''}/>
 
-  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines" defaultValue={props.trip !== undefined ? props.trip.gratuity : ''}/>
+  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines" defaultValue={trip !== undefined ? trip.gratuity : ''}/>
 
   const guidedOrNot =
   <select name="guidedOrNot">
@@ -22,14 +22,14 @@ function MiscellaneousFields(props) {
     <option value="public">Public</option>
   </select>
 
-  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)" defaultValue={props.trip !== undefined ? props.trip.access : ''}/>
+  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)" defaultValue={trip !== undefined ? trip.access : ''}/>
 
   const travelTime = <input type="text"
-  name="travelTime" placeholder="Travel Time" defaultValue={props.trip !== undefined ? props.trip.travelTime : ''}/>
+  name="travelTime" placeholder="Travel Time" defaultValue={trip !== undefined ? trip.travelTime : ''}/>
 
-  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={props.trip !== undefined ? props.trip.timeOfDay : ''} required/>
+  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={trip !== undefined ? trip.timeOfDay : ''} required/>
 
-  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={props.trip !== undefined ? props.trip.licenses : ''} required/>
+  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={trip !== undefined ? trip.licenses : ''} required/>
 
   return (
     <React.Fragment>
@@ -59,6 +59,7 @@ function MiscellaneousFields(props) {
 }
 
 MiscellaneousFields.propTypes = {
+  trip: PropTypes.object,
   tripType: PropTypes.string
 }
 

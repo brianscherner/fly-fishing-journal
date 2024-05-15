@@ -1,7 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TripCostsFields(props) {
-  const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs" defaultValue={props.trip !== undefined ? props.trip.travelCosts : ''}/>
+  const { trip } = props;
+  const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs" defaultValue={trip !== undefined ? trip.travelCosts : ''}/>
 
   const travelDocs =
   <select name="travelDocs">
@@ -10,19 +12,19 @@ function TripCostsFields(props) {
     <option value="visa">Visa</option>
   </select>
 
-  const tripExpenses = <input type="text" name="tripExpenses" placeholder="Trip Expenses" defaultValue={props.trip !== undefined ? props.trip.tripExpenses : ''}/>
+  const tripExpenses = <input type="text" name="tripExpenses" placeholder="Trip Expenses" defaultValue={trip !== undefined ? trip.tripExpenses : ''}/>
 
-  const depositTerms = <input type="text" name="depositTerms" placeholder="Deposit Terms" defaultValue={props.trip !== undefined ? props.trip.depositTerms : ''}/>
+  const depositTerms = <input type="text" name="depositTerms" placeholder="Deposit Terms" defaultValue={trip !== undefined ? trip.depositTerms : ''}/>
 
-  const cancellationPolicy = <input type="text" name="cancellationPolicy" placeholder="Cancellation Policy" defaultValue={props.trip !== undefined ? props.trip.cancellationPolicy : ''}/>
+  const cancellationPolicy = <input type="text" name="cancellationPolicy" placeholder="Cancellation Policy" defaultValue={trip !== undefined ? trip.cancellationPolicy : ''}/>
 
   const baggageLuggage = <input type="text"
-  name="baggageLuggage" placeholder="Baggage/Luggage Policy" defaultValue={props.trip !== undefined ? props.trip.baggageLuggage : ''}/>
+  name="baggageLuggage" placeholder="Baggage/Luggage Policy" defaultValue={trip !== undefined ? trip.baggageLuggage : ''}/>
 
   const tripInsurance = <input type="text"
-  name="tripInsurance" placeholder="Trip Insurance" defaultValue={props.trip !== undefined ? props.trip.tripInsurance : ''}/>
+  name="tripInsurance" placeholder="Trip Insurance" defaultValue={trip !== undefined ? trip.tripInsurance : ''}/>
 
-  const evacInsurance = <input type="text" name="evacInsurance" placeholder="Medical Evacuation Insurance" defaultValue={props.trip !== undefined ? props.trip.evacInsurance : ''}/>
+  const evacInsurance = <input type="text" name="evacInsurance" placeholder="Medical Evacuation Insurance" defaultValue={trip !== undefined ? trip.evacInsurance : ''}/>
 
   return (
     <React.Fragment>
@@ -45,6 +47,10 @@ function TripCostsFields(props) {
       <br/>
     </React.Fragment>
   )
+}
+
+TripCostsFields.propTypes = {
+  trip: PropTypes.object
 }
 
 export default TripCostsFields;

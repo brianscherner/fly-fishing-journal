@@ -10,8 +10,6 @@ function ReusableTripForm(props) {
   const { trip } = props;
   const [tripType, setTripType] = useState('');
 
-  const createButton = <button type="submit">{props.buttonText}</button>
-
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
@@ -26,24 +24,24 @@ function ReusableTripForm(props) {
         )}
 
         {tripType === "Past" && (
-          <TripNotesFields/>
+          <TripNotesFields trip={trip}/>
         )}
 
         {tripType === "Future" && (
           <React.Fragment>
-            <TripCostsFields/>
-            <GearRequirementsFields/>
+            <TripCostsFields trip={trip}/>
+            <GearRequirementsFields trip={trip}/>
           </React.Fragment>
         )}
 
         {tripType && (
-          <MiscellaneousFields tripType={tripType}/>
+          <MiscellaneousFields trip={trip} tripType={tripType}/>
         )}
 
         {tripType && (
           <React.Fragment>
             <br/>
-            {createButton}
+            <button type="submit">{props.buttonText}</button>
           </React.Fragment>
         )}
       </form>
