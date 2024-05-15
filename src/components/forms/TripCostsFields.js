@@ -6,7 +6,7 @@ function TripCostsFields(props) {
   const travelCosts = <input type="text" name="travelCosts" placeholder="Travel Costs" defaultValue={trip !== undefined ? trip.travelCosts : ''}/>
 
   const travelDocs =
-  <select name="travelDocs">
+  <select name="travelDocs" defaultValue={trip !== undefined ? trip.travelDocs : ''}>
     <option value="" disabled selected>Travel Documents</option>
     <option value="passport">Passport</option>
     <option value="visa">Visa</option>
