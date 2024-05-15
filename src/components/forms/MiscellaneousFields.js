@@ -46,11 +46,11 @@ function MiscellaneousFields(props) {
       <br/>
       {tripType === "Future" && (
         <React.Fragment>
+          {guidedOrNot}
+          <br/>
           {communications}
           <br/>
           {gratuity}
-          <br/>
-          {guidedOrNot}
           <br/>
         </React.Fragment>
       )}

@@ -30,21 +30,21 @@ function TripCostsFields(props) {
   return (
     <React.Fragment>
       <h4>Trip Costs</h4>
-      {travelCosts}
-      <br/>
       {travelDocs}
+      <br/>
+      {travelCosts}
       <br/>
       {tripExpenses}
       <br/>
       {depositTerms}
       <br/>
-      {cancellationPolicy}
-      <br/>
-      {baggageLuggage}
-      <br/>
       {tripInsurance}
       <br/>
       {evacInsurance}
+      <br/>
+      {cancellationPolicy}
+      <br/>
+      {baggageLuggage}
       <br/>
     </React.Fragment>
   )

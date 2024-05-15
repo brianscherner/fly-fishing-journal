@@ -23,9 +23,9 @@ function TripNotesFields(props) {
       <br/>
       {fishingTackleUsed}
       <br/>
-      {riverFlowLevels}
-      <br/>
       {fishingMethod}
+      <br/>
+      {riverFlowLevels}
       <br/>
     </React.Fragment>
   )
