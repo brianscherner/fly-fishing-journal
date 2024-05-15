@@ -146,7 +146,7 @@
 
 #### Wednesday, 5/15/24
 
-* 9:00am - : Worked on cleaning up code for form and form field components, and adding functionality to save values of dropdown menus when a user goes to edit a trip.
+* 9:00am - 10:30am: Worked on cleaning up code for form and form field components, added functionality to save values of dropdown menus when a user goes to edit a trip, and changed ordering of some form fields.
 
 <!-- NOTES:
 
