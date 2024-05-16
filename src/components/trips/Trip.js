@@ -14,8 +14,8 @@ function Trip(props) {
 }
 
 Trip.propTypes = {
-  destination: PropTypes.string.isRequired,
-  tripType: PropTypes.string.isRequired,
+  destination: PropTypes.string,
+  tripType: PropTypes.string,
   id: PropTypes.string,
   whenTripClicked: PropTypes.func
 }

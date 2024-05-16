@@ -7,7 +7,6 @@ function TripsList(props) {
     <React.Fragment>
       <h2>Trips</h2>
       <br/>
-      <hr/>
       {props.tripsList.map((trip) =>
         <Trip
           whenTripClicked={props.onTripSelection}

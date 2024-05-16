@@ -7,7 +7,7 @@ import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
 
 function ReusableTripForm(props) {
-  const { trip, formData, setFormData } = props;
+  const { formData, setFormData } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -33,27 +33,27 @@ function ReusableTripForm(props) {
         return <DestinationInfoFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
       case 1:
         if (tripType === "Past") {
-          return <TripNotesFields formData={formData} setFormData={setFormData}/>;
+          return <TripNotesFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <TripCostsFields trip={trip} formData={formData} setFormData={setFormData}/>;
+          return <TripCostsFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         break;
       case 2:
         if (tripType === "Past") {
-          return <MiscellaneousFields trip={trip} tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <MiscellaneousFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <GearRequirementsFields trip={trip} formData={formData} setFormData={setFormData}/>;
+          return <GearRequirementsFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         break;
       case 3:
         if (tripType === "Future") {
-          return <MiscellaneousFields trip={trip} tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <MiscellaneousFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         break;
       default:
-        return <DestinationInfoFields trip={trip} tripType={tripType} formData={formData} setFormData={setFormData}/>;
+        return <DestinationInfoFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
     }
   }
 
