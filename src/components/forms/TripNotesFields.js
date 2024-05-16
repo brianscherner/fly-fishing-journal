@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function TripNotesFields(props) {
-  const { trip } = props;
+  const { formData, setFormData } = props;
 
-  const fliesUsed = <input type="text" name="fliesUsed" placeholder="Flies Used" defaultValue={trip !== undefined ? trip.fliesUsed : ''} required/>
+  const fliesUsed = <input type="text" name="fliesUsed" placeholder="Flies Used" defaultValue={formData !== undefined ? formData.fliesUsed : ''} onChange={(e) => setFormData({...formData, fliesUsed: e.target.value})} required/>
 
-  const fishCaught = <input type="text" name="fishCaught" placeholder="Fish Caught" defaultValue={trip !== undefined ? trip.fishCaught : ''} required/>
+  const fishCaught = <input type="text" name="fishCaught" placeholder="Fish Caught" defaultValue={formData !== undefined ? formData.fishCaught : ''} onChange={(e) => setFormData({...formData, fishCaught: e.target.value})} required/>
 
-  const fishingTackleUsed = <input type="text" name="fishingTackleUsed" placeholder="Fishing Tackle Used" defaultValue={trip !== undefined ? trip.fishingTackleUsed : ''} required/>
+  const fishingTackleUsed = <input type="text" name="fishingTackleUsed" placeholder="Fishing Tackle Used" defaultValue={formData !== undefined ? formData.fishingTackleUsed : ''} onChange={(e) => setFormData({...formData, fishingTackleUsed: e.target.value})} required/>
 
-  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)" defaultValue={trip !== undefined ? trip.riverFlowLevels : ''}/>
+  const riverFlowLevels = <input type="text" name="riverFlowLevels" placeholder="River Flow Levels (cfs/ft)" defaultValue={formData !== undefined ? formData.riverFlowLevels : ''} onChange={(e) => setFormData({...formData, riverFlowLevels: e.target.value})}/>
 
-  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)" defaultValue={trip !== undefined ? trip.fishingMethod : ''} required/>
+  const fishingMethod = <input type="text" name="fishingMethod" placeholder="Fishing Method (wade, raft, etc)" defaultValue={formData !== undefined ? formData.fishingMethod : ''} onChange={(e) => setFormData({...formData, fishingMethod: e.target.value})} required/>
 
   return (
     <React.Fragment>
@@ -32,7 +32,8 @@ function TripNotesFields(props) {
 }
 
 TripNotesFields.propTypes = {
-  trip: PropTypes.object
+  formData: PropTypes.object,
+  setFormData: PropTypes.func,
 }
 
 export default TripNotesFields;

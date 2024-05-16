@@ -7,15 +7,10 @@ import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
 
 function ReusableTripForm(props) {
-  const { trip } = props;
+  const { trip, formData, setFormData } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [formData, setFormData] = useState({
-    destination: '',
-    destinationType: '',
-    season: ''
-  });
 
   useEffect(() => {
     let total = 0;
@@ -32,37 +27,33 @@ function ReusableTripForm(props) {
     setTotalPages(total);
   }, [tripType]);
 
-  const trackFormData = (formField, fieldValue) => {
-    setFormData(prevData => ({
-      ...prevData,
-      [formField]: fieldValue
-    }));
-  };
-
   const conditionalComponent = () => {
     switch (page) {
       case 0:
-        return <DestinationInfoFields trip={trip} tripType={tripType} formData={formData} onChange={trackFormData}/>;
+        return <DestinationInfoFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
       case 1:
         if (tripType === "Past") {
-          return <TripNotesFields trip={trip} formData={formData} onChange={trackFormData}/>;
+          return <TripNotesFields formData={formData} setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <TripCostsFields trip={trip} formData={formData} onChange={trackFormData}/>;
+          return <TripCostsFields trip={trip} formData={formData} setFormData={setFormData}/>;
         }
+        break;
       case 2:
         if (tripType === "Past") {
-          return <MiscellaneousFields trip={trip} tripType={tripType} formData={formData} onChange={trackFormData}/>;
+          return <MiscellaneousFields trip={trip} tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <GearRequirementsFields trip={trip} formData={formData} onChange={trackFormData}/>;
+          return <GearRequirementsFields trip={trip} formData={formData} setFormData={setFormData}/>;
         }
+        break;
       case 3:
         if (tripType === "Future") {
-          return <MiscellaneousFields trip={trip} tripType={tripType} formData={formData} onChange={trackFormData}/>;
+          return <MiscellaneousFields trip={trip} tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
+        break;
       default:
-        return null;
+        return <DestinationInfoFields trip={trip} tripType={tripType} formData={formData} setFormData={setFormData}/>;
     }
   }
 
@@ -74,10 +65,15 @@ function ReusableTripForm(props) {
     setPage(page - 1);
   }
 
+  const handleTripTypeSelection = (e) => {
+    setTripType(e.target.value);
+    setFormData({...formData, tripType: e.target.value});
+  }
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <select defaultValue="" name="tripType" onChange={(event) => setTripType(event.target.value)}>
+        <select defaultValue="" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
           <option value="" disabled selected>Trip Type</option>
           <option value="Past">Past</option>
           <option value="Future">Future</option>
@@ -100,6 +96,8 @@ function ReusableTripForm(props) {
 
 ReusableTripForm.propTypes = {
   trip: PropTypes.object,
+  formData: PropTypes.object,
+  setFormData: PropTypes.func,
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string,
 }
