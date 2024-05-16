@@ -158,6 +158,8 @@
 
 * 9:00am - 12:00pm: Read article about multi-step form creation, and worked on implementing it into my reusable form.
 
+* 1:00pm - 4:00pm: Worked on retaining input field information in multi-step form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
