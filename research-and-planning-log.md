@@ -154,6 +154,10 @@
 
 * 3:30pm - 4:00pm: Read article about creating a multi-step form.
 
+#### Thursday, 5/16/24
+
+* 9:00am - 12:00pm: Read article about multi-step form creation, and worked on implementing it into my reusable form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.

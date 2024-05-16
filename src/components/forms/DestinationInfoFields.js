@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function DestinationInfoFields(props) {
-  const { trip, tripType} = props;
+  const { trip, tripType } = props;
 
   const destination = <input type="text" name="destination" placeholder="Destination" defaultValue={trip !== undefined ? trip.destination : ''} required/>
 
