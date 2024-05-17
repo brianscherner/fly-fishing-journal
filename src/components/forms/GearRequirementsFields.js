@@ -13,6 +13,7 @@ function GearRequirements(props) {
   return (
     <React.Fragment>
       <h4>Gear Requirements</h4>
+      <p>* = required</p>
       {clothingRequirements}
       <br/>
       {gearRequirements}

@@ -30,6 +30,7 @@ function TripCostsFields(props) {
   return (
     <React.Fragment>
       <h4>Trip Costs</h4>
+      <p>* = required</p>
       {travelDocs}
       <br/>
       {travelCosts}

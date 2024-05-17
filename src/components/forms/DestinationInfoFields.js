@@ -51,6 +51,7 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4>Destination Info</h4>
+      <p>* = required</p>
       {destination}
       <br/>
       {destinationType}

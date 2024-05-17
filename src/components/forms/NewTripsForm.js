@@ -22,7 +22,7 @@ function NewTripsForm(props) {
 }
 
 NewTripsForm.propTypes = {
-  onNewTripCreation: PropTypes.func
+  onNewTripCreation: PropTypes.func,
 }
 
 export default NewTripsForm;

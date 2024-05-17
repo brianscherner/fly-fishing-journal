@@ -82,6 +82,8 @@
 
 * 3:45pm - 4:00pm: Began renaming components and removing components related to "Future Trips".
 
+### Final Capstone Sessions
+
 #### Wednesday, 5/8/24
 
 * 9:00am - 9:30am: Finished refactoring application to only have "Trips"-related components distinguished by a "type" property vs separate components.
@@ -165,6 +167,10 @@
 * 9:00am - 9:45am: Finished working on retaining input field information in multi-step form.
 
 * 9:45am - 10:45am: Fixed minor bugs in multi-step form.
+
+* 10:45am - 12:00pm: Worked on form validation for multi-step form.
+
+* 1:00pm - 3:15pm: Worked on form validation for multi-step form.
 
 <!-- NOTES:
 

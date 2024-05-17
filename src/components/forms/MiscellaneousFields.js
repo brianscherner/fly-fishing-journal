@@ -34,6 +34,7 @@ function MiscellaneousFields(props) {
   return (
     <React.Fragment>
       <h4>Miscellaneous</h4>
+      <p>* = required</p>
       {licenses}
       <br/>
       {waterFees}

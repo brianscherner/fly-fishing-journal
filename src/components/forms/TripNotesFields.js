@@ -17,6 +17,7 @@ function TripNotesFields(props) {
   return (
     <React.Fragment>
       <h4>Trip Notes</h4>
+      <p>* = required</p>
       {fliesUsed}
       <br/>
       {fishCaught}

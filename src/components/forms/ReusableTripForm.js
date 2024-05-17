@@ -60,8 +60,37 @@ function ReusableTripForm(props) {
     }
   }
 
+  const validatePage = () => {
+    switch (page) {
+      case 0:
+        if (tripType === "Past") {
+          return formData.destination && formData.season && formData.species && formData.state && formData.county && formData.country && formData.waterBodyType && formData.species;
+        }
+        if (tripType === "Future") {
+          return formData.destination && formData.season && formData.waterBodyType && formData.country && formData.climate;
+        }
+        break;
+      case 1:
+        return formData.fliesUsed && formData.fishCaught && formData.fishingTackleUsed && formData.fishingMethod && formData.riverFlowLevels;
+      case 2:
+        if (tripType === "Past") {
+          return formData.licenses && formData.waterFees && formData.access && formData.timeOfDay && formData.travelTime;
+        }
+        if (tripType === "Future") {
+          return formData.licenses && formData.guidedOrNot && formData.communications && formData.gratuity;
+        }
+        break;
+      default:
+        return true;
+    }
+  }
+
   const nextPage = () => {
-    setPage(page + 1);
+    if (validatePage()) {
+      setPage(page + 1);
+    } else {
+      alert ('Form is missing required information. Please try again.');
+    }
   }
 
   const prevPage = () => {
