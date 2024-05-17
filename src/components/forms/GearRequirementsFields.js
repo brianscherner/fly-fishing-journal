@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function GearRequirements(props) {
-  const { trip } = props;
+  const { formData, setFormData } = props;
 
-  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={trip !== undefined ? trip.clothingRequirements : ''} required/>
+  const clothingRequirements = <input type="text" name="clothingRequirements" placeholder="Clothing Requirements" defaultValue={formData !== undefined ? formData.clothingRequirements : ''} onChange={(e) => setFormData({...formData, clothingRequirements: e.target.value})} required/>
 
-  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={trip !== undefined ? trip.gearRequirements : ''} required/>
+  const gearRequirements = <input type="text" name="gearRequirements" placeholder="Fishing Gear Requirements" defaultValue={formData !== undefined ? formData.gearRequirements : ''} onChange={(e) => setFormData({...formData, gearRequirements: e.target.value})} required/>
 
-  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements" defaultValue={trip !== undefined ? trip.flyRequirements : ''} required/>
+  const flyRequirements = <input type="text" name="flyRequirements" placeholder="Fly Requirements" defaultValue={formData !== undefined ? formData.flyRequirements : ''} onChange={(e) => setFormData({...formData, flyRequirements: e.target.value})} required/>
 
   return (
     <React.Fragment>
@@ -24,7 +24,8 @@ function GearRequirements(props) {
 }
 
 GearRequirements.propTypes = {
-  trip: PropTypes.object
+  formData: PropTypes.object,
+  setFormData: PropTypes.func
 }
 
 export default GearRequirements;

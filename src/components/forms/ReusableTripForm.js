@@ -33,10 +33,10 @@ function ReusableTripForm(props) {
         return <DestinationInfoFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
       case 1:
         if (tripType === "Past") {
-          return <TripNotesFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <TripNotesFields formData={formData} setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <TripCostsFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <TripCostsFields formData={formData} setFormData={setFormData}/>;
         }
         break;
       case 2:
@@ -44,7 +44,7 @@ function ReusableTripForm(props) {
           return <MiscellaneousFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <GearRequirementsFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <GearRequirementsFields formData={formData} setFormData={setFormData}/>;
         }
         break;
       case 3:
@@ -82,8 +82,8 @@ function ReusableTripForm(props) {
         {tripType && (
           <React.Fragment>
             {conditionalComponent()}
-            { page > 0 && <button onClick={() => prevPage(page - 1)}>Back</button>}
-            { page < totalPages && <button onClick={nextPage}>Next</button>}
+            { page > 0 && <button onClick={() => prevPage(page - 1)} type="button">Back</button>}
+            { page < totalPages && <button onClick={nextPage} type="button">Next</button>}
             <br/>
             <button type="submit">{props.buttonText}</button>
           </React.Fragment>

@@ -160,6 +160,10 @@
 
 * 1:00pm - 4:00pm: Worked on retaining input field information in multi-step form.
 
+#### Friday, 5/17/24
+
+* 9:00am - 9:45am: Finished working on retaining input field information in multi-step form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
