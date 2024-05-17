@@ -168,7 +168,7 @@
 
 * 10:45 - 12:00pm: Worked on multi-step form validation.
 
-* 1:00pm - 3:15pm: Worked on multi-step form validation. Decided to work on trip details to take a break.
+* 1:00pm - 3:15pm: Worked on multi-step form validation. Decided to take a break and work on 'Update' functionality.
 
 <!-- NOTES:
 
