@@ -10,8 +10,6 @@ function NewTripsForm(props) {
     props.onNewTripCreation(formData);
   }
 
-  console.log("Form data: ", formData);
-
   return (
     <React.Fragment>
       <ReusableTripForm
