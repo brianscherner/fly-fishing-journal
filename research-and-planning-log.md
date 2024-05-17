@@ -166,6 +166,10 @@
 
 * 9:45am - 10:45am: Fixed minor bugs in multi-step form.
 
+* 10:45 - 12:00pm: Worked on multi-step form validation.
+
+* 1:00pm - 3:15pm: Worked on multi-step form validation. Decided to work on trip details to take a break.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
