@@ -164,6 +164,8 @@
 
 * 9:00am - 9:45am: Finished working on retaining input field information in multi-step form.
 
+* 9:45am - 10:45am: Fixed minor bugs in multi-step form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
