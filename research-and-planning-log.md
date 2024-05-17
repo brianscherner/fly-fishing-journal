@@ -170,6 +170,8 @@
 
 * 1:00pm - 3:15pm: Worked on multi-step form validation. Decided to take a break and work on 'Update' functionality.
 
+* 3:15pm - 4:00pm: Worked on refactoring 'Update' functionality to work with multi-step form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
