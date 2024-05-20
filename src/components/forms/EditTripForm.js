@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import ReusableTripForm from "./ReusableTripForm";
 
 function EditTripForm(props) {
-  const { trip, handleTripTypeSelection } = props;
+  const { trip } = props;
   const [editFormData, setEditFormData] = useState(trip);
 
   function handleEditTripFormSubmission(event) {
     event.preventDefault();
-    props.onEditingTrip(editFormData);
+    const updatedTrip = {...trip, ...editFormData};
+    props.onEditingTrip(updatedTrip);
   }
 
   return (
@@ -18,7 +19,7 @@ function EditTripForm(props) {
         setFormData={setEditFormData}
         formSubmissionHandler={handleEditTripFormSubmission}
         buttonText={"Edit"}
-        tripType={handleTripTypeSelection}
+        tripType={trip.tripType}
         trip={trip}
         />
     </React.Fragment>
