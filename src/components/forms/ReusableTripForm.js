@@ -68,7 +68,6 @@ function ReusableTripForm(props) {
     setPage(page - 1);
   }
 
-  // have func for setEditFormData and pass prop as setEditFormData? //
   const handleTripTypeSelection = (e) => {
     setTripType(e.target.value);
     setFormData({...formData, tripType: e.target.value});

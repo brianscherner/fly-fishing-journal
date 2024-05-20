@@ -2,38 +2,33 @@ import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import ReusableTripForm from "./ReusableTripForm";
 
-// this form is not receiving the default values from the reusable form. The values should be in the fields. //
-
-// need to somehow gather the data from each step of the form and then submit it. //
-
 function EditTripForm(props) {
-  const { trip, formData } = props;
-  // const [formData, setFormData] = useState({});
-  const [editFormData, setEditFormData] = useState(formData);
+  const { trip, handleTripTypeSelection } = props;
+  const [editFormData, setEditFormData] = useState(trip);
 
   function handleEditTripFormSubmission(event) {
     event.preventDefault();
     props.onEditingTrip(editFormData);
   }
 
-  console.log(formData);
   return (
     <React.Fragment>
       <ReusableTripForm
-        formData={formData}
-        setEditFormData={setEditFormData}
+        formData={editFormData}
+        setFormData={setEditFormData}
         formSubmissionHandler={handleEditTripFormSubmission}
         buttonText={"Edit"}
-        tripType={trip.tripType}
-        trip={trip}/>
+        tripType={handleTripTypeSelection}
+        trip={trip}
+        />
     </React.Fragment>
   )
 }
 
 EditTripForm.propTypes = {
-  trip: PropTypes.object,
+  trip: PropTypes.object.isRequired,
   formData: PropTypes.object,
-  setFormData: PropTypes.func,
+  handleTripTypeSelection: PropTypes.func,
   onEditingTrip: PropTypes.func
 }
 
