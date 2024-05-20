@@ -168,9 +168,17 @@
 
 * 9:45am - 10:45am: Fixed minor bugs in multi-step form.
 
-* 10:45am - 12:00pm: Worked on form validation for multi-step form.
+* 10:45 - 12:00pm: Worked on multi-step form validation.
 
-* 1:00pm - 3:15pm: Worked on form validation for multi-step form.
+* 1:00pm - 3:15pm: Worked on multi-step form validation. Decided to take a break and work on 'Update' functionality.
+
+* 3:15pm - 4:00pm: Worked on refactoring 'Update' functionality to work with multi-step form.
+
+#### Monday, 5/20/24
+
+* 9:00am - 12:00pm: Worked on refactoring 'Update' functionality to work with multi-step form.
+
+* 1:00pm - 3:15pm: Finished refactoring 'Update' functionality to work with multi-step form.
 
 <!-- NOTES:
 

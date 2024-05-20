@@ -4,32 +4,32 @@ import PropTypes from "prop-types";
 function MiscellaneousFields(props) {
   const { formData, setFormData, tripType } = props;
 
-  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service" defaultValue={formData !== undefined ? formData.communications : ''} onChange={(e) => setFormData({...formData, communications: e.target.value})}/>
+  const communications = <input type="text" name="communications" placeholder="Cell and Wifi Service" defaultValue={formData.communications ??= ''} onChange={(e) => setFormData({...formData, communications: e.target.value})}/>
 
-  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines" defaultValue={formData !== undefined ? formData.gratuity : ''} onChange={(e) => setFormData({...formData, gratuity: e.target.value})}/>
+  const gratuity = <input type="text" name="gratuity" placeholder="Gratuity Guidelines" defaultValue={formData.gratuity ??= ''} onChange={(e) => setFormData({...formData, gratuity: e.target.value})}/>
 
   const guidedOrNot =
-  <select name="guidedOrNot" defaultValue={formData !== undefined ? formData.guidedOrNot : ''} onChange={(e) => setFormData({...formData, guidedOrNot: e.target.value})}>
+  <select name="guidedOrNot" defaultValue={formData.guidedOrNot ??= ''} onChange={(e) => setFormData({...formData, guidedOrNot: e.target.value})}>
     <option value="" disabled selected>Guided?</option>
     <option value="yes">Yes</option>
     <option value="no">No</option>
   </select>
 
   const waterFees =
-  <select name="waterFees" defaultValue={formData !== undefined ? formData.waterFees : ''} onChange={(e) => setFormData({...formData, waterFees: e.target.value})}>
+  <select name="waterFees" defaultValue={formData.waterFees ??= ''} onChange={(e) => setFormData({...formData, waterFees: e.target.value})}>
     <option value="" disabled selected>Water Fees</option>
     <option value="private">Private</option>
     <option value="public">Public</option>
   </select>
 
-  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)" defaultValue={formData !== undefined ? formData.access : ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
+  const access = <input type="text" name="access" placeholder="Access (ex: car, boat, etc)" defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
 
   const travelTime = <input type="text"
-  name="travelTime" placeholder="Travel Time" defaultValue={formData !== undefined ? formData.travelTime : ''} onChange={(e) => setFormData({...formData, travelTime: e.target.value})}/>
+  name="travelTime" placeholder="Travel Time" defaultValue={formData.travelTime ??= ''} onChange={(e) => setFormData({...formData, travelTime: e.target.value})}/>
 
-  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={formData !== undefined ? formData.timeOfDay : ''} onChange={(e) => setFormData({...formData, timeOfDay: e.target.value})}/>
+  const timeOfDay = <input type="text" name="timeOfDay" placeholder="Time of Day" defaultValue={formData.timeOfDay ??= ''} onChange={(e) => setFormData({...formData, timeOfDay: e.target.value})}/>
 
-  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={formData !== undefined ? formData.licenses : ''} onChange={(e) => setFormData({...formData, licenses: e.target.value})}/>
+  const licenses = <input type="text" name="licenses" placeholder="Licenses" defaultValue={formData.licenses ??= ''} onChange={(e) => setFormData({...formData, licenses: e.target.value})}/>
 
   return (
     <React.Fragment>
