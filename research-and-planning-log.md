@@ -180,6 +180,9 @@
 
 * 3:15pm - 3:55pm: Brainstormed what functionality to work on next.
 
+#### Tuesday, 5/21/24
+
+* 9:10am - 11:00am: Added functionality to highlight a nav link when its category is selected by user.
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.

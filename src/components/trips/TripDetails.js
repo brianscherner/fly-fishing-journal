@@ -12,6 +12,7 @@ function TripDetails(props) {
   const [gearRequirements, setGearRequirements] = useState(false);
   const [miscellaneous, setMiscellaneous] = useState(false);
   const [tripNotes, setTripNotes] = useState(false);
+  const [isLinkSelected, setIsLinkSelected] = useState('');
 
   const handleShowingTripDetails = (selectedDetails) => {
     setDestinationInfo(selectedDetails === "destinationInfo" ? true : false);
@@ -19,6 +20,7 @@ function TripDetails(props) {
     setGearRequirements(selectedDetails === "gearRequirements" ? true : false);
     setMiscellaneous(selectedDetails === "miscellaneous" ? true : false);
     setTripNotes(selectedDetails === "tripNotes" ? true : false);
+    setIsLinkSelected(selectedDetails);
   }
 
   const { trip, onClickingDelete, onClickingEdit } = props;
@@ -28,7 +30,7 @@ function TripDetails(props) {
       <h3>Trip Details</h3>
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
-          <a className="nav-link" aria-current="page" href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
+          <a className={`nav-link ${isLinkSelected === "destinationInfo" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
           {destinationInfo === true && (
             <DestinationInfo trip={trip}/>
           )}
@@ -37,14 +39,14 @@ function TripDetails(props) {
         {trip.tripType === "Future" && (
           <React.Fragment>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
+              <a className={`nav-link ${isLinkSelected === "tripCosts" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
               {tripCosts === true && (
                 <TripCosts trip={trip}/>
               )}
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
+              <a className={`nav-link ${isLinkSelected === "gearRequirements" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
               {gearRequirements === true && (
                 <GearRequirements trip={trip}/>
               )}
@@ -54,7 +56,7 @@ function TripDetails(props) {
 
         {trip.tripType === "Past" && (
           <li className="nav-item">
-            <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
+            <a className={`nav-link ${isLinkSelected === "tripNotes" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
             {tripNotes === true && (
               <TripNotes trip={trip}/>
             )}
@@ -62,7 +64,7 @@ function TripDetails(props) {
         )}
 
         <li className="nav-item">
-          <a className="nav-link" href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
+          <a className={`nav-link ${isLinkSelected === "miscellaneous" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
           {miscellaneous === true && (
             <Miscellaneous trip={trip}/>
           )}

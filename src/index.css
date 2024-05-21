@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.active {
+  background-color: blue;
+}
+
 #root {
   text-align: center;
 }
