@@ -9,26 +9,28 @@ function TripNotes(props) {
       <div className='table-container'>
         <div className='row justify-content-center'>
           <table className='table'>
-            <tr className="trip-notes-table">
-              <th>Fishing Method</th>
-              <td>{trip.fishingMethod}</td>
-            </tr>
-            <tr className="trip-notes-table">
-              <th>Flies Used</th>
-              <td>{trip.fliesUsed}</td>
-            </tr>
-            <tr className="trip-notes-table">
-              <th>Fish Caught</th>
-              <td>{trip.fishCaught}</td>
-            </tr>
-            <tr className="trip-notes-table">
-              <th>Fishing Tackle Used</th>
-              <td>{trip.fishingTackleUsed}</td>
-            </tr>
-            <tr className="trip-notes-table">
-              <th>River Flow Levels</th>
-              <td>{trip.riverFlowLevels}</td>
-            </tr>
+            <tbody>
+              <tr className="trip-notes-table">
+                <th>Fishing Method</th>
+                <td>{trip.fishingMethod}</td>
+              </tr>
+              <tr className="trip-notes-table">
+                <th>Flies Used</th>
+                <td>{trip.fliesUsed}</td>
+              </tr>
+              <tr className="trip-notes-table">
+                <th>Fish Caught</th>
+                <td>{trip.fishCaught}</td>
+              </tr>
+              <tr className="trip-notes-table">
+                <th>Fishing Tackle Used</th>
+                <td>{trip.fishingTackleUsed}</td>
+              </tr>
+              <tr className="trip-notes-table">
+                <th>River Flow Levels</th>
+                <td>{trip.riverFlowLevels}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

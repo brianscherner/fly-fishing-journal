@@ -28,9 +28,9 @@ function TripDetails(props) {
   return (
     <div className="trip-details">
       <h3>Trip Details</h3>
-      <ul className="nav nav-pills nav-fill">
+      <ul className="nav flex-column">
         <li className="nav-item">
-          <a className={`nav-link ${isLinkSelected === "destinationInfo" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
+          <a className={`nav-link ${isLinkSelected === "destinationInfo" ? "active" : "".toString()}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
           <br/>
           {destinationInfo === true && (
             <DestinationInfo trip={trip}/>

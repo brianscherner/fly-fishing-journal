@@ -9,18 +9,20 @@ function GearRequirements(props) {
       <div className='table-container'>
         <div className='row justify-content-center'>
           <table className='table'>
-            <tr className="gear-requir-table">
-              <th>Clothing</th>
-              <td>{trip.clothingRequirements}</td>
-            </tr>
-            <tr className="gear-requir-table">
-              <th>Fishing Gear</th>
-              <td>{trip.gearRequirements}</td>
-            </tr>
-            <tr className="gear-requir-table">
-              <th>Flies</th>
-              <td>{trip.flyRequirements}</td>
-            </tr>
+            <tbody>
+              <tr className="gear-requir-table">
+                <th>Clothing</th>
+                <td>{trip.clothingRequirements}</td>
+              </tr>
+              <tr className="gear-requir-table">
+                <th>Fishing Gear</th>
+                <td>{trip.gearRequirements}</td>
+              </tr>
+              <tr className="gear-requir-table">
+                <th>Flies</th>
+                <td>{trip.flyRequirements}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

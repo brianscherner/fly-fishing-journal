@@ -185,6 +185,8 @@
 * 9:10am - 11:00am: Added functionality to highlight a nav link when its category is selected by user.
 
 * 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00pm - 2:15pm: Worked on changing styling of trip details tables.
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
