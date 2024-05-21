@@ -8,7 +8,6 @@ function DestinationInfo(props) {
     <React.Fragment>
       <div className="table-container">
         <div className="row justify-content-center">
-          <div className="col-4">
           <table className="table">
             <tr className="dest-info-details">
               <th>Destination</th>
@@ -63,7 +62,6 @@ function DestinationInfo(props) {
             )}
           </table>
           </div>
-        </div>
       </div>
     </React.Fragment>
   )

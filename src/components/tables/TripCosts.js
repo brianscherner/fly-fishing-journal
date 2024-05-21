@@ -8,7 +8,6 @@ function TripCosts(props) {
     <React.Fragment>
       <div className="table-container">
         <div className="row justify-content-center">
-          <div className="col-4">
           <table className="table">
             <tr className="trip-costs-table">
               <th>Travel Documents</th>
@@ -43,7 +42,6 @@ function TripCosts(props) {
               <td>{trip.cancellationPolicy}</td>
             </tr>
           </table>
-          </div>
         </div>
       </div>
     </React.Fragment>
