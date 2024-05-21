@@ -190,6 +190,8 @@
 
 * 2:15pm - 3:00pm: Worked on setting a default table for trip details when page is rendered and highlighting the selected category.
 
+* 3:00pm - 4:00pm: Worked on adding styling to application, starting with multi-step form.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.

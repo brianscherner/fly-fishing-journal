@@ -76,21 +76,25 @@ function ReusableTripForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <select defaultValue="" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
-          <option value="" disabled selected>Trip Type</option>
-          <option value="Past">Past</option>
-          <option value="Future">Future</option>
-        </select>
-        <br/>
-        {tripType && (
-          <React.Fragment>
-            {conditionalComponent()}
-            { page > 0 && <button onClick={() => prevPage(page - 1)} type="button">Back</button>}
-            { page < totalPages && <button onClick={nextPage} type="button">Next</button>}
+        <div className="row justify-content-center">
+          <div className="col-6">
+            <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
+              <option value="" disabled selected>Trip Type</option>
+              <option value="Past">Past</option>
+              <option value="Future">Future</option>
+            </select>
             <br/>
-            { page >= totalPages && <button type="submit">{props.buttonText}</button>}
-          </React.Fragment>
-        )}
+            {tripType && (
+              <React.Fragment>
+                {conditionalComponent()}
+                { page > 0 && <button className="btn btn-danger" onClick={() => prevPage(page - 1)} type="button">Back</button>}
+                { page < totalPages && <button className="btn btn-primary" onClick={nextPage} type="button">Next</button>}
+                <br/>
+                { page >= totalPages && <button type="submit">{props.buttonText}</button>}
+              </React.Fragment>
+            )}
+          </div>
+        </div>
       </form>
       <br/>
     </React.Fragment>

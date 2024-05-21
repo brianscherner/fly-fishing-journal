@@ -12,12 +12,14 @@ code {
     monospace;
 }
 
+/* styling for trip details navigation links for categories */
 .nav-link.active {
   background-color: blue;
   color: white !important;
   border-radius: 0.25rem;
 }
 
+/* container styling */
 #root {
   text-align: center;
   margin-left: 1.5rem;
@@ -26,6 +28,7 @@ code {
   margin-top: 1.5rem;
 }
 
+/* table styling for trip details categories */
 .table th, .table td {
   border: 0.125rem solid black;
 }
