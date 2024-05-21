@@ -187,6 +187,9 @@
 * 11:00am - 12:00pm: Met with Ethel.
 
 * 1:00pm - 2:15pm: Worked on changing styling of trip details tables.
+
+* 2:15pm - 3:00pm: Worked on setting a default table for trip details when page is rendered and highlighting the selected category.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.

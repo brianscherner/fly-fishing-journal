@@ -7,12 +7,12 @@ import Miscellaneous from '../tables/Miscellaneous';
 import TripNotes from '../tables/TripNotes';
 
 function TripDetails(props) {
-  const [destinationInfo, setDestinationInfo] = useState(false);
+  const [destinationInfo, setDestinationInfo] = useState(true);
   const [tripCosts, setTripCosts] = useState(false);
   const [gearRequirements, setGearRequirements] = useState(false);
   const [miscellaneous, setMiscellaneous] = useState(false);
   const [tripNotes, setTripNotes] = useState(false);
-  const [isLinkSelected, setIsLinkSelected] = useState('');
+  const [isLinkSelected, setIsLinkSelected] = useState('destinationInfo');
 
   const handleShowingTripDetails = (selectedDetails) => {
     setDestinationInfo(selectedDetails === "destinationInfo" ? true : false);
