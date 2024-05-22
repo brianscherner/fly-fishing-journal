@@ -198,6 +198,10 @@
 
 9:45am - 11:00am: Added basic styling to sign in page and tables on details page.
 
+* 11:00am - 12:00pm: Whiteboarding interview.
+
+* 1:00pm - 2:45pm: Continued working on table styling.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
