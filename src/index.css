@@ -65,6 +65,10 @@ code {
   font-style: italic;
 }
 
+.gear-data {
+  font-style: italic;
+}
+
 /* trip details styling */
 .trip-details-header {
   font-family: 'Courier New', Courier, monospace;
