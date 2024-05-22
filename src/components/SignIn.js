@@ -48,7 +48,7 @@ function SignIn() {
       <h2>Sign Up</h2>
       {signUpSuccess}
       <div className="row justify-content-center">
-        <div className="col-4">
+        <div className="col-6">
           <form onSubmit={doSignUp}>
             <input className="form-control"
               type="text"
