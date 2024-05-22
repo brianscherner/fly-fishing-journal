@@ -12,23 +12,23 @@ function TripNotes(props) {
             <tbody>
               <tr className="trip-notes-table">
                 <th>Fishing Method</th>
-                <td>{trip.fishingMethod}</td>
+                <td className="trip-notes-data">{trip.fishingMethod}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>Flies Used</th>
-                <td>{trip.fliesUsed}</td>
+                <td className="trip-notes-data">{trip.fliesUsed}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>Fish Caught</th>
-                <td>{trip.fishCaught}</td>
+                <td className="trip-notes-data">{trip.fishCaught}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>Fishing Tackle Used</th>
-                <td>{trip.fishingTackleUsed}</td>
+                <td className="trip-notes-data">{trip.fishingTackleUsed}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>River Flow Levels</th>
-                <td>{trip.riverFlowLevels}</td>
+                <td className="trip-notes-data">{trip.riverFlowLevels}</td>
               </tr>
             </tbody>
           </table>

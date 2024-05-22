@@ -69,6 +69,18 @@ code {
   font-style: italic;
 }
 
+.misc-data {
+  font-style: italic;
+}
+
+.trip-costs-data {
+  font-style: italic;
+}
+
+.trip-notes-data {
+  font-style: italic;
+}
+
 /* trip details styling */
 .trip-details-header {
   font-family: 'Courier New', Courier, monospace;

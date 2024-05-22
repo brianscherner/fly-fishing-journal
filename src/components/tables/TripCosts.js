@@ -12,35 +12,35 @@ function TripCosts(props) {
             <tbody>
               <tr className="trip-costs-table">
                 <th>Travel Documents</th>
-                <td>{trip.travelDocs}</td>
+                <td className="trip-costs-data">{trip.travelDocs}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Travel Costs</th>
-                <td>{trip.travelCosts}</td>
+                <td className="trip-costs-data">{trip.travelCosts}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Trip Expenses</th>
-                <td>{trip.tripExpenses}</td>
+                <td className="trip-costs-data">{trip.tripExpenses}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Baggage/Luggage Fees</th>
-                <td>{trip.baggageLuggage}</td>
+                <td className="trip-costs-data">{trip.baggageLuggage}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Trip Insurance</th>
-                <td>{trip.tripInsurance}</td>
+                <td className="trip-costs-data">{trip.tripInsurance}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Evacuation Insurance</th>
-                <td>{trip.evacInsurance}</td>
+                <td className="trip-costs-data">{trip.evacInsurance}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Deposit Terms</th>
-                <td>{trip.depositTerms}</td>
+                <td className="trip-costs-data">{trip.depositTerms}</td>
               </tr>
               <tr className="trip-costs-table">
                 <th>Cancellation Policy</th>
-                <td>{trip.cancellationPolicy}</td>
+                <td className="trip-costs-data">{trip.cancellationPolicy}</td>
               </tr>
             </tbody>
           </table>

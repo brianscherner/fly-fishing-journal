@@ -12,38 +12,38 @@ function Miscellaneous(props) {
             <tbody>
               <tr className="misc-details">
                 <th>Required Licenses</th>
-                <td>{trip.licenses}</td>
+                <td className="misc-data">{trip.licenses}</td>
               </tr>
               <tr className="misc-details">
                 <th>Water Fees</th>
-                <td>{trip.waterFees}</td>
+                <td className="misc-data">{trip.waterFees}</td>
               </tr>
               <tr className="misc-details">
                 <th>Access</th>
-                <td>{trip.access}</td>
+                <td className="misc-data">{trip.access}</td>
               </tr>
               <tr className="misc-details">
                 <th>Time of Day</th>
-                <td>{trip.timeOfDay}</td>
+                <td className="misc-data">{trip.timeOfDay}</td>
               </tr>
               <tr className="misc-details">
                 <th>Travel Time</th>
-                <td>{trip.travelTime}</td>
+                <td className="misc-data">{trip.travelTime}</td>
               </tr>
 
               {trip.tripType === "Future" && (
                 <React.Fragment>
                   <tr className="misc-details">
                     <th>Guided?</th>
-                    <td>{trip.guidedOrNot}</td>
+                    <td className="misc-data">{trip.guidedOrNot}</td>
                   </tr>
                   <tr className="misc-details">
                     <th>Cell and Wifi Service</th>
-                    <td>{trip.communications}</td>
+                    <td className="misc-data">{trip.communications}</td>
                   </tr>
                   <tr className="misc-details">
                     <th>Gratuity Guidelines</th>
-                    <td>{trip.gratuity}</td>
+                    <td className="misc-data">{trip.gratuity}</td>
                   </tr>
                 </React.Fragment>
               )}
