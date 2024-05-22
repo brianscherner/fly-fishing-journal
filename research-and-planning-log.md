@@ -202,7 +202,7 @@
 
 * 1:00pm - 2:45pm: Continued working on table styling.
 
-* 2:45pm - 4:00pm: Worked on styling for other sections of application.
+* 2:45pm - 4:00pm: Worked on styling for app header, trips list, and trip details page.
 
 <!-- NOTES:
 
