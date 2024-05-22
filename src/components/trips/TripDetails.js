@@ -27,55 +27,57 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
-      <h3>Trip Details</h3>
+      <h3 className="trip-details-header">Trip Details</h3>
       <br/>
-      <ul className="nav flex-column">
-        <li className="nav-item">
-          <a className={`nav-link ${isLinkSelected === "destinationInfo" ? "active" : "".toString()}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
-          <br/>
-          {destinationInfo === true && (
-            <DestinationInfo trip={trip}/>
-          )}
-        </li>
-
-        {trip.tripType === "Future" && (
-          <React.Fragment>
-            <li className="nav-item">
-              <a className={`nav-link ${isLinkSelected === "tripCosts" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
-              <br/>
-              {tripCosts === true && (
-                <TripCosts trip={trip}/>
-              )}
-            </li>
-
-            <li className="nav-item">
-              <a className={`nav-link ${isLinkSelected === "gearRequirements" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
-              <br/>
-              {gearRequirements === true && (
-                <GearRequirements trip={trip}/>
-              )}
-            </li>
-          </React.Fragment>
-        )}
-
-        {trip.tripType === "Past" && (
+      <div className="detail-categories">
+        <ul className="nav flex-column">
           <li className="nav-item">
-            <a className={`nav-link ${isLinkSelected === "tripNotes" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
+            <a className={`nav-link ${isLinkSelected === "destinationInfo" ? "active" : "".toString()}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
             <br/>
-            {tripNotes === true && (
-              <TripNotes trip={trip}/>
+            {destinationInfo === true && (
+              <DestinationInfo trip={trip}/>
             )}
           </li>
-        )}
 
-        <li className="nav-item">
-          <a className={`nav-link ${isLinkSelected === "miscellaneous" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
-          <br/>
-          {miscellaneous === true && (
-            <Miscellaneous trip={trip}/>
+          {trip.tripType === "Future" && (
+            <React.Fragment>
+              <li className="nav-item">
+                <a className={`nav-link ${isLinkSelected === "tripCosts" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
+                <br/>
+                {tripCosts === true && (
+                  <TripCosts trip={trip}/>
+                )}
+              </li>
+
+              <li className="nav-item">
+                <a className={`nav-link ${isLinkSelected === "gearRequirements" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
+                <br/>
+                {gearRequirements === true && (
+                  <GearRequirements trip={trip}/>
+                )}
+              </li>
+            </React.Fragment>
           )}
-        </li>
-      </ul>
+
+          {trip.tripType === "Past" && (
+            <li className="nav-item">
+              <a className={`nav-link ${isLinkSelected === "tripNotes" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
+              <br/>
+              {tripNotes === true && (
+                <TripNotes trip={trip}/>
+              )}
+            </li>
+          )}
+
+          <li className="nav-item">
+            <a className={`nav-link ${isLinkSelected === "miscellaneous" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
+            <br/>
+            {miscellaneous === true && (
+              <Miscellaneous trip={trip}/>
+            )}
+          </li>
+        </ul>
+      </div>
 
       <button className="btn btn-success" onClick={() => onClickingEdit(trip.id)}>Edit</button>
       <button className="btn btn-danger" onClick={() => onClickingDelete(trip.id)}>Delete</button>

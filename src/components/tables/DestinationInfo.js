@@ -12,52 +12,52 @@ function DestinationInfo(props) {
             <tbody>
               <tr className="dest-info-details">
                 <th>Destination</th>
-                <td>{trip.destination}</td>
+                <td className="dest-info-data">{trip.destination}</td>
               </tr>
               <tr className="dest-info-details">
                 <th>Trip Type</th>
-                <td>{trip.tripType}</td>
+                <td className="dest-info-data">{trip.tripType}</td>
               </tr>
               <tr className="dest-info-details">
                 <th>Season</th>
-                <td>{trip.season}</td>
+                <td className="dest-info-data">{trip.season}</td>
               </tr>
               <tr className="dest-info-details">
                 <th>Water Type</th>
-                <td>{trip.waterType}</td>
+                <td className="dest-info-data">{trip.waterType}</td>
               </tr>
               <tr className="dest-info-details">
                 <th>Water Body Type</th>
-                <td>{trip.waterBodyType}</td>
+                <td className="dest-info-data">{trip.waterBodyType}</td>
               </tr>
               <tr className="dest-info-details">
                 <th>Fish Species</th>
-                <td>{trip.species}</td>
+                <td className="dest-info-data">{trip.species}</td>
               </tr>
 
               {trip.tripType === "Past" && (
                 <React.Fragment>
                   <tr className="dest-info-details">
                     <th>State</th>
-                    <td>{trip.state}</td>
+                    <td className="dest-info-data">{trip.state}</td>
                   </tr>
                   <tr className="dest-info-details">
                     <th>County</th>
-                    <td>{trip.county}</td>
+                    <td className="dest-info-data">{trip.county}</td>
                   </tr>
                 </React.Fragment>
               )}
 
               <tr className="dest-info-details">
                 <th>Country</th>
-                <td>{trip.country}</td>
+                <td className="dest-info-data">{trip.country}</td>
               </tr>
 
               {trip.tripType === "Future" && (
                 <React.Fragment>
                   <tr className="dest-info-details">
                     <th>Climate</th>
-                    <td>{trip.climate}</td>
+                    <td className="dest-info-data">{trip.climate}</td>
                   </tr>
                 </React.Fragment>
               )}

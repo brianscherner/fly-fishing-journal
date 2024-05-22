@@ -31,6 +31,11 @@ code {
 }
 
 /* styling for trip details navigation links for categories */
+.detail-categories {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.025rem;
+}
+
 .nav-link.active {
   background-color: #0D6EFD;
   color: white !important;
@@ -54,6 +59,17 @@ code {
 .table-container {
   margin-left: 0.825rem;
   margin-right: 0.825rem;
+}
+
+.dest-info-data {
+  font-style: italic;
+}
+
+/* trip details styling */
+.trip-details-header {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 /* trip list styling */
