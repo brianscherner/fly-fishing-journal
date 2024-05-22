@@ -196,6 +196,8 @@
 
 * 9:00am - 9:45am: Worked on adding more styling to application's multi-step form and details pages.
 
+9:45am - 11:00am: Added basic styling to sign in page and tables on details page.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.

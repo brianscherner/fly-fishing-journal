@@ -32,3 +32,8 @@ code {
 .table th, .table td {
   border: 0.125rem solid black;
 }
+
+.table-container {
+  margin-left: 0.825rem;
+  margin-right: 0.825rem;
+}
