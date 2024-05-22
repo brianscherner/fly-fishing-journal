@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <React.Fragment>
-      <h1>Fly Fishing Journal</h1>
-      <p>Keep track of past and future fly fishing trips!</p>
-      <p><Link to="/trips">Manage Trips</Link></p>
-      <p><Link to="/sign-in">Sign In</Link></p>
-      <hr/>
+      <div className='app-header'>
+        <h1 className='app-title'>Fly Fishing Journal</h1>
+        <p className='header-message'>Keep track of your fly fishing trips!</p>
+        <div className='header-links'>
+          <p><Link to="/trips">Manage Trips</Link></p>
+          <p><Link to="/sign-in">Sign In</Link></p>
+        </div>
+        <hr/>
+      </div>
     </React.Fragment>
   )
 }
