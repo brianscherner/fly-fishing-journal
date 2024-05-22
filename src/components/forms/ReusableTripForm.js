@@ -88,9 +88,9 @@ function ReusableTripForm(props) {
               <React.Fragment>
                 {conditionalComponent()}
                 { page > 0 && <button className="btn btn-danger" onClick={() => prevPage(page - 1)} type="button">Back</button>}
-                { page < totalPages && <button className="btn btn-primary" onClick={nextPage} type="button">Next</button>}
+                { page < totalPages && <button className="btn btn-success" onClick={nextPage} type="button">Next</button>}
                 <br/>
-                { page >= totalPages && <button type="submit">{props.buttonText}</button>}
+                { page >= totalPages && <button className="btn btn-success" type="submit">{props.buttonText}</button>}
               </React.Fragment>
             )}
           </div>

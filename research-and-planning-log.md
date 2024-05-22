@@ -192,6 +192,10 @@
 
 * 3:00pm - 4:00pm: Worked on adding styling to application, starting with multi-step form.
 
+#### Wednesday, 5/22/24
+
+* 9:00am - 9:45am: Worked on adding more styling to application's multi-step form and details pages.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
