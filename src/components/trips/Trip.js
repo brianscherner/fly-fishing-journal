@@ -5,8 +5,8 @@ function Trip(props) {
   return (
     <React.Fragment>
       <div onClick={() => props.whenTripClicked(props.id)}>
-        <h3>{props.destination}</h3>
-        <p>{props.tripType}</p>
+        <h3 className="trip-header-in-list">{props.destination}</h3>
+        <p className="trip-type-in-list">{props.tripType}</p>
         <hr/>
       </div>
     </React.Fragment>

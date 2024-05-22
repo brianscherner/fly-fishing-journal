@@ -55,3 +55,16 @@ code {
   margin-left: 0.825rem;
   margin-right: 0.825rem;
 }
+
+/* trip list styling */
+
+.trip-header-in-list {
+  font-family:'Courier New', Courier, monospace;
+  font-size: 1.85rem;
+  font-weight: 600;
+}
+
+.trip-type-in-list {
+  font-size: 1.25rem;
+  font-family:'Courier New', Courier, monospace;
+}
