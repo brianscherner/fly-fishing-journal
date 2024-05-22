@@ -45,41 +45,45 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      <h1>Sign Up</h1>
+      <h2>Sign Up</h2>
       {signUpSuccess}
-      <form onSubmit={doSignUp}>
-        <input
-          type="text"
-          name="email"
-          placeholder="email"/>
-        <br/>
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"/>
-        <br/>
-        <button type="submit">Sign Up</button>
-      </form>
-      <br/>
-      <h1>Sign In</h1>
-      {signInSuccess}
-      <form onSubmit={doSignIn}>
-        <input
-          type="text"
-          name="signInEmail"
-          placeholder="email"/>
-        <br/>
-        <input
-          type="password"
-          name="signInPassword"
-          placeholder="Password"/>
-        <br/>
-        <button type="submit">Sign In</button>
-      </form>
+      <div className="row justify-content-center">
+        <div className="col-4">
+          <form onSubmit={doSignUp}>
+            <input className="form-control"
+              type="text"
+              name="email"
+              placeholder="Email"/>
+            <br/>
+            <input className="form-control"
+              type="password"
+              name="password"
+              placeholder="Password"/>
+            <br/>
+            <button className="btn btn-primary" type="submit">Sign Up</button>
+          </form>
+          <br/>
+          <h2>Sign In</h2>
+          {signInSuccess}
+          <form onSubmit={doSignIn}>
+            <input className="form-control"
+              type="text"
+              name="signInEmail"
+              placeholder="Email"/>
+            <br/>
+            <input className="form-control"
+              type="password"
+              name="signInPassword"
+              placeholder="Password"/>
+            <br/>
+            <button className="btn btn-success" type="submit">Sign In</button>
+          </form>
+        </div>
+      </div>
       <br/>
       {signOutSuccess}
       <br/>
-      <button onClick={doSignOut}>Sign Out</button>
+      <button className="btn btn-danger" onClick={doSignOut}>Sign Out</button>
     </React.Fragment>
   )
 }
