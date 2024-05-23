@@ -73,7 +73,7 @@ function TripsControl() {
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
-        <h2>You must be signed in to access the fly fishing journal.</h2>
+        <h2 className='auth-message'>You must be signed in to access the fly fishing journal.</h2>
       </React.Fragment>
     )
   } else if (auth.currentUser != null) {
@@ -107,7 +107,7 @@ function TripsControl() {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        {error ? null : <button className='btn btn-primary' onClick={handleClick}>{buttonText}</button>}
+        {error ? null : <button className='btn btn-primary app-buttons' onClick={handleClick}>{buttonText}</button>}
       </React.Fragment>
     );
   }

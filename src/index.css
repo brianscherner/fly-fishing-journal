@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+/* styling for message telling user to sign in to access app */
+.auth-message {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* styling for app buttons */
+.btn.app-buttons {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 /* styling for application header component */
 .app-title {
   font-size: 2.6rem;
@@ -49,6 +61,17 @@ code {
   margin-right: 1.5rem;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
+}
+
+/* styling for sign in page */
+.sign-in-headings {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.sign-in-messages {
+  font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* table styling for trip details categories */

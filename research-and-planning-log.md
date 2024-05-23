@@ -204,9 +204,17 @@
 
 * 2:45pm - 4:00pm: Worked on styling for app header, trips list, and trip details page.
 
+#### Thursday, 5/23/24
+
+* 9:45am - 11:00am: Continued adding styling to application.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
+
+Can have a toggle button that uses filter method to filter by type and passes in the filtered list.
+
+Can also possibly have toggle feature inside the trips list component and just render different trips by type when clicked.
 
 Consider adding unique ID's to each trip
 

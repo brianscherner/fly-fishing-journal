@@ -45,8 +45,8 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      <h2>Sign Up</h2>
-      {signUpSuccess}
+      <h2 className="sign-in-headings">Sign Up</h2>
+      <p className="sign-in-messages">{signUpSuccess}</p>
       <div className="row justify-content-center">
         <div className="col-6">
           <form onSubmit={doSignUp}>
@@ -60,11 +60,11 @@ function SignIn() {
               name="password"
               placeholder="Password"/>
             <br/>
-            <button className="btn btn-primary" type="submit">Sign Up</button>
+            <button className="btn btn-primary app-buttons" type="submit">Sign Up</button>
           </form>
           <br/>
-          <h2>Sign In</h2>
-          {signInSuccess}
+          <h2 className="sign-in-headings">Sign In</h2>
+          <p className="sign-in-messages">{signInSuccess}</p>
           <form onSubmit={doSignIn}>
             <input className="form-control"
               type="text"
@@ -76,14 +76,13 @@ function SignIn() {
               name="signInPassword"
               placeholder="Password"/>
             <br/>
-            <button className="btn btn-success" type="submit">Sign In</button>
+            <button className="btn btn-success app-buttons" type="submit">Sign In</button>
           </form>
         </div>
       </div>
       <br/>
-      {signOutSuccess}
-      <br/>
-      <button className="btn btn-danger" onClick={doSignOut}>Sign Out</button>
+      <p className="sign-in-messages">{signOutSuccess}</p>
+      <button className="btn btn-danger app-buttons" onClick={doSignOut}>Sign Out</button>
     </React.Fragment>
   )
 }

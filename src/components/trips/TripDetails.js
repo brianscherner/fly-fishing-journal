@@ -79,8 +79,8 @@ function TripDetails(props) {
         </ul>
       </div>
 
-      <button className="btn btn-success" onClick={() => onClickingEdit(trip.id)}>Edit</button>
-      <button className="btn btn-danger" onClick={() => onClickingDelete(trip.id)}>Delete</button>
+      <button className="btn btn-success app-buttons" onClick={() => onClickingEdit(trip.id)}>Edit</button>
+      <button className="btn btn-danger app-buttons" onClick={() => onClickingDelete(trip.id)}>Delete</button>
       <hr/>
     </div>
   );
