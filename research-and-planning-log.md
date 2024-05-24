@@ -208,9 +208,21 @@
 
 * 9:45am - 11:00am: Continued adding styling to application.
 
+* 11:10am - 12:00pm: Worked on adding feature to toggle trips by their type.
+
+* 1:00pm - 4:00pm: Continued working on toggling trips by their trip type.
+
+#### Friday, 5/24/24
+
+* 9:00am - 12:00pm: Worked on toggle trips by trip type feature.
+
+* 1:00 - 4:00pm: Continued working on toggle trips feature.
+
 <!-- NOTES:
 
 Conditionally render trips by having a toggle feature.
+
+I want all trips to be shown by default regardless of type, and a button which will toggle between showing all past trips, or all future trips.
 
 Can have a toggle button that uses filter method to filter by type and passes in the filtered list.
 
