@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Trip from './Trip';
 import PropTypes from 'prop-types';
-
-// I want to show a list of all trips and have a button that will toggle trips by their type (by 'past' or 'future') //
 
 function TripsList(props) {
   const { tripsList } = props;
