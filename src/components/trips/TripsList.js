@@ -5,24 +5,21 @@ import PropTypes from 'prop-types';
 // I want to show a list of all trips and have a button that will toggle trips by their type (by 'past' or 'future') //
 
 function TripsList(props) {
-  const [tripsList, setTripsList] = useState(props.tripsList);
-  const [filteredTripsList, setFilteredTripsList] = useState(props.tripsList);
+  const { tripsList } = props;
+  const [filteredTripsList, setFilteredTripsList] = useState(tripsList);
 
   const filterByPast = () => {
     const filteredPastTripsList = tripsList.filter(trip => trip.tripType === "Past");
     setFilteredTripsList(filteredPastTripsList);
-    console.log(filteredPastTripsList);
   }
 
   const filterByFuture = () => {
     const filteredFutureTripsList = tripsList.filter(trip => trip.tripType === "Future");
     setFilteredTripsList(filteredFutureTripsList);
-    console.log(filteredFutureTripsList);
   }
 
   const allTrips = () => {
-    setTripsList(tripsList);
-    console.log(tripsList);
+    setFilteredTripsList(tripsList);
   }
 
   return (
