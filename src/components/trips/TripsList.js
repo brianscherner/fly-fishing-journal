@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Trip from './Trip';
 import PropTypes from 'prop-types';
 
@@ -6,6 +6,10 @@ function TripsList(props) {
   const { tripsList } = props;
   const [filteredTripsList, setFilteredTripsList] = useState(tripsList);
   const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    setFilteredTripsList(tripsList);
+  }, [tripsList]);
 
   const handleFilterSelection = (event) => {
     const filterSelection = event.target.value;
@@ -24,23 +28,18 @@ function TripsList(props) {
     <React.Fragment>
       <div className="row justify-content-center">
         <div className="col-6">
-          <select defaultValue="" className="form-select" onChange={handleFilterSelection}>
-            <option value="" disabled>View Trips By Type</option>
+          <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
+            <option value="" disabled>Filter By Type</option>
             <option value="Past">Past</option>
             <option value="Future">Future</option>
           </select>
           <br/>
-          {filter && (
-            <React.Fragment>
-              {filteredTripsList.map((trip) =>
-              <Trip
-                whenTripClicked={props.onTripSelection}
-                destination={trip.destination}
-                tripType={trip.tripType}
-                id={trip.id}
-                key={trip.id}/>
-              )}
-            </React.Fragment>
+          {filteredTripsList.map((trip) =>
+          <Trip
+            whenTripClicked={props.onTripSelection}
+            destination={trip.destination}
+            id={trip.id}
+            key={trip.id}/>
           )}
         </div>
       </div>

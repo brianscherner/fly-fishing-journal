@@ -106,8 +106,10 @@ function TripsControl() {
 
     return (
       <React.Fragment>
-        {currentlyVisibleState}
         {error ? null : <button className='btn btn-primary app-buttons' onClick={handleClick}>{buttonText}</button>}
+        <br/>
+        <br/>
+        {currentlyVisibleState}
       </React.Fragment>
     );
   }
