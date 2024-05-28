@@ -218,13 +218,13 @@
 
 * 1:00 - 4:00pm: Continued working on toggle trips feature.
 
+#### Tuesday, 5/28/24
+
+* 9:00am - 12:00pm: Worked on filtering trips by type using dropdown menu.
+
+* 1:00pm - 2:00pm: Finished functionality to filter trips by type from trips list.
+
 <!-- NOTES:
-
-Conditionally render trips by having a toggle feature.
-
-I want all trips to be shown by default regardless of type, and a button which will toggle between showing all past trips, or all future trips.
-
-Can have a toggle button that uses filter method to filter by type and passes in the filtered list.
 
 Can also possibly have toggle feature inside the trips list component and just render different trips by type when clicked.
 

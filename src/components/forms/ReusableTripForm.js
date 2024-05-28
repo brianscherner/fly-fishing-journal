@@ -79,7 +79,7 @@ function ReusableTripForm(props) {
         <div className="row justify-content-center">
           <div className="col-6">
             <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
-              <option value="" disabled selected>Trip Type</option>
+              <option value="" disabled>Trip Type</option>
               <option value="Past">Past</option>
               <option value="Future">Future</option>
             </select>
