@@ -222,7 +222,7 @@
 
 * 9:00am - 12:00pm: Worked on filtering trips by type using dropdown menu.
 
-* 1:00pm - 2:00pm: Finished functionality to filter trips by type from trips list.
+* 1:00pm - 2:40pm: Finished functionality to filter trips by type from trips list.
 
 <!-- NOTES:
 
