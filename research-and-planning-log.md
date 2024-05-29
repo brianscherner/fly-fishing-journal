@@ -224,6 +224,8 @@
 
 * 1:00pm - 2:40pm: Finished functionality to filter trips by type from trips list.
 
+* 2:45pm - 4:00pm: Worked on debugging a console error.
+
 <!-- NOTES:
 
 Can also possibly have toggle feature inside the trips list component and just render different trips by type when clicked.
