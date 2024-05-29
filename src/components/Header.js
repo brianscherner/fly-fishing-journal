@@ -9,7 +9,7 @@ function Header() {
         <p className='header-message'>Keep track of your fly fishing trips!</p>
         <div className='header-links'>
           <p><Link to="/trips">Manage Trips</Link></p>
-          <p><Link to="/sign-in">Sign In</Link></p>
+          <p><Link to="/account">Account</Link></p>
         </div>
         <hr/>
       </div>

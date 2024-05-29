@@ -73,7 +73,7 @@ function TripsControl() {
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
-        <h2 className='auth-message'>You must be signed in to access the fly fishing journal.</h2>
+        <h2 className='auth-message'>Sign in to your account to access the fly fishing journal.</h2>
       </React.Fragment>
     )
   } else if (auth.currentUser != null) {
