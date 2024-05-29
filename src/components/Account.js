@@ -45,44 +45,62 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      <h2 className="sign-in-headings">Sign Up</h2>
-      <p className="sign-in-messages">{signUpSuccess}</p>
-      <div className="row justify-content-center">
-        <div className="col-6">
-          <form onSubmit={doSignUp}>
-            <input className="form-control"
-              type="text"
-              name="email"
-              placeholder="Email"/>
-            <br/>
-            <input className="form-control"
-              type="password"
-              name="password"
-              placeholder="Password"/>
-            <br/>
-            <button className="btn btn-primary app-buttons" type="submit">Sign Up</button>
-          </form>
-          <br/>
-          <h2 className="sign-in-headings">Sign In</h2>
-          <p className="sign-in-messages">{signInSuccess}</p>
-          <form onSubmit={doSignIn}>
-            <input className="form-control"
-              type="text"
-              name="signInEmail"
-              placeholder="Email"/>
-            <br/>
-            <input className="form-control"
-              type="password"
-              name="signInPassword"
-              placeholder="Password"/>
-            <br/>
-            <button className="btn btn-success app-buttons" type="submit">Sign In</button>
-          </form>
-        </div>
-      </div>
-      <br/>
-      <p className="sign-in-messages">{signOutSuccess}</p>
-      <button className="btn btn-danger app-buttons" onClick={doSignOut}>Sign Out</button>
+      {signOutSuccess && (
+        <p className="sign-in-messages">{signOutSuccess}</p>
+      )}
+
+      {signUpSuccess && (
+        <p className="sign-in-messages">{signUpSuccess}</p>
+      )}
+
+      {signInSuccess && (
+        <p className="sign-in-messages">{signInSuccess}</p>
+      )}
+
+      {auth.currentUser == null && (
+        <React.Fragment>
+          <h2 className="sign-in-headings">Sign Up</h2>
+          <div className="row justify-content-center">
+            <div className="col-6">
+              <form onSubmit={doSignUp}>
+                <input className="form-control"
+                  type="text"
+                  name="email"
+                  placeholder="Email"/>
+                <br/>
+                <input className="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Password"/>
+                <br/>
+                <button className="btn btn-primary app-buttons" type="submit">Sign Up</button>
+              </form>
+              <br/>
+              <h2 className="sign-in-headings">Sign In</h2>
+              <form onSubmit={doSignIn}>
+                <input className="form-control"
+                  type="text"
+                  name="signInEmail"
+                  placeholder="Email"/>
+                <br/>
+                <input className="form-control"
+                  type="password"
+                  name="signInPassword"
+                  placeholder="Password"/>
+                <br/>
+                <button className="btn btn-success app-buttons" type="submit">Sign In</button>
+              </form>
+            </div>
+          </div>
+        </React.Fragment>
+      )}
+
+      {auth.currentUser !== null && (
+        <React.Fragment>
+          <button className="btn btn-danger app-buttons" onClick={doSignOut}>Sign Out</button>
+        </React.Fragment>
+      )}
+
     </React.Fragment>
   )
 }

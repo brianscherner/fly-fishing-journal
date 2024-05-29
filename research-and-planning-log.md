@@ -226,6 +226,12 @@
 
 * 2:45pm - 4:00pm: Worked on debugging a console error.
 
+#### Wednesday, 5/29/24
+
+* 9:00am - 12:00pm: Worked on refactoring authentication/authorization to conditionally render different parts of Account component.
+
+* 1:00pm - 2:30pm: Finished working on conditionally rendering different sections of Account component.
+
 <!-- NOTES:
 
 Consider adding unique ID's to each trip
