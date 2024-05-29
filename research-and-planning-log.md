@@ -230,7 +230,7 @@
 
 * 9:00am - 12:00pm: Worked on refactoring authentication/authorization to conditionally render different parts of Account component.
 
-* 1:00pm - 2:30pm: Finished working on conditionally rendering different sections of Account component.
+* 1:00pm - 4:00pm: Worked on conditionally rendering different sections of Account component.
 
 <!-- NOTES:
 

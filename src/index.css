@@ -76,13 +76,6 @@ code {
   font-weight: 600;
 }
 
-.sign-out-message {
-  font-size: 1.15rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-style: italic;
-  font-weight: 600;
-}
-
 /* table styling for trip details categories */
 .table th, .table td {
   border: 0.125rem solid black;

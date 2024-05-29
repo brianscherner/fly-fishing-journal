@@ -3,9 +3,7 @@ import { auth } from "../firebase.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 function SignIn() {
-  const [signUpSuccess, setSignUpSuccess] = useState(null);
-  const [signInSuccess, setSignInSuccess] = useState(null);
-  const [signOutSuccess, setSignOutSuccess] = useState(null);
+  const [messageToUser, setMessageToUser] = useState(null);
 
   function doSignUp(event) {
     event.preventDefault();
@@ -13,10 +11,10 @@ function SignIn() {
     const password = event.target.password.value;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setSignUpSuccess(`Sign up successful. Welcome ${userCredential.user.email}!`);
+        setMessageToUser(`Sign up successful. Welcome ${userCredential.user.email}!`);
       })
       .catch((error) => {
-        setSignUpSuccess(`There was an error signing up: ${error.message}`);
+        setMessageToUser(`There was an error signing up: ${error.message}`);
       });
   }
 
@@ -26,31 +24,27 @@ function SignIn() {
     const password = event.target.signInPassword.value;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setSignInSuccess(`Successfully signed in as ${userCredential.user.email}.`);
+        setMessageToUser(`Successfully signed in as ${userCredential.user.email}.`);
       })
       .catch((error) => {
-        setSignInSuccess(`There was an error signing in: ${error.message}`);
+        setMessageToUser(`There was an error signing in: ${error.message}`);
       });
   }
 
   function doSignOut() {
     signOut(auth)
       .then(function() {
-        setSignOutSuccess(`Successfully signed out.`);
+        setMessageToUser(`Successfully signed out.`);
       })
       .catch(function(error) {
-        setSignOutSuccess(`There was an error signing out: ${error.message}`);
+        setMessageToUser(`There was an error signing out: ${error.message}`);
       });
   }
 
   return (
     <React.Fragment>
-      {signOutSuccess && (
-        <p className="sign-out-message">{signOutSuccess}</p>
-      )}
-
-      {signUpSuccess && (
-        <p className="sign-in-messages">{signUpSuccess}</p>
+      {messageToUser && (
+        <p className="sign-in-messages">{messageToUser}</p>
       )}
 
       {auth.currentUser == null && (
@@ -72,9 +66,6 @@ function SignIn() {
                 <button className="btn btn-primary app-buttons" type="submit">Sign Up</button>
               </form>
               <br/>
-              {signInSuccess && (
-                <p className="sign-in-messages">{signInSuccess}</p>
-              )}
               <h2 className="sign-in-headings">Sign In</h2>
               <form onSubmit={doSignIn}>
                 <input className="form-control"
@@ -96,9 +87,6 @@ function SignIn() {
 
       {auth.currentUser !== null && (
         <React.Fragment>
-          {signInSuccess && (
-            <p className="sign-in-messages">{signInSuccess}</p>
-          )}
           <button className="btn btn-danger app-buttons" onClick={doSignOut}>Sign Out</button>
         </React.Fragment>
       )}
