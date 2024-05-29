@@ -46,15 +46,11 @@ function SignIn() {
   return (
     <React.Fragment>
       {signOutSuccess && (
-        <p className="sign-in-messages">{signOutSuccess}</p>
+        <p className="sign-out-message">{signOutSuccess}</p>
       )}
 
       {signUpSuccess && (
         <p className="sign-in-messages">{signUpSuccess}</p>
-      )}
-
-      {signInSuccess && (
-        <p className="sign-in-messages">{signInSuccess}</p>
       )}
 
       {auth.currentUser == null && (
@@ -76,6 +72,9 @@ function SignIn() {
                 <button className="btn btn-primary app-buttons" type="submit">Sign Up</button>
               </form>
               <br/>
+              {signInSuccess && (
+                <p className="sign-in-messages">{signInSuccess}</p>
+              )}
               <h2 className="sign-in-headings">Sign In</h2>
               <form onSubmit={doSignIn}>
                 <input className="form-control"
@@ -97,6 +96,9 @@ function SignIn() {
 
       {auth.currentUser !== null && (
         <React.Fragment>
+          {signInSuccess && (
+            <p className="sign-in-messages">{signInSuccess}</p>
+          )}
           <button className="btn btn-danger app-buttons" onClick={doSignOut}>Sign Out</button>
         </React.Fragment>
       )}
