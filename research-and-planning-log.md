@@ -228,8 +228,6 @@
 
 <!-- NOTES:
 
-Can also possibly have toggle feature inside the trips list component and just render different trips by type when clicked.
-
 Consider adding unique ID's to each trip
 
 -->
