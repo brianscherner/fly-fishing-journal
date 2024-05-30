@@ -44,7 +44,7 @@ function SignIn() {
   return (
     <React.Fragment>
       {messageToUser && (
-        <p className="sign-in-messages">{messageToUser}</p>
+        <p className="sign-in-messages" style={{color: messageToUser.toLowerCase().includes('error') ? '#dc3545' : '#198754'}}>{messageToUser}</p>
       )}
 
       {auth.currentUser == null && (

@@ -232,6 +232,10 @@
 
 * 1:00pm - 4:00pm: Worked on conditionally rendering different sections of Account component.
 
+#### Thursday, 5/30/24
+
+* 9:00am - 10:00am: Added functionality to set message to "red" if an error occurs, and "green" if it's successful.
+
 <!-- NOTES:
 
 Consider adding unique ID's to each trip
