@@ -3,6 +3,7 @@ import Header from './Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TripsControl from './trips/TripsControl';
 import Account from './Account';
+import SignUp from './SignUp';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/trips" element={<TripsControl/>}/>
         <Route path="/account" element={<Account/>}/>
+        <Route path="/sign-up" element={<SignUp/>}/>
       </Routes>
     </React.Fragment>
     </Router>

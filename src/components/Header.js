@@ -10,6 +10,7 @@ function Header() {
         <div className='header-links'>
           <p><Link to="/trips">Manage Trips</Link></p>
           <p><Link to="/account">Account</Link></p>
+          <p><Link to="/sign-up">Sign Up</Link></p>
         </div>
         <hr/>
       </div>
