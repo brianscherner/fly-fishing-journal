@@ -50,7 +50,7 @@ function SignIn() {
                   name="signInPassword"
                   placeholder="Password"/>
                 <br/>
-                <button className="btn btn-success app-buttons" type="submit">Sign In</button>
+                <button className="btn btn-primary app-buttons" type="submit">Sign In</button>
               </form>
             </div>
           </div>
