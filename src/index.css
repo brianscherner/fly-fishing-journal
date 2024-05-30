@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
+/* navbar menu styling */
+.navbar {
+  border-radius: 0.45rem;
+}
+
+.nav-link {
+  color: white !important;
+}
+
 /* styling for message telling user to sign in to access app */
 .auth-message {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -125,3 +134,4 @@ code {
   font-size: 1.25rem;
   font-family:'Courier New', Courier, monospace;
 }
+

@@ -236,6 +236,10 @@
 
 * 9:00am - 10:00am: Added functionality to set message to "red" if an error occurs, and "green" if it's successful.
 
+* 10:00am - 12:00pm: Worked on navbar menu to display links to different sections of app.
+
+* 1:00pm - 1:45pm: Finished working on navbar menu.
+
 <!-- NOTES:
 
 Consider adding unique ID's to each trip
