@@ -254,6 +254,29 @@
 
 <!-- NOTES:
 
+Finish multi-step form validation:
+
+  Trip info that is not required:
+
+  Past Trips:
+
+  * Destination Type (Domestic/Int'l)
+  * Water Type (Freshwater/Saltwater)
+
+  Future Trips:
+
+  * Destination Type (Domestic/Int'l)
+  * Water Type (Freshwater/Saltwater)
+  * Fish Species
+  * Air Travel Costs
+  * Baggage and Luggage Policies
+
+Add feature for dates for each trip, with month and year at minimum. Organize trips by their date from newest to oldest.
+
+Add functionality to mark a future trip as a past trip after going on it.
+
+Add functionality to place N/A in a table cell if it's empty.
+
 Consider adding unique ID's to each trip
 
 -->
