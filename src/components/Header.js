@@ -6,6 +6,7 @@ function Header() {
     <React.Fragment>
       <div className='app-header'>
         <h1 className='app-title'>Fly Fishing Journal</h1>
+        <hr/>
         <Navbar/>
         <hr/>
       </div>
