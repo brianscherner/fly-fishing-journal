@@ -50,7 +50,7 @@ function DestinationInfoFields(props) {
 
   return (
     <React.Fragment>
-      <h4>Destination Info</h4>
+      <h4 className="form-section-heading">Destination Info</h4>
       {destination}
       <br/>
       {destinationType}

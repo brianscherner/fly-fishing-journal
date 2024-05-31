@@ -38,7 +38,7 @@ function SignUp() {
               name="password"
               placeholder="Password"/>
             <br/>
-            <button className="btn btn-primary app-buttons" type="submit">Sign Up</button>
+            <button className="btn app-buttons" type="submit">Sign Up</button>
           </form>
           <br/>
         </div>

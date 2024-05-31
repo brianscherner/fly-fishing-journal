@@ -50,7 +50,7 @@ function SignIn() {
                   name="signInPassword"
                   placeholder="Password"/>
                 <br/>
-                <button className="btn btn-primary app-buttons" type="submit">Sign In</button>
+                <button className="btn app-buttons" type="submit">Sign In</button>
               </form>
             </div>
           </div>
@@ -59,7 +59,7 @@ function SignIn() {
 
       {auth.currentUser !== null && (
         <React.Fragment>
-          <button className="btn btn-danger app-buttons" onClick={doSignOut}>Sign Out</button>
+          <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>
         </React.Fragment>
       )}
 

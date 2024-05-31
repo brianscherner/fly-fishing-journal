@@ -33,7 +33,7 @@ function MiscellaneousFields(props) {
 
   return (
     <React.Fragment>
-      <h4>Miscellaneous</h4>
+      <h4 className="form-section-heading">Miscellaneous</h4>
       {licenses}
       <br/>
       {waterFees}

@@ -12,7 +12,7 @@ function GearRequirements(props) {
 
   return (
     <React.Fragment>
-      <h4>Gear Requirements</h4>
+      <h4 className="form-section-heading">Gear Requirements</h4>
       {clothingRequirements}
       <br/>
       {gearRequirements}

@@ -240,6 +240,12 @@
 
 * 1:00pm - 1:45pm: Finished working on navbar menu.
 
+* 1:45pm - 4:00pm: Worked on new color theme.
+
+#### Friday, 5/31/24
+
+* 9:00am - 10:15am: Worked on new color theme.
+
 <!-- NOTES:
 
 Consider adding unique ID's to each trip

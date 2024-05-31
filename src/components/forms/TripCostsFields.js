@@ -27,7 +27,7 @@ function TripCostsFields(props) {
 
   return (
     <React.Fragment>
-      <h4>Trip Costs</h4>
+      <h4 className="form-section-heading">Trip Costs</h4>
       {travelDocs}
       <br/>
       {travelCosts}

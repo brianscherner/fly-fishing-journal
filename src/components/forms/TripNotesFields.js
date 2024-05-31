@@ -16,7 +16,7 @@ function TripNotesFields(props) {
 
   return (
     <React.Fragment>
-      <h4>Trip Notes</h4>
+      <h4 className="form-section-heading">Trip Notes</h4>
       {fliesUsed}
       <br/>
       {fishCaught}
