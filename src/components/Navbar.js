@@ -20,21 +20,21 @@ function Navbar() {
           <ul className="navbar-nav">
             <li className="nav-item active">
               <Link className="nav-link" to="/trips">
-                <div className={"nav-link"} href="#">
+                <div className={"navbar nav-link"} href="#">
                   Trips
                 </div>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/account">
-                <div className={"nav-link"} href="#">
+                <div className={"navbar nav-link"} href="#">
                   Account
                 </div>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/sign-up">
-                <div className={"nav-link"} href="#">
+                <div className={"navbar nav-link"} href="#">
                   Sign Up
                 </div>
               </Link>

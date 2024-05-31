@@ -244,7 +244,7 @@
 
 #### Friday, 5/31/24
 
-* 9:00am - 10:15am: Worked on new color theme.
+* 9:00am - 11:30am: Added hover features to various parts of application and finished color theme.
 
 <!-- NOTES:
 

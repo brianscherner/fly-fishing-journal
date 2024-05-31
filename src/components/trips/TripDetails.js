@@ -32,7 +32,7 @@ function TripDetails(props) {
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className={`nav-link ${isLinkSelected === "destinationInfo" ? "active" : "".toString()}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
+            <a className={`nav-link details ${isLinkSelected === "destinationInfo" ? "active" : "".toString()}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
             <br/>
             {destinationInfo === true && (
               <DestinationInfo trip={trip}/>
@@ -42,7 +42,7 @@ function TripDetails(props) {
           {trip.tripType === "Future" && (
             <React.Fragment>
               <li className="nav-item">
-                <a className={`nav-link ${isLinkSelected === "tripCosts" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
+                <a className={`nav-link details ${isLinkSelected === "tripCosts" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
                 <br/>
                 {tripCosts === true && (
                   <TripCosts trip={trip}/>
@@ -50,7 +50,7 @@ function TripDetails(props) {
               </li>
 
               <li className="nav-item">
-                <a className={`nav-link ${isLinkSelected === "gearRequirements" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
+                <a className={`nav-link details ${isLinkSelected === "gearRequirements" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
                 <br/>
                 {gearRequirements === true && (
                   <GearRequirements trip={trip}/>
@@ -61,7 +61,7 @@ function TripDetails(props) {
 
           {trip.tripType === "Past" && (
             <li className="nav-item">
-              <a className={`nav-link ${isLinkSelected === "tripNotes" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
+              <a className={`nav-link details ${isLinkSelected === "tripNotes" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
               <br/>
               {tripNotes === true && (
                 <TripNotes trip={trip}/>
@@ -70,7 +70,7 @@ function TripDetails(props) {
           )}
 
           <li className="nav-item">
-            <a className={`nav-link ${isLinkSelected === "miscellaneous" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
+            <a className={`nav-link details ${isLinkSelected === "miscellaneous" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
             <br/>
             {miscellaneous === true && (
               <Miscellaneous trip={trip}/>
