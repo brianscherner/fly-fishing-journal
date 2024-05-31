@@ -252,6 +252,8 @@
 
 * 2:15pm - 3:15pm: Fixed bug in form and edited formatting of trip details in table.
 
+* 3:15pm - 4:00pm: Brainstormed about things to work on for next work session on Monday.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
