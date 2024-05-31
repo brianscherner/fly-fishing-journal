@@ -8,9 +8,9 @@ function TripCostsFields(props) {
 
   const travelDocs =
   <select name="travelDocs" className="form-select" defaultValue={formData.travelDocs ??= ''} onChange={(e) => setFormData({...formData, travelDocs: e.target.value})}>
-    <option value="" disabled selected>Travel Documents</option>
-    <option value="passport">Passport</option>
-    <option value="visa">Visa</option>
+    <option value="" disabled>Travel Documents</option>
+    <option value="Passport">Passport</option>
+    <option value="Visa">Visa</option>
   </select>
 
   const tripExpenses = <input type="text" className="form-control" name="tripExpenses" placeholder="Trip Expenses" defaultValue={formData.tripExpenses ??= ''} onChange={(e) => setFormData({...formData, tripExpenses: e.target.value})}/>

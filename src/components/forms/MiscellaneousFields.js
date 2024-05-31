@@ -10,16 +10,16 @@ function MiscellaneousFields(props) {
 
   const guidedOrNot =
   <select name="guidedOrNot" className="form-select" defaultValue={formData.guidedOrNot ??= ''} onChange={(e) => setFormData({...formData, guidedOrNot: e.target.value})}>
-    <option value="" disabled selected>Guided?</option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
+    <option value="" disabled>Guided?</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
   </select>
 
   const waterFees =
   <select name="waterFees" className="form-select" defaultValue={formData.waterFees ??= ''} onChange={(e) => setFormData({...formData, waterFees: e.target.value})}>
-    <option value="" disabled selected>Water Fees</option>
-    <option value="private">Private</option>
-    <option value="public">Public</option>
+    <option value="" disabled>Water Fees</option>
+    <option value="Private">Private</option>
+    <option value="Public">Public</option>
   </select>
 
   const access = <input type="text" className="form-control" name="access" placeholder="Access (ex: car, boat, etc)" defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
