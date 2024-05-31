@@ -246,6 +246,10 @@
 
 * 9:00am - 11:30am: Added hover features to various parts of application and finished color theme.
 
+* 11:30am - 12:00pm: Worked on fixing overflowing text in trips list.
+
+* 1:00pm - 2:15pm: Worked on fixing overflowing table data in trip details.
+
 <!-- NOTES:
 
 Consider adding unique ID's to each trip
