@@ -250,6 +250,8 @@
 
 * 1:00pm - 2:15pm: Worked on fixing overflowing table data in trip details.
 
+* 2:15pm - 3:15pm: Fixed bug in form and edited formatting of trip details in table.
+
 <!-- NOTES:
 
 Consider adding unique ID's to each trip
