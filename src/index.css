@@ -1,9 +1,8 @@
 /* container styling */
 #root {
   min-height: 100vh;
-  /* min-width: 100vh; */
   text-align: center;
-  padding: 2.25rem;
+  padding: 1.5rem;
   --text: #d6fcf3;
   --background: #021611;
   --primary: #7ef6e0;
@@ -20,11 +19,12 @@
 }
 
 .navbar.nav-link {
-  color: var(--text);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .navbar.nav-link:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 /* styling for message telling user to sign in to access app */
@@ -130,6 +130,8 @@
 
 .dest-info-data {
   font-style: italic;
+  max-width: 30vw;
+  overflow: auto;
 }
 
 .gear-data {
@@ -149,21 +151,16 @@
 }
 
 /* trip list styling */
-
 .trip-header-in-list {
   font-family:'Courier New', Courier, monospace;
   font-size: 1.85rem;
   font-weight: 600;
   color: var(--accent);
+  word-wrap: break-word;
 }
 
 .trip-header-in-list:hover {
   color: var(--text);
-}
-
-.trip-type-in-list {
-  font-size: 1.25rem;
-  font-family:'Courier New', Courier, monospace;
 }
 
 /* form styling */
