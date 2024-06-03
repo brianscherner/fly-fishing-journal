@@ -23,12 +23,11 @@ function TripDetails(props) {
     setIsLinkSelected(selectedDetails);
   }
 
-  const { trip, onClickingDelete, onClickingEdit } = props;
+  const { trip, onClickingDelete, onClickingEdit, onMarkingTripAsPast } = props;
 
   return (
     <div className="trip-details">
       <h3 className="trip-details-header">Trip Details</h3>
-      <br/>
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
@@ -81,6 +80,11 @@ function TripDetails(props) {
 
       <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}>Edit</button>
       <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}>Delete</button>
+      <br/>
+      <br/>
+      {trip.tripType === "Future" && (
+        <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}>Mark Trip as Past</button>
+      )}
     </div>
   );
 }
@@ -88,7 +92,8 @@ function TripDetails(props) {
 TripDetails.propTypes = {
   trip: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onMarkingTripAsPast: PropTypes.func
 }
 
 export default TripDetails;

@@ -254,6 +254,12 @@
 
 * 3:15pm - 4:00pm: Brainstormed about things to work on for next work session on Monday.
 
+#### Monday, 6/3/24
+
+* 9:00am - 11:00am: Worked on feature to mark a "Future" trip as "Past" after going on it.
+
+* 1:00pm - 3:00pm: Finished feature to mark a "Future" trip as "Past" after going on it.
+
 <!-- NOTES:
 
 Finish multi-step form validation:

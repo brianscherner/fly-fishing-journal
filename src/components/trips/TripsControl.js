@@ -70,6 +70,13 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
+  const handleMarkingTripAsPast = async (tripToMark) => {
+    const trip = doc(db, "Trips", tripToMark);
+    console.log(trip);
+    await updateDoc(trip, { tripType: "Past" });
+    setSelectedTrip(null);
+  }
+
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
@@ -91,7 +98,8 @@ function TripsControl() {
       currentlyVisibleState = <TripDetails
         trip = {selectedTrip}
         onClickingEdit={handleEditClick}
-        onClickingDelete={handleDeletingTrip}/>
+        onClickingDelete={handleDeletingTrip}
+        onMarkingTripAsPast={handleMarkingTripAsPast}/>
       buttonText = "Return to Trips List";
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewTripsForm
