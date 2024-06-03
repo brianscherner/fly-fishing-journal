@@ -80,12 +80,12 @@
 
 .nav-link.details {
   background-color: var(--secondary);
-  color: var(--text);
+  color: var(--accent);
   border-radius: 0.45rem;
 }
 
 .nav-link.details:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 .detail-categories {
@@ -99,7 +99,7 @@
 
 .nav-link.active {
   background-color: var(--secondary);
-  color: var(--accent);
+  color: var(--text);
   border-radius: 0.45rem;
 }
 
