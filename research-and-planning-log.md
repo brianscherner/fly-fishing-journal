@@ -260,6 +260,8 @@
 
 * 1:00pm - 3:00pm: Finished feature to mark a "Future" trip as "Past" after going on it.
 
+* 3:00pm - 3:30pm: Change font colors of trip details categories.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
@@ -280,8 +282,6 @@ Finish multi-step form validation:
   * Baggage and Luggage Policies
 
 Add feature for dates for each trip, with month and year at minimum. Organize trips by their date from newest to oldest.
-
-Add functionality to mark a future trip as a past trip after going on it.
 
 Add functionality to place N/A in a table cell if it's empty.
 
