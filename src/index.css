@@ -164,6 +164,13 @@
   word-wrap: break-word;
 }
 
+.trip-dates-in-list {
+  color: var(--accent);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 1.075rem;
+  font-weight: 600;
+}
+
 .trip-header-in-list:hover {
   color: var(--text);
 }

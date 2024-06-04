@@ -38,6 +38,8 @@ function TripsList(props) {
           <Trip
             whenTripClicked={props.onTripSelection}
             destination={trip.destination}
+            startDate={trip.startDate}
+            endDate={trip.endDate}
             id={trip.id}
             key={trip.id}/>
           )}
