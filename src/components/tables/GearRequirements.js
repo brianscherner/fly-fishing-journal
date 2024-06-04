@@ -12,15 +12,15 @@ function GearRequirements(props) {
             <tbody>
               <tr className="gear-requir-table">
                 <th>Clothing</th>
-                <td className="gear-data">{trip.clothingRequirements}</td>
+                <td className="gear-data">{trip.clothingRequirements ? trip.clothingRequirements : "N/A"}</td>
               </tr>
               <tr className="gear-requir-table">
                 <th>Fishing Gear</th>
-                <td className="gear-data">{trip.gearRequirements}</td>
+                <td className="gear-data">{trip.gearRequirements ? trip.gearRequirements : "N/A"}</td>
               </tr>
               <tr className="gear-requir-table">
                 <th>Flies</th>
-                <td className="gear-data">{trip.flyRequirements}</td>
+                <td className="gear-data">{trip.flyRequirements ? trip.flyRequirements : "N/A"}</td>
               </tr>
             </tbody>
           </table>

@@ -276,6 +276,8 @@
 
 * 1:00pm - 1:30pm: Removed trip end dates from trips list.
 
+* 1:30pm - 3:30pm: Added functionality to add 'N/A' to a table data cell if the value is empty/null/undefined.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
@@ -294,8 +296,6 @@ Finish multi-step form validation:
   * Fish Species
   * Air Travel Costs
   * Baggage and Luggage Policies
-
-Add functionality to place N/A in a table cell if it's empty.
 
 Consider adding unique ID's to each trip
 
