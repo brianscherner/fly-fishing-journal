@@ -40,6 +40,18 @@ function DestinationInfoFields(props) {
     <option value="Fall">Fall</option>
   </select>
 
+  const startDate =
+  <div className="calendar">
+    <label>Start Date</label>
+    <input className="form-control" aria-label="Date" type="date" defaultValue={formData.startDate ??= ''} onChange={(e) => setFormData({...formData, startDate: e.target.value})}/>
+  </div>
+
+  const endDate =
+  <div className="calendar">
+    <label>End Date</label>
+    <input className="form-control" aria-label="Date" type="date" defaultValue={formData.endDate ??= ''} onChange={(e) => setFormData({...formData, endDate: e.target.value})}/>
+  </div>
+
   const state = <input type="text" className="form-control" name="state" placeholder="State" defaultValue={formData.state ??= ''} onChange={(e) => setFormData({...formData, state: e.target.value})}/>
 
   const county = <input type="text" className="form-control" name="county" placeholder="County" defaultValue={formData.county ??= ''} onChange={(e) => setFormData({...formData, county: e.target.value})}/>
@@ -56,6 +68,10 @@ function DestinationInfoFields(props) {
       {destinationType}
       <br/>
       {season}
+      <br/>
+      {startDate}
+      <br/>
+      {endDate}
       <br/>
       {waterType}
       <br/>

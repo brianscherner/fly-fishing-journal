@@ -132,22 +132,27 @@
   font-style: italic;
   max-width: 30vw;
   overflow: auto;
+  font-weight: 600;
 }
 
 .gear-data {
   font-style: italic;
+  font-weight: 600;
 }
 
 .misc-data {
   font-style: italic;
+  font-weight: 600;
 }
 
 .trip-costs-data {
   font-style: italic;
+  font-weight: 600;
 }
 
 .trip-notes-data {
   font-style: italic;
+  font-weight: 600;
 }
 
 /* trip list styling */
@@ -164,6 +169,11 @@
 }
 
 /* form styling */
+.calendar {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.075rem;
+}
+
 .form-section-heading {
   color: var(--accent);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

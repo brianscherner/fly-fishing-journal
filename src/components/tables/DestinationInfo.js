@@ -23,6 +23,14 @@ function DestinationInfo(props) {
                 <td className="dest-info-data">{trip.season}</td>
               </tr>
               <tr className="dest-info-details">
+                <th>Start Date</th>
+                <td className="dest-info-data">{trip.startDate}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>End Date</th>
+                <td className="dest-info-data">{trip.endDate}</td>
+              </tr>
+              <tr className="dest-info-details">
                 <th>Water Type</th>
                 <td className="dest-info-data">{trip.waterType}</td>
               </tr>

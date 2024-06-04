@@ -262,6 +262,12 @@
 
 * 3:00pm - 3:30pm: Change font colors of trip details categories.
 
+* 3:30pm - 4:00pm: Explored adding a date feature for adding new trips.
+
+#### Tuesday, 6/4/24
+
+* 9:00am - 9:30am: Added date fields to trip form and trip details.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
