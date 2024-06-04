@@ -268,6 +268,8 @@
 
 * 9:00am - 9:30am: Added date fields to trip form and trip details.
 
+* 9:30am - 11:00am: Sorted trips in trips list by their date, from most recent to oldest.
+
 <!-- NOTES:
 
 Finish multi-step form validation:

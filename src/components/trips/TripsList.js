@@ -8,6 +8,7 @@ function TripsList(props) {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
+    // tripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
     setFilteredTripsList(tripsList);
   }, [tripsList]);
 
@@ -34,7 +35,7 @@ function TripsList(props) {
             <option value="Future">Future</option>
           </select>
           <br/>
-          {filteredTripsList.map((trip) =>
+          {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)).map((trip) =>
           <Trip
             whenTripClicked={props.onTripSelection}
             destination={trip.destination}
