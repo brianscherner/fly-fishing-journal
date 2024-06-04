@@ -258,6 +258,8 @@
 
 * 9:00am - 11:00am: Worked on feature to mark a "Future" trip as "Past" after going on it.
 
+* 11:00am - 12:00pm: Met with Ethel.
+
 * 1:00pm - 3:00pm: Finished feature to mark a "Future" trip as "Past" after going on it.
 
 * 3:00pm - 3:30pm: Change font colors of trip details categories.
@@ -269,6 +271,10 @@
 * 9:00am - 9:30am: Added date fields to trip form and trip details.
 
 * 9:30am - 11:00am: Sorted trips in trips list by their date, from most recent to oldest.
+
+* 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00pm - 1:30pm: Removed trip end dates from trips list.
 
 <!-- NOTES:
 
@@ -288,8 +294,6 @@ Finish multi-step form validation:
   * Fish Species
   * Air Travel Costs
   * Baggage and Luggage Policies
-
-Add feature for dates for each trip, with month and year at minimum. Organize trips by their date from newest to oldest.
 
 Add functionality to place N/A in a table cell if it's empty.
 
