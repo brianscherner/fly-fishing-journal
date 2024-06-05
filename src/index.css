@@ -118,14 +118,19 @@
 }
 
 /* table styling for trip details categories */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 .table th, .table td {
   border: 0.125rem solid black;
   background-color: var(--text);
 }
 
 .table-container {
-  margin-left: 0.825rem;
-  margin-right: 0.825rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
 }
 
 .dest-info-data {
@@ -138,21 +143,29 @@
 .gear-data {
   font-style: italic;
   font-weight: 600;
+  max-width: 30vw;
+  overflow: auto;
 }
 
 .misc-data {
   font-style: italic;
   font-weight: 600;
+  max-width: 30vw;
+  overflow: auto;
 }
 
 .trip-costs-data {
   font-style: italic;
   font-weight: 600;
+  max-width: 30vw;
+  overflow: auto;
 }
 
 .trip-notes-data {
   font-style: italic;
   font-weight: 600;
+  max-width: 30vw;
+  overflow: auto;
 }
 
 /* trip list styling */

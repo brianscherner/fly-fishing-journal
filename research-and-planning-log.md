@@ -278,6 +278,12 @@
 
 * 1:30pm - 3:30pm: Added functionality to add 'N/A' to a table data cell if the value is empty/null/undefined.
 
+* 3:30pm - 4:00pm: Worked on fixing alignment of table data.
+
+#### Wednesday, 6/5/24
+
+* 9:00am - 9:45am: Set fixed width for all tables in trip details.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
