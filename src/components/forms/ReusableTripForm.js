@@ -71,15 +71,23 @@ function ReusableTripForm(props) {
         }
         break;
       case 1:
-        return formData.fliesUsed && formData.fishCaught && formData.fishingTackleUsed && formData.fishingMethod && formData.riverFlowLevels;
+        if (tripType === "Past") {
+          return formData.fliesUsed && formData.fishCaught && formData.fishingTackleUsed && formData.fishingMethod && formData.riverFlowLevels;
+        }
+        if (tripType === "Future") {
+          return formData.travelDocs && formData.tripExpenses && formData.depositTerms && formData.cancellationPolicy && formData.tripInsurance && formData.evacInsurance;
+        }
+        break;
       case 2:
         if (tripType === "Past") {
           return formData.licenses && formData.waterFees && formData.access && formData.timeOfDay && formData.travelTime;
         }
         if (tripType === "Future") {
-          return formData.licenses && formData.guidedOrNot && formData.communications && formData.gratuity;
+          return formData.clothingRequirements && formData.gearRequirements && formData.flyRequirements;
         }
         break;
+      case 3:
+        return formData.licenses && formData.guidedOrNot && formData.communications && formData.gratuityGuidelines;
       default:
         return true;
     }

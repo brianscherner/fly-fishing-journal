@@ -286,6 +286,12 @@
 
 * 9:00am - 9:45am: Set fixed width for all tables in trip details.
 
+* 9:45am - 11:00am: Worked on multi-step form validation.
+
+* 11:00am - 11:30am: Met with Ethel.
+
+* 11:30am - 12:00pm: Worked on multi-step form validation.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
