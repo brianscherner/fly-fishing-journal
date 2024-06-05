@@ -4,59 +4,74 @@ import PropTypes from "prop-types";
 function DestinationInfoFields(props) {
   const { tripType, formData, setFormData } = props;
 
-  const destination = <input type="text" name="destination" placeholder="Destination" defaultValue={formData.destination ??= ''} onChange={(e) => setFormData({...formData, destination: e.target.value})}/>
+  const destination = <input type="text" className="form-control" name="destination" placeholder="Destination" defaultValue={formData.destination ??= ''} onChange={(e) => setFormData({...formData, destination: e.target.value})}/>
 
   const destinationType =
-  <select name="destinationType" defaultValue={formData.destinationType ??= ''} onChange={(e) => setFormData({...formData, destinationType: e.target.value})}>
-    <option value="" disabled selected>Destination Type</option>
-    <option value="domestic">Domestic</option>
-    <option value="international">International</option>
+  <select className="form-select" name="destinationType" defaultValue={formData.destinationType ??= ''} onChange={(e) => setFormData({...formData, destinationType: e.target.value})}>
+    <option value="" disabled>Destination Type</option>
+    <option value="Domestic">Domestic</option>
+    <option value="International">International</option>
   </select>
 
   const waterType =
-  <select name="waterType" defaultValue={formData.waterType ??= ''} onChange={(e) => setFormData({...formData, waterType: e.target.value})}>
-    <option value="" disabled selected>Water Type</option>
-    <option value="freshwater">Freshwater</option>
-    <option value="saltwater">Saltwater</option>
+  <select className="form-select" name="waterType" defaultValue={formData.waterType ??= ''} onChange={(e) => setFormData({...formData, waterType: e.target.value})}>
+    <option value="" disabled>Water Type</option>
+    <option value="Freshwater">Freshwater</option>
+    <option value="Saltwater">Saltwater</option>
   </select>
 
   const waterBodyType =
-  <select name="waterBodyType" defaultValue={formData.waterBodyType ??= ''} onChange={(e) => setFormData({...formData, waterBodyType: e.target.value})}>
-    <option value="" disabled selected>Water Body Type</option>
-    <option value="river">River</option>
-    <option value="lake">Lake</option>
-    <option value="ocean">Ocean</option>
-    <option value="mix">Mix</option>
+  <select className="form-select" name="waterBodyType" defaultValue={formData.waterBodyType ??= ''} onChange={(e) => setFormData({...formData, waterBodyType: e.target.value})}>
+    <option value="" disabled>Water Body Type</option>
+    <option value="River">River</option>
+    <option value="Lake">Lake</option>
+    <option value="Ocean">Ocean</option>
+    <option value="Mix">Mix</option>
   </select>
 
-  const species = <input type="text" name="species" placeholder="Fish Species" defaultValue={formData.species ??= ''} onChange={(e) => setFormData({...formData, species: e.target.value})}/>
+  const species = <input type="text" className="form-control" name="species" placeholder="Fish Species" defaultValue={formData.species ??= ''} onChange={(e) => setFormData({...formData, species: e.target.value})}/>
 
   const season =
-  <select name="season" defaultValue={formData.season ??= ''} onChange={(e) => setFormData({...formData, season: e.target.value})}>
-    <option value="" disabled selected>Season</option>
-    <option value="winter">Winter</option>
-    <option value="spring">Spring</option>
-    <option value="summer">Summer</option>
-    <option value="fall">Fall</option>
+  <select className="form-select" name="season" defaultValue={formData.season ??= ''} onChange={(e) => setFormData({...formData, season: e.target.value})}>
+    <option value="" disabled>Season</option>
+    <option value="Winter">Winter</option>
+    <option value="Spring">Spring</option>
+    <option value="Summer">Summer</option>
+    <option value="Fall">Fall</option>
   </select>
 
-  const state = <input type="text" name="state" placeholder="State" defaultValue={formData.state ??= ''} onChange={(e) => setFormData({...formData, state: e.target.value})}/>
+  const startDate =
+  <div className="calendar">
+    <label>Start Date</label>
+    <input className="form-control" aria-label="Date" type="date" defaultValue={formData.startDate ??= ''} onChange={(e) => setFormData({...formData, startDate: e.target.value})}/>
+  </div>
 
-  const county = <input type="text" name="county" placeholder="County" defaultValue={formData.county ??= ''} onChange={(e) => setFormData({...formData, county: e.target.value})}/>
+  const endDate =
+  <div className="calendar">
+    <label>End Date</label>
+    <input className="form-control" aria-label="Date" type="date" defaultValue={formData.endDate ??= ''} onChange={(e) => setFormData({...formData, endDate: e.target.value})}/>
+  </div>
 
-  const country = <input type="text" name="country" placeholder="Country" defaultValue={formData.country ??= ''} onChange={(e) => setFormData({...formData, country: e.target.value})}/>
+  const state = <input type="text" className="form-control" name="state" placeholder="State" defaultValue={formData.state ??= ''} onChange={(e) => setFormData({...formData, state: e.target.value})}/>
 
-  const climate = <input type="text" name="climate" placeholder="Climate" defaultValue={formData.climate ??= ''} onChange={(e) => setFormData({...formData, climate: e.target.value})}/>
+  const county = <input type="text" className="form-control" name="county" placeholder="County" defaultValue={formData.county ??= ''} onChange={(e) => setFormData({...formData, county: e.target.value})}/>
+
+  const country = <input type="text" className="form-control" name="country" placeholder="Country" defaultValue={formData.country ??= ''} onChange={(e) => setFormData({...formData, country: e.target.value})}/>
+
+  const climate = <input type="text" className="form-control" name="climate" placeholder="Climate" defaultValue={formData.climate ??= ''} onChange={(e) => setFormData({...formData, climate: e.target.value})}/>
 
   return (
     <React.Fragment>
-      <h4>Destination Info</h4>
-      <p>* = required</p>
+      <h4 className="form-section-heading">Destination Info</h4>
       {destination}
       <br/>
       {destinationType}
       <br/>
       {season}
+      <br/>
+      {startDate}
+      <br/>
+      {endDate}
       <br/>
       {waterType}
       <br/>

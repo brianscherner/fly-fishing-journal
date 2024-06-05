@@ -8,30 +8,30 @@ function TripNotes(props) {
     <React.Fragment>
       <div className='table-container'>
         <div className='row justify-content-center'>
-          <div className='col-4'>
-            <table className='table'>
+          <table className='table'>
+            <tbody>
               <tr className="trip-notes-table">
                 <th>Fishing Method</th>
-                <td>{trip.fishingMethod}</td>
+                <td className="trip-notes-data">{trip.fishingMethod ? trip.fishingMethod : "N/A"}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>Flies Used</th>
-                <td>{trip.fliesUsed}</td>
+                <td className="trip-notes-data">{trip.fliesUsed ? trip.fliesUsed : "N/A"}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>Fish Caught</th>
-                <td>{trip.fishCaught}</td>
+                <td className="trip-notes-data">{trip.fishCaught ? trip.fishCaught : "N/A"}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>Fishing Tackle Used</th>
-                <td>{trip.fishingTackleUsed}</td>
+                <td className="trip-notes-data">{trip.fishingTackleUsed ? trip.fishingTackleUsed : "N/A"}</td>
               </tr>
               <tr className="trip-notes-table">
                 <th>River Flow Levels</th>
-                <td>{trip.riverFlowLevels}</td>
+                <td className="trip-notes-data">{trip.riverFlowLevels ? trip.riverFlowLevels : "N/A"}</td>
               </tr>
-            </table>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
     </React.Fragment>

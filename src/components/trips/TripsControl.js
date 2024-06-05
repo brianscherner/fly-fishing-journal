@@ -70,10 +70,17 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
+  const handleMarkingTripAsPast = async (tripToMark) => {
+    const trip = doc(db, "Trips", tripToMark);
+    console.log(trip);
+    await updateDoc(trip, { tripType: "Past" });
+    setSelectedTrip(null);
+  }
+
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
-        <h2>You must be signed in to access the fly fishing journal.</h2>
+        <h2 className='auth-message'>Sign in to your account to access the application.</h2>
       </React.Fragment>
     )
   } else if (auth.currentUser != null) {
@@ -91,7 +98,8 @@ function TripsControl() {
       currentlyVisibleState = <TripDetails
         trip = {selectedTrip}
         onClickingEdit={handleEditClick}
-        onClickingDelete={handleDeletingTrip}/>
+        onClickingDelete={handleDeletingTrip}
+        onMarkingTripAsPast={handleMarkingTripAsPast}/>
       buttonText = "Return to Trips List";
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewTripsForm
@@ -106,8 +114,10 @@ function TripsControl() {
 
     return (
       <React.Fragment>
+        {error ? null : <button className='btn control-button' onClick={handleClick}>{buttonText}</button>}
+        <br/>
+        <br/>
         {currentlyVisibleState}
-        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
       </React.Fragment>
     );
   }

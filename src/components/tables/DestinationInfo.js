@@ -8,61 +8,69 @@ function DestinationInfo(props) {
     <React.Fragment>
       <div className="table-container">
         <div className="row justify-content-center">
-          <div className="col-4">
           <table className="table">
-            <tr className="dest-info-details">
-              <th>Destination</th>
-              <td>{trip.destination}</td>
-            </tr>
-            <tr className="dest-info-details">
-              <th>Trip Type</th>
-              <td>{trip.tripType}</td>
-            </tr>
-            <tr className="dest-info-details">
-              <th>Season</th>
-              <td>{trip.season}</td>
-            </tr>
-            <tr className="dest-info-details">
-              <th>Water Type</th>
-              <td>{trip.waterType}</td>
-            </tr>
-            <tr className="dest-info-details">
-              <th>Water Body Type</th>
-              <td>{trip.waterBodyType}</td>
-            </tr>
-            <tr className="dest-info-details">
-              <th>Fish Species</th>
-              <td>{trip.species}</td>
-            </tr>
+            <tbody>
+              <tr className="dest-info-details">
+                <th>Destination</th>
+                <td className="dest-info-data">{trip.destination ? trip.destination : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>Trip Type</th>
+                <td className="dest-info-data">{trip.tripType ? trip.tripType : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>Season</th>
+                <td className="dest-info-data">{trip.season ? trip.season : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>Start Date</th>
+                <td className="dest-info-data">{trip.startDate ? trip.startDate : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>End Date</th>
+                <td className="dest-info-data">{trip.endDate ? trip.endDate : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>Water Type</th>
+                <td className="dest-info-data">{trip.waterType ? trip.waterType : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>Water Body Type</th>
+                <td className="dest-info-data">{trip.waterBodyType ? trip.waterBodyType : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>Fish Species</th>
+                <td className="dest-info-data">{trip.species ? trip.species : "N/A"}</td>
+              </tr>
 
-            {trip.tripType === "Past" && (
-              <React.Fragment>
-                <tr className="dest-info-details">
-                  <th>State</th>
-                  <td>{trip.state}</td>
-                </tr>
-                <tr className="dest-info-details">
-                  <th>County</th>
-                  <td>{trip.county}</td>
-                </tr>
-              </React.Fragment>
-            )}
+              {trip.tripType === "Past" && (
+                <React.Fragment>
+                  <tr className="dest-info-details">
+                    <th>State</th>
+                    <td className="dest-info-data">{trip.state ? trip.state : "N/A"}</td>
+                  </tr>
+                  <tr className="dest-info-details">
+                    <th>County</th>
+                    <td className="dest-info-data">{trip.county ? trip.county : "N/A"}</td>
+                  </tr>
+                </React.Fragment>
+              )}
 
-            <tr className="dest-info-details">
-              <th>Country</th>
-              <td>{trip.country}</td>
-            </tr>
+              <tr className="dest-info-details">
+                <th>Country</th>
+                <td className="dest-info-data">{trip.country ? trip.country : "N/A"}</td>
+              </tr>
 
-            {trip.tripType === "Future" && (
-              <React.Fragment>
-                <tr className="dest-info-details">
-                  <th>Climate</th>
-                  <td>{trip.climate}</td>
-                </tr>
-              </React.Fragment>
-            )}
+              {trip.tripType === "Future" && (
+                <React.Fragment>
+                  <tr className="dest-info-details">
+                    <th>Climate</th>
+                    <td className="dest-info-data">{trip.climate ? trip.climate : "N/A"}</td>
+                  </tr>
+                </React.Fragment>
+              )}
+            </tbody>
           </table>
-          </div>
         </div>
       </div>
     </React.Fragment>

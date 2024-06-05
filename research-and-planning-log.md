@@ -180,9 +180,130 @@
 
 * 1:00pm - 3:15pm: Finished refactoring 'Update' functionality to work with multi-step form.
 
+* 3:15pm - 3:55pm: Brainstormed what functionality to work on next.
+
+#### Tuesday, 5/21/24
+
+* 9:10am - 11:00am: Added functionality to highlight a nav link when its category is selected by user.
+
+* 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00pm - 2:15pm: Worked on changing styling of trip details tables.
+
+* 2:15pm - 3:00pm: Worked on setting a default table for trip details when page is rendered and highlighting the selected category.
+
+* 3:00pm - 4:00pm: Worked on adding styling to application, starting with multi-step form.
+
+#### Wednesday, 5/22/24
+
+* 9:00am - 9:45am: Worked on adding more styling to application's multi-step form and details pages.
+
+9:45am - 11:00am: Added basic styling to sign in page and tables on details page.
+
+* 11:00am - 12:00pm: Whiteboarding interview.
+
+* 1:00pm - 2:45pm: Continued working on table styling.
+
+* 2:45pm - 4:00pm: Worked on styling for app header, trips list, and trip details page.
+
+#### Thursday, 5/23/24
+
+* 9:45am - 11:00am: Continued adding styling to application.
+
+* 11:10am - 12:00pm: Worked on adding feature to toggle trips by their type.
+
+* 1:00pm - 4:00pm: Continued working on toggling trips by their trip type.
+
+#### Friday, 5/24/24
+
+* 9:00am - 12:00pm: Worked on toggle trips by trip type feature.
+
+* 1:00 - 4:00pm: Continued working on toggle trips feature.
+
+#### Tuesday, 5/28/24
+
+* 9:00am - 12:00pm: Worked on filtering trips by type using dropdown menu.
+
+* 1:00pm - 2:40pm: Finished functionality to filter trips by type from trips list.
+
+* 2:45pm - 4:00pm: Worked on debugging a console error.
+
+#### Wednesday, 5/29/24
+
+* 9:00am - 12:00pm: Worked on refactoring authentication/authorization to conditionally render different parts of Account component.
+
+* 1:00pm - 4:00pm: Worked on conditionally rendering different sections of Account component.
+
+#### Thursday, 5/30/24
+
+* 9:00am - 10:00am: Added functionality to set message to "red" if an error occurs, and "green" if it's successful.
+
+* 10:00am - 12:00pm: Worked on navbar menu to display links to different sections of app.
+
+* 1:00pm - 1:45pm: Finished working on navbar menu.
+
+* 1:45pm - 4:00pm: Worked on new color theme.
+
+#### Friday, 5/31/24
+
+* 9:00am - 11:30am: Added hover features to various parts of application and finished color theme.
+
+* 11:30am - 12:00pm: Worked on fixing overflowing text in trips list.
+
+* 1:00pm - 2:15pm: Worked on fixing overflowing table data in trip details.
+
+* 2:15pm - 3:15pm: Fixed bug in form and edited formatting of trip details in table.
+
+* 3:15pm - 4:00pm: Brainstormed about things to work on for next work session on Monday.
+
+#### Monday, 6/3/24
+
+* 9:00am - 11:00am: Worked on feature to mark a "Future" trip as "Past" after going on it.
+
+* 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00pm - 3:00pm: Finished feature to mark a "Future" trip as "Past" after going on it.
+
+* 3:00pm - 3:30pm: Change font colors of trip details categories.
+
+* 3:30pm - 4:00pm: Explored adding a date feature for adding new trips.
+
+#### Tuesday, 6/4/24
+
+* 9:00am - 9:30am: Added date fields to trip form and trip details.
+
+* 9:30am - 11:00am: Sorted trips in trips list by their date, from most recent to oldest.
+
+* 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00pm - 1:30pm: Removed trip end dates from trips list.
+
+* 1:30pm - 3:30pm: Added functionality to add 'N/A' to a table data cell if the value is empty/null/undefined.
+
+* 3:30pm - 4:00pm: Worked on fixing alignment of table data.
+
+#### Wednesday, 6/5/24
+
+* 9:00am - 9:45am: Set fixed width for all tables in trip details.
+
 <!-- NOTES:
 
-Conditionally render trips by having a toggle feature.
+Finish multi-step form validation:
+
+  Trip info that is not required:
+
+  Past Trips:
+
+  * Destination Type (Domestic/Int'l)
+  * Water Type (Freshwater/Saltwater)
+
+  Future Trips:
+
+  * Destination Type (Domestic/Int'l)
+  * Water Type (Freshwater/Saltwater)
+  * Fish Species
+  * Air Travel Costs
+  * Baggage and Luggage Policies
 
 Consider adding unique ID's to each trip
 

@@ -8,22 +8,22 @@ function GearRequirements(props) {
     <React.Fragment>
       <div className='table-container'>
         <div className='row justify-content-center'>
-          <div className='col-4'>
-            <table className='table'>
+          <table className='table'>
+            <tbody>
               <tr className="gear-requir-table">
                 <th>Clothing</th>
-                <td>{trip.clothingRequirements}</td>
+                <td className="gear-data">{trip.clothingRequirements ? trip.clothingRequirements : "N/A"}</td>
               </tr>
               <tr className="gear-requir-table">
                 <th>Fishing Gear</th>
-                <td>{trip.gearRequirements}</td>
+                <td className="gear-data">{trip.gearRequirements ? trip.gearRequirements : "N/A"}</td>
               </tr>
               <tr className="gear-requir-table">
                 <th>Flies</th>
-                <td>{trip.flyRequirements}</td>
+                <td className="gear-data">{trip.flyRequirements ? trip.flyRequirements : "N/A"}</td>
               </tr>
-            </table>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
     </React.Fragment>
