@@ -292,6 +292,8 @@
 
 * 11:30am - 12:00pm: Worked on multi-step form validation.
 
+* 1:00pm - 4:00pm: Worked on group project.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
