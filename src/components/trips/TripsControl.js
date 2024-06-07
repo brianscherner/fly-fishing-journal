@@ -72,7 +72,6 @@ function TripsControl() {
 
   const handleMarkingTripAsPast = async (tripToMark) => {
     const trip = doc(db, "Trips", tripToMark);
-    console.log(trip);
     await updateDoc(trip, { tripType: "Past" });
     setSelectedTrip(null);
   }

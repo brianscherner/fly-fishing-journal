@@ -27,6 +27,11 @@ function ReusableTripForm(props) {
     setTotalPages(total);
   }, [tripType]);
 
+  const handleTripTypeSelection = (e) => {
+    setTripType(e.target.value);
+    setFormData({...formData, tripType: e.target.value});
+  }
+
   const conditionalComponent = () => {
     switch (page) {
       case 0:
@@ -93,12 +98,8 @@ function ReusableTripForm(props) {
     }
   }
 
-  const validateFinalPage = () => {
-    if (validatePage() && page >= totalPages) {
-      setIsFinalPageValid(!isFinalPageValid);
-    } else {
-      alert ('Form is missing required information. Please try again.');
-    }
+  const prevPage = () => {
+    setPage(page - 1);
   }
 
   const nextPage = () => {
@@ -109,13 +110,12 @@ function ReusableTripForm(props) {
     }
   }
 
-  const prevPage = () => {
-    setPage(page - 1);
-  }
-
-  const handleTripTypeSelection = (e) => {
-    setTripType(e.target.value);
-    setFormData({...formData, tripType: e.target.value});
+  const validateFinalPage = () => {
+    if (validatePage() && page >= totalPages) {
+      setIsFinalPageValid(!isFinalPageValid);
+    } else {
+      alert ('Form is missing required information. Please try again.');
+    }
   }
 
   return (

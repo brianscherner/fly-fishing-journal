@@ -16,7 +16,6 @@ function Trip(props) {
 Trip.propTypes = {
   destination: PropTypes.string,
   startDate: PropTypes.string,
-  tripType: PropTypes.string,
   id: PropTypes.string,
   whenTripClicked: PropTypes.func
 }
