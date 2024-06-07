@@ -7,7 +7,7 @@ import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
 
 function ReusableTripForm(props) {
-  const { formData, setFormData } = props;
+  const { formData, setFormData, formSubmissionHandler, isFinalPageValid, setIsFinalPageValid } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -87,9 +87,17 @@ function ReusableTripForm(props) {
         }
         break;
       case 3:
-        return formData.licenses && formData.guidedOrNot && formData.communications && formData.gratuityGuidelines;
+        return formData.licenses && formData.guidedOrNot && formData.communications && formData.gratuity;
       default:
         return true;
+    }
+  }
+
+  const validateFinalPage = () => {
+    if (validatePage() && page >= totalPages) {
+      setIsFinalPageValid(!isFinalPageValid);
+    } else {
+      alert ('Form is missing required information. Please try again.');
     }
   }
 
@@ -112,7 +120,7 @@ function ReusableTripForm(props) {
 
   return (
     <React.Fragment>
-      <form onSubmit={props.formSubmissionHandler}>
+      <form onSubmit={formSubmissionHandler}>
         <div className="row justify-content-center">
           <div className="col-6">
             <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
@@ -124,9 +132,9 @@ function ReusableTripForm(props) {
             {tripType && (
               <React.Fragment>
                 {conditionalComponent()}
-                { page > 0 && <button className="btn back-button" onClick={() => prevPage(page - 1)} type="button">Back</button>}
+                { page > 0 && <button className="btn back-button" onClick={prevPage} type="button">Back</button>}
                 { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button">Next</button>}
-                { page >= totalPages && <button className="btn app-buttons" type="submit">{props.buttonText}</button>}
+                { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit">{props.buttonText}</button>}
               </React.Fragment>
             )}
           </div>
@@ -142,6 +150,7 @@ ReusableTripForm.propTypes = {
   formData: PropTypes.object,
   setFormData: PropTypes.func,
   formSubmissionHandler: PropTypes.func,
+  setIsFinalPageValid: PropTypes.func,
   buttonText: PropTypes.string,
 }
 

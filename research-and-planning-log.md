@@ -294,6 +294,18 @@
 
 * 1:00pm - 4:00pm: Worked on group project.
 
+#### Thursday, 6/6/24
+
+* 9:00am - 11:00am: Worked on multi-step form validation.
+
+* 11:00am - 12:00pm: Met with Ethel.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Friday, 6/7/24
+
+* 9:00am - 10:00am: Worked on multi-step form.
+
 <!-- NOTES:
 
 Finish multi-step form validation:
