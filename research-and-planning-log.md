@@ -306,25 +306,6 @@
 
 * 9:00am - 10:00am: Worked on multi-step form.
 
-<!-- NOTES:
+* 10:00am - 11:00am: Finished multi-step form validation.
 
-Finish multi-step form validation:
-
-  Trip info that is not required:
-
-  Past Trips:
-
-  * Destination Type (Domestic/Int'l)
-  * Water Type (Freshwater/Saltwater)
-
-  Future Trips:
-
-  * Destination Type (Domestic/Int'l)
-  * Water Type (Freshwater/Saltwater)
-  * Fish Species
-  * Air Travel Costs
-  * Baggage and Luggage Policies
-
-Consider adding unique ID's to each trip
-
--->
+* 11:00am - 12:00pm: Met with Ethel.
