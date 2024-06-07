@@ -5,11 +5,14 @@ import ReusableTripForm from "./ReusableTripForm";
 function EditTripForm(props) {
   const { trip } = props;
   const [editFormData, setEditFormData] = useState(trip);
+  const [isFinalPageValid, setIsFinalPageValid] = useState(false);
 
   function handleEditTripFormSubmission(event) {
     event.preventDefault();
     const updatedTrip = {...trip, ...editFormData};
-    props.onEditingTrip(updatedTrip);
+    if (isFinalPageValid) {
+      props.onEditingTrip(updatedTrip);
+    }
   }
 
   return (
@@ -17,6 +20,8 @@ function EditTripForm(props) {
       <ReusableTripForm
         formData={editFormData}
         setFormData={setEditFormData}
+        isFinalPageValid={isFinalPageValid}
+        setIsFinalPageValid={setIsFinalPageValid}
         formSubmissionHandler={handleEditTripFormSubmission}
         buttonText={"Edit"}
         tripType={trip.tripType}
