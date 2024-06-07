@@ -10,7 +10,7 @@ function MiscellaneousFields(props) {
 
   const guidedOrNot =
   <select name="guidedOrNot" className="form-select" defaultValue={formData.guidedOrNot ??= ''} onChange={(e) => setFormData({...formData, guidedOrNot: e.target.value})}>
-    <option value="" disabled>Guided?</option>
+    <option value="" disabled>Guided?*</option>
     <option value="Yes">Yes</option>
     <option value="No">No</option>
   </select>
