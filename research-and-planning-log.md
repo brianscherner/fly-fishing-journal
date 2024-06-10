@@ -309,3 +309,7 @@
 * 10:00am - 11:00am: Finished multi-step form validation.
 
 * 11:00am - 12:00pm: Met with Ethel.
+
+#### Monday, 6/10/24
+
+* 9:00am - 11:15am: Changed form validation to display a message to user in UI if form is invalid, and made minor adjustments to styling.
