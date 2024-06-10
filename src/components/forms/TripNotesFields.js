@@ -17,7 +17,7 @@ function TripNotesFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Trip Notes</h4>
-      <p className="required-paragraph">* indicates a required field</p>
+      <p className="required-msg">* indicates a required field</p>
       {fliesUsed}
       <br/>
       {fishCaught}

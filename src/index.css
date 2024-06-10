@@ -194,6 +194,13 @@ table {
   font-size: 1.075rem;
 }
 
+.form-error-msg {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 1.075rem;
+}
+
 .form-section-heading {
   color: var(--accent);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -210,9 +217,9 @@ table {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.required-paragraph {
-  color: #dc3545;
+.required-msg {
+  color: var(--text);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-weight: 600;
+  font-size: 1.0935rem;
 }
 

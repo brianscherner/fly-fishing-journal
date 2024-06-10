@@ -13,7 +13,7 @@ function GearRequirements(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Gear Requirements</h4>
-      <p className="required-paragraph">* indicates a required field</p>
+      <p className="required-msg">* indicates a required field</p>
       {clothingRequirements}
       <br/>
       {gearRequirements}

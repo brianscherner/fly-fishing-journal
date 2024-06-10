@@ -11,6 +11,7 @@ function ReusableTripForm(props) {
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     let total = 0;
@@ -100,21 +101,24 @@ function ReusableTripForm(props) {
 
   const prevPage = () => {
     setPage(page - 1);
+    setErrorMessage('');
   }
 
   const nextPage = () => {
     if (validatePage()) {
       setPage(page + 1);
+      setErrorMessage('');
     } else {
-      alert ('Form is missing required information. Please try again.');
+      setErrorMessage('Please fill out all required form fields.');
     }
   }
 
   const validateFinalPage = () => {
     if (validatePage() && page >= totalPages) {
       setIsFinalPageValid(!isFinalPageValid);
+      setErrorMessage('');
     } else {
-      alert ('Form is missing required information. Please try again.');
+      setErrorMessage('Please fill out all required form fields.');
     }
   }
 
@@ -135,6 +139,11 @@ function ReusableTripForm(props) {
                 { page > 0 && <button className="btn back-button" onClick={prevPage} type="button">Back</button>}
                 { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button">Next</button>}
                 { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit">{props.buttonText}</button>}
+                <br/>
+                <br/>
+                {errorMessage && (
+                  <p className="form-error-msg">{errorMessage}</p>
+                )}
               </React.Fragment>
             )}
           </div>
