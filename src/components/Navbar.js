@@ -26,16 +26,16 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/account">
+              <Link className="nav-link" to="/sign-up">
                 <div className={"navbar nav-link"} href="#">
-                  Account
+                  Sign Up
                 </div>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/sign-up">
+              <Link className="nav-link" to="/account">
                 <div className={"navbar nav-link"} href="#">
-                  Sign Up
+                  Account
                 </div>
               </Link>
             </li>

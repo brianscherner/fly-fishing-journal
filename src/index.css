@@ -33,7 +33,6 @@
   font-weight: 600;
   font-size: 1.225rem;
   color: var(--text);
-  font-style: italic;
 }
 
 /* styling for app buttons */
@@ -113,7 +112,6 @@
 .sign-in-messages {
   font-size: 1.15rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-style: italic;
   font-weight: 600;
 }
 
