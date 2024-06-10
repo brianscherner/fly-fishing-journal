@@ -10,8 +10,8 @@ function SignIn() {
     const email = event.target.signInEmail.value;
     const password = event.target.signInPassword.value;
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setMessageToUser(`Successfully signed in as ${userCredential.user.email}.`);
+      .then(() => {
+        setMessageToUser(`Sign in successful.`);
       })
       .catch((error) => {
         setMessageToUser(`There was an error signing in: ${error.message}`);
@@ -59,6 +59,7 @@ function SignIn() {
 
       {auth.currentUser !== null && (
         <React.Fragment>
+          <p className="username">Username: {auth.currentUser.email}</p>
           <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>
         </React.Fragment>
       )}
