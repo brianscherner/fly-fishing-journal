@@ -313,3 +313,11 @@
 #### Monday, 6/10/24
 
 * 9:00am - 11:15am: Changed form validation to display a message to user in UI if form is invalid, and made minor adjustments to styling.
+
+* 11:15am - 12:00pm: Looked at reusable form for possible refactoring.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Tuesday, 6/11/24
+
+* 9:00am - 11:00am: Cleaned up spacing errors and fixed minor bug in reusable form.
