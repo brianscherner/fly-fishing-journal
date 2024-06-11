@@ -11,7 +11,7 @@ function ReusableTripForm(props) {
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     let total = 0;
@@ -31,6 +31,7 @@ function ReusableTripForm(props) {
   const handleTripTypeSelection = (e) => {
     setTripType(e.target.value);
     setFormData({...formData, tripType: e.target.value});
+    setErrorMessage('');
   }
 
   const conditionalComponent = () => {
@@ -70,30 +71,59 @@ function ReusableTripForm(props) {
     switch (page) {
       case 0:
         if (tripType === "Past") {
-          return formData.destination && formData.season && formData.species && formData.state && formData.county && formData.country && formData.waterBodyType && formData.species;
+          return formData.destination &&
+          formData.season &&
+          formData.species &&
+          formData.state &&
+          formData.county &&
+          formData.country &&
+          formData.waterBodyType &&
+          formData.species;
         }
         if (tripType === "Future") {
-          return formData.destination && formData.season && formData.waterBodyType && formData.country && formData.climate;
+          return formData.destination &&
+          formData.season &&
+          formData.waterBodyType &&
+          formData.country &&
+          formData.climate;
         }
         break;
       case 1:
         if (tripType === "Past") {
-          return formData.fliesUsed && formData.fishCaught && formData.fishingTackleUsed && formData.fishingMethod && formData.riverFlowLevels;
+          return formData.fliesUsed &&
+          formData.fishCaught &&
+          formData.fishingTackleUsed &&
+          formData.fishingMethod &&
+          formData.riverFlowLevels;
         }
         if (tripType === "Future") {
-          return formData.travelDocs && formData.tripExpenses && formData.depositTerms && formData.cancellationPolicy && formData.tripInsurance && formData.evacInsurance;
+          return formData.travelDocs &&
+          formData.tripExpenses &&
+          formData.depositTerms &&
+          formData.cancellationPolicy &&
+          formData.tripInsurance &&
+          formData.evacInsurance;
         }
         break;
       case 2:
         if (tripType === "Past") {
-          return formData.licenses && formData.waterFees && formData.access && formData.timeOfDay && formData.travelTime;
+          return formData.licenses &&
+          formData.waterFees &&
+          formData.access &&
+          formData.timeOfDay &&
+          formData.travelTime;
         }
         if (tripType === "Future") {
-          return formData.clothingRequirements && formData.gearRequirements && formData.flyRequirements;
+          return formData.clothingRequirements &&
+          formData.gearRequirements &&
+          formData.flyRequirements;
         }
         break;
       case 3:
-        return formData.licenses && formData.guidedOrNot && formData.communications && formData.gratuity;
+        return formData.licenses &&
+        formData.guidedOrNot &&
+        formData.communications &&
+        formData.gratuity;
       default:
         return true;
     }
