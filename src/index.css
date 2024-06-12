@@ -13,18 +13,31 @@
 }
 
 /* navbar menu styling */
+a {
+  color: var(--text);
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+a:active {
+  text-decoration: none;
+}
+
+.navbar-nav.me-auto {
+  float: left;
+}
+
 .navbar {
   border-radius: 0.45rem;
   background-color: var(--secondary);
-}
-
-.navbar.nav-link {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.navbar.nav-link:hover {
-  color: var(--text);
 }
 
 /* styling for message telling user to sign in to access app */
@@ -61,12 +74,15 @@
 .app-title {
   font-size: 2.6rem;
   font-family:'Courier New', Courier, monospace;
-  font-weight: 600;
+  font-weight: 900;
+  color: var(--accent);
 }
 
 .header-links {
   font-size: 1.05rem;
+  font-weight: 600;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--text);
 }
 
 /* styling for trip details navigation links for categories */
