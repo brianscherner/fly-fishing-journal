@@ -11,11 +11,13 @@ function CustomNavbar() {
         <h1 className='app-title'>Fly Fishing Journal</h1>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto header-links">
-            <NavLink to="/trips">Trips</NavLink>
-            <NavLink to="/sign-up">Sign Up</NavLink>
-            <NavLink to="/account">Account</NavLink>
-          </Nav>
+          <div className="navbar-menu-links">
+            <Nav className="me-auto header-links">
+                <NavLink to="/trips">Trips</NavLink>
+                <NavLink to="/sign-up">Sign Up</NavLink>
+                <NavLink to="/account">Account</NavLink>
+            </Nav>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

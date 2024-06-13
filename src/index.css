@@ -34,22 +34,33 @@ a:active {
   text-decoration: none;
 }
 
-.navbar-toggler {
-  background-color: var(--accent);
-  font-size: 1.075rem;
-}
-
-.navbar-toggler:hover {
-  background-color: var(--text);
-}
-
 .navbar-nav.me-auto {
-  float: left;
+  float: right;
 }
 
 .navbar {
   border-radius: 0.45rem;
   background-color: var(--secondary);
+}
+
+.navbar > .container {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.navbar-menu-links {
+  text-align: left;
+}
+
+.navbar-toggler {
+  background-color: var(--accent);
+  font-size: 1rem;
+}
+
+.navbar-toggler:hover {
+  background-color: var(--text);
 }
 
 /* styling for message telling user to sign in to access app */
@@ -88,13 +99,14 @@ a:active {
   font-family:'Courier New', Courier, monospace;
   font-weight: 900;
   color: var(--accent);
+  padding-right: 0.75rem;
+  margin: 0;
 }
 
 .header-links {
   font-size: 1.05rem;
   font-weight: 600;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: var(--accent);
 }
 
 /* styling for trip details navigation links for categories */
