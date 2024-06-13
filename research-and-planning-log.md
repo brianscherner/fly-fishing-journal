@@ -321,3 +321,17 @@
 #### Tuesday, 6/11/24
 
 * 9:00am - 11:00am: Cleaned up spacing errors and fixed minor bug in reusable form.
+
+* 11:00am - 12:00pm: Worked on creating responsive navbar.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Wednesday, 6/12/24
+
+* 9:00am - 12:00pm: Worked on navbar menu.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Thursday, 6/13/24
+
+* 9:00am - 9:45am: Finished navbar menu.
