@@ -335,3 +335,11 @@
 #### Thursday, 6/13/24
 
 * 9:00am - 9:45am: Finished navbar menu.
+
+* 9:45am - 12:00pm: Worked on navbar alignment.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Friday, 6/14/24
+
+* 9:00am - 12:00pm: Aligned navbar menu to right and navbar menu links under title of app.
