@@ -15,48 +15,56 @@
 /* navbar menu styling */
 a {
   color: var(--accent);
+  float: right;
 }
 
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
+a:link,
+a:visited,
+a:hover,
+a:active  {
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
   color: var(--text);
 }
 
-a:active {
-  text-decoration: none;
-}
-
 .navbar-nav.me-auto {
-  float: right;
+  float: center;
 }
 
 .navbar {
   border-radius: 0.45rem;
   background-color: var(--secondary);
+  display: flex;
+}
+
+.navbar-collapse {
+  grid-column: span 3;
 }
 
 .navbar > .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
   flex-wrap: inherit;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto 0 auto;
+  padding: 0 0 0 0;
+  width: 100%;
 }
 
 .navbar-menu-links {
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
 }
 
 .navbar-toggler {
   background-color: var(--accent);
-  font-size: 1rem;
+  font-size: 0.8rem;
+  justify-self: flex-end;
 }
 
 .navbar-toggler:hover {
@@ -99,8 +107,8 @@ a:active {
   font-family:'Courier New', Courier, monospace;
   font-weight: 900;
   color: var(--accent);
-  padding-right: 0.75rem;
   margin: 0;
+  justify-self: center;
 }
 
 .header-links {
