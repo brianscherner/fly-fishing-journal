@@ -343,3 +343,9 @@
 #### Friday, 6/14/24
 
 * 9:00am - 12:00pm: Aligned navbar menu to right and navbar menu links under title of app.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Monday, 6/17/24
+
+* 9:00am - 10:00am: Fixed issue with clashing CSS rules and change font sizes and margins in navbar.
