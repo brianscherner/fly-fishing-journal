@@ -14,9 +14,9 @@ function CustomNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto header-links">
             <div className="navbar-menu-links">
-              <NavLink to="/trips">Trips</NavLink>
-              <NavLink to="/sign-up">Sign Up</NavLink>
-              <NavLink to="/account">Account</NavLink>
+              <NavLink to="/trips" className="navbar-link">Trips</NavLink>
+              <NavLink to="/sign-up" className="navbar-link">Sign Up</NavLink>
+              <NavLink to="/account" className="navbar-link">Account</NavLink>
             </div>
           </Nav>
         </Navbar.Collapse>

@@ -13,19 +13,18 @@
 }
 
 /* navbar menu styling */
-a {
+.navbar-link {
   color: var(--accent);
-  float: right;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active  {
+.navbar-link:link,
+.navbar-link:visited,
+.navbar-link:hover,
+.navbar-link:active  {
   text-decoration: none;
 }
 
-a:hover {
+.navbar-link:hover {
   color: var(--text);
 }
 
