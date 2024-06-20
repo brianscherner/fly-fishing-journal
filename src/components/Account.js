@@ -1,39 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import { auth } from "../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn() {
-  const [messageToUser, setMessageToUser] = useState(null);
-
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signInEmail.value;
     const password = event.target.signInPassword.value;
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        setMessageToUser(`Sign in successful.`);
+        toast.success("Successfully signed in.")
       })
       .catch((error) => {
-        setMessageToUser(`There was an error signing in: ${error.message}`);
+        toast.error(`There was an error signing in: ${error.message}`);
       });
   }
 
   function doSignOut() {
     signOut(auth)
       .then(function() {
-        setMessageToUser(`Successfully signed out.`);
+        toast.success("Successfully signed out");
       })
       .catch(function(error) {
-        setMessageToUser(`There was an error signing out: ${error.message}`);
+        toast.error(`There was an error signing out: ${error.message}`);
       });
   }
 
+  console.log(auth.currentUser);
   return (
     <React.Fragment>
-      {messageToUser && (
-        <p className="sign-in-messages" style={{color: messageToUser.toLowerCase().includes('error') ? '#dc3545' : '#198754'}}>{messageToUser}</p>
-      )}
-
+      {/* <ToastContainer/> */}
       {auth.currentUser == null && (
         <React.Fragment>
           <div className="row justify-content-center">
@@ -54,6 +52,7 @@ function SignIn() {
               </form>
             </div>
           </div>
+          {/* <ToastContainer/> */}
         </React.Fragment>
       )}
 
@@ -61,9 +60,11 @@ function SignIn() {
         <React.Fragment>
           <p className="username">Username: {auth.currentUser.email}</p>
           <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>
+          {/* <ToastContainer/> */}
         </React.Fragment>
       )}
 
+      <ToastContainer/>
     </React.Fragment>
   )
 }
