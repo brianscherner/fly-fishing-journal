@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth } from "../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn() {
+  const [userSignedIn, setUserSignedIn] = useState(false);
+
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signInEmail.value;
     const password = event.target.signInPassword.value;
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        toast.success("Successfully signed in.")
+        toast.success("Successfully signed in.");
+        setUserSignedIn(true);
       })
       .catch((error) => {
         toast.error(`There was an error signing in: ${error.message}`);
@@ -22,17 +25,17 @@ function SignIn() {
     signOut(auth)
       .then(function() {
         toast.success("Successfully signed out");
+        setUserSignedIn(false);
       })
       .catch(function(error) {
         toast.error(`There was an error signing out: ${error.message}`);
       });
   }
 
-  console.log(auth.currentUser);
+  // Note: After signing out, the sign in form does not correctly render as it is supposed to.
   return (
     <React.Fragment>
-      {/* <ToastContainer/> */}
-      {auth.currentUser == null && (
+      {auth.currentUser == null && userSignedIn === false && (
         <React.Fragment>
           <div className="row justify-content-center">
             <div className="col-6">
@@ -52,7 +55,6 @@ function SignIn() {
               </form>
             </div>
           </div>
-          {/* <ToastContainer/> */}
         </React.Fragment>
       )}
 
@@ -60,7 +62,6 @@ function SignIn() {
         <React.Fragment>
           <p className="username">Username: {auth.currentUser.email}</p>
           <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>
-          {/* <ToastContainer/> */}
         </React.Fragment>
       )}
 
