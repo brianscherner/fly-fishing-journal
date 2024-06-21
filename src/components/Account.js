@@ -19,22 +19,26 @@ function SignIn() {
     const password = event.target.signInPassword.value;
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        toast.success("Successfully signed in.");
+        toast.success("Successfully signed in.", {
+          position: "bottom-right"});
         toggleSignInStatus();
       })
       .catch((error) => {
-        toast.error(`There was an error signing in: ${error.message}`);
+        toast.error(`There was an error signing in: ${error.message}`, {
+          position: "bottom-right"});
       });
   }
 
   function doSignOut() {
     signOut(auth)
       .then(function() {
-        toast.success("Successfully signed out.");
+        toast.success("Successfully signed out.", {
+          position: "bottom-right"});
         toggleSignInStatus();
       })
       .catch(function(error) {
-        toast.error(`There was an error signing out: ${error.message}`);
+        toast.error(`There was an error signing out: ${error.message}`, {
+          position: "bottom-right"});
       });
   }
 
