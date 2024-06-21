@@ -6,6 +6,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
+  console.log(userSignedIn);
+  console.log("User: ", auth.currentUser);
+
+  const toggleSignInStatus = () => {
+    setUserSignedIn((userSignedIn) => !userSignedIn);
+  }
 
   function doSignIn(event) {
     event.preventDefault();
@@ -14,7 +20,7 @@ function SignIn() {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         toast.success("Successfully signed in.");
-        setUserSignedIn(true);
+        toggleSignInStatus();
       })
       .catch((error) => {
         toast.error(`There was an error signing in: ${error.message}`);
@@ -24,18 +30,17 @@ function SignIn() {
   function doSignOut() {
     signOut(auth)
       .then(function() {
-        toast.success("Successfully signed out");
-        setUserSignedIn(false);
+        toast.success("Successfully signed out.");
+        toggleSignInStatus();
       })
       .catch(function(error) {
         toast.error(`There was an error signing out: ${error.message}`);
       });
   }
 
-  // Note: After signing out, the sign in form does not correctly render as it is supposed to.
   return (
     <React.Fragment>
-      {auth.currentUser == null && userSignedIn === false && (
+      {auth.currentUser == null && (
         <React.Fragment>
           <div className="row justify-content-center">
             <div className="col-6">
