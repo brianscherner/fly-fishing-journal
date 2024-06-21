@@ -349,3 +349,23 @@
 #### Monday, 6/17/24
 
 * 9:00am - 10:00am: Fixed issue with clashing CSS rules and change font sizes and margins in navbar.
+
+* 11:00am - 12:00pm: Read docs on toast notifications.
+
+* 1:00pm - 4:00pm: Group project work.
+
+#### Tuesday, 6/18/24
+
+* 9:00am - 12:00pm: Worked on adding toast notifications to project.
+
+* 1:00pm - 4:00pm: Group project work.
+
+#### Thursday, 6/20/24
+
+* 9:00am - 12:00pm: Successfully added toasts to sign in page, worked on fixing bug related to conditional rendering.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Friday, 6/21/24
+
+* 9:00am - 10:30am: Fixed bug related to conditional rendering for user signing in/out.
