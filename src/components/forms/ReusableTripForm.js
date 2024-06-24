@@ -5,13 +5,14 @@ import GearRequirementsFields from "./GearRequirementsFields";
 import MiscellaneousFields from "./MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ReusableTripForm(props) {
   const { formData, setFormData, formSubmissionHandler, isFinalPageValid, setIsFinalPageValid } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     let total = 0;
@@ -31,7 +32,6 @@ function ReusableTripForm(props) {
   const handleTripTypeSelection = (e) => {
     setTripType(e.target.value);
     setFormData({...formData, tripType: e.target.value});
-    setErrorMessage('');
   }
 
   const conditionalComponent = () => {
@@ -131,24 +131,21 @@ function ReusableTripForm(props) {
 
   const prevPage = () => {
     setPage(page - 1);
-    setErrorMessage('');
   }
 
   const nextPage = () => {
     if (validatePage()) {
       setPage(page + 1);
-      setErrorMessage('');
     } else {
-      setErrorMessage('Please fill out all required form fields.');
+      toast.error("Please fill out all required form fields. * indicates a required field.", { position: "bottom-right"});
     }
   }
 
   const validateFinalPage = () => {
     if (validatePage() && page >= totalPages) {
       setIsFinalPageValid(!isFinalPageValid);
-      setErrorMessage('');
     } else {
-      setErrorMessage('Please fill out all required form fields.');
+      toast.error("Please fill out all required form fields. * indicates a required field.", { position: "bottom-right"});
     }
   }
 
@@ -169,17 +166,12 @@ function ReusableTripForm(props) {
                 { page > 0 && <button className="btn back-button" onClick={prevPage} type="button">Back</button>}
                 { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button">Next</button>}
                 { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit">{props.buttonText}</button>}
-                <br/>
-                <br/>
-                {errorMessage && (
-                  <p className="form-error-msg">{errorMessage}</p>
-                )}
               </React.Fragment>
             )}
           </div>
         </div>
       </form>
-      <br/>
+      <ToastContainer/>
     </React.Fragment>
   )
 }
