@@ -60,10 +60,6 @@ function SignUp() {
         </React.Fragment>
       )}
 
-      {userSignedUp && (
-        <h2 className='auth-message'>You must first sign out of your account before creating a new one.</h2>
-      )}
-
       <ToastContainer/>
     </React.Fragment>
   )
