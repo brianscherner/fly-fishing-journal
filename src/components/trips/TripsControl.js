@@ -50,6 +50,7 @@ function TripsControl() {
     setEditing(true);
   }
 
+  // toast doesn't disappear when a trip is added
   const handleCreatingNewTrip = async (newTripData) => {
     toast.success('Trip successfully added.', { position: "bottom-right"});
     await addDoc(collection(db, "Trips"), newTripData);
@@ -61,13 +62,17 @@ function TripsControl() {
     setSelectedTrip(tripSelection);
   }
 
+  // toast successfully disappears when a trip is deleted
   const handleDeletingTrip = async (id) => {
+    toast.success('Trip successfully deleted.', { position: "bottom-right"});
     await deleteDoc(doc(db, "Trips", id));
     setSelectedTrip(null);
   }
 
+  // toast doesn't disappear when a trip is edited
   const handleEditingTrip = async (tripToEdit) => {
     const trip = doc(db, "Trips", tripToEdit.id);
+    toast.success('Trip successfully edited.', { position: "bottom-right"});
     await updateDoc(trip, tripToEdit);
     setEditing(false);
     setSelectedTrip(null);
