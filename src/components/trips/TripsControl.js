@@ -5,6 +5,8 @@ import TripDetails from './TripDetails.js';
 import EditTripForm from '../forms/EditTripForm.js';
 import { db, auth } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -49,6 +51,7 @@ function TripsControl() {
   }
 
   const handleCreatingNewTrip = async (newTripData) => {
+    toast.success('Trip successfully added.', { position: "bottom-right"});
     await addDoc(collection(db, "Trips"), newTripData);
     setFormVisibleOnPage(false);
   }
@@ -117,6 +120,7 @@ function TripsControl() {
         <br/>
         <br/>
         {currentlyVisibleState}
+        <ToastContainer/>
       </React.Fragment>
     );
   }

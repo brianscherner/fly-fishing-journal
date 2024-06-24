@@ -375,3 +375,5 @@
 #### Monday, 6/24/24
 
 * 9:00am - 10:00am: Fixed management of authentication state which was causing rendering issues.
+
+* 10:00am - 12:00pm: Added toasts for user sign in and form validation. Worked on adding toasts for successful trip creation.
