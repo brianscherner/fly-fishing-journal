@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,12 +6,18 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
-  console.log(userSignedIn);
-  console.log("User: ", auth.currentUser);
 
-  const toggleSignInStatus = () => {
-    setUserSignedIn((userSignedIn) => !userSignedIn);
-  }
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserSignedIn(true);
+      } else {
+        setUserSignedIn(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   function doSignIn(event) {
     event.preventDefault();
@@ -21,7 +27,6 @@ function SignIn() {
       .then(() => {
         toast.success("Successfully signed in.", {
           position: "bottom-right"});
-        toggleSignInStatus();
       })
       .catch((error) => {
         toast.error(`There was an error signing in: ${error.message}`, {
@@ -34,7 +39,6 @@ function SignIn() {
       .then(function() {
         toast.success("Successfully signed out.", {
           position: "bottom-right"});
-        toggleSignInStatus();
       })
       .catch(function(error) {
         toast.error(`There was an error signing out: ${error.message}`, {
@@ -44,7 +48,7 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      {auth.currentUser == null && (
+      {!userSignedIn && (
         <React.Fragment>
           <div className="row justify-content-center">
             <div className="col-6">
@@ -67,7 +71,7 @@ function SignIn() {
         </React.Fragment>
       )}
 
-      {auth.currentUser !== null && (
+      {userSignedIn && (
         <React.Fragment>
           <p className="username">Username: {auth.currentUser.email}</p>
           <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>

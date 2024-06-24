@@ -369,3 +369,9 @@
 #### Friday, 6/21/24
 
 * 9:00am - 10:30am: Fixed bug related to conditional rendering for user signing in/out.
+
+* 1:00pm - 4:00pm: Group project work.
+
+#### Monday, 6/24/24
+
+* 9:00am - 10:00am: Fixed management of authentication state which was causing rendering issues.
