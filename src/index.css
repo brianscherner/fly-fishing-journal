@@ -73,7 +73,6 @@
 /* styling for message telling user to sign in to access app */
 .auth-message {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-weight: 600;
   font-size: 1.125rem;
   color: var(--text);
 }
