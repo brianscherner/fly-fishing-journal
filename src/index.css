@@ -222,6 +222,12 @@ table {
 }
 
 /* trip list styling */
+.empty-trip-list-msg {
+  font-size: 1.125rem;
+  color: var(--text);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .trip-header-in-list {
   font-family:'Courier New', Courier, monospace;
   font-size: 1.75rem;
@@ -247,11 +253,10 @@ table {
   font-size: 1.075rem;
 }
 
-.form-error-msg {
+.form-instruction {
+  font-size: 1.0935rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #dc3545;
-  font-weight: 600;
-  font-size: 1.075rem;
+  color: var(--text);
 }
 
 .form-section-heading {

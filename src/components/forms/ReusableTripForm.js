@@ -154,6 +154,9 @@ function ReusableTripForm(props) {
       <form onSubmit={formSubmissionHandler}>
         <div className="row justify-content-center">
           <div className="col-6">
+            <label className="form-instruction">Please select a trip type to get started</label>
+            <br/>
+            <br/>
             <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
               <option value="" disabled>Trip Type</option>
               <option value="Past">Past</option>

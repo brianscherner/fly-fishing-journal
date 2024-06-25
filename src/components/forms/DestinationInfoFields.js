@@ -82,9 +82,9 @@ function DestinationInfoFields(props) {
       <br/>
       {tripType === "Past" && (
         <React.Fragment>
-          {state}
-          <br/>
           {county}
+          <br/>
+          {state}
           <br/>
         </React.Fragment>
       )}
