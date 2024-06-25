@@ -75,7 +75,6 @@ function TripsControl() {
     toast.success('Trip successfully deleted.', { position: "bottom-right"});
   }
 
-  // toast doesn't disappear when a trip is edited
   const handleEditingTrip = async (tripToEdit) => {
     toast.success('Trip successfully edited.', { position: "bottom-right"});
     const trip = doc(db, "Trips", tripToEdit.id);
