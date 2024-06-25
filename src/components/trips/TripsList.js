@@ -7,6 +7,7 @@ function TripsList(props) {
   const [filteredTripsList, setFilteredTripsList] = useState(tripsList);
   const [filter, setFilter] = useState("");
   const [isListEmpty, setIsListEmpty] = useState(false);
+  const [isFilteredListEmpty, setIsFilteredListEmpty] = useState(false);
 
   useEffect(() => {
     setFilteredTripsList(tripsList);
@@ -24,9 +25,19 @@ function TripsList(props) {
     if (filterSelection === "Past") {
       const filteredPastTripsList = tripsList.filter(trip => trip.tripType === "Past");
       setFilteredTripsList(filteredPastTripsList);
+      if (filteredPastTripsList.length === 0) {
+        setIsFilteredListEmpty(true);
+      } else {
+        setIsFilteredListEmpty(false);
+      }
     } else if (filterSelection === "Future") {
       const filteredFutureTripsList = tripsList.filter(trip => trip.tripType === "Future");
       setFilteredTripsList(filteredFutureTripsList);
+      if (filteredFutureTripsList.length === 0) {
+        setIsFilteredListEmpty(true);
+      } else {
+        setIsFilteredListEmpty(false);
+      }
     }
   }
 
@@ -46,14 +57,21 @@ function TripsList(props) {
             <option value="Future">Future</option>
             </select>
             <br/>
-            {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
-            .map((trip) =>
-            <Trip
-              whenTripClicked={props.onTripSelection}
-              destination={trip.destination}
-              startDate={trip.startDate}
-              id={trip.id}
-              key={trip.id}/>
+            {isFilteredListEmpty && (
+              <p className="empty-trip-list-msg">No trips exist.</p>
+            )}
+            {!isFilteredListEmpty && (
+              <React.Fragment>
+                {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
+                .map((trip) =>
+                <Trip
+                  whenTripClicked={props.onTripSelection}
+                  destination={trip.destination}
+                  startDate={trip.startDate}
+                  id={trip.id}
+                  key={trip.id}/>
+                )}
+              </React.Fragment>
             )}
             </React.Fragment>
           )}

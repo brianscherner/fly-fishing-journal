@@ -50,11 +50,12 @@ function TripsControl() {
     setEditing(true);
   }
 
-  // toast doesn't disappear when a trip is added
   const handleCreatingNewTrip = async (newTripData) => {
     toast.success('Trip successfully added.', { position: "bottom-right"});
     await addDoc(collection(db, "Trips"), newTripData);
+    // toast.success('Trip successfully added.', { position: "bottom-right"});
     setFormVisibleOnPage(false);
+    // toast.success('Trip successfully added.', { position: "bottom-right"});
   }
 
   const handleChangingSelectedTrip = (id) => {
@@ -62,23 +63,28 @@ function TripsControl() {
     setSelectedTrip(tripSelection);
   }
 
-  // toast successfully disappears when a trip is deleted
   const handleDeletingTrip = async (id) => {
-    toast.success('Trip successfully deleted.', { position: "bottom-right"});
+    // toast.success('Trip successfully deleted.', { position: "bottom-right"});
     await deleteDoc(doc(db, "Trips", id));
+    // toast.success('Trip successfully deleted.', { position: "bottom-right"});
     setSelectedTrip(null);
+    toast.success('Trip successfully deleted.', { position: "bottom-right"});
   }
 
   // toast doesn't disappear when a trip is edited
   const handleEditingTrip = async (tripToEdit) => {
-    const trip = doc(db, "Trips", tripToEdit.id);
     toast.success('Trip successfully edited.', { position: "bottom-right"});
+    const trip = doc(db, "Trips", tripToEdit.id);
+    // toast.success('Trip successfully edited.', { position: "bottom-right"});
     await updateDoc(trip, tripToEdit);
+    // toast.success('Trip successfully edited.', { position: "bottom-right"});
     setEditing(false);
     setSelectedTrip(null);
+    // toast.success('Trip successfully edited.', { position: "bottom-right"});
   }
 
   const handleMarkingTripAsPast = async (tripToMark) => {
+    toast.success('Trip successfully edited.', { position: "bottom-right"});
     const trip = doc(db, "Trips", tripToMark);
     await updateDoc(trip, { tripType: "Past" });
     setSelectedTrip(null);
