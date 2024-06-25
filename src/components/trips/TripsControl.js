@@ -50,6 +50,10 @@ function TripsControl() {
     setEditing(true);
   }
 
+  // two problems exist:
+  // 1. toasts do not disappear or get dismissed for adding/editing a trip.
+  // 2. toasts don't show up for deleting a trip, or marking it as 'past'.
+
   const handleCreatingNewTrip = async (newTripData) => {
     toast.success('Trip successfully added.', { position: "bottom-right"});
     await addDoc(collection(db, "Trips"), newTripData);
