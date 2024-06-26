@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { auth } from "../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
+import {useNavigate} from 'react-router-dom';
 
+// the 'Sign Up' link in navbar should disappear.
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -26,6 +29,7 @@ function SignIn() {
       .then(() => {
         toast.success("Successfully signed in.", {
           position: "bottom-right"});
+        navigate('/trips');
       })
       .catch((error) => {
         toast.error(`There was an error signing in: ${error.message}`, {

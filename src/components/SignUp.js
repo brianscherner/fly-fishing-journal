@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { auth } from "../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from 'react-toastify';
+import {useNavigate} from 'react-router-dom';
 
 function SignUp() {
   const [userSignedUp, setUserSignedUp] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((createdUser) => {
@@ -26,6 +28,7 @@ function SignUp() {
       .then((userCredential) => {
         toast.success(`Sign up successful. Welcome, ${userCredential.user.email}!`, {
           position: "bottom-right"});
+        navigate('/trips');
       })
       .catch((error) => {
         toast.error(`There was an error signing up: ${error.message}`, {
