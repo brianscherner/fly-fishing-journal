@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 function SignUp() {
   const [userSignedUp, setUserSignedUp] = useState(false);
@@ -60,7 +59,6 @@ function SignUp() {
         </React.Fragment>
       )}
 
-      <ToastContainer/>
     </React.Fragment>
   )
 }

@@ -5,8 +5,7 @@ import GearRequirementsFields from "./GearRequirementsFields";
 import MiscellaneousFields from "./MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 function ReusableTripForm(props) {
   const { formData, setFormData, formSubmissionHandler, isFinalPageValid, setIsFinalPageValid } = props;
@@ -174,7 +173,6 @@ function ReusableTripForm(props) {
           </div>
         </div>
       </form>
-      <ToastContainer/>
     </React.Fragment>
   )
 }

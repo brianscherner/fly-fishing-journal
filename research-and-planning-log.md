@@ -385,3 +385,9 @@
 * 9:00am - 11:30am: Added feature to display a message to the user if there are no trips. Worked on debugging toasts issue.
 
 * 11:30am - 12:00pm: Worked on debugging toasts issue.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Wednesday, 6/26/24
+
+* 9:00am - 10:45am: Fixed bug with toast notifications in TripsControl component.

@@ -5,8 +5,7 @@ import TripDetails from './TripDetails.js';
 import EditTripForm from '../forms/EditTripForm.js';
 import { db, auth } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -50,16 +49,10 @@ function TripsControl() {
     setEditing(true);
   }
 
-  // two problems exist:
-  // 1. toasts do not disappear or get dismissed for adding/editing a trip.
-  // 2. toasts don't show up for deleting a trip, or marking it as 'past'.
-
   const handleCreatingNewTrip = async (newTripData) => {
-    toast.success('Trip successfully added.', { position: "bottom-right"});
     await addDoc(collection(db, "Trips"), newTripData);
-    // toast.success('Trip successfully added.', { position: "bottom-right"});
+    toast.success('Trip added.', { position: "bottom-right"});
     setFormVisibleOnPage(false);
-    // toast.success('Trip successfully added.', { position: "bottom-right"});
   }
 
   const handleChangingSelectedTrip = (id) => {
@@ -68,28 +61,23 @@ function TripsControl() {
   }
 
   const handleDeletingTrip = async (id) => {
-    // toast.success('Trip successfully deleted.', { position: "bottom-right"});
     await deleteDoc(doc(db, "Trips", id));
-    // toast.success('Trip successfully deleted.', { position: "bottom-right"});
+    toast.success('Trip deleted.', { position: "bottom-right"});
     setSelectedTrip(null);
-    toast.success('Trip successfully deleted.', { position: "bottom-right"});
   }
 
   const handleEditingTrip = async (tripToEdit) => {
-    toast.success('Trip successfully edited.', { position: "bottom-right"});
     const trip = doc(db, "Trips", tripToEdit.id);
-    // toast.success('Trip successfully edited.', { position: "bottom-right"});
     await updateDoc(trip, tripToEdit);
-    // toast.success('Trip successfully edited.', { position: "bottom-right"});
+    toast.success('Trip edited.', { position: "bottom-right"});
     setEditing(false);
     setSelectedTrip(null);
-    // toast.success('Trip successfully edited.', { position: "bottom-right"});
   }
 
   const handleMarkingTripAsPast = async (tripToMark) => {
-    toast.success('Trip successfully edited.', { position: "bottom-right"});
     const trip = doc(db, "Trips", tripToMark);
     await updateDoc(trip, { tripType: "Past" });
+    toast.success('Trip marked as "Past".', { position: "bottom-right"});
     setSelectedTrip(null);
   }
 
@@ -134,7 +122,6 @@ function TripsControl() {
         <br/>
         <br/>
         {currentlyVisibleState}
-        <ToastContainer/>
       </React.Fragment>
     );
   }
