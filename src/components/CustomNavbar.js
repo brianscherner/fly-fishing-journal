@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { auth } from "../firebase.js";
 
 function CustomNavbar() {
+  const [userSignedIn, setUserSignedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserSignedIn(true);
+      } else {
+        setUserSignedIn(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <Navbar expand=''>
       <Container>
@@ -15,7 +30,9 @@ function CustomNavbar() {
           <Nav className="me-auto header-links">
             <div className="navbar-menu-links">
               <NavLink to="/trips" className="navbar-link">Trips</NavLink>
-              <NavLink to="/sign-up" className="navbar-link">Sign Up</NavLink>
+              {!userSignedIn && (
+                <NavLink to="/sign-up" className="navbar-link">Sign Up</NavLink>
+              )}
               <NavLink to="/account" className="navbar-link">Account</NavLink>
             </div>
           </Nav>
