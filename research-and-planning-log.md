@@ -391,3 +391,5 @@
 #### Wednesday, 6/26/24
 
 * 9:00am - 10:45am: Fixed bug with toast notifications in TripsControl component.
+
+* 10:45am - 12:00pm: Added feature to redirect a user to the Trips page when they sign in or sign up. Added feature to hide the 'Sign Up' route if a user is signed in.
