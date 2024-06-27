@@ -4,7 +4,6 @@ import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 
-// the 'Sign Up' link in navbar should disappear.
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
   const navigate = useNavigate();
