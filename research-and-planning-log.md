@@ -401,3 +401,5 @@
 * 9:00am - 11:00am: Added feature to confirm password when signing up for an account. Also added toggle feature to trip details page, allowing a user to expand/collapse different categories as they please.
 
 * 11:00am - 12:00pm: Added dropdown and dropup arrows to each trip details category.
+
+* 1:00pm - 4:00pm: Worked on group project.
