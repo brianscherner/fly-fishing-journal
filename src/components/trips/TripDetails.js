@@ -7,20 +7,30 @@ import Miscellaneous from '../tables/Miscellaneous';
 import TripNotes from '../tables/TripNotes';
 
 function TripDetails(props) {
-  const [destinationInfo, setDestinationInfo] = useState(true);
-  const [tripCosts, setTripCosts] = useState(false);
-  const [gearRequirements, setGearRequirements] = useState(false);
-  const [miscellaneous, setMiscellaneous] = useState(false);
-  const [tripNotes, setTripNotes] = useState(false);
-  const [isLinkSelected, setIsLinkSelected] = useState('destinationInfo');
+  const [destInfoToggled, setDestInfoToggled] = useState(true);
+  const [tripCostsToggled, setTripCostsToggled] = useState(false);
+  const [gearRequirementsToggled, setGearRequirementsToggled] = useState(false);
+  const [miscellaneousToggled, setMiscellaneousToggled] = useState(false);
+  const [tripNotesToggled, setTripNotesToggled] = useState(false);
 
-  const handleShowingTripDetails = (selectedDetails) => {
-    setDestinationInfo(selectedDetails === "destinationInfo" ? true : false);
-    setTripCosts(selectedDetails === "tripCosts" ? true : false);
-    setGearRequirements(selectedDetails === "gearRequirements" ? true : false);
-    setMiscellaneous(selectedDetails === "miscellaneous" ? true : false);
-    setTripNotes(selectedDetails === "tripNotes" ? true : false);
-    setIsLinkSelected(selectedDetails);
+  const toggleDestInfo = () => {
+    setDestInfoToggled(!destInfoToggled);
+  }
+
+  const toggleTripCosts = () => {
+    setTripCostsToggled(!tripCostsToggled);
+  }
+
+  const toggleGearRequirements = () => {
+    setGearRequirementsToggled(!gearRequirementsToggled);
+  }
+
+  const toggleMiscellaneous = () => {
+    setMiscellaneousToggled(!miscellaneousToggled);
+  }
+
+  const toggleTripNotes = () => {
+    setTripNotesToggled(!tripNotesToggled);
   }
 
   const { trip, onClickingDelete, onClickingEdit, onMarkingTripAsPast } = props;
@@ -31,9 +41,9 @@ function TripDetails(props) {
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className={`nav-link details ${isLinkSelected === "destinationInfo" ? "active" : "".toString()}`} href="#" onClick={() => handleShowingTripDetails("destinationInfo")}>Destination Info</a>
+            <a className='nav-link details' href="#" onClick={() => toggleDestInfo()}>Destination Info</a>
             <br/>
-            {destinationInfo === true && (
+            {destInfoToggled && (
               <DestinationInfo trip={trip}/>
             )}
           </li>
@@ -41,17 +51,17 @@ function TripDetails(props) {
           {trip.tripType === "Future" && (
             <React.Fragment>
               <li className="nav-item">
-                <a className={`nav-link details ${isLinkSelected === "tripCosts" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripCosts")}>Trip Costs</a>
+                <a className='nav-link details' href="#" onClick={() => toggleTripCosts()}>Trip Costs</a>
                 <br/>
-                {tripCosts === true && (
+                {tripCostsToggled && (
                   <TripCosts trip={trip}/>
                 )}
               </li>
 
               <li className="nav-item">
-                <a className={`nav-link details ${isLinkSelected === "gearRequirements" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("gearRequirements")}>Gear Requirements</a>
+                <a className='nav-link details' href="#" onClick={() => toggleGearRequirements()}>Gear Requirements</a>
                 <br/>
-                {gearRequirements === true && (
+                {gearRequirementsToggled && (
                   <GearRequirements trip={trip}/>
                 )}
               </li>
@@ -60,18 +70,18 @@ function TripDetails(props) {
 
           {trip.tripType === "Past" && (
             <li className="nav-item">
-              <a className={`nav-link details ${isLinkSelected === "tripNotes" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("tripNotes")}>Trip Notes</a>
+              <a className='nav-link details' href="#" onClick={() => toggleTripNotes()}>Trip Notes</a>
               <br/>
-              {tripNotes === true && (
+              {tripNotesToggled && (
                 <TripNotes trip={trip}/>
               )}
             </li>
           )}
 
           <li className="nav-item">
-            <a className={`nav-link details ${isLinkSelected === "miscellaneous" ? "active" : ""}`} href="#" onClick={() => handleShowingTripDetails("miscellaneous")}>Miscellaneous</a>
+            <a className='nav-link details' href="#" onClick={() => toggleMiscellaneous()}>Miscellaneous</a>
             <br/>
-            {miscellaneous === true && (
+            {miscellaneousToggled && (
               <Miscellaneous trip={trip}/>
             )}
           </li>
