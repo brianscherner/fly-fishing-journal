@@ -142,12 +142,6 @@
   color: var(--accent);
 }
 
-.nav-link.active {
-  background-color: var(--secondary);
-  color: var(--text);
-  border-radius: 0.45rem;
-}
-
 /* styling for sign in page */
 .sign-in-headings {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
