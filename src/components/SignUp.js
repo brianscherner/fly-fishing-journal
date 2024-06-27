@@ -24,7 +24,10 @@ function SignUp() {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    createUserWithEmailAndPassword(auth, email, password)
+    const confirmPassword = event.target.confirmPassword.value;
+
+    if (password === confirmPassword) {
+      createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success(`Sign up successful. Welcome, ${userCredential.user.email}!`, {
           position: "bottom-right"});
@@ -34,6 +37,10 @@ function SignUp() {
         toast.error(`There was an error signing up: ${error.message}`, {
           position: "bottom-right"});
       });
+    } else {
+      toast.error(`Passwords do not match. Please try again.`, {
+        position: "bottom-right"});
+    }
   }
 
   return (
@@ -53,6 +60,11 @@ function SignUp() {
                   type="password"
                   name="password"
                   placeholder="Password"/>
+                <br/>
+                <input className="form-control"
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"/>
                 <br/>
                 <button className="btn app-buttons" type="submit">Sign Up</button>
               </form>
