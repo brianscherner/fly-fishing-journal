@@ -5,6 +5,8 @@ import TripCosts from '../tables/TripCosts';
 import GearRequirements from '../tables/GearRequirements';
 import Miscellaneous from '../tables/Miscellaneous';
 import TripNotes from '../tables/TripNotes';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 function TripDetails(props) {
   const [destInfoToggled, setDestInfoToggled] = useState(true);
@@ -41,7 +43,12 @@ function TripDetails(props) {
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <a className='nav-link details' href="#" onClick={() => toggleDestInfo()}>Destination Info</a>
+            {destInfoToggled && (
+              <a className='nav-link details' href="#" onClick={() => toggleDestInfo()}>Destination Info <ArrowDropUpIcon/></a>
+            )}
+            {!destInfoToggled && (
+              <a className='nav-link details' href="#" onClick={() => toggleDestInfo()}>Destination Info <ArrowDropDownIcon/></a>
+            )}
             <br/>
             {destInfoToggled && (
               <DestinationInfo trip={trip}/>
@@ -51,7 +58,12 @@ function TripDetails(props) {
           {trip.tripType === "Future" && (
             <React.Fragment>
               <li className="nav-item">
-                <a className='nav-link details' href="#" onClick={() => toggleTripCosts()}>Trip Costs</a>
+                {tripCostsToggled && (
+                  <a className='nav-link details' href="#" onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropUpIcon/></a>
+                )}
+                {!tripCostsToggled && (
+                  <a className='nav-link details' href="#" onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropDownIcon/></a>
+                )}
                 <br/>
                 {tripCostsToggled && (
                   <TripCosts trip={trip}/>
@@ -59,7 +71,12 @@ function TripDetails(props) {
               </li>
 
               <li className="nav-item">
-                <a className='nav-link details' href="#" onClick={() => toggleGearRequirements()}>Gear Requirements</a>
+                {gearRequirementsToggled && (
+                  <a className='nav-link details' href="#" onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropUpIcon/></a>
+                )}
+                {!gearRequirementsToggled && (
+                  <a className='nav-link details' href="#" onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropDownIcon/></a>
+                )}
                 <br/>
                 {gearRequirementsToggled && (
                   <GearRequirements trip={trip}/>
@@ -70,7 +87,12 @@ function TripDetails(props) {
 
           {trip.tripType === "Past" && (
             <li className="nav-item">
-              <a className='nav-link details' href="#" onClick={() => toggleTripNotes()}>Trip Notes</a>
+              {tripNotesToggled && (
+                <a className='nav-link details' href="#" onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropUpIcon/></a>
+              )}
+              {!tripNotesToggled && (
+                <a className='nav-link details' href="#" onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropDownIcon/></a>
+              )}
               <br/>
               {tripNotesToggled && (
                 <TripNotes trip={trip}/>
@@ -79,7 +101,12 @@ function TripDetails(props) {
           )}
 
           <li className="nav-item">
-            <a className='nav-link details' href="#" onClick={() => toggleMiscellaneous()}>Miscellaneous</a>
+            {miscellaneousToggled && (
+              <a className='nav-link details' href="#" onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropUpIcon/></a>
+            )}
+            {!miscellaneousToggled && (
+              <a className='nav-link details' href="#" onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropDownIcon/></a>
+            )}
             <br/>
             {miscellaneousToggled && (
               <Miscellaneous trip={trip}/>
