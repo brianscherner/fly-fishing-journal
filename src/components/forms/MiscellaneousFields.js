@@ -29,7 +29,7 @@ function MiscellaneousFields(props) {
 
   const timeOfDay = <input type="text" className="form-control" name="timeOfDay" placeholder="Time of Day*" defaultValue={formData.timeOfDay ??= ''} onChange={(e) => setFormData({...formData, timeOfDay: e.target.value})}/>
 
-  const licenses = <input type="text" className="form-control" name="licenses" placeholder="Licenses*" defaultValue={formData.licenses ??= ''} onChange={(e) => setFormData({...formData, licenses: e.target.value})}/>
+  const licenses = <input type="text" className="form-control" name="licenses" placeholder="Fishing Licenses*" defaultValue={formData.licenses ??= ''} onChange={(e) => setFormData({...formData, licenses: e.target.value})}/>
 
   return (
     <React.Fragment>
