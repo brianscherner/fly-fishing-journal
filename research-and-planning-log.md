@@ -407,3 +407,5 @@
 #### Friday, 6/28/24
 
 * 9:00am - 11:15am: Added reset password feature to application.
+
+* 11:15am - 12:00pm: Worked on adding email verification feature.
