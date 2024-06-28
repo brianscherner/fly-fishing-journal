@@ -403,3 +403,7 @@
 * 11:00am - 12:00pm: Added dropdown and dropup arrows to each trip details category.
 
 * 1:00pm - 4:00pm: Worked on group project.
+
+#### Friday, 6/28/24
+
+* 9:00am - 11:15am: Added reset password feature to application.

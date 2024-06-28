@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../firebase.js";
+import { auth } from "../../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';

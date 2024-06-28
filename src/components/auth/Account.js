@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../firebase.js";
+import { auth } from "../../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
@@ -48,6 +48,10 @@ function SignIn() {
       });
   }
 
+  function goToResetPassword() {
+    navigate('/reset-password');
+  }
+
   return (
     <React.Fragment>
       {!userSignedIn && (
@@ -65,6 +69,8 @@ function SignIn() {
                   type="password"
                   name="signInPassword"
                   placeholder="Password"/>
+                <a onClick={goToResetPassword} className="forgot-password">Forgot password?</a>
+                <br/>
                 <br/>
                 <button className="btn app-buttons" type="submit">Sign In</button>
               </form>

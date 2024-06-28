@@ -143,6 +143,17 @@
 }
 
 /* styling for sign in page */
+.forgot-password {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.075rem;
+}
+
+.forgot-password:hover {
+  color: var(--text);
+}
+
 .sign-in-headings {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 600;
