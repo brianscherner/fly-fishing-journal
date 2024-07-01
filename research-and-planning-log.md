@@ -409,3 +409,9 @@
 * 9:00am - 11:15am: Added reset password feature to application.
 
 * 11:15am - 12:00pm: Worked on adding email verification feature.
+
+* 1:00pm - 4:00pm: Worked on group project.
+
+#### Monday, 7/1/24
+
+* 9:00am - 10:45am: Finished adding email verification feature.

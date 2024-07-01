@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../../firebase.js";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
-import VerifyEmail from "./VerifyEmail.js";
+import {useNavigate} from 'react-router-dom';
 
 function SignUp() {
   const [userSignedUp, setUserSignedUp] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((createdUser) => {
@@ -28,8 +29,11 @@ function SignUp() {
     if (password === confirmPassword) {
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        toast.success(`Sign up successful. Welcome, ${userCredential.user.email}!`, {
+        sendEmailVerification(auth.currentUser)
+        signOut(auth);
+        toast.success(`Verification email sent to ${userCredential.user.email}!`, {
           position: "bottom-right"});
+        navigate('/account');
       })
       .catch((error) => {
         toast.error(`There was an error signing up: ${error.message}`, {
@@ -70,10 +74,6 @@ function SignUp() {
             </div>
           </div>
         </React.Fragment>
-      )}
-
-      {userSignedUp && (
-        <VerifyEmail/>
       )}
 
     </React.Fragment>
