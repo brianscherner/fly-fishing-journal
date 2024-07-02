@@ -44,10 +44,10 @@ function TripDetails(props) {
         <ul className="nav flex-column">
           <li className="nav-item">
             {destInfoToggled && (
-              <a className='nav-link details' href="#" onClick={() => toggleDestInfo()}>Destination Info <ArrowDropUpIcon/></a>
+              <button className='nav-link details' onClick={() => toggleDestInfo()}>Destination Info <ArrowDropUpIcon/></button>
             )}
             {!destInfoToggled && (
-              <a className='nav-link details' href="#" onClick={() => toggleDestInfo()}>Destination Info <ArrowDropDownIcon/></a>
+              <button className='nav-link details' onClick={() => toggleDestInfo()}>Destination Info <ArrowDropDownIcon/></button>
             )}
             <br/>
             {destInfoToggled && (
@@ -59,10 +59,10 @@ function TripDetails(props) {
             <React.Fragment>
               <li className="nav-item">
                 {tripCostsToggled && (
-                  <a className='nav-link details' href="#" onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropUpIcon/></a>
+                  <button className='nav-link details' onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropUpIcon/></button>
                 )}
                 {!tripCostsToggled && (
-                  <a className='nav-link details' href="#" onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropDownIcon/></a>
+                  <button className='nav-link details' onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropDownIcon/></button>
                 )}
                 <br/>
                 {tripCostsToggled && (
@@ -72,10 +72,10 @@ function TripDetails(props) {
 
               <li className="nav-item">
                 {gearRequirementsToggled && (
-                  <a className='nav-link details' href="#" onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropUpIcon/></a>
+                  <button className='nav-link details' onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropUpIcon/></button>
                 )}
                 {!gearRequirementsToggled && (
-                  <a className='nav-link details' href="#" onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropDownIcon/></a>
+                  <button className='nav-link details' onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropDownIcon/></button>
                 )}
                 <br/>
                 {gearRequirementsToggled && (
@@ -88,10 +88,10 @@ function TripDetails(props) {
           {trip.tripType === "Past" && (
             <li className="nav-item">
               {tripNotesToggled && (
-                <a className='nav-link details' href="#" onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropUpIcon/></a>
+                <button className='nav-link details' onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropUpIcon/></button>
               )}
               {!tripNotesToggled && (
-                <a className='nav-link details' href="#" onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropDownIcon/></a>
+                <button className='nav-link details' onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropDownIcon/></button>
               )}
               <br/>
               {tripNotesToggled && (
@@ -102,10 +102,10 @@ function TripDetails(props) {
 
           <li className="nav-item">
             {miscellaneousToggled && (
-              <a className='nav-link details' href="#" onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropUpIcon/></a>
+              <button className='nav-link details' onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropUpIcon/></button>
             )}
             {!miscellaneousToggled && (
-              <a className='nav-link details' href="#" onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropDownIcon/></a>
+              <button className='nav-link details' onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropDownIcon/></button>
             )}
             <br/>
             {miscellaneousToggled && (

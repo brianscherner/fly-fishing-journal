@@ -123,6 +123,12 @@
   color: var(--text);
 }
 
+.nav-item {
+  flex-direction: column;
+  display: flex;
+  align-items: stretch;
+}
+
 .nav-link.details {
   background-color: var(--secondary);
   color: var(--accent);
@@ -148,6 +154,12 @@
   color: var(--accent);
   text-decoration: none;
   font-size: 1.075rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .forgot-password:hover {
