@@ -423,3 +423,7 @@
 #### Tuesday, 7/2/24
 
 * 9:00am - 10:00am: Brainstormed hosting options for application.
+
+* 10:00am - 12:00pm: Worked on adding firebase hosting and fixing ESLint errors.
+
+* 1:00pm - 4:00pm: Worked on firebase hosting and fixed ESLint errors.
