@@ -415,3 +415,11 @@
 #### Monday, 7/1/24
 
 * 9:00am - 10:45am: Finished adding email verification feature.
+
+* 11:00am - 12:00pm: Worked on delete account feature.
+
+* 1:00pm - 2:00pm: Presented group project and signed out early because I wasn't feeling well.
+
+#### Tuesday, 7/2/24
+
+* 9:00am - 10:00am: Brainstormed hosting options for application.
