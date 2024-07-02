@@ -81,7 +81,7 @@ function SignIn() {
 
       {userSignedIn && (
         <React.Fragment>
-          <p className="username">Username: {auth.currentUser.email}</p>
+          <p className="username">Welcome, {auth.currentUser.email}!</p>
           <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>
         </React.Fragment>
       )}
