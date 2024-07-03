@@ -20,10 +20,12 @@ function TripsControl() {
       (collectionSnapshot) => {
         const trips = [];
         collectionSnapshot.forEach((doc) => {
-          trips.push({
-            ...doc.data(),
-            id: doc.id
-          });
+          if (doc.data().userId === auth.currentUser.uid) {
+            trips.push({
+              ...doc.data(),
+              id: doc.id
+            });
+          }
         });
         setMainTripsList(trips);
       },

@@ -427,3 +427,7 @@
 * 10:00am - 12:00pm: Worked on adding firebase hosting and fixing ESLint errors.
 
 * 1:00pm - 4:00pm: Worked on firebase hosting and fixed ESLint errors.
+
+#### Wednesday, 7/3/24
+
+* 9:00am - 10:30am: Added functionality to allow a user to only create/read/update/delete trips that they created.

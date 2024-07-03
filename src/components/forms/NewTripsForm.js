@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReusableTripForm from "./ReusableTripForm";
+import { auth } from "../../firebase.js";
 
 function NewTripsForm(props) {
   const [formData, setFormData] = useState({});
@@ -9,6 +10,7 @@ function NewTripsForm(props) {
   function handleNewTripFormSubmission(event) {
     event.preventDefault();
     if (isFinalPageValid) {
+      formData.userId = auth.currentUser.uid;
       props.onNewTripCreation(formData);
     }
   }
