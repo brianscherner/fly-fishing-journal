@@ -1,6 +1,6 @@
 # Fly Fishing Journal
 
-#### An application that allows a user to log their past fly fishing trips, as well as their planned future trips. This serves as my capstone project for Epicodus.
+#### An application that allows fly fishing enthusiasts to efficiently manage their past and future trips.
 
 #### By Brian Scherner
 
@@ -23,15 +23,11 @@
 
 ## Description
 
-The purpose of this application is to allow a user to keep a virtual journal of their past and future fly fishing trips. This application was originally designed to be used by my father, who is an avid fly fisherman.
+The purpose of this application is to allow a user to keep a virtual journal of their past and future fly fishing trips.
 
-In order to use the application, users must first sign up for an account. Once an account has been created and their email verified, they can sign in to their account and access the application. Users can add trips to the journal by their type, "Past" or "Future". Depending on the type of trip, a different form will be rendered, which contains different types of information that a user can enter. Users can click on a trip and view its details by toggling the different categories that are listed. Users can also edit trips from the journal, and mark a "Future" trip as "Past" if they eventually go on the trip and want to update their journal. Users can also delete trips from the journal. All users trips and account information will be stored on a Firestore database.
+In order to use the application, users must first sign up for an account. Once an account has been created and their email verified, they can sign in to their account and access the application. Users can add trips to the journal by their type, "Past" or "Future". Depending on the type of trip, a different multi-step form will be rendered, which contains different types of information that a user can enter. Users can click on a trip and view its details by toggling the different categories that are listed. Users can also edit trips from the journal, and mark a "Future" trip as "Past" if they eventually go on the trip and want to update their journal. Users can also delete trips from the journal. All users trips and account information will be stored on a Firestore database.
 
-The application can be accessed by clicking the following [link](https://fly-fishing-journal.web.app/).
-
-The capstone proposal can be found [here](capstone-proposal.md).
-
-A log of my time spent working on this project can be found [here](research-and-planning-log.md).
+The live site can be visited [here](https://fly-fishing-journal.web.app/).
 
 ## Setup/Installation Requirements
 
