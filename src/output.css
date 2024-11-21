@@ -587,19 +587,6 @@ video {
   display: table;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -610,11 +597,11 @@ video {
   min-height: 100vh;
   text-align: center;
   padding: 1.5rem;
-  --text: #d6fcf3;
-  --background: #021611;
-  --primary: #7ef6e0;
-  --secondary: #910a32;
-  --accent: #efc121;
+  --text: #34495E;
+  --background: #ECF0F1;
+  --primary: #2C3E50;
+  --secondary: #16A085;
+  --accent: #E74C3C;
   color: var(--text);
   background-color: var(--background);
 }
@@ -642,7 +629,7 @@ video {
 
 .navbar {
   border-radius: 0.45rem;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   display: flex;
 }
 
@@ -715,7 +702,7 @@ video {
   font-size: 2.45rem;
   font-family: 'Merriweather';
   font-weight: 900;
-  color: var(--accent);
+  color: var(--background);
   margin: 0;
   justify-self: center;
 }

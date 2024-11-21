@@ -6,6 +6,8 @@ import EditTripForm from '../forms/EditTripForm.js';
 import { db, auth } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { toast } from 'react-toastify';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import HomeIcon from '@mui/icons-material/Home';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -99,23 +101,23 @@ function TripsControl() {
       currentlyVisibleState = <EditTripForm
         trip={selectedTrip}
         onEditingTrip={handleEditingTrip}/>
-      buttonText = "Return to Trips List";
+      buttonText = <HomeIcon/>;
     } else if (selectedTrip != null) {
       currentlyVisibleState = <TripDetails
         trip = {selectedTrip}
         onClickingEdit={handleEditClick}
         onClickingDelete={handleDeletingTrip}
         onMarkingTripAsPast={handleMarkingTripAsPast}/>
-      buttonText = "Return to Trips List";
+      buttonText = <HomeIcon/>;
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewTripsForm
         onNewTripCreation={handleCreatingNewTrip}/>
-      buttonText = "Return to Trips List";
+      buttonText = <HomeIcon/>;
     } else {
       currentlyVisibleState = <TripsList
         onTripSelection={handleChangingSelectedTrip}
         tripsList={mainTripsList}/>
-      buttonText = "Add a Trip";
+      buttonText = <AddBoxIcon/>;
     }
 
     return (
