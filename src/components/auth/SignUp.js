@@ -3,6 +3,7 @@ import { auth } from "../../firebase.js";
 import { createUserWithEmailAndPassword, sendEmailVerification, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 function SignUp() {
   const [userSignedUp, setUserSignedUp] = useState(false);
@@ -68,7 +69,7 @@ function SignUp() {
                   name="confirmPassword"
                   placeholder="Confirm Password"/>
                 <br/>
-                <button className="btn app-buttons" type="submit">Sign Up</button>
+                <button className="btn app-buttons" type="submit"><PersonAddIcon/></button>
               </form>
               <br/>
             </div>

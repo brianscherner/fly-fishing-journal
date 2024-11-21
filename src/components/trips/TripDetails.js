@@ -7,6 +7,9 @@ import Miscellaneous from '../tables/Miscellaneous';
 import TripNotes from '../tables/TripNotes';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 function TripDetails(props) {
   const [destInfoToggled, setDestInfoToggled] = useState(true);
@@ -115,13 +118,13 @@ function TripDetails(props) {
         </ul>
       </div>
 
-      <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}>Edit</button>
-      <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}>Delete</button>
-      <br/>
-      <br/>
+      <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}><EditIcon/></button>
       {trip.tripType === "Future" && (
-        <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}>Mark Trip as Past</button>
+        <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}><CheckCircleIcon/></button>
       )}
+      <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}><DeleteIcon/></button>
+      {/* <br/> */}
+      {/* <br/> */}
     </div>
   );
 }

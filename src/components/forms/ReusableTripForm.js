@@ -6,6 +6,8 @@ import MiscellaneousFields from "./MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
 import { toast } from 'react-toastify';
+import ForwardIcon from '@mui/icons-material/Forward';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function ReusableTripForm(props) {
   const { formData, setFormData, formSubmissionHandler, isFinalPageValid, setIsFinalPageValid } = props;
@@ -165,9 +167,9 @@ function ReusableTripForm(props) {
             {tripType && (
               <React.Fragment>
                 {conditionalComponent()}
-                { page > 0 && <button className="btn back-button" onClick={prevPage} type="button">Back</button>}
-                { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button">Next</button>}
-                { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit">{props.buttonText}</button>}
+                { page > 0 && <button className="btn back-button" onClick={prevPage} type="button"><ForwardIcon style={{ transform: 'rotate(180deg)'}}/></button>}
+                { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button"><ForwardIcon/></button>}
+                { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit"><AddCircleIcon/></button>}
               </React.Fragment>
             )}
           </div>

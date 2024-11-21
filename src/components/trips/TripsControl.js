@@ -8,6 +8,7 @@ import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "fireb
 import { toast } from 'react-toastify';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import HomeIcon from '@mui/icons-material/Home';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -117,7 +118,7 @@ function TripsControl() {
       currentlyVisibleState = <TripsList
         onTripSelection={handleChangingSelectedTrip}
         tripsList={mainTripsList}/>
-      buttonText = <AddBoxIcon/>;
+      buttonText = <AddCircleIcon/>;
     }
 
     return (

@@ -3,6 +3,9 @@ import { auth } from "../../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
+import LoginIcon from '@mui/icons-material/Login';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
@@ -72,7 +75,7 @@ function SignIn() {
                 <button type="button" onClick={goToResetPassword} className="forgot-password">Forgot password?</button>
                 <br/>
                 <br/>
-                <button className="btn app-buttons" type="submit">Sign In</button>
+                <button className="btn app-buttons" type="submit"><LoginIcon/></button>
               </form>
             </div>
           </div>
@@ -81,8 +84,11 @@ function SignIn() {
 
       {userSignedIn && (
         <React.Fragment>
-          <p className="username">Welcome, {auth.currentUser.email}!</p>
-          <button className="btn app-buttons" onClick={doSignOut}>Sign Out</button>
+          <div className="current-user">
+            <AccountCircleIcon fontSize="large"/>
+            <p className="username">{auth.currentUser.email}</p>
+          </div>
+          <button className="btn app-buttons" onClick={doSignOut}><LogoutIcon/></button>
         </React.Fragment>
       )}
 
