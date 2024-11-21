@@ -42,7 +42,6 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
-      <h3 className="trip-details-header">Trip Details</h3>
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
