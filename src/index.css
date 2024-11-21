@@ -40,6 +40,8 @@
   border-radius: 0.45rem;
   background-color: var(--primary);
   display: flex;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
 }
 
 .navbar-collapse {
@@ -121,37 +123,49 @@
 }
 
 /* styling for trip details navigation links for categories */
-.trip-details-header {
+/* .trip-details-header {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 600;
   font-size: 1.9rem;
   color: var(--text);
-}
+} */
 
 .nav-item {
   flex-direction: column;
   display: flex;
+  width: 50%;
   align-items: stretch;
 }
 
 .nav-link.details {
-  background-color: var(--secondary);
-  color: var(--accent);
+  background-color: var(--text);
+  color: var(--background);
   border-radius: 0.45rem;
 }
 
-.nav-link.details:hover {
+/* .nav-link.details:hover {
   color: var(--text);
-}
+} */
 
 .detail-categories {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1.025rem;
+  /* width: 100%; */
 }
 
 .nav-link {
   color: var(--accent);
 }
+
+/* .trip-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+} */
 
 /* styling for sign in page */
 
@@ -261,12 +275,12 @@ table {
   font-family:'Courier New', Courier, monospace;
   font-size: 1.75rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--text);
   word-wrap: break-word;
 }
 
 .trip-dates-in-list {
-  color: var(--accent);
+  color: var(--text);
   font-family:'Courier New', Courier, monospace;
   font-size: 1.075rem;
   font-weight: 600;
@@ -280,6 +294,7 @@ table {
 .calendar {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1.075rem;
+  color: var(--background);
 }
 
 .form-instruction {
@@ -298,12 +313,14 @@ table {
   background-color: var(--text);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
+  color: var(--background);
 }
 
 .form-control {
   background-color: var(--text);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
+  color: var(--background);
 }
 
 .required-msg {
