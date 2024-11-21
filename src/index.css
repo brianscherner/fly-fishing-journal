@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* container styling */
 #root {
   min-height: 100vh;
@@ -102,7 +106,7 @@
 /* styling for application header component */
 .app-title {
   font-size: 2.45rem;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Merriweather';
   font-weight: 900;
   color: var(--accent);
   margin: 0;
@@ -112,7 +116,8 @@
 .header-links {
   font-size: 1.05rem;
   font-weight: 600;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-family: 'Merriweather';
 }
 
 /* styling for trip details navigation links for categories */
