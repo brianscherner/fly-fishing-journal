@@ -49,18 +49,13 @@ function TripsList(props) {
   return (
     <React.Fragment>
       <div className="row justify-content-center">
-        <div className="col-6">
+        <div className="col-2">
           {isListEmpty && (
             <p className="empty-trip-list-msg">No trips exist.</p>
           )}
 
           {!isListEmpty && (
             <React.Fragment>
-              {/* <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
-                <option value="" disabled>Filter By Type</option>
-                <option value="Past">Past</option>
-                <option value="Future">Future</option>
-              </select> */}
               <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Trip Type</InputLabel>
@@ -77,26 +72,31 @@ function TripsList(props) {
                 </FormControl>
               </Box>
             <br/>
-            {isFilteredListEmpty && (
+            {/* {isFilteredListEmpty && (
               <p className="empty-trip-list-msg">No trips exist.</p>
-            )}
-            {!isFilteredListEmpty && (
-              <React.Fragment>
-                {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
-                .map((trip) =>
-                <Trip
-                  whenTripClicked={props.onTripSelection}
-                  destination={trip.destination}
-                  startDate={trip.startDate}
-                  id={trip.id}
-                  key={trip.id}/>
-                )}
-              </React.Fragment>
-            )}
+            )} */}
             </React.Fragment>
           )}
         </div>
       </div>
+      {isFilteredListEmpty && (
+        <p className="empty-trip-list-msg">No trips exist.</p>
+      )}
+      {!isFilteredListEmpty && (
+        <div className="row justify-content-center">
+          <div className="col-6">
+            {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
+            .map((trip) =>
+            <Trip
+              whenTripClicked={props.onTripSelection}
+              destination={trip.destination}
+              startDate={trip.startDate}
+              id={trip.id}
+              key={trip.id}/>
+            )}
+          </div>
+        </div>
+      )}
     </React.Fragment>
   );
 }
