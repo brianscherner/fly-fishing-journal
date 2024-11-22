@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Trip from './Trip';
 import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 function TripsList(props) {
   const { tripsList } = props;
@@ -51,11 +56,26 @@ function TripsList(props) {
 
           {!isListEmpty && (
             <React.Fragment>
-              <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
+              {/* <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
                 <option value="" disabled>Filter By Type</option>
                 <option value="Past">Past</option>
                 <option value="Future">Future</option>
-              </select>
+              </select> */}
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Trip Type</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={filter}
+                    label="Trip Type"
+                    onChange={handleFilterSelection}
+                  >
+                    <MenuItem value={"Past"}>Past</MenuItem>
+                    <MenuItem value={"Future"}>Future</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             <br/>
             {isFilteredListEmpty && (
               <p className="empty-trip-list-msg">No trips exist.</p>
