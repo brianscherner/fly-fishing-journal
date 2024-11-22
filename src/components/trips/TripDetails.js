@@ -10,6 +10,11 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import NotesIcon from '@mui/icons-material/Notes';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import PhishingIcon from '@mui/icons-material/Phishing';
 
 function TripDetails(props) {
   const [destInfoToggled, setDestInfoToggled] = useState(true);
@@ -46,10 +51,10 @@ function TripDetails(props) {
         <ul className="nav flex-column">
           <li className="nav-item">
             {destInfoToggled && (
-              <button className='nav-link details' onClick={() => toggleDestInfo()}>Destination Info <ArrowDropUpIcon/></button>
+              <button className='nav-link details' onClick={() => toggleDestInfo()}><LocationOnIcon/>  Destination Info <ArrowDropUpIcon/></button>
             )}
             {!destInfoToggled && (
-              <button className='nav-link details' onClick={() => toggleDestInfo()}>Destination Info <ArrowDropDownIcon/></button>
+              <button className='nav-link details' onClick={() => toggleDestInfo()}><LocationOnIcon/> Destination Info <ArrowDropDownIcon/></button>
             )}
             <br/>
             {destInfoToggled && (
@@ -61,10 +66,10 @@ function TripDetails(props) {
             <React.Fragment>
               <li className="nav-item">
                 {tripCostsToggled && (
-                  <button className='nav-link details' onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropUpIcon/></button>
+                  <button className='nav-link details' onClick={() => toggleTripCosts()}><AttachMoneyIcon/> Trip Costs <ArrowDropUpIcon/></button>
                 )}
                 {!tripCostsToggled && (
-                  <button className='nav-link details' onClick={() => toggleTripCosts()}>Trip Costs <ArrowDropDownIcon/></button>
+                  <button className='nav-link details' onClick={() => toggleTripCosts()}><AttachMoneyIcon/> Trip Costs <ArrowDropDownIcon/></button>
                 )}
                 <br/>
                 {tripCostsToggled && (
@@ -74,10 +79,10 @@ function TripDetails(props) {
 
               <li className="nav-item">
                 {gearRequirementsToggled && (
-                  <button className='nav-link details' onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropUpIcon/></button>
+                  <button className='nav-link details' onClick={() => toggleGearRequirements()}><PhishingIcon/> Gear Requirements <ArrowDropUpIcon/></button>
                 )}
                 {!gearRequirementsToggled && (
-                  <button className='nav-link details' onClick={() => toggleGearRequirements()}>Gear Requirements <ArrowDropDownIcon/></button>
+                  <button className='nav-link details' onClick={() => toggleGearRequirements()}><PhishingIcon/> Gear Requirements <ArrowDropDownIcon/></button>
                 )}
                 <br/>
                 {gearRequirementsToggled && (
@@ -90,10 +95,10 @@ function TripDetails(props) {
           {trip.tripType === "Past" && (
             <li className="nav-item">
               {tripNotesToggled && (
-                <button className='nav-link details' onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropUpIcon/></button>
+                <button className='nav-link details' onClick={() => toggleTripNotes()}><NotesIcon/> Trip Notes<ArrowDropUpIcon/></button>
               )}
               {!tripNotesToggled && (
-                <button className='nav-link details' onClick={() => toggleTripNotes()}>Trip Notes<ArrowDropDownIcon/></button>
+                <button className='nav-link details' onClick={() => toggleTripNotes()}><NotesIcon/> Trip Notes<ArrowDropDownIcon/></button>
               )}
               <br/>
               {tripNotesToggled && (
@@ -104,10 +109,10 @@ function TripDetails(props) {
 
           <li className="nav-item">
             {miscellaneousToggled && (
-              <button className='nav-link details' onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropUpIcon/></button>
+              <button className='nav-link details' onClick={() => toggleMiscellaneous()}><MiscellaneousServicesIcon/> Miscellaneous<ArrowDropUpIcon/></button>
             )}
             {!miscellaneousToggled && (
-              <button className='nav-link details' onClick={() => toggleMiscellaneous()}>Miscellaneous<ArrowDropDownIcon/></button>
+              <button className='nav-link details' onClick={() => toggleMiscellaneous()}><MiscellaneousServicesIcon/> Miscellaneous<ArrowDropDownIcon/></button>
             )}
             <br/>
             {miscellaneousToggled && (
