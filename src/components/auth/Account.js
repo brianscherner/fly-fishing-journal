@@ -60,8 +60,9 @@ function SignIn() {
       {!userSignedIn && (
         <React.Fragment>
           <div className="row justify-content-center">
-            <div className="col-6">
+            <div className="col-sm-4 col-md-6">
               <h2 className="sign-in-headings">Sign In</h2>
+              <br/>
               <form onSubmit={doSignIn}>
                 <input className="form-control"
                   type="text"
@@ -72,6 +73,7 @@ function SignIn() {
                   type="password"
                   name="signInPassword"
                   placeholder="Password"/>
+                <br/>
                 <button type="button" onClick={goToResetPassword} className="forgot-password">Forgot password?</button>
                 <br/>
                 <br/>
