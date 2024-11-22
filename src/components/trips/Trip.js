@@ -7,7 +7,7 @@ function Trip(props) {
       <div onClick={() => props.whenTripClicked(props.id)}>
         <h3 className="trip-header-in-list">{props.destination}</h3>
         <p className="trip-dates-in-list">{props.startDate}</p>
-        <hr/>
+        <hr style={{ borderTop: "2px solid #2C3E50"}}/>
       </div>
     </React.Fragment>
   );

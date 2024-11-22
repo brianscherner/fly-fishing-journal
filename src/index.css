@@ -7,18 +7,22 @@
   min-height: 100vh;
   text-align: center;
   padding: 1.5rem;
-  --text: #34495E;
-  --background: #ECF0F1;
+  --text: #ECF0F1;
+  --background: #34495E;
   --primary: #2C3E50;
-  --secondary: #16A085;
-  --accent: #E74C3C;
+  --secondary: #16a05d;
+  --accent: #ff1900;
   color: var(--text);
-  background-color: var(--background);
+  /* background: linear-gradient(to bottom, #a7d5c5, #d1e8f4); */
+  /* background: linear-gradient(to bottom, #f5d77a, #a7d5c5); */
+  background: linear-gradient(to bottom, #c3e88d, #d1e8f4);
 }
 
 /* navbar menu styling */
 .navbar-link {
-  color: var(--accent);
+  color: var(--text);
+  font-size: 1.3rem;
+  font-family: "Cabin", sans-serif;
 }
 
 .navbar-link:link,
@@ -29,7 +33,7 @@
 }
 
 .navbar-link:hover {
-  color: var(--text);
+  color: var(--background);
 }
 
 .navbar-nav.me-auto {
@@ -37,11 +41,14 @@
 }
 
 .navbar {
-  border-radius: 0.45rem;
-  background-color: var(--primary);
+  /* border-radius: 0.45rem; */
+  /* background-color: var(--primary); */
+  background: linear-gradient(to right, #2a5d34, #356e8c);
   display: flex;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .navbar-collapse {
@@ -67,50 +74,50 @@
 }
 
 .navbar-toggler {
-  background-color: var(--accent);
+  background-color: var(--text);
   font-size: 0.8rem;
   justify-self: flex-end;
 }
 
 .navbar-toggler:hover {
-  background-color: var(--text);
+  background-color: var(--background);
 }
 
 /* styling for message telling user to sign in to access app */
 .auth-message {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1.125rem;
-  color: var(--text);
+  color: var(--primary);
 }
 
 /* styling for app buttons */
 .btn.app-buttons {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: var(--primary);
-  color: var(--background);
+  color: var(--text);
   font-weight: 600;
 }
 
 .btn.control-button {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: var(--primary);
-  color: var(--background);
+  color: var(--text);
   font-weight: 600;
 }
 
 .btn.back-button {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: var(--secondary);
-  color: var(--accent);
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--primary);
+  color: var(--text);
   font-weight: 600;
 }
 
 /* styling for application header component */
 .app-title {
   font-size: 2.45rem;
-  font-family: 'Merriweather';
+  font-family: "Cabin", sans-serif;
   font-weight: 900;
-  color: var(--background);
+  color: var(--text);
   margin: 0;
   justify-self: center;
 }
@@ -138,8 +145,8 @@
 }
 
 .nav-link.details {
-  background-color: var(--text);
-  color: var(--background);
+  background-color: var(--primary);
+  color: var(--text);
   border-radius: 0.45rem;
 }
 
@@ -148,7 +155,7 @@
 } */
 
 .detail-categories {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.025rem;
 }
 
@@ -173,7 +180,7 @@
 }
 
 .forgot-password {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: var(--accent);
   text-decoration: none;
   font-size: 1.075rem;
@@ -190,7 +197,7 @@
 }
 
 .sign-in-headings {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   color: var(--accent);
   font-size: 1.65rem;
@@ -198,15 +205,15 @@
 
 .sign-in-messages {
   font-size: 1.125rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 
 .username {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.02rem;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 /* table styling for trip details categories */
@@ -217,6 +224,7 @@ table {
   border-radius: 0.45rem;
   overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* border-image: linear-gradient(to right, #1167f2, #1e40af) 1; */
 }
 
 .table th, .table td {
@@ -267,15 +275,15 @@ table {
 /* trip list styling */
 .empty-trip-list-msg {
   font-size: 1.125rem;
-  color: var(--text);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--primary);
+  font-family: "Open Sans", sans-serif;
 }
 
 .trip-header-in-list {
-  font-family:'Courier New', Courier, monospace;
+  font-family:"Open Sans", sans-serif;
   font-size: 1.75rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--primary);
   word-wrap: break-word;
 }
 
@@ -292,40 +300,40 @@ table {
 
 /* form styling */
 .calendar {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1.075rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
   color: var(--background);
 }
 
 .form-instruction {
-  font-size: 1.0935rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: var(--text);
+  font-size: 1.25rem;
+  font-family: "Open Sans", sans-serif;
+  color: var(--primary);
 }
 
 .form-section-heading {
-  color: var(--accent);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--primary);
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 
 .form-select {
-  background-color: var(--text);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: var(--primary);
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  color: var(--background);
+  color: var(--text);
 }
 
 .form-control {
-  background-color: var(--text);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: var(--primary);
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  color: var(--background);
+  color: var(--text);
 }
 
 .required-msg {
-  color: var(--text);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1.0935rem;
+  color: var(--primary);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
 }
 

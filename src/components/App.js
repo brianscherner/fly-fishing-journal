@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TripsControl from './trips/TripsControl';
 import Account from './auth/Account';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword/>}/>
       </Routes>
       <ToastContainer/>
+      {/* <Footer/> */}
     </React.Fragment>
     </Router>
   );
