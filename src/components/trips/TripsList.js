@@ -52,10 +52,10 @@ function TripsList(props) {
           {!isListEmpty && (
             <React.Fragment>
               <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
-            <option value="" disabled>Filter By Type</option>
-            <option value="Past">Past</option>
-            <option value="Future">Future</option>
-            </select>
+                <option value="" disabled>Filter By Type</option>
+                <option value="Past">Past</option>
+                <option value="Future">Future</option>
+              </select>
             <br/>
             {isFilteredListEmpty && (
               <p className="empty-trip-list-msg">No trips exist.</p>

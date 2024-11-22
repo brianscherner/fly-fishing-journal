@@ -181,7 +181,7 @@
 
 .forgot-password {
   font-family: "Open Sans", sans-serif;
-  color: var(--accent);
+  color: var(--primary);
   text-decoration: none;
   font-size: 1.075rem;
   background-color: transparent;
@@ -199,7 +199,7 @@
 .sign-in-headings {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--primary);
   font-size: 1.65rem;
 }
 
@@ -288,8 +288,8 @@ table {
 }
 
 .trip-dates-in-list {
-  color: var(--text);
-  font-family:'Courier New', Courier, monospace;
+  color: var(--primary);
+  font-family: "Open Sans", sans-serif;
   font-size: 1.075rem;
   font-weight: 600;
 }
@@ -318,17 +318,17 @@ table {
 }
 
 .form-select {
-  background-color: var(--primary);
+  background-color: var(--text);
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  color: var(--text);
+  color: var(--primary);
 }
 
 .form-control {
-  background-color: var(--primary);
+  background-color: var(--text);
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  color: var(--text);
+  color: var(--primary);
 }
 
 .required-msg {
