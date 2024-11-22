@@ -124,13 +124,6 @@
 
 /* styling for trip details navigation links for categories */
 
-/* .trip-details-header {
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 600;
-  font-size: 1.9rem;
-  color: var(--text);
-} */
-
 .flex-column {
   flex-direction: column !important;
   align-items: center;
@@ -161,6 +154,13 @@
 
 .nav-link {
   color: var(--accent);
+}
+
+.trip-details-buttons, .form-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* styling for sign in page */

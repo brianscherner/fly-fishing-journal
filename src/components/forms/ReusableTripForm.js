@@ -164,16 +164,19 @@ function ReusableTripForm(props) {
               <option value="Future">Future</option>
             </select>
             <br/>
-            {tripType && (
-              <React.Fragment>
-                {conditionalComponent()}
-                { page > 0 && <button className="btn back-button" onClick={prevPage} type="button"><ForwardIcon style={{ transform: 'rotate(180deg)'}}/></button>}
-                { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button"><ForwardIcon/></button>}
-                { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit"><AddCircleIcon/></button>}
-              </React.Fragment>
-            )}
+
+              {tripType && (
+                <React.Fragment>
+                  {conditionalComponent()}
+                  <div className="form-buttons">
+                    { page > 0 && <button className="btn back-button" onClick={prevPage} type="button"><ForwardIcon style={{ transform: 'rotate(180deg)'}}/></button>}
+                    { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button"><ForwardIcon/></button>}
+                    { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit"><AddCircleIcon/></button>}
+                  </div>
+                </React.Fragment>
+              )}
+            </div>
           </div>
-        </div>
       </form>
     </React.Fragment>
   )

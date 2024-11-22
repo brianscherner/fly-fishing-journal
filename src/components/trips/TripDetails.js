@@ -117,13 +117,13 @@ function TripDetails(props) {
         </ul>
       </div>
 
-      <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}><EditIcon/></button>
-      {trip.tripType === "Future" && (
-        <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}><CheckCircleIcon/></button>
-      )}
-      <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}><DeleteIcon/></button>
-      {/* <br/> */}
-      {/* <br/> */}
+      <div className="trip-details-buttons">
+        <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}><EditIcon/></button>
+        {trip.tripType === "Future" && (
+          <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}><CheckCircleIcon/></button>
+        )}
+        <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}><DeleteIcon/></button>
+      </div>
     </div>
   );
 }
