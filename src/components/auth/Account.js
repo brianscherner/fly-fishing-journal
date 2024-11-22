@@ -75,7 +75,7 @@ function SignIn() {
                 <button type="button" onClick={goToResetPassword} className="forgot-password">Forgot password?</button>
                 <br/>
                 <br/>
-                <button className="btn app-buttons" type="submit"><LoginIcon/></button>
+                <button className="btn app-buttons" type="submit">Sign In <LoginIcon/></button>
               </form>
             </div>
           </div>
