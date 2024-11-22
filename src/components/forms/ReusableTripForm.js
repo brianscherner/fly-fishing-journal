@@ -171,7 +171,7 @@ function ReusableTripForm(props) {
                   <div className="form-buttons">
                     { page > 0 && <button className="btn back-button" onClick={prevPage} type="button"><ForwardIcon style={{ transform: 'rotate(180deg)'}}/></button>}
                     { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button"><ForwardIcon/></button>}
-                    { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit"><AddCircleIcon/></button>}
+                    { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit">Add <AddCircleIcon/></button>}
                   </div>
                 </React.Fragment>
               )}

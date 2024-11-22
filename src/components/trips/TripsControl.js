@@ -118,7 +118,7 @@ function TripsControl() {
       currentlyVisibleState = <TripsList
         onTripSelection={handleChangingSelectedTrip}
         tripsList={mainTripsList}/>
-      buttonText = <AddCircleIcon/>;
+      buttonText = <p style={{ display: "inline-block"}}>Add <AddCircleIcon/></p>;
     }
 
     return (

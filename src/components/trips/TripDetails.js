@@ -123,11 +123,11 @@ function TripDetails(props) {
       </div>
 
       <div className="trip-details-buttons">
-        <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}><EditIcon/></button>
+        <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}>Edit <EditIcon/></button>
         {trip.tripType === "Future" && (
-          <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}><CheckCircleIcon/></button>
+          <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}>Mark as Past <CheckCircleIcon/></button>
         )}
-        <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}><DeleteIcon/></button>
+        <button className="btn back-button" onClick={() => onClickingDelete(trip.id)}>Delete <DeleteIcon/></button>
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ function SignIn() {
             <AccountCircleIcon fontSize="large"/>
             <p className="username">{auth.currentUser.email}</p>
           </div>
-          <button className="btn app-buttons" onClick={doSignOut}><LogoutIcon/></button>
+          <button className="btn app-buttons" onClick={doSignOut}>Sign Out <LogoutIcon/></button>
         </React.Fragment>
       )}
 

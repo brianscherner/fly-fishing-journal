@@ -69,7 +69,7 @@ function SignUp() {
                   name="confirmPassword"
                   placeholder="Confirm Password"/>
                 <br/>
-                <button className="btn app-buttons" type="submit"><PersonAddIcon/></button>
+                <button className="btn app-buttons" type="submit">Sign Up <PersonAddIcon/></button>
               </form>
               <br/>
             </div>
