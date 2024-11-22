@@ -49,7 +49,7 @@ function TripsList(props) {
   return (
     <React.Fragment>
       <div className="row justify-content-center">
-        <div className="col-2">
+        <div className="col-3">
           {isListEmpty && (
             <p className="empty-trip-list-msg">No trips exist.</p>
           )}

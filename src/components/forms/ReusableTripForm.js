@@ -8,6 +8,11 @@ import TripNotesFields from "./TripNotesFields";
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 function ReusableTripForm(props) {
   const { formData, setFormData, formSubmissionHandler, isFinalPageValid, setIsFinalPageValid } = props;
@@ -154,15 +159,25 @@ function ReusableTripForm(props) {
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
         <div className="row justify-content-center">
-          <div className="col-6">
+          <div className="col-sm-4 col-md-6">
             <label className="form-instruction">Please select a trip type to get started.</label>
             <br/>
             <br/>
-            <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
-              <option value="" disabled>Trip Type</option>
-              <option value="Past">Past</option>
-              <option value="Future">Future</option>
-            </select>
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Trip Type</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={formData.tripType}
+                  label="Trip Type"
+                  onChange={(event) => handleTripTypeSelection(event)}
+                >
+                  <MenuItem value={"Past"}>Past</MenuItem>
+                  <MenuItem value={"Future"}>Future</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
             <br/>
 
               {tripType && (
