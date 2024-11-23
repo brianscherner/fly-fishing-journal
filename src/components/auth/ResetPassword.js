@@ -3,6 +3,7 @@ import { auth } from "../../firebase.js";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
+import SendIcon from '@mui/icons-material/Send';
 
 function ResetPassword() {
   const navigate = useNavigate();
@@ -25,15 +26,17 @@ function ResetPassword() {
   return (
     <React.Fragment>
       <div className="row justify-content-center">
-        <div className="col-6">
+        {/* look into adjusting width for responsiveness */}
+        <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
           <h2 className="sign-in-headings">Reset Password</h2>
+          <br/>
           <form onSubmit={doResetPassword}>
             <input className="form-control"
               type="text"
               name="resetEmail"
               placeholder="Email"/>
             <br/>
-            <button className="btn app-buttons" type="submit">Send Password Reset Email</button>
+            <button className="btn app-buttons" type="submit">Send Email &nbsp;<SendIcon/></button>
           </form>
         </div>
       </div>

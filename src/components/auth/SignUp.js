@@ -53,7 +53,7 @@ function SignUp() {
           <h2 className="sign-in-headings">Sign Up</h2>
           <br/>
           <div className="row justify-content-center">
-            <div className="col-sm-4 col-md-6">
+            <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
               <form onSubmit={doSignUp}>
                 <input className="form-control"
                   type="text"

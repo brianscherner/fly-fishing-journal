@@ -60,7 +60,7 @@ function SignIn() {
       {!userSignedIn && (
         <React.Fragment>
           <div className="row justify-content-center">
-            <div className="col-sm-4 col-md-6">
+            <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
               <h2 className="sign-in-headings">Sign In</h2>
               <br/>
               <form onSubmit={doSignIn}>
