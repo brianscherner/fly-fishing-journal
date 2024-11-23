@@ -46,6 +46,9 @@ function TripDetails(props) {
   const { trip, onClickingDelete, onClickingEdit, onMarkingTripAsPast } = props;
 
   return (
+    // make trip details more responsive - may need to edit CSS as there are existing styles that could override it
+
+    // can use bootstrap like before, or use media queries to adjust width of columns
     <div className="trip-details">
       <div className="detail-categories">
         <ul className="nav flex-column">
