@@ -24,7 +24,8 @@ function CustomNavbar() {
     <Navbar expand=''>
       <Container>
         <div></div>
-        <h1 className='app-title'>Fly Fishing Journal</h1>
+        <h1 className='app-title'>Cast Tracker</h1>
+        {/* put 1 sentence here explaining app's purpose */}
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto header-links">

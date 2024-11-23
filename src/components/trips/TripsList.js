@@ -49,7 +49,8 @@ function TripsList(props) {
   return (
     <React.Fragment>
       <div className="row justify-content-center">
-        <div className="col-3">
+        {/* can adjust width for greater responsiveness later */}
+        <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
           {isListEmpty && (
             <p className="empty-trip-list-msg">No trips exist.</p>
           )}
@@ -84,7 +85,7 @@ function TripsList(props) {
       )}
       {!isFilteredListEmpty && (
         <div className="row justify-content-center">
-          <div className="col-6">
+          <div className="col-8">
             {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
             .map((trip) =>
             <Trip
