@@ -159,7 +159,8 @@ function ReusableTripForm(props) {
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
         <div className="row justify-content-center">
-          <div className="col-sm-4 col-md-6">
+          {/* look into adjusting for greater responsiveness */}
+          <div className="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-4">
             <label className="form-instruction">Please select a trip type to get started.</label>
             <br/>
             <br/>
