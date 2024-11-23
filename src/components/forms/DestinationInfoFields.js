@@ -63,7 +63,9 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
+      <br/>
       <p className="required-msg">* indicates a required field</p>
+      <br/>
       {destination}
       <br/>
       {destinationType}

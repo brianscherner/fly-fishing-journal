@@ -315,6 +315,7 @@ table {
   color: var(--primary);
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .form-select {
@@ -334,6 +335,6 @@ table {
 .required-msg {
   color: var(--primary);
   font-family: "Open Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
