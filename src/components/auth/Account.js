@@ -77,7 +77,8 @@ function SignIn() {
                     name="signInEmail"
                     placeholder="Email"/>
                   <EmailIcon
-                    className="form-input-icon" id="email-icon"/>
+                    className="form-input-icon"
+                    id="email-icon"/>
                 </div>
                 <br/>
                 <div className="form-input-container">
