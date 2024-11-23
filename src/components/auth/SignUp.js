@@ -4,9 +4,12 @@ import { createUserWithEmailAndPassword, sendEmailVerification, signOut } from "
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import EmailIcon from '@mui/icons-material/Email';
 
 function SignUp() {
   const [userSignedUp, setUserSignedUp] = useState(false);
+  const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,6 +23,10 @@ function SignUp() {
 
     return () => unsubscribe();
   }, []);
+
+  const handlePasswordIconClick = () => {
+    setIsPasswordIconClicked(!isPassWordIconClicked);
+  }
 
   function doSignUp(event) {
     event.preventDefault();
@@ -55,22 +62,44 @@ function SignUp() {
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
               <form onSubmit={doSignUp}>
-                <input className="form-control"
-                  type="text"
-                  name="email"
-                  placeholder="Email"/>
+                <div className="form-input-container">
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="email"
+                    placeholder="Email"/>
+                  <EmailIcon
+                      className="form-input-icon"
+                      id="email-icon"/>
+                  </div>
                 <br/>
-                <input className="form-control"
-                  type="password"
-                  name="password"
-                  placeholder="Password"/>
+                <div className="form-input-container">
+                  <input
+                    className="form-control"
+                    type={`${isPassWordIconClicked ? "text" : "password"}`}
+                    name="password"
+                    placeholder="Password"/>
+                  <VisibilityIcon
+                    className="form-input-icon" id="password-icon"
+                    onClick={handlePasswordIconClick}/>
+                </div>
                 <br/>
-                <input className="form-control"
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"/>
+                <div className="form-input-container">
+                  <input
+                    className="form-control"
+                    type={`${isPassWordIconClicked ? "text" : "password"}`}
+                    name="confirmPassword"
+                    placeholder="Confirm Password"/>
+                  <VisibilityIcon
+                    className="form-input-icon"
+                    id="password-icon"
+                    onClick={handlePasswordIconClick}/>
+                </div>
                 <br/>
-                <button className="btn app-buttons" type="submit">Sign Up <PersonAddIcon/></button>
+                <button
+                  className="btn app-buttons"
+                  type="submit">Sign Up <PersonAddIcon/>
+                </button>
               </form>
               <br/>
             </div>

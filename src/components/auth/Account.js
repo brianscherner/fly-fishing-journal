@@ -72,7 +72,8 @@ function SignIn() {
               <br/>
               <form onSubmit={doSignIn}>
                 <div className="form-input-container">
-                  <input className="form-control"
+                  <input
+                    className="form-control"
                     type="text"
                     name="signInEmail"
                     placeholder="Email"/>
@@ -96,7 +97,8 @@ function SignIn() {
                 <br/>
                 <br/>
                 <button
-                  className="btn app-buttons" type="submit">Sign In <LoginIcon/>
+                  className="btn app-buttons"
+                  type="submit">Sign In <LoginIcon/>
                 </button>
               </form>
             </div>
