@@ -164,7 +164,12 @@ function ReusableTripForm(props) {
             <label className="form-instruction">Please select a trip type to get started.</label>
             <br/>
             <br/>
-            <Box sx={{ minWidth: 120 }}>
+            <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
+              <option value="" disabled>Trip Type</option>
+              <option value="Past">Past</option>
+              <option value="Future">Future</option>
+            </select>
+            {/* <Box sx={{ minWidth: 120 }}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Trip Type</InputLabel>
                 <Select
@@ -178,7 +183,7 @@ function ReusableTripForm(props) {
                   <MenuItem value={"Future"}>Future</MenuItem>
                 </Select>
               </FormControl>
-            </Box>
+            </Box> */}
             <br/>
 
               {tripType && (

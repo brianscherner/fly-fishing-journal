@@ -57,7 +57,12 @@ function TripsList(props) {
 
           {!isListEmpty && (
             <React.Fragment>
-              <Box sx={{ minWidth: 120 }}>
+              <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
+                <option value="" disabled>Trip Type</option>
+                <option value="Past">Past</option>
+                <option value="Future">Future</option>
+              </select>
+              {/* <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Trip Type</InputLabel>
                   <Select
@@ -71,7 +76,7 @@ function TripsList(props) {
                     <MenuItem value={"Future"}>Future</MenuItem>
                   </Select>
                 </FormControl>
-              </Box>
+              </Box> */}
             <br/>
             {/* {isFilteredListEmpty && (
               <p className="empty-trip-list-msg">No trips exist.</p>

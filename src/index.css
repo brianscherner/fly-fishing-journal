@@ -321,14 +321,14 @@ table {
 .form-select {
   background-color: var(--text);
   font-family: "Open Sans", sans-serif;
-  text-align: center;
+  /* text-align: center; */
   color: var(--primary);
 }
 
 .form-control {
   background-color: var(--text);
   font-family: "Open Sans", sans-serif;
-  text-align: center;
+  /* text-align: center; */
   color: var(--primary);
 }
 
