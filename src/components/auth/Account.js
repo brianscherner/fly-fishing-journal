@@ -6,9 +6,12 @@ import {useNavigate} from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import EmailIcon from '@mui/icons-material/Email';
 
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
+  const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +25,10 @@ function SignIn() {
 
     return () => unsubscribe();
   }, []);
+
+  const handlePasswordIconClick = () => {
+    setIsPasswordIconClicked(!isPassWordIconClicked);
+  }
 
   function doSignIn(event) {
     event.preventDefault();
@@ -64,20 +71,32 @@ function SignIn() {
               <h2 className="sign-in-headings">Sign In</h2>
               <br/>
               <form onSubmit={doSignIn}>
-                <input className="form-control"
-                  type="text"
-                  name="signInEmail"
-                  placeholder="Email"/>
+                <div className="form-input-container">
+                  <input className="form-control"
+                    type="text"
+                    name="signInEmail"
+                    placeholder="Email"/>
+                  <EmailIcon
+                    className="form-input-icon" id="email-icon"/>
+                </div>
                 <br/>
-                <input className="form-control"
-                  type="password"
-                  name="signInPassword"
-                  placeholder="Password"/>
+                <div className="form-input-container">
+                  <input
+                    className="form-control"
+                    type={`${isPassWordIconClicked ? "text" : "password"}`}
+                    name="signInPassword"
+                    placeholder="Password"/>
+                  <VisibilityIcon
+                    className="form-input-icon" id="password-icon"
+                    onClick={handlePasswordIconClick}/>
+                </div>
                 <br/>
                 <button type="button" onClick={goToResetPassword} className="forgot-password">Forgot password?</button>
                 <br/>
                 <br/>
-                <button className="btn app-buttons" type="submit">Sign In <LoginIcon/></button>
+                <button
+                  className="btn app-buttons" type="submit">Sign In <LoginIcon/>
+                </button>
               </form>
             </div>
           </div>
@@ -87,10 +106,15 @@ function SignIn() {
       {userSignedIn && (
         <React.Fragment>
           <div className="current-user">
-            <AccountCircleIcon fontSize="large" color="#2C3E50"/>
+            <AccountCircleIcon
+              fontSize="large"
+              color="#2C3E50"/>
             <p className="username">{auth.currentUser.email}</p>
           </div>
-          <button className="btn app-buttons" onClick={doSignOut}>Sign Out <LogoutIcon/></button>
+          <button
+            className="btn app-buttons"
+            onClick={doSignOut}>Sign Out <LogoutIcon/>
+          </button>
         </React.Fragment>
       )}
 

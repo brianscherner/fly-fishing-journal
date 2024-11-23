@@ -305,6 +305,26 @@ table {
   color: var(--background);
 }
 
+#email-icon {
+  pointer-events: none;
+}
+
+.form-input-container {
+  position: relative;
+}
+
+.form-input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+#password-icon:hover {
+  cursor: pointer;
+}
+
 .form-instruction {
   font-size: 1.25rem;
   font-family: "Open Sans", sans-serif;
