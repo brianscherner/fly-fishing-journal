@@ -2,7 +2,8 @@
 #root {
   min-height: 100vh;
   text-align: center;
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   --text: #ECF0F1;
   --background: #34495E;
   --primary: #2C3E50;
@@ -40,8 +41,8 @@
   display: flex;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .navbar-collapse {
@@ -141,10 +142,6 @@
   color: var(--text);
   border-radius: 0.45rem;
 }
-
-/* .nav-link.details:hover {
-  color: var(--text);
-} */
 
 .detail-categories {
   font-family: "Open Sans", sans-serif;
@@ -412,14 +409,14 @@ label {
 
 @media (min-width: 768px) and (max-width: 1279px) {
   .trips-list-container {
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 1280px) {
   .trips-list-container {
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
   }
 }
