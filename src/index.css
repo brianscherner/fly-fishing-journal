@@ -290,12 +290,20 @@ table {
   font-weight: 600;
 }
 
+.trips-list-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
 .trips-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  /* justify-items: center; */
-  /* align-items: center; */
+  width: 100%;
+  justify-content: center;
 }
 
 .trip {
@@ -307,11 +315,7 @@ table {
   transition: transform 0.5s ease, box-shadow 0.3s ease;
   padding: 2.5rem;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
+  overflow-x: hidden;
 }
 
 .trip:hover {
@@ -391,3 +395,20 @@ label {
   font-size: 1rem;
 }
 
+/* media queries */
+
+@media (max-width: 768px) {
+
+  .trips-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .trips-list {
+    grid-template-columns: 1fr;
+  }
+
+}

@@ -89,10 +89,10 @@ function TripsList(props) {
         <p className="empty-trip-list-msg">No trips exist.</p>
       )}
       {!isFilteredListEmpty && (
-        <div className="row justify-content-center">
-          <div className="trips-list col-8">
+        <div className="trips-list-container">
+          <div className="trips-list">
             {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
-            .map((trip) =>
+            .map((trip) => (
             <Trip
               whenTripClicked={props.onTripSelection}
               destination={trip.destination}
@@ -100,7 +100,7 @@ function TripsList(props) {
               tripType={trip.tripType}
               id={trip.id}
               key={trip.id}/>
-            )}
+            ))}
           </div>
         </div>
       )}
