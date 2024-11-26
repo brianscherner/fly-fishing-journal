@@ -41,7 +41,7 @@ function MiscellaneousFields(props) {
             type="text"
             className="form-control"
             name="access"
-            placeholder="Example: car" defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
+            placeholder="Enter access type" defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
             <KeyIcon className="form-input-icon"/>
           </div>
           <br/>
@@ -51,7 +51,7 @@ function MiscellaneousFields(props) {
               type="text"
               className="form-control"
               name="timeOfDay"
-              placeholder="Example: morning"
+              placeholder="Enter time of day"
               defaultValue={formData.timeOfDay ??= ''} onChange={(e) => setFormData({...formData, timeOfDay: e.target.value})}/>
             <AccessTimeFilledIcon className="form-input-icon"/>
           </div>

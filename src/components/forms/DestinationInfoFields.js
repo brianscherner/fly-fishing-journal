@@ -5,6 +5,7 @@ import MapIcon from '@mui/icons-material/Map';
 import PublicIcon from '@mui/icons-material/Public';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import ExploreIcon from '@mui/icons-material/Explore';
+import ForestIcon from '@mui/icons-material/Forest';
 
 function DestinationInfoFields(props) {
   const { tripType, formData, setFormData } = props;
@@ -19,7 +20,7 @@ function DestinationInfoFields(props) {
           type="text"
           className="form-control"
           name="destination"
-          placeholder="Example: Missouri River"
+          placeholder="Enter destination name"
           defaultValue={formData.destination ??= ''}
           onChange={(e) => setFormData({...formData, destination: e.target.value})}
         />
@@ -96,7 +97,7 @@ function DestinationInfoFields(props) {
           type="text"
           className="form-control"
           name="species"
-          placeholder="Example: salmon"
+          placeholder="Enter fish species"
           defaultValue={formData.species ??= ''} onChange={(e) => setFormData({...formData, species: e.target.value})}/>
         <WaterDropIcon className="form-input-icon"/>
       </div>
@@ -135,7 +136,7 @@ function DestinationInfoFields(props) {
           type="text"
           className="form-control"
           name="country"
-          placeholder="Country*"
+          placeholder="Enter a country"
           defaultValue={formData.country ??= ''}
           onChange={(e) => setFormData({...formData, country: e.target.value})}/>
         <PublicIcon className="form-input-icon"/>
@@ -144,13 +145,16 @@ function DestinationInfoFields(props) {
       {tripType === "Future" && (
         <React.Fragment>
           <label>Climate*</label>
-          <input
-            type="text"
-            className="form-control"
-            name="climate"
-            placeholder="Example: desert"
-            defaultValue={formData.climate ??= ''}
-            onChange={(e) => setFormData({...formData, climate: e.target.value})}/>
+          <div className="form-input-container">
+            <input
+              type="text"
+              className="form-control"
+              name="climate"
+              placeholder="Enter climate type"
+              defaultValue={formData.climate ??= ''}
+              onChange={(e) => setFormData({...formData, climate: e.target.value})}/>
+            <ForestIcon className="form-input-icon"/>
+          </div>
           <br/>
         </React.Fragment>
       )}

@@ -30,7 +30,7 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="fishCaught"
-          placeholder="Enter amount"
+          placeholder="Enter amount of fish"
           defaultValue={formData.fishCaught ??= ''}
           onChange={(e) => setFormData({...formData, fishCaught: e.target.value})}/>
         <TagIcon className="form-input-icon"/>
@@ -53,7 +53,8 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="fishingMethod"
-          placeholder="Example: raft, boat, etc" defaultValue={formData.fishingMethod ??= ''}
+          placeholder="Enter fishing method"
+          defaultValue={formData.fishingMethod ??= ''}
           onChange={(e) => setFormData({...formData, fishingMethod: e.target.value})}/>
         <KayakingIcon className="form-input-icon"/>
       </div>
@@ -64,7 +65,7 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="riverFlowLevels"
-          placeholder="Cubic feet per second"
+          placeholder="Enter cubic feet per second"
           defaultValue={formData.riverFlowLevels ??= ''} onChange={(e) => setFormData({...formData, riverFlowLevels: e.target.value})}/>
         <WaterIcon className="form-input-icon"/>
       </div>
