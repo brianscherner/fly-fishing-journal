@@ -8,6 +8,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EmailIcon from '@mui/icons-material/Email';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 function SignIn() {
   const [userSignedIn, setUserSignedIn] = useState(false);
@@ -68,7 +69,7 @@ function SignIn() {
         <React.Fragment>
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-              <h2 className="sign-in-headings">Sign In</h2>
+              {/* <h2 className="sign-in-headings">Sign In</h2> */}
               {/* <br/> */}
               <form onSubmit={doSignIn}>
                 <label>Email</label>
@@ -90,11 +91,15 @@ function SignIn() {
                     type={`${isPassWordIconClicked ? "text" : "password"}`}
                     name="signInPassword"
                     />
-                  <VisibilityIcon
-                    className="form-input-icon" id="password-icon"
-                    onClick={handlePasswordIconClick}/>
+                  {isPassWordIconClicked ?
+                      <VisibilityOffIcon        className="form-input-icon"     id="password-icon"
+                      onClick={handlePasswordIconClick}/>
+                      :
+                      <VisibilityIcon
+                        className="form-input-icon" id="password-icon"
+                        onClick={handlePasswordIconClick}/>}
                 </div>
-                <br/>
+                {/* <br/> */}
                 <button type="button" onClick={goToResetPassword} className="forgot-password">Forgot password?</button>
                 <br/>
                 <br/>

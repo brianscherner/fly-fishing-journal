@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EmailIcon from '@mui/icons-material/Email';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 function SignUp() {
   const [userSignedUp, setUserSignedUp] = useState(false);
@@ -57,7 +58,7 @@ function SignUp() {
     <React.Fragment>
       {!userSignedUp && (
         <React.Fragment>
-          <h2 className="sign-in-headings">Sign Up</h2>
+          {/* <h2 className="sign-in-headings">Sign Up</h2> */}
           {/* <br/> */}
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
@@ -81,9 +82,13 @@ function SignUp() {
                     type={`${isPassWordIconClicked ? "text" : "password"}`}
                     name="password"
                     />
-                  <VisibilityIcon
-                    className="form-input-icon" id="password-icon"
+                  {isPassWordIconClicked ?
+                    <VisibilityOffIcon          className="form-input-icon"     id="password-icon"
                     onClick={handlePasswordIconClick}/>
+                    :
+                    <VisibilityIcon
+                      className="form-input-icon" id="password-icon"
+                      onClick={handlePasswordIconClick}/>}
                 </div>
                 <br/>
                 <label>Confirm Password</label>
@@ -93,10 +98,13 @@ function SignUp() {
                     type={`${isPassWordIconClicked ? "text" : "password"}`}
                     name="confirmPassword"
                     />
-                  <VisibilityIcon
-                    className="form-input-icon"
-                    id="password-icon"
+                  {isPassWordIconClicked ?
+                    <VisibilityOffIcon        className="form-input-icon"     id="password-icon"
                     onClick={handlePasswordIconClick}/>
+                    :
+                    <VisibilityIcon
+                      className="form-input-icon" id="password-icon"
+                      onClick={handlePasswordIconClick}/>}
                 </div>
                 <br/>
                 <button

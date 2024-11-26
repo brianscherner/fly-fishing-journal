@@ -123,7 +123,7 @@ function DestinationInfoFields(props) {
           <br/>
         </React.Fragment>
       )}
-      <label>Enter a country*</label>
+      <label>Country*</label>
       <div className="form-input-container">
         <input
           type="text"

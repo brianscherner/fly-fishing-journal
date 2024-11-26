@@ -326,7 +326,7 @@ table {
 }
 
 .form-instruction {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: center;
@@ -342,6 +342,7 @@ table {
 
 .form-select {
   background-color: var(--text);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   font-family: "Open Sans", sans-serif;
   /* text-align: center; */
   color: var(--primary);
@@ -349,6 +350,8 @@ table {
 
 .form-control {
   background-color: var(--text);
+  /* border-color: #ced4da; */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   font-family: "Open Sans", sans-serif;
   /* text-align: center; */
   color: var(--primary);
@@ -359,6 +362,7 @@ label {
   align-items: flex-start;
   display: flex;
   font-size: 1.15rem;
+  font-weight: 500;
 }
 
 .required-msg {
