@@ -90,13 +90,14 @@ function TripsList(props) {
       )}
       {!isFilteredListEmpty && (
         <div className="row justify-content-center">
-          <div className="col-8">
+          <div className="trips-list col-8">
             {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
             .map((trip) =>
             <Trip
               whenTripClicked={props.onTripSelection}
               destination={trip.destination}
               startDate={trip.startDate}
+              tripType={trip.tripType}
               id={trip.id}
               key={trip.id}/>
             )}
