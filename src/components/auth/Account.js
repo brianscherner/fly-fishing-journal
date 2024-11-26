@@ -111,7 +111,7 @@ function SignIn() {
           <div className="current-user">
             <AccountCircleIcon
               fontSize="large"
-              color="#2C3E50"/>
+              id="user-icon"/>
             <p className="username">{auth.currentUser.email}</p>
           </div>
           <button

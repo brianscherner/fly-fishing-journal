@@ -212,6 +212,10 @@
   color: var(--primary);
 }
 
+#user-icon {
+  color: var(--primary);
+}
+
 /* table styling for trip details categories */
 table {
   table-layout: fixed;
