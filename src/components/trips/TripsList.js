@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 function TripsList(props) {
   const { tripsList } = props;
   const [filteredTripsList, setFilteredTripsList] = useState(tripsList);
-  const [filter, setFilter] = useState("");
+  // const [filter, setFilter] = useState("");
   const [isListEmpty, setIsListEmpty] = useState(false);
   const [isFilteredListEmpty, setIsFilteredListEmpty] = useState(false);
 
@@ -25,7 +25,7 @@ function TripsList(props) {
 
   const handleFilterSelection = (event) => {
     const filterSelection = event.target.value;
-    setFilter(filterSelection);
+    // setFilter(filterSelection);
 
     if (filterSelection === "Past") {
       const filteredPastTripsList = tripsList.filter(trip => trip.tripType === "Past");
@@ -43,6 +43,8 @@ function TripsList(props) {
       } else {
         setIsFilteredListEmpty(false);
       }
+    } else {
+      setFilteredTripsList(tripsList);
     }
   }
 
@@ -57,8 +59,13 @@ function TripsList(props) {
 
           {!isListEmpty && (
             <React.Fragment>
-              <select defaultValue={filter} className="form-select" onChange={handleFilterSelection}>
-                <option value="" disabled>Trip Type</option>
+              <label>Filter Trips</label>
+              <select
+                defaultValue="All"
+                className="form-select"
+                onChange={handleFilterSelection}>
+                <option value="" disabled>Select one</option>
+                <option value="All">All</option>
                 <option value="Past">Past</option>
                 <option value="Future">Future</option>
               </select>
@@ -78,9 +85,6 @@ function TripsList(props) {
                 </FormControl>
               </Box> */}
             <br/>
-            {/* {isFilteredListEmpty && (
-              <p className="empty-trip-list-msg">No trips exist.</p>
-            )} */}
             </React.Fragment>
           )}
         </div>
