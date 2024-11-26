@@ -20,17 +20,16 @@ function MiscellaneousFields(props) {
           type="text"
           className="form-control"
           name="licenses"
-          placeholder="Enter license(s)"
+          placeholder="Example: State fishing license"
           defaultValue={formData.licenses ??= ''}
           onChange={(e) => setFormData({...formData, licenses: e.target.value})}/>
-        <ArticleIcon className="form-input-icon"/>
       </div>
       <br/>
       {tripType === "Past" && (
         <React.Fragment>
           <label>Water Fees*</label>
           <select name="waterFees" className="form-select" defaultValue={formData.waterFees ??= ''} onChange={(e) => setFormData({...formData, waterFees: e.target.value})}>
-            <option value="" disabled>Select an option</option>
+            <option value="" disabled>Select one</option>
             <option value="Private">Private</option>
             <option value="Public">Public</option>
           </select>
@@ -41,8 +40,8 @@ function MiscellaneousFields(props) {
             type="text"
             className="form-control"
             name="access"
-            placeholder="Enter access type" defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
-            <KeyIcon className="form-input-icon"/>
+            placeholder="Example: Public boat ramp"
+            defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
           </div>
           <br/>
           <label>Time of Day*</label>
@@ -51,9 +50,8 @@ function MiscellaneousFields(props) {
               type="text"
               className="form-control"
               name="timeOfDay"
-              placeholder="Enter time of day"
+              placeholder="Example: Morning"
               defaultValue={formData.timeOfDay ??= ''} onChange={(e) => setFormData({...formData, timeOfDay: e.target.value})}/>
-            <AccessTimeFilledIcon className="form-input-icon"/>
           </div>
           <br/>
           <label>Travel Time*</label>
@@ -62,9 +60,8 @@ function MiscellaneousFields(props) {
               type="text"
               className="form-control"
               name="travelTime"
-              placeholder="Enter travel time"
+              placeholder="Example: 2 hour drive"
               defaultValue={formData.travelTime ??= ''} onChange={(e) => setFormData({...formData, travelTime: e.target.value})}/>
-            <DriveEtaIcon className="form-input-icon"/>
           </div>
           <br/>
         </React.Fragment>
@@ -90,7 +87,6 @@ function MiscellaneousFields(props) {
               name="communications"
               placeholder="Example: No cell service"
               defaultValue={formData.communications ??= ''} onChange={(e) => setFormData({...formData, communications: e.target.value})}/>
-            <CellWifiIcon className="form-input-icon"/>
           </div>
           <br/>
           <label>Gratuity Guidelines*</label>
@@ -99,9 +95,8 @@ function MiscellaneousFields(props) {
               type="text"
               className="form-control"
               name="gratuity"
-              placeholder="Example: tip 20%"
+              placeholder="Example: 10-20% of trip cost"
               defaultValue={formData.gratuity ??= ''} onChange={(e) => setFormData({...formData, gratuity: e.target.value})}/>
-            <AttachMoneyIcon className="form-input-icon"/>
           </div>
           <br/>
         </React.Fragment>

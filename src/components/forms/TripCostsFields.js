@@ -21,20 +21,19 @@ function TripCostsFields(props) {
         className="form-select"
         defaultValue={formData.travelDocs ??= ''}
         onChange={(e) => setFormData({...formData, travelDocs: e.target.value})}>
-        <option value="" disabled>Select an option</option>
+        <option value="" disabled>Select one</option>
         <option value="Passport">Passport</option>
         <option value="Visa">Visa</option>
       </select>
       <br/>
-      <label>Air Travel Cost</label>
+      <label>Air Travel Expenses</label>
       <div className="form-input-container">
         <input
           type="text"
           className="form-control"
           name="travelCosts"
-          placeholder="Enter cost"
+          placeholder="Enter estimated airfare costs"
           defaultValue={formData.travelCosts ??= ''} onChange={(e) => setFormData({...formData, travelCosts: e.target.value})}/>
-        <FlightIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Fishing and Lodging Expenses*</label>
@@ -43,8 +42,8 @@ function TripCostsFields(props) {
           type="text"
           className="form-control"
           name="tripExpenses"
-          placeholder="Enter expenses" defaultValue={formData.tripExpenses ??= ''} onChange={(e) => setFormData({...formData, tripExpenses: e.target.value})}/>
-        <CottageIcon className="form-input-icon"/>
+          placeholder="Enter costs for fishing and lodging"
+          defaultValue={formData.tripExpenses ??= ''} onChange={(e) => setFormData({...formData, tripExpenses: e.target.value})}/>
       </div>
       <br/>
       <label>Deposit Payment Terms*</label>
@@ -53,9 +52,8 @@ function TripCostsFields(props) {
           type="text"
           className="form-control"
           name="depositTerms"
-          placeholder="Enter terms"
+          placeholder="Enter payment terms and due dates"
           defaultValue={formData.depositTerms ??= ''} onChange={(e) => setFormData({...formData, depositTerms: e.target.value})}/>
-        <PaymentIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Trip Insurance*</label>
@@ -64,10 +62,9 @@ function TripCostsFields(props) {
           type="text"
           className="form-control"
           name="tripInsurance"
-          placeholder="Enter policy"
+          placeholder="Describe coverage details"
           defaultValue={formData.tripInsurance ??= ''}
           onChange={(e) => setFormData({...formData, tripInsurance: e.target.value})}/>
-        <CardTravelIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Medical Evacuation Insurance*</label>
@@ -76,8 +73,8 @@ function TripCostsFields(props) {
           type="text"
           className="form-control"
           name="evacInsurance"
-          placeholder="Enter policy" defaultValue={formData.evacInsurance ??= ''} onChange={(e) => setFormData({...formData, evacInsurance: e.target.value})}/>
-        <HealthAndSafetyIcon className="form-input-icon"/>
+          placeholder="Describe coverage details"
+          defaultValue={formData.evacInsurance ??= ''} onChange={(e) => setFormData({...formData, evacInsurance: e.target.value})}/>
       </div>
       <br/>
       <label>Refund Cancellation Policy*</label>
@@ -86,9 +83,8 @@ function TripCostsFields(props) {
           type="text"
           className="form-control"
           name="cancellationPolicy"
-          placeholder="Enter policy"
+          placeholder="Describe refund and cancellation terms"
           defaultValue={formData.cancellationPolicy ??= ''} onChange={(e) => setFormData({...formData, cancellationPolicy: e.target.value})}/>
-        <ReceiptIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Baggage and Luggage Policy*</label>
@@ -97,9 +93,8 @@ function TripCostsFields(props) {
           type="text"
           className="form-control"
           name="baggageLuggage"
-          placeholder="Enter policy"
+          placeholder="Enter policy details"
           defaultValue={formData.baggageLuggage ??= ''} onChange={(e) => setFormData({...formData, baggageLuggage: e.target.value})}/>
-        <LuggageIcon className="form-input-icon"/>
       </div>
       <br/>
     </React.Fragment>

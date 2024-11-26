@@ -18,10 +18,9 @@ function TripNotesFields(props) {
         <input type="text"
         className="form-control"
         name="fliesUsed"
-        placeholder="List flies used"
+        placeholder="Example: Elk Hair Caddis (Size 16)"
         defaultValue={formData.fliesUsed ??= ''}
         onChange={(e) => setFormData({...formData, fliesUsed: e.target.value})}/>
-        <BugReportIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Fish Caught*</label>
@@ -30,10 +29,9 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="fishCaught"
-          placeholder="Enter amount of fish"
+          placeholder="Example: 5 rainbow trout"
           defaultValue={formData.fishCaught ??= ''}
           onChange={(e) => setFormData({...formData, fishCaught: e.target.value})}/>
-        <TagIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Fishing Tackle*</label>
@@ -42,9 +40,8 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="fishingTackleUsed"
-          placeholder="Enter tackle used"
+          placeholder="Example: floating line"
           defaultValue={formData.fishingTackleUsed ??= ''} onChange={(e) => setFormData({...formData, fishingTackleUsed: e.target.value})}/>
-        <PhishingIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Fishing Method*</label>
@@ -53,10 +50,9 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="fishingMethod"
-          placeholder="Enter fishing method"
+          placeholder="Example: wading"
           defaultValue={formData.fishingMethod ??= ''}
           onChange={(e) => setFormData({...formData, fishingMethod: e.target.value})}/>
-        <KayakingIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>River Flow*</label>
@@ -65,9 +61,8 @@ function TripNotesFields(props) {
           type="text"
           className="form-control"
           name="riverFlowLevels"
-          placeholder="Enter cubic feet per second"
+          placeholder="Example: 250 cfs"
           defaultValue={formData.riverFlowLevels ??= ''} onChange={(e) => setFormData({...formData, riverFlowLevels: e.target.value})}/>
-        <WaterIcon className="form-input-icon"/>
       </div>
       <br/>
     </React.Fragment>

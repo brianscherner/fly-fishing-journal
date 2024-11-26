@@ -17,9 +17,8 @@ function GearRequirements(props) {
           type="text"
           className="form-control"
           name="clothingRequirements"
-          placeholder="Enter requirements"
+          placeholder="Example: Waterproof jacket"
           defaultValue={formData.clothingRequirements ??= ''} onChange={(e) => setFormData({...formData, clothingRequirements: e.target.value})}/>
-        <CheckroomIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Fishing Requirements*</label>
@@ -28,9 +27,8 @@ function GearRequirements(props) {
           type="text"
           className="form-control"
           name="gearRequirements"
-          placeholder="Enter requirements"
+          placeholder="Example: 9ft 5wt fly rod"
           defaultValue={formData.gearRequirements ??= ''} onChange={(e) => setFormData({...formData, gearRequirements: e.target.value})}/>
-        <PhishingIcon className="form-input-icon"/>
       </div>
       <br/>
       <label>Fly Requirements*</label>
@@ -39,9 +37,8 @@ function GearRequirements(props) {
           type="text"
           className="form-control"
           name="flyRequirements"
-          placeholder="Enter requirements"
+          placeholder="Example: Elk Hair Caddis (Size 16)"
           defaultValue={formData.flyRequirements ??= ''} onChange={(e) => setFormData({...formData, flyRequirements: e.target.value})}/>
-        <BugReportIcon className="form-input-icon"/>
       </div>
       <br/>
     </React.Fragment>
