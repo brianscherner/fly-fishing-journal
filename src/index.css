@@ -9,9 +9,8 @@
   --secondary: #16a05d;
   --accent: #ff1900;
   color: var(--text);
-  /* background: linear-gradient(to bottom, #a7d5c5, #d1e8f4); */
-  /* background: linear-gradient(to bottom, #f5d77a, #a7d5c5); */
-  background: linear-gradient(to bottom, #c3e88d, #95bef0);
+  /* sunrise gradient */
+  background: linear-gradient(to right, #ff9a8b, #fdd365, #8479e1);
 }
 
 /* navbar menu styling */
@@ -37,9 +36,7 @@
 }
 
 .navbar {
-  /* border-radius: 0.45rem; */
-  /* background-color: var(--primary); */
-  background: linear-gradient(to right, #2a5d34, #356e8c);
+  background: linear-gradient(to right, #4a7856, #2d8ca3);
   display: flex;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
@@ -89,21 +86,21 @@
 /* styling for app buttons */
 .btn.app-buttons {
   font-family: "Open Sans", sans-serif;
-  background-color: var(--primary);
+  background: linear-gradient(to right, #2C3E50, #465A65);
   color: var(--text);
   font-weight: 600;
 }
 
 .btn.control-button {
   font-family: "Open Sans", sans-serif;
-  background-color: var(--primary);
+  background: linear-gradient(to bottom, #2C3E50, #356e8c);
   color: var(--text);
   font-weight: 600;
 }
 
 .btn.back-button {
   font-family: "Open Sans", sans-serif;
-  background-color: var(--primary);
+  background: linear-gradient(to left, #2C3E50, #465A65);
   color: var(--text);
   font-weight: 600;
 }
@@ -121,7 +118,6 @@
 .header-links {
   font-size: 1.05rem;
   font-weight: 600;
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   font-family: 'Merriweather';
 }
 
@@ -344,7 +340,6 @@ table {
   background-color: var(--text);
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   font-family: "Open Sans", sans-serif;
-  /* text-align: center; */
   color: var(--primary);
 }
 
@@ -353,7 +348,6 @@ table {
   /* border-color: #ced4da; */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   font-family: "Open Sans", sans-serif;
-  /* text-align: center; */
   color: var(--primary);
 }
 
