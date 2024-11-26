@@ -58,38 +58,41 @@ function SignUp() {
       {!userSignedUp && (
         <React.Fragment>
           <h2 className="sign-in-headings">Sign Up</h2>
-          <br/>
+          {/* <br/> */}
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
               <form onSubmit={doSignUp}>
+                <label>Email</label>
                 <div className="form-input-container">
                   <input
                     className="form-control"
                     type="text"
                     name="email"
-                    placeholder="Email"/>
+                    />
                   <EmailIcon
                       className="form-input-icon"
                       id="email-icon"/>
                   </div>
                 <br/>
+                <label>Password</label>
                 <div className="form-input-container">
                   <input
                     className="form-control"
                     type={`${isPassWordIconClicked ? "text" : "password"}`}
                     name="password"
-                    placeholder="Password"/>
+                    />
                   <VisibilityIcon
                     className="form-input-icon" id="password-icon"
                     onClick={handlePasswordIconClick}/>
                 </div>
                 <br/>
+                <label>Confirm Password</label>
                 <div className="form-input-container">
                   <input
                     className="form-control"
                     type={`${isPassWordIconClicked ? "text" : "password"}`}
                     name="confirmPassword"
-                    placeholder="Confirm Password"/>
+                    />
                   <VisibilityIcon
                     className="form-input-icon"
                     id="password-icon"

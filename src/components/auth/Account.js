@@ -69,25 +69,27 @@ function SignIn() {
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
               <h2 className="sign-in-headings">Sign In</h2>
-              <br/>
+              {/* <br/> */}
               <form onSubmit={doSignIn}>
+                <label>Email</label>
                 <div className="form-input-container">
                   <input
                     className="form-control"
                     type="text"
                     name="signInEmail"
-                    placeholder="Email"/>
+                    />
                   <EmailIcon
                     className="form-input-icon"
                     id="email-icon"/>
                 </div>
                 <br/>
+                <label>Password</label>
                 <div className="form-input-container">
                   <input
                     className="form-control"
                     type={`${isPassWordIconClicked ? "text" : "password"}`}
                     name="signInPassword"
-                    placeholder="Password"/>
+                    />
                   <VisibilityIcon
                     className="form-input-icon" id="password-icon"
                     onClick={handlePasswordIconClick}/>

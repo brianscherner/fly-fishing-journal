@@ -30,13 +30,14 @@ function ResetPassword() {
         {/* look into adjusting width for responsiveness */}
         <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
           <h2 className="sign-in-headings">Reset Password</h2>
-          <br/>
+          {/* <br/> */}
           <form onSubmit={doResetPassword}>
+            <label>Email</label>
             <div className="form-input-container">
               <input className="form-control"
                 type="text"
                 name="resetEmail"
-                placeholder="Email"/>
+                />
               <EmailIcon
                 className="form-input-icon"
                 id="email-icon"/>
