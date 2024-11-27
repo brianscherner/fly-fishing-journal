@@ -89,7 +89,7 @@ function TripsControl() {
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
-        <h2 className='auth-message'>Sign in to your account to access the application.</h2>
+        <h2 className='auth-message'>Please sign in to your account to start adding trips!</h2>
       </React.Fragment>
     )
   } else if (auth.currentUser != null) {
