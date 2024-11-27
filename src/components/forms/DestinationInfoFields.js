@@ -13,7 +13,7 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
-      <p className="required-msg" style={{ fontStyle: "italic" }}>* indicates a required field</p>
+      <p className="required-msg">* indicates a required field</p>
       <label>Fishing Destination*</label>
       <div className="form-input-container">
         <input

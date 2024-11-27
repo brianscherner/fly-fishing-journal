@@ -10,7 +10,7 @@ function GearRequirements(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Gear Requirements</h4>
-      <p className="required-msg" style={{ fontStyle: "italic"}}>* indicates a required field</p>
+      <p className="required-msg">* indicates a required field</p>
       <label>Clothing Requirements*</label>
       <div className="form-input-container">
         <input

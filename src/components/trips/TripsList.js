@@ -73,7 +73,7 @@ function TripsList(props) {
         </div>
       </div>
       {isFilteredListEmpty && (
-        <p className="empty-trip-list-msg">No trips found in this category. Add a trip to get started!</p>
+        <p className="empty-trip-list-msg">No trips were found. Add a trip to get started!</p>
       )}
       {!isFilteredListEmpty && (
         <div className="trips-list-container">
