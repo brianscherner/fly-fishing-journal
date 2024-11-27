@@ -5,19 +5,19 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 1.5rem;
-  --background: #F5F5F5;
-  --primary-text: #333333;
-  --secondary-text: #6B6B6B;
-  --accent-primary: #007BFF;
-  --accent-secondary: #F4D06F;
-  --borders: #D1D5DB;
+  --background: #DFF6FF;
+  --primary-text: #0B3D20;
+  --secondary-text: #3A5A40;
+  --accent-primary: #008891;
+  --accent-secondary: #FFB703;
+  --borders: #AAAAAA;
   color: var(--primary-text);
   background: var(--background);
 }
 
 /* navbar menu styling */
 .navbar-link {
-  color: #F5F5F5;
+  color: var(--background);
   font-size: 1.3rem;
   font-family: "Cabin", sans-serif;
 }
@@ -69,7 +69,7 @@
 }
 
 .navbar-toggler {
-  background-color: #F5F5F5;
+  background-color: var(--background);
   font-size: 0.8rem;
   justify-self: flex-end;
 }
@@ -89,7 +89,7 @@
 .btn.app-buttons {
   font-family: "Open Sans", sans-serif;
   background: var(--accent-primary);
-  color: #F5F5F5;
+  color: var(--background);
   font-weight: 600;
 }
 
@@ -100,14 +100,14 @@
 .btn.control-button {
   font-family: "Open Sans", sans-serif;
   background: var(--accent-primary);
-  color: #F5F5F5;
+  color: var(--background);
   font-weight: 600;
 }
 
 .btn.back-button {
   font-family: "Open Sans", sans-serif;
   background: var(--accent-primary);
-  color: #F5F5F5;
+  color: var(--background);
   font-weight: 600;
 }
 
@@ -116,7 +116,7 @@
   font-size: 2.45rem;
   font-family: "Cabin", sans-serif;
   font-weight: 900;
-  color: #F5F5F5;
+  color: var(--background);
   margin: 0;
   justify-self: center;
 }
