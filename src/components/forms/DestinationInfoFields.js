@@ -49,7 +49,7 @@ function DestinationInfoFields(props) {
         <option value="Fall">Fall</option>
       </select>
       <br/>
-      <label>Start Date</label>
+      <label>Start Date*</label>
       <input
         className="form-control"
         aria-label="Date"

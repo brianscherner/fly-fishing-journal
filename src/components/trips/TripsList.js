@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 function TripsList(props) {
   const { tripsList } = props;
   const [filteredTripsList, setFilteredTripsList] = useState(tripsList);
-  // const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
   const [isListEmpty, setIsListEmpty] = useState(false);
   const [isFilteredListEmpty, setIsFilteredListEmpty] = useState(false);
 
@@ -25,7 +25,7 @@ function TripsList(props) {
 
   const handleFilterSelection = (event) => {
     const filterSelection = event.target.value;
-    // setFilter(filterSelection);
+    setFilter(filterSelection);
 
     if (filterSelection === "Past") {
       const filteredPastTripsList = tripsList.filter(trip => trip.tripType === "Past");
@@ -43,54 +43,37 @@ function TripsList(props) {
       } else {
         setIsFilteredListEmpty(false);
       }
-    } else {
-      setFilteredTripsList(tripsList);
     }
+
   }
 
+  console.log(tripsList);
   return (
     <React.Fragment>
       <div className="row justify-content-center">
+        {isListEmpty && (
+          <p className="empty-trip-list-msg">Add your first adventure to get started!</p>
+        )}
         {/* can adjust width for greater responsiveness later */}
         <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-          {isListEmpty && (
-            <p className="empty-trip-list-msg">No trips exist.</p>
-          )}
-
           {!isListEmpty && (
             <React.Fragment>
-              <label>Filter Trips</label>
+              <label style={{ justifyContent: "center" }}>Filter Trips</label>
               <select
-                defaultValue="All"
+                defaultValue={filter}
                 className="form-select"
                 onChange={handleFilterSelection}>
                 <option value="" disabled>Select one</option>
-                <option value="All">All</option>
                 <option value="Past">Past</option>
                 <option value="Future">Future</option>
               </select>
-              {/* <Box sx={{ minWidth: 120 }}>
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Trip Type</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={filter}
-                    label="Trip Type"
-                    onChange={handleFilterSelection}
-                  >
-                    <MenuItem value={"Past"}>Past</MenuItem>
-                    <MenuItem value={"Future"}>Future</MenuItem>
-                  </Select>
-                </FormControl>
-              </Box> */}
             <br/>
             </React.Fragment>
           )}
         </div>
       </div>
       {isFilteredListEmpty && (
-        <p className="empty-trip-list-msg">No trips exist.</p>
+        <p className="empty-trip-list-msg">No trips found in this category. Add a trip to get started!</p>
       )}
       {!isFilteredListEmpty && (
         <div className="trips-list-container">
@@ -102,6 +85,8 @@ function TripsList(props) {
               destination={trip.destination}
               startDate={trip.startDate}
               tripType={trip.tripType}
+              fishCaught={trip.fishCaught}
+              waterBodyType={trip.waterBodyType}
               id={trip.id}
               key={trip.id}/>
             ))}

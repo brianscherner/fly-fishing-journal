@@ -79,6 +79,7 @@ function ReusableTripForm(props) {
         if (tripType === "Past") {
           return formData.destination &&
           formData.season &&
+          formData.startDate &&
           formData.species &&
           formData.state &&
           formData.county &&

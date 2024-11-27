@@ -111,6 +111,17 @@
   font-weight: 600;
 }
 
+#delete-button {
+  font-family: "Open Sans", sans-serif;
+  background: #D90429;
+  color: var(--background);
+  font-weight: 600;
+}
+
+#delete-button:hover {
+  background: #A4031F;
+}
+
 /* styling for application header component */
 .app-title {
   font-size: 2.45rem;
@@ -217,12 +228,12 @@
 .username {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  font-size: 1.02rem;
-  color: var(--primary);
+  font-size: 1.1rem;
+  color: var(--primary-text);
 }
 
 #user-icon {
-  color: var(--primary);
+  color: var(--primary-text);
 }
 
 /* table styling for trip details categories */
@@ -265,7 +276,7 @@ table {
 /* trip list styling */
 .empty-trip-list-msg {
   font-size: 1.125rem;
-  color: var(--primary);
+  color: var(--primary-text);
   font-family: "Open Sans", sans-serif;
 }
 
@@ -273,15 +284,26 @@ table {
   font-family:"Open Sans", sans-serif;
   font-size: 1.75rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--background);
   word-wrap: break-word;
 }
 
-.trip-dates-in-list {
-  color: var(--primary);
+.trip-details-in-list {
+  color: var(--background);
   font-family: "Open Sans", sans-serif;
   font-size: 1.075rem;
   font-weight: 600;
+}
+
+.trip-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#trip-icon {
+  color: var(--background);
 }
 
 .trips-list-container {
@@ -303,14 +325,16 @@ table {
 
 .trip {
   border-radius: 0.45rem;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, #c3e88d, #95bef0);
+  /* background: linear-gradient(120deg, #008891, #B3E4F0); */
+  background: linear-gradient(135deg, #006A74 10%, #007D84 45%, #B0DCE4 90%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
   padding: 2.5rem;
   width: 100%;
   overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  justify-content: center;
 }
 
 .trip:hover {
