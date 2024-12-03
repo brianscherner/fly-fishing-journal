@@ -1,12 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import FlightIcon from '@mui/icons-material/Flight';
-import CottageIcon from '@mui/icons-material/Cottage';
-import PaymentIcon from '@mui/icons-material/Payment';
-import CardTravelIcon from '@mui/icons-material/CardTravel';
-import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-import ReceiptIcon from '@mui/icons-material/Receipt';
-import LuggageIcon from '@mui/icons-material/Luggage';
 
 function TripCostsFields(props) {
   const { formData, setFormData } = props;
@@ -14,8 +7,8 @@ function TripCostsFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Trip Costs</h4>
-      <p className="required-msg">* indicates a required field</p>
-      <label>Travel Documents*</label>
+      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
+      <label>Travel Documents<span className="required-asterik">*</span></label>
       <select
         name="travelDocs"
         className="form-select"
@@ -36,7 +29,7 @@ function TripCostsFields(props) {
           defaultValue={formData.travelCosts ??= ''} onChange={(e) => setFormData({...formData, travelCosts: e.target.value})}/>
       </div>
       <br/>
-      <label>Fishing and Lodging Expenses*</label>
+      <label>Fishing and Lodging Expenses<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -46,7 +39,7 @@ function TripCostsFields(props) {
           defaultValue={formData.tripExpenses ??= ''} onChange={(e) => setFormData({...formData, tripExpenses: e.target.value})}/>
       </div>
       <br/>
-      <label>Deposit Payment Terms*</label>
+      <label>Deposit Payment Terms<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -56,7 +49,7 @@ function TripCostsFields(props) {
           defaultValue={formData.depositTerms ??= ''} onChange={(e) => setFormData({...formData, depositTerms: e.target.value})}/>
       </div>
       <br/>
-      <label>Trip Insurance*</label>
+      <label>Trip Insurance<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -67,7 +60,7 @@ function TripCostsFields(props) {
           onChange={(e) => setFormData({...formData, tripInsurance: e.target.value})}/>
       </div>
       <br/>
-      <label>Medical Evacuation Insurance*</label>
+      <label>Medical Evacuation Insurance<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -77,7 +70,7 @@ function TripCostsFields(props) {
           defaultValue={formData.evacInsurance ??= ''} onChange={(e) => setFormData({...formData, evacInsurance: e.target.value})}/>
       </div>
       <br/>
-      <label>Refund Cancellation Policy*</label>
+      <label>Refund Cancellation Policy<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -87,7 +80,7 @@ function TripCostsFields(props) {
           defaultValue={formData.cancellationPolicy ??= ''} onChange={(e) => setFormData({...formData, cancellationPolicy: e.target.value})}/>
       </div>
       <br/>
-      <label>Baggage and Luggage Policy*</label>
+      <label>Baggage and Luggage Policy<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"

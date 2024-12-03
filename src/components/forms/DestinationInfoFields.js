@@ -1,11 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import MapIcon from '@mui/icons-material/Map';
-import PublicIcon from '@mui/icons-material/Public';
-import WaterDropIcon from '@mui/icons-material/WaterDrop';
-import ExploreIcon from '@mui/icons-material/Explore';
-import ForestIcon from '@mui/icons-material/Forest';
 
 function DestinationInfoFields(props) {
   const { tripType, formData, setFormData } = props;
@@ -13,8 +7,8 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
-      <p className="required-msg">* indicates a required field</p>
-      <label>Fishing Destination*</label>
+      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
+      <label>Fishing Destination<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -36,7 +30,7 @@ function DestinationInfoFields(props) {
         <option value="International">International</option>
       </select>
       <br/>
-      <label>Season*</label>
+      <label>Season<span className="required-asterik">*</span></label>
       <select
         className="form-select"
         name="season"
@@ -49,7 +43,7 @@ function DestinationInfoFields(props) {
         <option value="Fall">Fall</option>
       </select>
       <br/>
-      <label>Start Date*</label>
+      <label>Start Date<span className="required-asterik">*</span></label>
       <input
         className="form-control"
         aria-label="Date"
@@ -76,7 +70,7 @@ function DestinationInfoFields(props) {
         <option value="Saltwater">Saltwater</option>
       </select>
       <br/>
-      <label>Water Body Type*</label>
+      <label>Water Body Type<span className="required-asterik">*</span></label>
       <select
         className="form-select"
         name="waterBodyType"
@@ -89,7 +83,7 @@ function DestinationInfoFields(props) {
         <option value="Mix">Mix</option>
       </select>
       <br/>
-      <label>Fish Species*</label>
+      <label>Fish Species<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -101,7 +95,7 @@ function DestinationInfoFields(props) {
       <br/>
       {tripType === "Past" && (
         <React.Fragment>
-          <label>County*</label>
+          <label>County<span className="required-asterik">*</span></label>
           <div className="form-input-container">
             <input
             type="text"
@@ -111,7 +105,7 @@ function DestinationInfoFields(props) {
             onChange={(e) => setFormData({...formData, county: e.target.value})}/>
           </div>
           <br/>
-          <label>State*</label>
+          <label>State<span className="required-asterik">*</span></label>
           <div className="form-input-container">
             <input
               type="text"
@@ -123,7 +117,7 @@ function DestinationInfoFields(props) {
           <br/>
         </React.Fragment>
       )}
-      <label>Country*</label>
+      <label>Country<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -135,7 +129,7 @@ function DestinationInfoFields(props) {
       <br/>
       {tripType === "Future" && (
         <React.Fragment>
-          <label>Climate*</label>
+          <label>Climate<span className="required-asterik">*</span></label>
           <div className="form-input-container">
             <input
               type="text"

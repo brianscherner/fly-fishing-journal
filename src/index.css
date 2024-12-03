@@ -385,7 +385,7 @@ table {
 .form-select {
   background-color: #F5F5F5;
   border: 1px solid var(--borders);
-  box-shadow: 0 0 4px #007BFF;
+  box-shadow: 0 0 2px #007BFF;
   font-family: "Open Sans", sans-serif;
   color: var(--primary-text);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -394,7 +394,7 @@ table {
 .form-control {
   background-color: #F5F5F5;
   border: 1px solid var(--borders);
-  box-shadow: 0 0 4px #007BFF;
+  box-shadow: 0 0 2px #007BFF;
   font-family: "Open Sans", sans-serif;
   color: var(--primary-text);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -415,6 +415,11 @@ label {
   display: flex;
   font-size: 1.15rem;
   font-weight: 500;
+  padding-bottom: 4px;
+}
+
+.required-asterik {
+  color: #D90429;
 }
 
 .required-msg {

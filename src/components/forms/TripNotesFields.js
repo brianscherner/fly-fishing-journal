@@ -1,10 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BugReportIcon from '@mui/icons-material/BugReport';
-import TagIcon from '@mui/icons-material/Tag';
-import PhishingIcon from '@mui/icons-material/Phishing';
-import KayakingIcon from '@mui/icons-material/Kayaking';
-import WaterIcon from '@mui/icons-material/Water';
 
 function TripNotesFields(props) {
   const { formData, setFormData } = props;
@@ -12,8 +7,8 @@ function TripNotesFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Trip Notes</h4>
-      <p className="required-msg">* indicates a required field</p>
-      <label>Flies Used*</label>
+      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
+      <label>Flies Used<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input type="text"
         className="form-control"
@@ -23,7 +18,7 @@ function TripNotesFields(props) {
         onChange={(e) => setFormData({...formData, fliesUsed: e.target.value})}/>
       </div>
       <br/>
-      <label>Fish Caught*</label>
+      <label>Fish Caught<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -34,7 +29,7 @@ function TripNotesFields(props) {
           onChange={(e) => setFormData({...formData, fishCaught: e.target.value})}/>
       </div>
       <br/>
-      <label>Fishing Tackle*</label>
+      <label>Fishing Tackle<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -44,7 +39,7 @@ function TripNotesFields(props) {
           defaultValue={formData.fishingTackleUsed ??= ''} onChange={(e) => setFormData({...formData, fishingTackleUsed: e.target.value})}/>
       </div>
       <br/>
-      <label>Fishing Method*</label>
+      <label>Fishing Method<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -55,7 +50,7 @@ function TripNotesFields(props) {
           onChange={(e) => setFormData({...formData, fishingMethod: e.target.value})}/>
       </div>
       <br/>
-      <label>River Flow*</label>
+      <label>River Flow<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
