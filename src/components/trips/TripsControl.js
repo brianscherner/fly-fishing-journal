@@ -89,12 +89,12 @@ function TripsControl() {
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
-        <h2 className='auth-message'>Please sign in to your account to start adding trips!</h2>
+        <h2 className='auth-message'>Please sign in to your account to start adding trips.</h2>
       </React.Fragment>
     )
   } else if (auth.currentUser != null) {
     let currentlyVisibleState = null;
-    let buttonText = null;
+    let mainButton = null;
 
     if (error) {
       currentlyVisibleState = <p>There was an error: {error}</p>
@@ -102,28 +102,40 @@ function TripsControl() {
       currentlyVisibleState = <EditTripForm
         trip={selectedTrip}
         onEditingTrip={handleEditingTrip}/>
-      buttonText = <HomeIcon/>;
+      mainButton =
+        <button className='btn control-button' onClick={handleClick}>
+          <HomeIcon/>
+        </button>;
     } else if (selectedTrip != null) {
       currentlyVisibleState = <TripDetails
         trip = {selectedTrip}
         onClickingEdit={handleEditClick}
         onClickingDelete={handleDeletingTrip}
         onMarkingTripAsPast={handleMarkingTripAsPast}/>
-      buttonText = <HomeIcon/>;
+      mainButton =
+        <button className='btn control-button' onClick={handleClick}>
+          <HomeIcon/>
+        </button>;
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewTripsForm
         onNewTripCreation={handleCreatingNewTrip}/>
-      buttonText = <HomeIcon/>;
+      mainButton =
+        <button className='btn control-button' onClick={handleClick}>
+          <HomeIcon/>
+        </button>;
     } else {
       currentlyVisibleState = <TripsList
         onTripSelection={handleChangingSelectedTrip}
         tripsList={mainTripsList}/>
-      buttonText = <p style={{ display: "inline-block" }}>Add Trips <AddCircleIcon/></p>;
+      mainButton =
+        <button className='btn control-button' onClick={handleClick}>
+          Add Trips <AddCircleIcon/>
+        </button>
     }
 
     return (
       <React.Fragment>
-        {error ? null : <button className='btn control-button' onClick={handleClick}>{buttonText}</button>}
+        {error ? null : mainButton}
         <br/>
         <br/>
         {currentlyVisibleState}

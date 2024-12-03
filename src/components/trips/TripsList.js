@@ -52,7 +52,7 @@ function TripsList(props) {
     <React.Fragment>
       <div className="row justify-content-center">
         {isListEmpty && (
-          <p className="empty-trip-list-msg">Add your first adventure to get started!</p>
+          <p className="empty-trip-list-msg">Add your first trip to get started!</p>
         )}
         {/* can adjust width for greater responsiveness later */}
         <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
@@ -63,7 +63,7 @@ function TripsList(props) {
                 defaultValue={filter}
                 className="form-select"
                 onChange={handleFilterSelection}>
-                <option value="" disabled>Select one</option>
+                <option value="" disabled>Select type</option>
                 <option value="Past">Past</option>
                 <option value="Future">Future</option>
               </select>
