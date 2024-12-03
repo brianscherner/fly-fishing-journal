@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 function TripsList(props) {
   const { tripsList } = props;
   const [filteredTripsList, setFilteredTripsList] = useState(tripsList);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("All");
   const [isListEmpty, setIsListEmpty] = useState(false);
   const [isFilteredListEmpty, setIsFilteredListEmpty] = useState(false);
 
@@ -45,6 +45,10 @@ function TripsList(props) {
       }
     }
 
+    if (filterSelection === "All") {
+      setFilteredTripsList(tripsList);
+    }
+
   }
 
   console.log(tripsList);
@@ -64,6 +68,7 @@ function TripsList(props) {
                 className="form-select"
                 onChange={handleFilterSelection}>
                 <option value="" disabled>Select type</option>
+                <option value="All">All</option>
                 <option value="Past">Past</option>
                 <option value="Future">Future</option>
               </select>
