@@ -42,20 +42,14 @@ function DestinationInfo(props) {
                 <th>Fish Species</th>
                 <td className="dest-info-data">{trip.species ? trip.species : "N/A"}</td>
               </tr>
-
-              {trip.tripType === "Past" && (
-                <React.Fragment>
-                  <tr className="dest-info-details">
-                    <th>State</th>
-                    <td className="dest-info-data">{trip.state ? trip.state : "N/A"}</td>
-                  </tr>
-                  <tr className="dest-info-details">
-                    <th>County</th>
-                    <td className="dest-info-data">{trip.county ? trip.county : "N/A"}</td>
-                  </tr>
-                </React.Fragment>
-              )}
-
+              <tr className="dest-info-details">
+                <th>State</th>
+                <td className="dest-info-data">{trip.state ? trip.state : "N/A"}</td>
+              </tr>
+              <tr className="dest-info-details">
+                <th>County</th>
+                <td className="dest-info-data">{trip.county ? trip.county : "N/A"}</td>
+              </tr>
               <tr className="dest-info-details">
                 <th>Country</th>
                 <td className="dest-info-data">{trip.country ? trip.country : "N/A"}</td>
