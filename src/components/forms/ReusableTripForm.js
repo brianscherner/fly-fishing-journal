@@ -69,7 +69,8 @@ function ReusableTripForm(props) {
         if (tripType === "Future") {
           return <GearRequirementsFields
             formData={formData}
-            setFormData={setFormData}/>;
+            setFormData={setFormData}
+            invalidFormFields={invalidFormFields}/>;
         }
         break;
       case 3:
@@ -113,6 +114,13 @@ function ReusableTripForm(props) {
           if (!formData.fliesUsed) invalidFields.fliesUsed = "Please enter flies used.";
           if (!formData.fishCaught) invalidFields.fishCaught = "Please enter fish caught.";
           if (!formData.fishingTackleUsed) invalidFields.fishingTackleUsed = "Please enter fishing tackle used.";
+        }
+        break;
+      case 2:
+        if (tripType === "Future") {
+          if (!formData.clothingRequirements) invalidFields.clothingRequirements = "Please enter clothing requirements.";
+          if (!formData.gearRequirements) invalidFields.gearRequirements = "Please enter fishing requirements.";
+          if (!formData.flyRequirements) invalidFields.flyRequirements = "Please enter fly requirements.";
         }
         break;
       default:
