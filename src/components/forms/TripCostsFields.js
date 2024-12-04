@@ -8,7 +8,7 @@ function TripCostsFields(props) {
     <React.Fragment>
       <h4 className="form-section-heading">Trip Costs</h4>
       <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
-      <label>Travel Documents<span className="required-asterik">*</span></label>
+      <label>Travel Documents</label>
       <select
         name="travelDocs"
         className="form-select"
@@ -29,7 +29,7 @@ function TripCostsFields(props) {
           defaultValue={formData.travelCosts ??= ''} onChange={(e) => setFormData({...formData, travelCosts: e.target.value})}/>
       </div>
       <br/>
-      <label>Fishing and Lodging Expenses<span className="required-asterik">*</span></label>
+      <label>Fishing and Lodging Expenses</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -39,7 +39,7 @@ function TripCostsFields(props) {
           defaultValue={formData.tripExpenses ??= ''} onChange={(e) => setFormData({...formData, tripExpenses: e.target.value})}/>
       </div>
       <br/>
-      <label>Deposit Payment Terms<span className="required-asterik">*</span></label>
+      <label>Deposit Payment Terms</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -49,7 +49,7 @@ function TripCostsFields(props) {
           defaultValue={formData.depositTerms ??= ''} onChange={(e) => setFormData({...formData, depositTerms: e.target.value})}/>
       </div>
       <br/>
-      <label>Trip Insurance<span className="required-asterik">*</span></label>
+      <label>Trip Insurance</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -60,7 +60,7 @@ function TripCostsFields(props) {
           onChange={(e) => setFormData({...formData, tripInsurance: e.target.value})}/>
       </div>
       <br/>
-      <label>Medical Evacuation Insurance<span className="required-asterik">*</span></label>
+      <label>Medical Evacuation Insurance</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -70,7 +70,7 @@ function TripCostsFields(props) {
           defaultValue={formData.evacInsurance ??= ''} onChange={(e) => setFormData({...formData, evacInsurance: e.target.value})}/>
       </div>
       <br/>
-      <label>Refund Cancellation Policy<span className="required-asterik">*</span></label>
+      <label>Refund Cancellation Policy</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -80,7 +80,7 @@ function TripCostsFields(props) {
           defaultValue={formData.cancellationPolicy ??= ''} onChange={(e) => setFormData({...formData, cancellationPolicy: e.target.value})}/>
       </div>
       <br/>
-      <label>Baggage and Luggage Policy<span className="required-asterik">*</span></label>
+      <label>Baggage and Luggage Policy</label>
       <div className="form-input-container">
         <input
           type="text"

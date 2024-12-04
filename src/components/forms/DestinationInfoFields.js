@@ -159,18 +159,15 @@ function DestinationInfoFields(props) {
       <br/>
       {tripType === "Future" && (
         <React.Fragment>
-          <label>Climate<span className="required-asterik">*</span></label>
+          <label>Climate</label>
           <div className="form-input-container">
             <input
               type="text"
-              className={`${invalidFormFields.climate ? "form-control invalid-field" : "form-control"}`}
+              className="form-control"
               name="climate"
               placeholder="Example: desert"
               defaultValue={formData.climate ??= ''}
               onChange={(e) => setFormData({...formData, climate: e.target.value})}/>
-            {invalidFormFields.climate && (
-              <small className="form-field-error">{invalidFormFields.climate}</small>
-            )}
           </div>
           <br/>
         </React.Fragment>

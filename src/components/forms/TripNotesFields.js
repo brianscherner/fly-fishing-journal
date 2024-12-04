@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function TripNotesFields(props) {
-  const { formData, setFormData } = props;
+  const { formData, setFormData, invalidFormFields } = props;
 
   return (
     <React.Fragment>
@@ -11,35 +11,44 @@ function TripNotesFields(props) {
       <label>Flies Used<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input type="text"
-        className="form-control"
-        name="fliesUsed"
-        placeholder="Example: Elk Hair Caddis (Size 16)"
-        defaultValue={formData.fliesUsed ??= ''}
-        onChange={(e) => setFormData({...formData, fliesUsed: e.target.value})}/>
+          className={`${invalidFormFields.fliesUsed ? "form-control invalid-field" : "form-control"}`}
+          name="fliesUsed"
+          placeholder="Example: Elk Hair Caddis (Size 16)"
+          defaultValue={formData.fliesUsed ??= ''}
+          onChange={(e) => setFormData({...formData, fliesUsed: e.target.value})}/>
+        {invalidFormFields.fliesUsed && (
+          <small className="form-field-error">{invalidFormFields.fliesUsed}</small>
+        )}
       </div>
       <br/>
       <label>Fish Caught<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
-          className="form-control"
+          className={`${invalidFormFields.fishCaught ? "form-control invalid-field" : "form-control"}`}
           name="fishCaught"
           placeholder="Example: 5 rainbow trout"
           defaultValue={formData.fishCaught ??= ''}
           onChange={(e) => setFormData({...formData, fishCaught: e.target.value})}/>
+        {invalidFormFields.fishCaught && (
+          <small className="form-field-error">{invalidFormFields.fishCaught}</small>
+        )}
       </div>
       <br/>
       <label>Fishing Tackle<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
           type="text"
-          className="form-control"
+          className={`${invalidFormFields.fishingTackleUsed ? "form-control invalid-field" : "form-control"}`}
           name="fishingTackleUsed"
           placeholder="Example: floating line"
           defaultValue={formData.fishingTackleUsed ??= ''} onChange={(e) => setFormData({...formData, fishingTackleUsed: e.target.value})}/>
+        {invalidFormFields.fishingTackleUsed && (
+          <small className="form-field-error">{invalidFormFields.fishingTackleUsed}</small>
+        )}
       </div>
       <br/>
-      <label>Fishing Method<span className="required-asterik">*</span></label>
+      <label>Fishing Method</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -50,7 +59,7 @@ function TripNotesFields(props) {
           onChange={(e) => setFormData({...formData, fishingMethod: e.target.value})}/>
       </div>
       <br/>
-      <label>River Flow<span className="required-asterik">*</span></label>
+      <label>River Flow Levels</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -67,6 +76,7 @@ function TripNotesFields(props) {
 TripNotesFields.propTypes = {
   formData: PropTypes.object,
   setFormData: PropTypes.func,
+  invalidFormFields: PropTypes.object
 }
 
 export default TripNotesFields;

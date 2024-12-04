@@ -47,10 +47,16 @@ function ReusableTripForm(props) {
           />;
       case 1:
         if (tripType === "Past") {
-          return <TripNotesFields formData={formData} setFormData={setFormData}/>;
+          return <TripNotesFields
+            formData={formData}
+            setFormData={setFormData}
+            invalidFormFields={invalidFormFields}
+            />;
         }
         if (tripType === "Future") {
-          return <TripCostsFields formData={formData} setFormData={setFormData}/>;
+          return <TripCostsFields
+            formData={formData}
+            setFormData={setFormData}/>;
         }
         break;
       case 2:
@@ -89,25 +95,12 @@ function ReusableTripForm(props) {
           if (!formData.state) invalidFields.state = "A state is required.";
           if (!formData.county) invalidFields.county = "A county is required.";
         }
-        if (tripType === "Future") {
-          if (!formData.climate) invalidFields.climate = "A climate is required.";
-        }
         break;
       case 1:
         if (tripType === "Past") {
-          return formData.fliesUsed &&
-          formData.fishCaught &&
-          formData.fishingTackleUsed &&
-          formData.fishingMethod &&
-          formData.riverFlowLevels;
-        }
-        if (tripType === "Future") {
-          return formData.travelDocs &&
-          formData.tripExpenses &&
-          formData.depositTerms &&
-          formData.cancellationPolicy &&
-          formData.tripInsurance &&
-          formData.evacInsurance;
+          if (!formData.fliesUsed) invalidFields.fliesUsed = "Please enter flies used.";
+          if (!formData.fishCaught) invalidFields.fishCaught = "Please enter fish caught.";
+          if (!formData.fishingTackleUsed) invalidFields.fishingTackleUsed = "Please enter fishing tackle used.";
         }
         break;
       case 2:
