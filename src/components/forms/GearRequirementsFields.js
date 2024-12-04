@@ -7,8 +7,7 @@ function GearRequirements(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Gear Requirements</h4>
-      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
-      <label>Clothing Requirements<span className="required-asterik">*</span></label>
+      <label>Clothing Requirements</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -18,7 +17,7 @@ function GearRequirements(props) {
           defaultValue={formData.clothingRequirements ??= ''} onChange={(e) => setFormData({...formData, clothingRequirements: e.target.value})}/>
       </div>
       <br/>
-      <label>Fishing Requirements<span className="required-asterik">*</span></label>
+      <label>Fishing Requirements</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -28,7 +27,7 @@ function GearRequirements(props) {
           defaultValue={formData.gearRequirements ??= ''} onChange={(e) => setFormData({...formData, gearRequirements: e.target.value})}/>
       </div>
       <br/>
-      <label>Fly Requirements<span className="required-asterik">*</span></label>
+      <label>Fly Requirements</label>
       <div className="form-input-container">
         <input
           type="text"

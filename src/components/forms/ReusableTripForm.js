@@ -61,22 +61,36 @@ function ReusableTripForm(props) {
         break;
       case 2:
         if (tripType === "Past") {
-          return <MiscellaneousFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <MiscellaneousFields
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}/>;
         }
         if (tripType === "Future") {
-          return <GearRequirementsFields formData={formData} setFormData={setFormData}/>;
+          return <GearRequirementsFields
+            formData={formData}
+            setFormData={setFormData}/>;
         }
         break;
       case 3:
         if (tripType === "Future") {
-          return <MiscellaneousFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <MiscellaneousFields
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}/>;
         }
         if (tripType === "Past") {
-          return <MiscellaneousFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+          return <MiscellaneousFields
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}/>;
         }
         break;
       default:
-        return <DestinationInfoFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+        return <DestinationInfoFields
+          tripType={tripType}
+          formData={formData}
+          setFormData={setFormData}/>;
     }
   }
 
@@ -103,25 +117,6 @@ function ReusableTripForm(props) {
           if (!formData.fishingTackleUsed) invalidFields.fishingTackleUsed = "Please enter fishing tackle used.";
         }
         break;
-      case 2:
-        if (tripType === "Past") {
-          return formData.licenses &&
-          formData.waterFees &&
-          formData.access &&
-          formData.timeOfDay &&
-          formData.travelTime;
-        }
-        if (tripType === "Future") {
-          return formData.clothingRequirements &&
-          formData.gearRequirements &&
-          formData.flyRequirements;
-        }
-        break;
-      case 3:
-        return formData.licenses &&
-        formData.guidedOrNot &&
-        formData.communications &&
-        formData.gratuity;
       default:
         return true;
     }

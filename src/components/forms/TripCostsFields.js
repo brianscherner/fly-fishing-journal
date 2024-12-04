@@ -7,7 +7,6 @@ function TripCostsFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Trip Costs</h4>
-      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
       <label>Travel Documents</label>
       <select
         name="travelDocs"

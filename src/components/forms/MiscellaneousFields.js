@@ -7,8 +7,7 @@ function MiscellaneousFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Miscellaneous</h4>
-      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
-      <label>Fishing Licenses<span className="required-asterik">*</span></label>
+      <label>Fishing Licenses</label>
       <div className="form-input-container">
         <input
           type="text"
@@ -21,14 +20,14 @@ function MiscellaneousFields(props) {
       <br/>
       {tripType === "Past" && (
         <React.Fragment>
-          <label>Water Fees<span className="required-asterik">*</span></label>
+          <label>Water Fees</label>
           <select name="waterFees" className="form-select" defaultValue={formData.waterFees ??= ''} onChange={(e) => setFormData({...formData, waterFees: e.target.value})}>
             <option value="" disabled>Select one</option>
             <option value="Private">Private</option>
             <option value="Public">Public</option>
           </select>
           <br/>
-          <label>Type of Access<span className="required-asterik">*</span></label>
+          <label>Type of Access</label>
           <div className="form-input-container">
             <input
             type="text"
@@ -38,7 +37,7 @@ function MiscellaneousFields(props) {
             defaultValue={formData.access ??= ''} onChange={(e) => setFormData({...formData, access: e.target.value})}/>
           </div>
           <br/>
-          <label>Time of Day<span className="required-asterik">*</span></label>
+          <label>Time of Day</label>
           <div className="form-input-container">
             <input
               type="text"
@@ -48,7 +47,7 @@ function MiscellaneousFields(props) {
               defaultValue={formData.timeOfDay ??= ''} onChange={(e) => setFormData({...formData, timeOfDay: e.target.value})}/>
           </div>
           <br/>
-          <label>Travel Time<span className="required-asterik">*</span></label>
+          <label>Travel Time</label>
           <div className="form-input-container">
             <input
               type="text"
@@ -62,7 +61,7 @@ function MiscellaneousFields(props) {
       )}
       {tripType === "Future" && (
         <React.Fragment>
-          <label>Guided?<span className="required-asterik">*</span></label>
+          <label>Guided?</label>
           <select
             name="guidedOrNot"
             className="form-select"
@@ -73,7 +72,7 @@ function MiscellaneousFields(props) {
             <option value="No">No</option>
           </select>
           <br/>
-          <label>Communications<span className="required-asterik">*</span></label>
+          <label>Communications</label>
           <div className="form-input-container">
             <input
               type="text"
@@ -83,7 +82,7 @@ function MiscellaneousFields(props) {
               defaultValue={formData.communications ??= ''} onChange={(e) => setFormData({...formData, communications: e.target.value})}/>
           </div>
           <br/>
-          <label>Gratuity Guidelines<span className="required-asterik">*</span></label>
+          <label>Gratuity Guidelines</label>
           <div className="form-input-container">
             <input
               type="text"
