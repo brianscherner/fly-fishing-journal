@@ -114,36 +114,32 @@ function DestinationInfoFields(props) {
         )}
       </div>
       <br/>
-      {tripType === "Past" && (
-        <React.Fragment>
-          <label>County<span className="required-asterik">*</span></label>
-          <div className="form-input-container">
-            <input
-            type="text"
-            className={`${invalidFormFields.county ? "form-control invalid-field" : "form-control"}`}
-            name="county"
-            defaultValue={formData.county ??= ''}
-            onChange={(e) => setFormData({...formData, county: e.target.value})}/>
-            {invalidFormFields.county && (
-              <small className="form-field-error">{invalidFormFields.county}</small>
-            )}
-          </div>
-          <br/>
-          <label>State<span className="required-asterik">*</span></label>
-          <div className="form-input-container">
-            <input
-              type="text"
-              className={`${invalidFormFields.state ? "form-control invalid-field" : "form-control"}`}
-              name="state"
-              defaultValue={formData.state ??= ''}
-              onChange={(e) => setFormData({...formData, state: e.target.value})}/>
-            {invalidFormFields.state && (
-              <small className="form-field-error">{invalidFormFields.state}</small>
-            )}
-          </div>
-          <br/>
-        </React.Fragment>
-      )}
+      <label>County<span className="required-asterik">*</span></label>
+      <div className="form-input-container">
+        <input
+        type="text"
+        className={`${invalidFormFields.county ? "form-control invalid-field" : "form-control"}`}
+        name="county"
+        defaultValue={formData.county ??= ''}
+        onChange={(e) => setFormData({...formData, county: e.target.value})}/>
+        {invalidFormFields.county && (
+          <small className="form-field-error">{invalidFormFields.county}</small>
+        )}
+      </div>
+      <br/>
+      <label>State<span className="required-asterik">*</span></label>
+      <div className="form-input-container">
+        <input
+          type="text"
+          className={`${invalidFormFields.state ? "form-control invalid-field" : "form-control"}`}
+          name="state"
+          defaultValue={formData.state ??= ''}
+          onChange={(e) => setFormData({...formData, state: e.target.value})}/>
+        {invalidFormFields.state && (
+          <small className="form-field-error">{invalidFormFields.state}</small>
+        )}
+      </div>
+      <br/>
       <label>Country<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input

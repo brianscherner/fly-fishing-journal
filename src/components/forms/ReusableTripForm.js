@@ -103,12 +103,10 @@ function ReusableTripForm(props) {
         if (!formData.season) invalidFields.season = "A season is required.";
         if (!formData.startDate) invalidFields.startDate = "A start date is required.";
         if (!formData.waterBodyType) invalidFields.waterBodyType = " A water body type is required.";
+        if (!formData.state) invalidFields.state = "A state is required.";
+        if (!formData.county) invalidFields.county = "A county is required.";
         if (!formData.country) invalidFields.country = "A country is required.";
         if (!formData.species) invalidFields.species = "A fish species is required.";
-        if (tripType === "Past") {
-          if (!formData.state) invalidFields.state = "A state is required.";
-          if (!formData.county) invalidFields.county = "A county is required.";
-        }
         break;
       case 1:
         if (tripType === "Past") {
