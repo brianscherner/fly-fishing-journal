@@ -10,7 +10,7 @@ import ForwardIcon from '@mui/icons-material/Forward';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function ReusableTripForm(props) {
-  const { formData, setFormData, formSubmissionHandler, isFinalPageValid, setIsFinalPageValid } = props;
+  const { formData, setFormData, formSubmissionHandler } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -135,14 +135,6 @@ function ReusableTripForm(props) {
     }
   }
 
-  const validateFinalPage = () => {
-    if (validatePage() && page >= totalPages) {
-      setIsFinalPageValid(!isFinalPageValid);
-    } else {
-      toast.error("Please fill out all required fields.", { position: "bottom-right"});
-    }
-  }
-
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
@@ -163,9 +155,21 @@ function ReusableTripForm(props) {
                 <React.Fragment>
                   {conditionalComponent()}
                   <div className="form-buttons">
-                    { page > 0 && <button className="btn back-button" onClick={prevPage} type="button"><ForwardIcon style={{ transform: 'rotate(180deg)'}}/></button>}
-                    { page < totalPages && <button className="btn app-buttons" onClick={nextPage} type="button"><ForwardIcon/></button>}
-                    { page >= totalPages && <button className="btn app-buttons" onClick={validateFinalPage} type="submit">Add <AddCircleIcon/></button>}
+                    { page > 0 &&
+                      <button
+                        className="btn back-button"
+                        onClick={prevPage} type="button"><ForwardIcon
+                        style={{ transform: 'rotate(180deg)'}}/>
+                      </button>}
+                      { page < totalPages &&
+                        <button
+                          className="btn app-buttons"
+                          onClick={nextPage} type="button"><ForwardIcon/>
+                        </button>}
+                    { page >= totalPages &&
+                      <button
+                        className="btn app-buttons" type="submit">Add Trip <AddCircleIcon/>
+                      </button>}
                   </div>
                 </React.Fragment>
               )}

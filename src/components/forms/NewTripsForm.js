@@ -5,14 +5,11 @@ import { auth } from "../../firebase.js";
 
 function NewTripsForm(props) {
   const [formData, setFormData] = useState({});
-  const [isFinalPageValid, setIsFinalPageValid] = useState(false);
 
   function handleNewTripFormSubmission(event) {
     event.preventDefault();
-    if (isFinalPageValid) {
-      formData.userId = auth.currentUser.uid;
-      props.onNewTripCreation(formData);
-    }
+    formData.userId = auth.currentUser.uid;
+    props.onNewTripCreation(formData);
   }
 
   return (
@@ -20,8 +17,6 @@ function NewTripsForm(props) {
       <ReusableTripForm
         formData={formData}
         setFormData={setFormData}
-        isFinalPageValid={isFinalPageValid}
-        setIsFinalPageValid={setIsFinalPageValid}
         formSubmissionHandler={handleNewTripFormSubmission}
         buttonText={"Add Trip"}/>
     </React.Fragment>
