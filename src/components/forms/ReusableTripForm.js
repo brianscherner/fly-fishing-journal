@@ -14,6 +14,7 @@ function ReusableTripForm(props) {
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
+  const [invalidFormFields, setInvalidFormFields] = useState({});
 
   useEffect(() => {
     let total = 0;
@@ -38,7 +39,12 @@ function ReusableTripForm(props) {
   const conditionalComponent = () => {
     switch (page) {
       case 0:
-        return <DestinationInfoFields tripType={tripType} formData={formData} setFormData={setFormData}/>;
+        return <DestinationInfoFields
+          tripType={tripType}
+          formData={formData}
+          setFormData={setFormData}
+          invalidFormFields={invalidFormFields}
+          />;
       case 1:
         if (tripType === "Past") {
           return <TripNotesFields formData={formData} setFormData={setFormData}/>;
@@ -69,25 +75,22 @@ function ReusableTripForm(props) {
   }
 
   const validatePage = () => {
+    const invalidFields = {};
+
     switch (page) {
       case 0:
+        if (!formData.destination) invalidFields.destination = "A fishing destination is required.";
+        if (!formData.season) invalidFields.season = "A season is required.";
+        if (!formData.startDate) invalidFields.startDate = "A start date is required.";
+        if (!formData.waterBodyType) invalidFields.waterBodyType = " A water body type is required.";
+        if (!formData.country) invalidFields.country = "A country is required.";
+        if (!formData.species) invalidFields.species = "A fish species is required.";
         if (tripType === "Past") {
-          return formData.destination &&
-          formData.season &&
-          formData.startDate &&
-          formData.species &&
-          formData.state &&
-          formData.county &&
-          formData.country &&
-          formData.waterBodyType &&
-          formData.species;
+          if (!formData.state) invalidFields.state = "A state is required.";
+          if (!formData.county) invalidFields.county = "A county is required.";
         }
         if (tripType === "Future") {
-          return formData.destination &&
-          formData.season &&
-          formData.waterBodyType &&
-          formData.country &&
-          formData.climate;
+          if (!formData.climate) invalidFields.climate = "A climate is required.";
         }
         break;
       case 1:
@@ -129,6 +132,9 @@ function ReusableTripForm(props) {
       default:
         return true;
     }
+
+    setInvalidFormFields(invalidFields);
+    return Object.keys(invalidFields).length === 0;
   }
 
   const prevPage = () => {
@@ -139,7 +145,7 @@ function ReusableTripForm(props) {
     if (validatePage()) {
       setPage(page + 1);
     } else {
-      toast.error("Please fill out all required form fields. * indicates a required field.", { position: "bottom-right"});
+      toast.error("Please fill out all required fields.", { position: "bottom-right" });
     }
   }
 
@@ -147,10 +153,12 @@ function ReusableTripForm(props) {
     if (validatePage() && page >= totalPages) {
       setIsFinalPageValid(!isFinalPageValid);
     } else {
-      toast.error("Please fill out all required form fields. * indicates a required field.", { position: "bottom-right"});
+      toast.error("Please fill out all required fields.", { position: "bottom-right"});
     }
   }
 
+  console.log("Form data: ", formData);
+  console.log("Invalid fields: ", invalidFormFields);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
