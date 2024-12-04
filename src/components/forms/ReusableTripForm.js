@@ -145,8 +145,6 @@ function ReusableTripForm(props) {
     }
   }
 
-  console.log("Form data: ", formData);
-  console.log("Invalid fields: ", invalidFormFields);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
