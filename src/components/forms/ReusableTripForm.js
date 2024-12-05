@@ -29,16 +29,35 @@ function ReusableTripForm(props) {
       default:
         total = 0;
     }
-    console.log("Total pages: ", total);
     setTotalPages(total);
   }, [tripType]);
 
   const handleTripTypeSelection = (e) => {
     setTripType(e.target.value);
-    setFormData({...formData, tripType: e.target.value});
+    setFormData({
+      ...formData, tripType: e.target.value,
+    });
   }
 
-  // the form section for uploading images only shows up correctly for a "Future" trip
+  const handleFileChange = (e, index) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setFormData((prevFormData) => {
+          const updatedImages = [...prevFormData.images];
+          updatedImages[index] = {
+            file,
+            preview: reader.result
+          };
+          return { ...prevFormData, images: updatedImages };
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
   const conditionalComponent = () => {
     switch (page) {
       case 0:
@@ -81,7 +100,9 @@ function ReusableTripForm(props) {
           return <Images
             tripType={tripType}
             formData={formData}
-            setFormData={setFormData}/>;
+            setFormData={setFormData}
+            onChangingFile={handleFileChange}
+            />;
         }
         if (tripType === "Future") {
           return <MiscellaneousFields
@@ -95,13 +116,17 @@ function ReusableTripForm(props) {
           return <Images
             tripType={tripType}
             formData={formData}
-            setFormData={setFormData}/>;
+            setFormData={setFormData}
+            onChangingFile={handleFileChange}
+            />;
         }
         if (tripType === "Future") {
           return <Images
             tripType={tripType}
             formData={formData}
-            setFormData={setFormData}/>;
+            setFormData={setFormData}
+            onChangingFile={handleFileChange}
+            />;
         }
         break;
       default:
@@ -160,7 +185,6 @@ function ReusableTripForm(props) {
     }
   }
 
-  console.log("Page #: ", page);
   console.log("Form data: ", formData);
   return (
     <React.Fragment>

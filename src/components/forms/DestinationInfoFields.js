@@ -15,7 +15,9 @@ function DestinationInfoFields(props) {
           className={`${invalidFormFields.destination ? "form-control invalid-field" : "form-control"}`}
           name="destination"
           defaultValue={formData.destination ??= ''}
-          onChange={(e) => setFormData({...formData, destination: e.target.value})}
+          onChange={(e) => setFormData({
+            ...formData, destination: e.target.value
+          })}
         />
         {invalidFormFields.destination && (
           <small className="form-field-error">{invalidFormFields.destination}</small>

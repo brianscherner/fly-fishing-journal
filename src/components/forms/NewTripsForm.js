@@ -4,7 +4,9 @@ import ReusableTripForm from "./ReusableTripForm";
 import { auth } from "../../firebase.js";
 
 function NewTripsForm(props) {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    images: []
+  });
 
   function handleNewTripFormSubmission(event) {
     event.preventDefault();
