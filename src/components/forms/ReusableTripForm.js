@@ -5,6 +5,7 @@ import GearRequirementsFields from "./GearRequirementsFields";
 import MiscellaneousFields from "./MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./TripNotesFields";
+import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -20,14 +21,15 @@ function ReusableTripForm(props) {
     let total = 0;
     switch (tripType) {
       case 'Past':
-        total = 2;
+        total = 3;
         break;
       case 'Future':
-        total = 3;
+        total = 4;
         break;
       default:
         total = 0;
     }
+    console.log("Total pages: ", total);
     setTotalPages(total);
   }, [tripType]);
 
@@ -36,6 +38,7 @@ function ReusableTripForm(props) {
     setFormData({...formData, tripType: e.target.value});
   }
 
+  // the form section for uploading images only shows up correctly for a "Future" trip
   const conditionalComponent = () => {
     switch (page) {
       case 0:
@@ -74,14 +77,28 @@ function ReusableTripForm(props) {
         }
         break;
       case 3:
+        if (tripType === "Past") {
+          return <Images
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}/>;
+        }
         if (tripType === "Future") {
           return <MiscellaneousFields
             tripType={tripType}
             formData={formData}
             setFormData={setFormData}/>;
         }
+        break;
+      case 4:
         if (tripType === "Past") {
-          return <MiscellaneousFields
+          return <Images
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}/>;
+        }
+        if (tripType === "Future") {
+          return <Images
             tripType={tripType}
             formData={formData}
             setFormData={setFormData}/>;
@@ -143,6 +160,8 @@ function ReusableTripForm(props) {
     }
   }
 
+  console.log("Page #: ", page);
+  console.log("Form data: ", formData);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
@@ -169,11 +188,11 @@ function ReusableTripForm(props) {
                         onClick={prevPage} type="button"><ForwardIcon
                         style={{ transform: 'rotate(180deg)'}}/>
                       </button>}
-                      { page < totalPages &&
-                        <button
-                          className="btn app-buttons"
-                          onClick={nextPage} type="button"><ForwardIcon/>
-                        </button>}
+                    { page < totalPages &&
+                      <button
+                        className="btn app-buttons"
+                        onClick={nextPage} type="button"><ForwardIcon/>
+                      </button>}
                     { page >= totalPages &&
                       <button
                         className="btn app-buttons" type="submit">Add Trip <AddCircleIcon/>
