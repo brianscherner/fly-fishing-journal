@@ -26,9 +26,10 @@ function Images(props) {
                   src={formData.images[index].preview}
                   alt={`Preview ${index}`}
                   style={{
-                    width: "100px",
-                    height: "100px",
-                    objectFit: "cover"
+                    width: "150px",
+                    height: "150px",
+                    objectFit: "cover",
+                    borderRadius: "0.45rem"
                   }}
                 />
                 {/* <button onClick={() => handleDelete(index)}>Delete</button> */}

@@ -434,7 +434,7 @@ label {
 
 .photo-upload-container {
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(2, 3fr);
   gap: 1rem;
 }
 
