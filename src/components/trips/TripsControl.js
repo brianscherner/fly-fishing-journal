@@ -54,6 +54,8 @@ function TripsControl() {
     setEditing(true);
   }
 
+  // Firebase doesn't support custom file objects, so it currently can't add a trip if there are photos in the form
+
   const handleCreatingNewTrip = async (newTripData) => {
     await addDoc(collection(db, "Trips"), newTripData);
     toast.success('Trip added.', { position: "bottom-right"});

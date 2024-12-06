@@ -39,22 +39,29 @@ function ReusableTripForm(props) {
     });
   }
 
-  const handleFileChange = (e, index) => {
-    const file = e.target.files[0];
+  // need logic to limit how many files a user can upload
+  // need a way to delete images
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setFormData((prevFormData) => {
-          const updatedImages = [...prevFormData.images];
-          updatedImages[index] = {
-            file,
-            preview: reader.result
-          };
-          return { ...prevFormData, images: updatedImages };
-        });
-      };
-      reader.readAsDataURL(file);
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files);
+
+    if (files) {
+      files.forEach((file) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          setFormData((prevFormData) => {
+            const updatedImages = [
+              ...prevFormData.images,
+              {
+                file,
+                preview: reader.result
+              }
+            ];
+            return { ...prevFormData, images: updatedImages };
+          });
+        };
+        reader.readAsDataURL(file);
+      });
     }
   }
 
@@ -101,7 +108,7 @@ function ReusableTripForm(props) {
             tripType={tripType}
             formData={formData}
             setFormData={setFormData}
-            onChangingFile={handleFileChange}
+            onChangingImage={handleImageChange}
             />;
         }
         if (tripType === "Future") {
@@ -112,23 +119,12 @@ function ReusableTripForm(props) {
         }
         break;
       case 4:
-        if (tripType === "Past") {
-          return <Images
-            tripType={tripType}
-            formData={formData}
-            setFormData={setFormData}
-            onChangingFile={handleFileChange}
-            />;
-        }
-        if (tripType === "Future") {
-          return <Images
-            tripType={tripType}
-            formData={formData}
-            setFormData={setFormData}
-            onChangingFile={handleFileChange}
-            />;
-        }
-        break;
+        return <Images
+          tripType={tripType}
+          formData={formData}
+          setFormData={setFormData}
+          onChangingImage={handleImageChange}
+          />;
       default:
         return <DestinationInfoFields
           tripType={tripType}
