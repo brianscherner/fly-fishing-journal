@@ -210,12 +210,12 @@ function ReusableTripForm(props) {
                       <button
                         className="btn back-button"
                         onClick={prevPage} type="button"><ForwardIcon
-                        style={{ transform: 'rotate(180deg)'}}/>
+                        style={{ transform: 'rotate(180deg)'}}/> Back
                       </button>}
                     { page < totalPages &&
                       <button
                         className="btn app-buttons"
-                        onClick={nextPage} type="button"><ForwardIcon/>
+                        onClick={nextPage} type="button">Next <ForwardIcon/>
                       </button>}
                     { page >= totalPages &&
                       <button
