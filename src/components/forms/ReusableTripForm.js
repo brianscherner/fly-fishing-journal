@@ -16,6 +16,7 @@ function ReusableTripForm(props) {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [invalidFormFields, setInvalidFormFields] = useState({});
+  const [isImageTotalExceeded, setIsImageTotalExceeded] = useState(false);
 
   useEffect(() => {
     let total = 0;
@@ -39,13 +40,21 @@ function ReusableTripForm(props) {
     });
   }
 
-  // need logic to limit how many files a user can upload
-  // need a way to delete images
+  // need a way to delete images individually
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
+    const currentImages = [...formData.images];
+    console.log("Files length: ", files);
+    console.log("Current imgs: ", currentImages);
 
-    if (files) {
+    if (currentImages.length + files.length > 6) {
+      toast.error("You cannot upload more than 6 images.", { position: "bottom-right" });
+      // setIsImageTotalExceeded(!isImageTotalExceeded);
+      return;
+    }
+
+    // if (files) {
       files.forEach((file) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -62,7 +71,12 @@ function ReusableTripForm(props) {
           });
         };
       });
-    }
+
+    // }
+  }
+
+  const handleDeletingImage = (e) => {
+
   }
 
   const conditionalComponent = () => {
@@ -109,6 +123,7 @@ function ReusableTripForm(props) {
             formData={formData}
             setFormData={setFormData}
             onChangingImage={handleImageChange}
+            isImageTotalExceeded={isImageTotalExceeded}
             />;
         }
         if (tripType === "Future") {
@@ -124,6 +139,7 @@ function ReusableTripForm(props) {
           formData={formData}
           setFormData={setFormData}
           onChangingImage={handleImageChange}
+          isImageTotalExceeded={isImageTotalExceeded}
           />;
       default:
         return <DestinationInfoFields
@@ -182,6 +198,7 @@ function ReusableTripForm(props) {
   }
 
   console.log("Form data: ", formData);
+  console.log("Image total exceeded: ", isImageTotalExceeded);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>

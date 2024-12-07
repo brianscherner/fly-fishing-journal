@@ -2,18 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Images(props) {
-  const { formData, onChangingImage } = props;
+  const { formData, onChangingImage, isImageTotalExceeded } = props;
 
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Photos</h4>
       <p className="required-msg">Add up to 6 photos from your trip!</p>
       <div className="photo-upload-slot">
-        <input
-          type="file"
-          accept="image/*"
-          multiple onChange={(e) => onChangingImage(e)}
-        />
+        {!isImageTotalExceeded && (
+          <input
+            type="file"
+            accept="image/*"
+            multiple onChange={(e) => onChangingImage(e)}
+          />
+        )}
       </div>
       <br/>
       <div className="photo-upload-container">
@@ -41,7 +43,8 @@ function Images(props) {
 
 Images.propTypes = {
   formData: PropTypes.object,
-  onChangingImage: PropTypes.func
+  onChangingImage: PropTypes.func,
+  isImageTotalExceeded: PropTypes.bool
 }
 
 export default Images;
