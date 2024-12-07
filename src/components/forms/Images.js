@@ -8,6 +8,7 @@ function Images(props) {
     <React.Fragment>
       <h4 className="form-section-heading">Photos</h4>
       <p className="required-msg">Add up to 6 photos from your trip!</p>
+      {/* need to give a more modern appearance - looks ugly */}
       <div className="photo-upload-slot">
         {!isImageTotalExceeded && (
           <input

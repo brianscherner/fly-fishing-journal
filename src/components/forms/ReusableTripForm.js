@@ -54,25 +54,23 @@ function ReusableTripForm(props) {
       return;
     }
 
-    // if (files) {
-      files.forEach((file) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          setFormData((prevFormData) => {
-            const updatedImages = [
-              ...prevFormData.images,
-              {
-                file,
-                preview: reader.result
-              }
-            ];
-            return { ...prevFormData, images: updatedImages };
-          });
-        };
-      });
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        setFormData((prevFormData) => {
+          const updatedImages = [
+            ...prevFormData.images,
+            {
+              file,
+              preview: reader.result
+            }
+          ];
+          return { ...prevFormData, images: updatedImages };
+        });
+      };
+    });
 
-    // }
   }
 
   const handleDeletingImage = (e) => {
