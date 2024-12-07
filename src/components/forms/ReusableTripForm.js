@@ -40,8 +40,6 @@ function ReusableTripForm(props) {
     });
   }
 
-  // need a way to delete images individually
-
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const currentImages = [...formData.images];
@@ -70,8 +68,12 @@ function ReusableTripForm(props) {
 
   }
 
-  const handleDeletingImage = (e) => {
-
+  const handleDeletingImage = (image) => {
+    const remainingImages = [...formData.images].filter((_, index) => index !== image);
+    setFormData({
+      ...formData,
+      images: remainingImages
+    })
   }
 
   const conditionalComponent = () => {
@@ -119,6 +121,7 @@ function ReusableTripForm(props) {
             setFormData={setFormData}
             onChangingImage={handleImageChange}
             isImageTotalExceeded={isImageTotalExceeded}
+            onDeletingImage={handleDeletingImage}
             />;
         }
         if (tripType === "Future") {
@@ -135,6 +138,7 @@ function ReusableTripForm(props) {
           setFormData={setFormData}
           onChangingImage={handleImageChange}
           isImageTotalExceeded={isImageTotalExceeded}
+          onDeletingImage={handleDeletingImage}
           />;
       default:
         return <DestinationInfoFields
@@ -192,7 +196,7 @@ function ReusableTripForm(props) {
     }
   }
 
-  // console.log("Form data: ", formData);
+  console.log("Form data: ", formData);
   // console.log("Image total exceeded: ", isImageTotalExceeded);
   return (
     <React.Fragment>

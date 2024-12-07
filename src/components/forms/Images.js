@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Images(props) {
-  const { formData, onChangingImage, isImageTotalExceeded } = props;
+  const { formData, onChangingImage, isImageTotalExceeded, onDeletingImage } = props;
 
   return (
     <React.Fragment>
@@ -22,7 +22,8 @@ function Images(props) {
         {formData.images.map((image, index) => (
           // need to style so that they're centered and can be responsive to other screen sizes
           // hard coding with px values makes them overflow
-          <div key ={index} className="photo-preview">
+          // need to add a red 'x' or something to indicate picture can be deleted
+          <div key ={index} className="photo-preview" onClick={() => onDeletingImage(index)}>
             <img
               src={image.preview}
               alt={`Preview ${index}`}
@@ -44,7 +45,8 @@ function Images(props) {
 Images.propTypes = {
   formData: PropTypes.object,
   onChangingImage: PropTypes.func,
-  isImageTotalExceeded: PropTypes.bool
+  isImageTotalExceeded: PropTypes.bool,
+  onDeletingImage: PropTypes.func
 }
 
 export default Images;
