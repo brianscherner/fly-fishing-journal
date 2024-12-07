@@ -48,6 +48,7 @@ function ReusableTripForm(props) {
     if (files) {
       files.forEach((file) => {
         const reader = new FileReader();
+        reader.readAsDataURL(file);
         reader.onload = () => {
           setFormData((prevFormData) => {
             const updatedImages = [
@@ -60,7 +61,6 @@ function ReusableTripForm(props) {
             return { ...prevFormData, images: updatedImages };
           });
         };
-        reader.readAsDataURL(file);
       });
     }
   }

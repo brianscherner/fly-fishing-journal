@@ -9,11 +9,11 @@ function Images(props) {
       <h4 className="form-section-heading">Photos</h4>
       <p className="required-msg">Add up to 6 photos from your trip!</p>
       <div className="photo-upload-slot">
-          <input
-            type="file"
-            accept="image/*"
-            multiple onChange={(e) => onChangingImage(e)}
-          />
+        <input
+          type="file"
+          accept="image/*"
+          multiple onChange={(e) => onChangingImage(e)}
+        />
       </div>
       <br/>
       <div className="photo-upload-container">
