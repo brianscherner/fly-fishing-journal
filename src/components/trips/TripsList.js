@@ -51,7 +51,7 @@ function TripsList(props) {
 
   }
 
-  console.log(tripsList);
+  // console.log(tripsList);
   return (
     <React.Fragment>
       <div className="row justify-content-center">

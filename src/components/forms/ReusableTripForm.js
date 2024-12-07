@@ -45,29 +45,26 @@ function ReusableTripForm(props) {
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const currentImages = [...formData.images];
-    console.log("Files length: ", files);
-    console.log("Current imgs: ", currentImages);
+    const remainingImageSlots = 6 - currentImages.length;
 
-    if (currentImages.length + files.length > 6) {
-      toast.error("You cannot upload more than 6 images.", { position: "bottom-right" });
-      // setIsImageTotalExceeded(!isImageTotalExceeded);
-      return;
+    if (remainingImageSlots <= 0) {
+      toast.error("A maximum of 6 photos are allowed.", { position: "bottom-right" });
     }
 
-    files.forEach((file) => {
+    const validFiles = files.slice(0, remainingImageSlots);
+    const newImages = [];
+
+    validFiles.forEach((file) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        setFormData((prevFormData) => {
-          const updatedImages = [
-            ...prevFormData.images,
-            {
-              file,
-              preview: reader.result
-            }
-          ];
-          return { ...prevFormData, images: updatedImages };
-        });
+        newImages.push({ file, preview: reader.result });
+        if (newImages.length === validFiles.length) {
+          setFormData((prevFormData) => ({
+            ...prevFormData,
+            images: [...prevFormData.images, ...newImages]
+          }));
+        }
       };
     });
 
@@ -195,8 +192,8 @@ function ReusableTripForm(props) {
     }
   }
 
-  console.log("Form data: ", formData);
-  console.log("Image total exceeded: ", isImageTotalExceeded);
+  // console.log("Form data: ", formData);
+  // console.log("Image total exceeded: ", isImageTotalExceeded);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>

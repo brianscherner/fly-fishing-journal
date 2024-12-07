@@ -10,13 +10,12 @@ function Images(props) {
       <p className="required-msg">Add up to 6 photos from your trip!</p>
       {/* need to give a more modern appearance - looks ugly */}
       <div className="photo-upload-slot">
-        {!isImageTotalExceeded && (
-          <input
-            type="file"
-            accept="image/*"
-            multiple onChange={(e) => onChangingImage(e)}
-          />
-        )}
+        <input
+          type="file"
+          accept="image/*"
+          multiple onChange={(e) => onChangingImage(e)}
+          disabled={isImageTotalExceeded}
+        />
       </div>
       <br/>
       <div className="photo-upload-container">
