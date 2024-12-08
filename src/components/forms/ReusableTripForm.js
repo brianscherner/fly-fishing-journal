@@ -16,7 +16,6 @@ function ReusableTripForm(props) {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [invalidFormFields, setInvalidFormFields] = useState({});
-  const [isImageTotalExceeded, setIsImageTotalExceeded] = useState(false);
 
   useEffect(() => {
     let total = 0;
@@ -120,7 +119,6 @@ function ReusableTripForm(props) {
             formData={formData}
             setFormData={setFormData}
             onChangingImage={handleImageChange}
-            isImageTotalExceeded={isImageTotalExceeded}
             onDeletingImage={handleDeletingImage}
             />;
         }
@@ -137,7 +135,6 @@ function ReusableTripForm(props) {
           formData={formData}
           setFormData={setFormData}
           onChangingImage={handleImageChange}
-          isImageTotalExceeded={isImageTotalExceeded}
           onDeletingImage={handleDeletingImage}
           />;
       default:
@@ -197,7 +194,6 @@ function ReusableTripForm(props) {
   }
 
   console.log("Form data: ", formData);
-  // console.log("Image total exceeded: ", isImageTotalExceeded);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>

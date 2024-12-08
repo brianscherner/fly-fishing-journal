@@ -435,7 +435,20 @@ label {
 .photo-upload-container {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
-  gap: 1rem;
+  gap: 10px;
+}
+
+.photo-preview--container {
+  position: relative;
+}
+
+.photo-delete-icon {
+  position: absolute;
+  z-index: 2;
+  transform: translateX(-100%);
+  color: #D90429;
+  text-align: right;
+  cursor: pointer;
 }
 
 .required-asterik {

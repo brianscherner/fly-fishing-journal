@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Images(props) {
-  const { formData, onChangingImage, isImageTotalExceeded, onDeletingImage } = props;
+  const { formData, onChangingImage, onDeletingImage } = props;
 
   return (
     <React.Fragment>
@@ -14,7 +15,6 @@ function Images(props) {
           type="file"
           accept="image/*"
           multiple onChange={(e) => onChangingImage(e)}
-          disabled={isImageTotalExceeded}
         />
       </div>
       <br/>
@@ -22,21 +22,26 @@ function Images(props) {
         {formData.images.map((image, index) => (
           // need to style so that they're centered and can be responsive to other screen sizes
           // hard coding with px values makes them overflow
-          // need to add a red 'x' or something to indicate picture can be deleted
-          <div key ={index} className="photo-preview" onClick={() => onDeletingImage(index)}>
-            <img
-              src={image.preview}
-              alt={`Preview ${index}`}
-              style={{
-                width: "150px",
-                height: "150px",
-                objectFit: "cover",
-                borderRadius: "0.45rem"
-              }}
-            />
+          <div key ={index} className="photo-preview">
+            <div className="photo-preview-container">
+              <img
+                src={image.preview}
+                alt={`Preview ${index}`}
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  objectFit: "cover",
+                  borderRadius: "0.45rem"
+                }}
+              />
+              <DeleteIcon
+                className="photo-delete-icon"
+                fontSize="large"
+                onClick={() => onDeletingImage(index)}/>
+            </div>
           </div>
         ))}
-        </div>
+      </div>
       <br/>
     </React.Fragment>
   )
@@ -45,7 +50,6 @@ function Images(props) {
 Images.propTypes = {
   formData: PropTypes.object,
   onChangingImage: PropTypes.func,
-  isImageTotalExceeded: PropTypes.bool,
   onDeletingImage: PropTypes.func
 }
 
