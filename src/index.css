@@ -465,11 +465,20 @@ label {
 
 .photo-delete-icon {
   position: absolute;
+  top: 5px;
+  right: 4px;
   z-index: 2;
-  transform: translateX(-100%);
-  color: #D90429;
-  text-align: right;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: var(--background);
+  border-radius: 50%;
+  padding: 3px;
   cursor: pointer;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.photo-delete-icon:hover {
+  background-color: rgba(200, 0, 0, 1);
+  transform: scale(1.075);
 }
 
 .required-asterik {
@@ -495,6 +504,7 @@ label {
   color: var(--accent-primary);
   cursor: pointer;
   font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   font-size: 1rem;
   transition: background-color 200ms ease, border-color 200ms ease;
 }

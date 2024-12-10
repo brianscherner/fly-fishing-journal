@@ -33,7 +33,9 @@ function Images(props) {
               />
               <DeleteIcon
                 className="photo-delete-icon"
-                onClick={() => onDeletingImage(index)}/>
+                onClick={() => onDeletingImage(index)}
+                fontSize="large"
+              />
             </div>
           </div>
         ))}
