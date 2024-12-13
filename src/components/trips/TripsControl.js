@@ -3,10 +3,11 @@ import NewTripsForm from '../forms/NewTripsForm.js';
 import TripsList from './TripsList.js';
 import TripDetails from './TripDetails.js';
 import EditTripForm from '../forms/EditTripForm.js';
-import { db, auth } from '../../firebase.js';
+import { db, auth, storage } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from 'uuid';
 import { toast } from 'react-toastify';
-import AddBoxIcon from '@mui/icons-material/AddBox';
 import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
@@ -30,6 +31,7 @@ function TripsControl() {
             });
           }
         });
+        console.log("Trips: ", trips);
         setMainTripsList(trips);
       },
       (error) => {
@@ -54,9 +56,44 @@ function TripsControl() {
     setEditing(true);
   }
 
-  // Firebase doesn't support custom file objects, so it currently can't add a trip if there are photos in the form
+  const uploadImages = (image) => {
+    const storageRef = ref(storage, `trip-images/${image.file.name + v4()}`);
+    // upload each image
+    uploadBytes(storageRef, image);
+    // is adding file name plus randomized string from v4()
+    console.log("Storage ref: ", storageRef.fullPath);
+    // returns full file path
+    return storageRef.fullPath;
+  }
+
+  // Errors:
+
+  // this fn is being called with invalid data
+  // field value not supported - doesn't accept a custom file object
+  // CORS error
+  // "max retry time for operation exceeded, please try again?"
 
   const handleCreatingNewTrip = async (newTripData) => {
+    // creates new array from the formData images array
+    const images = [...newTripData.images];
+    // empty array for the new file paths
+    const uploadedImages = [];
+    // log this message if array is empty
+    if (images.length === 0) {
+      console.log("No images to upload");
+    // otherwise, map through the array, and call uploadImages, passing in each array index as argument
+    } else {
+      images.map(index => {
+        // push each full file path into empty array
+        uploadedImages.push(uploadImages(index));
+      });
+    }
+    // array now has each full file path
+    console.log("Uploaded imgs: ", uploadedImages);
+
+    // now need to getDownloadUrl() method to access each file later
+    // saves each URL as a string in database w/ other form data
+
     await addDoc(collection(db, "Trips"), newTripData);
     toast.success('Trip added.', { position: "bottom-right"});
     setFormVisibleOnPage(false);
