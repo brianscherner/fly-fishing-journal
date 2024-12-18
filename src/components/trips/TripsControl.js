@@ -3,10 +3,8 @@ import NewTripsForm from '../forms/NewTripsForm.js';
 import TripsList from './TripsList.js';
 import TripDetails from './TripDetails.js';
 import EditTripForm from '../forms/EditTripForm.js';
-import { db, auth, storage } from '../../firebase.js';
+import { db, auth } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { v4 } from 'uuid';
 import { toast } from 'react-toastify';
 import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -31,7 +29,6 @@ function TripsControl() {
             });
           }
         });
-        console.log("Trips: ", trips);
         setMainTripsList(trips);
       },
       (error) => {
@@ -83,7 +80,8 @@ function TripsControl() {
     let tripDataToUpload = null;
     // log this message if array is empty
     if (images.length === 0) {
-      console.log("No images to upload");
+      // simply pass the trip data to upload as the incoming newTripData
+      tripDataToUpload = newTripData;
     } else {
       // map through images array and create new array of the result of uploadImages, which is a promise
       const uploadImagesResult = images.map(index => {
