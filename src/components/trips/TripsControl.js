@@ -56,45 +56,52 @@ function TripsControl() {
     setEditing(true);
   }
 
-  const uploadImages = (image) => {
-    const storageRef = ref(storage, `trip-images/${image.file.name + v4()}`);
-    // upload each image
-    uploadBytes(storageRef, image);
-    // is adding file name plus randomized string from v4()
-    console.log("Storage ref: ", storageRef.fullPath);
-    // returns full file path
-    return storageRef.fullPath;
+  // add error handling to this fn
+  const uploadImages = async (file) => {
+    // API call with appropriate endpoint
+    const url = 'https://api.cloudinary.com/v1_1/dn7tkwqfs/image/upload';
+    // create FormData object so that Cloudinary can process the data
+    const imagesFormData = new FormData();
+    // append file and upload preset
+    imagesFormData.append("file", file);
+    imagesFormData.append("upload_preset", "uploaded_images");
+    // make POST request using the FormData object which contains each 'file' key and file object
+    const response = await fetch(url, {
+      method: 'POST',
+      body: imagesFormData,
+    })
+    // when response is fetched, create JSON object
+    const data = await response.json();
+    // return a Promise which results in a secure_url when fulfilled
+    return data.secure_url;
   }
-
-  // Errors:
-
-  // this fn is being called with invalid data
-  // field value not supported - doesn't accept a custom file object
-  // CORS error
-  // "max retry time for operation exceeded, please try again?"
 
   const handleCreatingNewTrip = async (newTripData) => {
     // creates new array from the formData images array
     const images = [...newTripData.images];
-    // empty array for the new file paths
-    const uploadedImages = [];
+    // var which eventually stores the trip data with proper URLs for Firebase storage
+    let tripDataToUpload = null;
     // log this message if array is empty
     if (images.length === 0) {
       console.log("No images to upload");
-    // otherwise, map through the array, and call uploadImages, passing in each array index as argument
     } else {
-      images.map(index => {
-        // push each full file path into empty array
-        uploadedImages.push(uploadImages(index));
+      // map through images array and create new array of the result of uploadImages, which is a promise
+      const uploadImagesResult = images.map(index => {
+        return uploadImages(index.file);
       });
+      // take in array of promises and return an array of the promise results
+      const imageURLsArray = await Promise.all(uploadImagesResult);
+      // newTripData needs to be updated with this array of image URLs
+      const updatedTripData = {
+        ...newTripData,
+        images: imageURLsArray
+      }
+      // trip data that will be uploaded is set to value of updatedTripData
+      tripDataToUpload = updatedTripData;
     }
-    // array now has each full file path
-    console.log("Uploaded imgs: ", uploadedImages);
 
-    // now need to getDownloadUrl() method to access each file later
-    // saves each URL as a string in database w/ other form data
-
-    await addDoc(collection(db, "Trips"), newTripData);
+    // updated trip data with URLs from Cloudinary is passed to addDoc and trip is now stored properly in Firebase
+    await addDoc(collection(db, "Trips"), tripDataToUpload);
     toast.success('Trip added.', { position: "bottom-right"});
     setFormVisibleOnPage(false);
   }
