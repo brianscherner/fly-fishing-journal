@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import ReusableTripForm from "./ReusableTripForm";
 
+// images don't initially preview when editing
+// they will preview when added, but the existing ones are not loaded for preview
+// could be because the images are now stored as URLs, not custom file objects
 function EditTripForm(props) {
   const { trip } = props;
   const [editFormData, setEditFormData] = useState(trip);

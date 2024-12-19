@@ -69,6 +69,7 @@ function TripsControl() {
     })
     // when response is fetched, create JSON object
     const data = await response.json();
+    console.log("Data object: ", data);
     // return a Promise which results in a secure_url when fulfilled
     return data.secure_url;
   }
@@ -115,6 +116,7 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
+  // needs to be fixed - this is expecting secure URLs for images and is instead receiving custom File Objects
   const handleEditingTrip = async (tripToEdit) => {
     const trip = doc(db, "Trips", tripToEdit.id);
     await updateDoc(trip, tripToEdit);
