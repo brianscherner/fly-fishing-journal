@@ -326,8 +326,7 @@ table {
 
 .trip {
   border-radius: 0.45rem;
-  /* background: linear-gradient(120deg, #008891, #B3E4F0); */
-  background: linear-gradient(135deg, #006A74 10%, #007D84 45%, #B0DCE4 90%);
+  background: #0077B6;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
