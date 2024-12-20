@@ -51,7 +51,6 @@ function TripsList(props) {
 
   }
 
-  // console.log(tripsList);
   return (
     <React.Fragment>
       <div className="row justify-content-center">
@@ -92,6 +91,7 @@ function TripsList(props) {
               tripType={trip.tripType}
               fishCaught={trip.fishCaught}
               waterBodyType={trip.waterBodyType}
+              images={trip.images}
               id={trip.id}
               key={trip.id}/>
             ))}
