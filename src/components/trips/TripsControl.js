@@ -147,7 +147,8 @@ function TripsControl() {
     } else if (editing) {
       currentlyVisibleState = <EditTripForm
         trip={selectedTrip}
-        onEditingTrip={handleEditingTrip}/>
+        onEditingTrip={handleEditingTrip}
+        />
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
           <HomeIcon/>

@@ -4,8 +4,13 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import UploadIcon from '@mui/icons-material/Upload';
 
 function Images(props) {
-  const { formData, onChangingImage, onDeletingImage } = props;
+  const {
+    formData,
+    onChangingImage,
+    onDeletingImage,
+  } = props;
 
+  console.log("Form Data: ", formData);
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Photos</h4>
@@ -27,7 +32,7 @@ function Images(props) {
           <div key ={index} className="photo-preview">
             <div className="photo-preview-container">
               <img
-                src={image.preview}
+                src={(typeof image === "string") ? image : image.preview}
                 alt={`Preview ${index}`}
                 className="photo"
               />
@@ -48,7 +53,7 @@ function Images(props) {
 Images.propTypes = {
   formData: PropTypes.object,
   onChangingImage: PropTypes.func,
-  onDeletingImage: PropTypes.func
+  onDeletingImage: PropTypes.func,
 }
 
 export default Images;

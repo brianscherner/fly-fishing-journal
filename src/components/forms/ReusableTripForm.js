@@ -11,7 +11,11 @@ import ForwardIcon from '@mui/icons-material/Forward';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function ReusableTripForm(props) {
-  const { formData, setFormData, formSubmissionHandler } = props;
+  const {
+    formData,
+    setFormData,
+    formSubmissionHandler,
+  } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -193,7 +197,7 @@ function ReusableTripForm(props) {
     }
   }
 
-  console.log("Form data: ", formData);
+  // console.log("Form data: ", formData);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
