@@ -69,7 +69,6 @@ function TripsControl() {
     })
     // when response is fetched, create JSON object
     const data = await response.json();
-    console.log("Data object: ", data);
     // return a Promise which results in a secure_url when fulfilled
     return data.secure_url;
   }

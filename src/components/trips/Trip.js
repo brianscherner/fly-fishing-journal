@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Trip(props) {
-  console.log("Imgs array: ", props.images);
+
   return (
     <React.Fragment>
-      {/* update trip background to be first image from the image array - otherwise leave it as is */}
-      <div className="trip" onClick={() => props.whenTripClicked(props.id)}>
+      {/* update trip background to be first image from the image array, if there are images - otherwise leave it as is */}
+      <div
+        className="trip"
+        onClick={() => props.whenTripClicked(props.id)}
+        style={
+          props.images.length > 0 ?
+          {
+            backgroundImage: `url(${props.images[0]})`,
+            backgroundSize: "cover"
+          } : {}
+        }
+        >
         <LocationOnIcon fontSize="large" id="trip-icon"/>
         <br/>
         <br/>
