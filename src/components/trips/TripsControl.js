@@ -116,10 +116,27 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
-  // needs to be fixed - this is expecting secure URLs for images and is instead receiving custom File Objects
   const handleEditingTrip = async (tripToEdit) => {
+    const images = [...tripToEdit.images];
+    // filter out images that are already URLs
+    const initialImageURLs = images.filter(index => typeof index === "string");
+    // filter out images that aren't URLs
+    const nonURLImages = images.filter(index => typeof index !== "string");
+    // turn File objects into URLs via uploadImages
+    const newUploadedImages = nonURLImages.map(index => {
+      return uploadImages(index.file);
+    })
+    // store the URLs returned from Promises into array:
+    const newImageURLs = await Promise.all(newUploadedImages);
+    // merge the two URL arrays back into one
+    const newArrayOfImageURLs = [...initialImageURLs, ...newImageURLs];
+    // update the tripToEdit with this new array of URLs
+    const finalTripToEdit = {
+      ...tripToEdit,
+      images: newArrayOfImageURLs,
+    }
     const trip = doc(db, "Trips", tripToEdit.id);
-    await updateDoc(trip, tripToEdit);
+    await updateDoc(trip, finalTripToEdit);
     toast.success('Trip edited.', { position: "bottom-right"});
     setEditing(false);
     setSelectedTrip(null);
