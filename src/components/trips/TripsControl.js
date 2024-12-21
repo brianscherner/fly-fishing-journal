@@ -167,7 +167,7 @@ function TripsControl() {
         />
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
-          <HomeIcon/>
+          <HomeIcon fontSize='large'/>
         </button>;
     } else if (selectedTrip != null) {
       currentlyVisibleState = <TripDetails
@@ -177,14 +177,14 @@ function TripsControl() {
         onMarkingTripAsPast={handleMarkingTripAsPast}/>
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
-          <HomeIcon/>
+          <HomeIcon fontSize='large'/>
         </button>;
     } else if (formVisibleOnPage) {
       currentlyVisibleState = <NewTripsForm
         onNewTripCreation={handleCreatingNewTrip}/>
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
-          <HomeIcon/>
+          <HomeIcon fontSize='large'/>
         </button>;
     } else {
       currentlyVisibleState = <TripsList
@@ -192,7 +192,7 @@ function TripsControl() {
         tripsList={mainTripsList}/>
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
-          Add Trips <AddCircleIcon/>
+          <AddCircleIcon fontSize='large'/> Add Trips
         </button>
     }
 
