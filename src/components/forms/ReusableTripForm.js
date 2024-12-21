@@ -226,7 +226,7 @@ function ReusableTripForm(props) {
                       </button>}
                     { page < totalPages &&
                       <button
-                        className="btn app-buttons"
+                        className="btn next-button"
                         onClick={nextPage} type="button">Next <ForwardIcon/>
                       </button>}
                     { page >= totalPages &&

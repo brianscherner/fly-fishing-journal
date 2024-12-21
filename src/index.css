@@ -106,13 +106,28 @@
 
 .btn.back-button {
   font-family: "Open Sans", sans-serif;
-  background: #D90429;
-  color: var(--background);
-  font-weight: 600;
+  color: #333333;
+  border: 3px solid #D90429;
+  border-radius: 0.45rem;
+  font-weight: 700;
 }
 
 .btn.back-button:hover {
-  background: #A4031F;
+  background: #D90429;
+  color: var(--background);
+}
+
+.btn.next-button {
+  font-family: "Open Sans", sans-serif;
+  color: #333333;
+  border: 3px solid var(--accent-primary);
+  border-radius: 0.45rem;
+  font-weight: 700;
+}
+
+.btn.next-button:hover {
+  background: var(--accent-primary);
+  color: var(--background);
 }
 
 #delete-button {
@@ -124,6 +139,7 @@
 
 #delete-button:hover {
   background: #A4031F;
+  border-color: #A4031F;
 }
 
 /* styling for application header component */
