@@ -43,13 +43,23 @@ function TripDetails(props) {
     setTripNotesToggled(!tripNotesToggled);
   }
 
-  const { trip, onClickingDelete, onClickingEdit, onMarkingTripAsPast } = props;
+  const {
+    trip,
+    onClickingDelete,
+    onClickingEdit,
+    onMarkingTripAsPast } = props;
 
+  console.log("Trip obj: ", trip);
   return (
-    // make trip details more responsive - may need to edit CSS as there are existing styles that could override it
-
-    // can use bootstrap like before, or use media queries to adjust width of columns
     <div className="trip-details">
+      <div className="images-carousel-container">
+        <img
+          src={trip.images[0]}
+          alt="Trip image"
+          className="trip-details-img"
+        />
+      </div>
+      <br/>
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">

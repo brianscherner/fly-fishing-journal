@@ -161,13 +161,19 @@
   font-family: 'Merriweather';
 }
 
-/* styling for trip details navigation links for categories */
+/* styling for trip details */
 
 .flex-column {
   flex-direction: column !important;
   align-items: center;
   display: flex;
   width: 100%;
+}
+
+.trip-details-img {
+  width: 50%;
+  height: auto;
+  border-radius: 0.45rem;
 }
 
 .nav-item {
@@ -550,6 +556,11 @@ label {
   .nav-item {
     width: 60%;
   }
+
+  .trip-details-img {
+    width: 60%;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -560,6 +571,11 @@ label {
   .nav-item {
     width: 100%;
   }
+
+  .trip-details-img {
+    width: 100%;
+  }
+
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -578,6 +594,11 @@ label {
   .nav-item {
     width: 40%;
   }
+
+  .trip-details-img {
+    width: 40%;
+  }
+
 }
 
 @media (min-width: 1440px) {
@@ -590,4 +611,9 @@ label {
   .nav-item {
     width: 30%;
   }
+
+  .trip-details-img {
+    width: 30%;
+  }
+
 }
