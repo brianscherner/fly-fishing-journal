@@ -109,7 +109,7 @@ function SignUp() {
                 <br/>
                 <button
                   className="btn app-buttons"
-                  type="submit">Sign Up <PersonAddIcon/>
+                  type="submit"><PersonAddIcon/> Sign Up
                 </button>
               </form>
               <br/>

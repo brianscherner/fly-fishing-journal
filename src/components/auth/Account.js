@@ -105,7 +105,7 @@ function SignIn() {
                 <br/>
                 <button
                   className="btn app-buttons"
-                  type="submit">Sign In <LoginIcon/>
+                  type="submit"><LoginIcon/> Sign In
                 </button>
               </form>
             </div>
@@ -123,7 +123,7 @@ function SignIn() {
           </div>
           <button
             className="btn app-buttons"
-            onClick={doSignOut}>Sign Out <LogoutIcon/>
+            onClick={doSignOut}><LogoutIcon/> Sign Out
           </button>
         </React.Fragment>
       )}

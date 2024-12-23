@@ -45,7 +45,7 @@ function ResetPassword() {
             <br/>
             <button
               className="btn app-buttons"
-              type="submit">Send Email &nbsp;<SendIcon/>
+              type="submit"><SendIcon/> Send Email
             </button>
           </form>
         </div>
