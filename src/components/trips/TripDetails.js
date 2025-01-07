@@ -62,7 +62,7 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
-      <div className="images-carousel-container">
+      {/* <div className="images-carousel-container"> */}
         <div className="images-carousel">
           <div className="move-left">
             <NavigateBeforeIcon onClick={moveLeft}/>
@@ -82,7 +82,7 @@ function TripDetails(props) {
             </div>
           )}
         </div>
-      </div>
+      {/* </div> */}
       <br/>
       <div className="detail-categories">
         <ul className="nav flex-column">

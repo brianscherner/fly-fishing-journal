@@ -170,8 +170,33 @@
   width: 100%;
 }
 
+.images-carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-left {
+  position: absolute;
+  left: 14rem;
+  top: 50%;
+  color: var(--background);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.move-right {
+  position: absolute;
+  right: 14rem;
+  top: 50%;
+  color: var(--background);
+  z-index: 5;
+  cursor: pointer;
+}
+
 .trip-details-img {
-  width: 50%;
+  width: 60%;
   height: auto;
   border-radius: 0.45rem;
 }
