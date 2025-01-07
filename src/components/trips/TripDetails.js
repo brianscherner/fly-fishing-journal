@@ -65,13 +65,20 @@ function TripDetails(props) {
       {/* <div className="images-carousel-container"> */}
         <div className="images-carousel">
           <div className="move-left">
-            <NavigateBeforeIcon onClick={moveLeft}/>
+            <NavigateBeforeIcon
+              onClick={moveLeft}
+              fontSize="large"/>
           </div>
           <div className="move-right">
-            <NavigateNextIcon onClick={moveRight}/>
+            <NavigateNextIcon
+              onClick={moveRight}
+              fontSize="large"/>
           </div>
           {trip.images.map((activeImage, index) =>
-            <div key={index}>
+            <div
+              key={index}
+              className={index === currentImage ? "active-current-image" : 'current-image'}
+            >
               {index === currentImage && (
                 <img
                   src={activeImage}

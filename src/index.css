@@ -170,8 +170,19 @@
   width: 100%;
 }
 
+.current-image {
+  transition-duration: 0.5s ease;
+  opacity: 0;
+}
+
+.active-current-image {
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+
 .images-carousel {
   position: relative;
+  /* height: 400px; */
   display: flex;
   justify-content: center;
   align-items: center;
