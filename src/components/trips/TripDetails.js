@@ -15,13 +15,22 @@ import NotesIcon from '@mui/icons-material/Notes';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 function TripDetails(props) {
+  const {
+    trip,
+    onClickingDelete,
+    onClickingEdit,
+    onMarkingTripAsPast } = props;
+
   const [destInfoToggled, setDestInfoToggled] = useState(true);
   const [tripCostsToggled, setTripCostsToggled] = useState(false);
   const [gearRequirementsToggled, setGearRequirementsToggled] = useState(false);
   const [miscellaneousToggled, setMiscellaneousToggled] = useState(false);
   const [tripNotesToggled, setTripNotesToggled] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
 
   const toggleDestInfo = () => {
     setDestInfoToggled(!destInfoToggled);
@@ -43,21 +52,36 @@ function TripDetails(props) {
     setTripNotesToggled(!tripNotesToggled);
   }
 
-  const {
-    trip,
-    onClickingDelete,
-    onClickingEdit,
-    onMarkingTripAsPast } = props;
+  const moveRight = () => {
+    setCurrentImage(currentImage === trip.images.length - 1 ? 0 : currentImage + 1);
+  }
 
-  console.log("Trip obj: ", trip);
+  const moveLeft = () => {
+    setCurrentImage(currentImage === 0 ? trip.images.length - 1 : currentImage - 1);
+  }
+
   return (
     <div className="trip-details">
       <div className="images-carousel-container">
-        <img
-          src={trip.images[0]}
-          alt="Trip image"
-          className="trip-details-img"
-        />
+        <div className="images-carousel">
+          <div className="move-left">
+            <NavigateBeforeIcon onClick={moveLeft}/>
+          </div>
+          <div className="move-right">
+            <NavigateNextIcon onClick={moveRight}/>
+          </div>
+          {trip.images.map((activeImage, index) =>
+            <div key={index}>
+              {index === currentImage && (
+                <img
+                  src={activeImage}
+                  alt="Trip image"
+                  className="trip-details-img"
+                />
+              )}
+            </div>
+          )}
+        </div>
       </div>
       <br/>
       <div className="detail-categories">
