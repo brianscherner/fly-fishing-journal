@@ -69,8 +69,19 @@ function TripsControl() {
     })
     // when response is fetched, create JSON object
     const data = await response.json();
-    // return a Promise which results in a secure_url when fulfilled
-    return data.secure_url;
+    // modify the secure_url for optimized display
+    const urlToOptimize = data.secure_url;
+    const optimizedUrl = optimizeUrl(urlToOptimize);
+    // return a Promise which results in an optimized secure_url when fulfilled
+    return optimizedUrl;
+  }
+
+  // adds optimizations to the existing secure_url to modify how the images are displayed once uploaded
+  // images are still being displayed w/ inconsistent sizes
+  const optimizeUrl = (url) => {
+    let optimizations = 'upload/w_auto:800,h_450,c_pad,b_rgb:ffffff,f_auto,q_auto,dpr_auto/';
+    let newUrl = url.replace(/\upload\//, optimizations);
+    return newUrl;
   }
 
   const handleCreatingNewTrip = async (newTripData) => {

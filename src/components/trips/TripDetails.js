@@ -60,6 +60,7 @@ function TripDetails(props) {
     setCurrentImage(currentImage === 0 ? trip.images.length - 1 : currentImage - 1);
   }
 
+  console.log("Trip details: ", trip.images);
   return (
     <div className="trip-details">
       {/* <div className="images-carousel-container"> */}
