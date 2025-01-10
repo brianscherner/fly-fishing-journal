@@ -17,6 +17,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import MobileStepper from '@mui/material/MobileStepper';
 
 function TripDetails(props) {
   const {
@@ -63,35 +64,61 @@ function TripDetails(props) {
   console.log("Trip details: ", trip.images);
   return (
     <div className="trip-details">
-      {/* <div className="images-carousel-container"> */}
-        <div className="images-carousel">
-          <div className="move-left">
-            <NavigateBeforeIcon
-              onClick={moveLeft}
-              fontSize="large"/>
-          </div>
-          <div className="move-right">
-            <NavigateNextIcon
-              onClick={moveRight}
-              fontSize="large"/>
-          </div>
-          {trip.images.map((activeImage, index) =>
-            <div
-              key={index}
-              className={index === currentImage ? "active-current-image" : 'current-image'}
-            >
-              {index === currentImage && (
-                <img
-                  src={activeImage}
-                  alt="Trip image"
-                  className="trip-details-img"
-                />
-              )}
+      {/* flexbox could be causing issue with images being displayed as different sizes */}
+      <div className="images-carousel">
+        {trip.images.length >= 2 && (
+          <React.Fragment>
+            <div className="move-left">
+              <NavigateBeforeIcon
+                onClick={moveLeft}
+                fontSize="medium"/>
             </div>
-          )}
-        </div>
-      {/* </div> */}
-      <br/>
+            <div className="move-right">
+              <NavigateNextIcon
+                onClick={moveRight}
+                fontSize="medium"/>
+            </div>
+          </React.Fragment>
+        )}
+
+        {trip.images.map((activeImage, index) =>
+          <div
+            key={index}
+            className={index === currentImage ? "active-current-image" : 'current-image'}
+          >
+            {index === currentImage && (
+              <img
+                src={activeImage}
+                alt="Trip image"
+                className="trip-details-img"
+              />
+            )}
+          </div>
+        )}
+
+        {trip.images.length >= 2 && (
+          <div className="mobile-stepper">
+            <MobileStepper
+              variant="dots"
+              steps={trip.images.length}
+              position="static"
+              activeStep={currentImage}
+              sx={{
+                maxWidth: '100%',
+                flexGrow: 1,
+                borderRadius: '0.45rem',
+                backgroundColor: '#e8f8fe'
+              }}
+            />
+          </div>
+        )}
+
+      </div>
+
+      {trip.images.length >= 1 && (
+        <br/>
+      )}
+
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">

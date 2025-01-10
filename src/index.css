@@ -182,34 +182,46 @@
 
 .images-carousel {
   position: relative;
-  /* height: 400px; */
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.move-left, .move-right {
+  position: absolute;
+  top: 40%;
+  z-index: 5;
+  cursor: pointer;
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .move-left {
-  position: absolute;
-  left: 14rem;
-  top: 50%;
-  color: var(--background);
-  z-index: 5;
-  cursor: pointer;
+  left: 12.25rem;
 }
 
 .move-right {
-  position: absolute;
-  right: 14rem;
-  top: 50%;
-  color: var(--background);
-  z-index: 5;
-  cursor: pointer;
+  right: 12.25rem;
 }
 
 .trip-details-img {
   width: 60%;
   height: auto;
   border-radius: 0.45rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.mobile-stepper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-item {
