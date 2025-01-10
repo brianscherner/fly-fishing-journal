@@ -606,7 +606,15 @@ label {
   }
 
   .trip-details-img {
-    width: 60%;
+    width: 65%;
+  }
+
+  .move-left {
+    left: 5.5rem;
+  }
+
+  .move-right {
+    right: 5.5rem;
   }
 
 }
@@ -624,14 +632,35 @@ label {
     width: 100%;
   }
 
+  .move-left, .move-right {
+    top: 35%;
+  }
+
+  .move-left {
+    left: 0.35rem;
+  }
+
+  .move-right {
+    right: 0.35rem;
+  }
+
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+/* @media (min-width: 768px) and (max-width: 1279px) {
   .trips-list-container {
     width: 85%;
     margin: 0 auto;
   }
-}
+
+  .move-left {
+    left: 6.5rem;
+  }
+
+  .move-right {
+    right: 6.5rem;
+  }
+
+} */
 
 @media (min-width: 1280px) {
   .trips-list-container {
