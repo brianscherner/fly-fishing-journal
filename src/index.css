@@ -187,7 +187,8 @@
   flex-direction: column;
 }
 
-.move-left, .move-right {
+.move-left,
+.move-right {
   position: absolute;
   top: 40%;
   z-index: 5;
@@ -196,26 +197,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
 }
 
 .move-left {
-  left: 12.25rem;
+  left: 11.25rem;
 }
 
 .move-right {
-  right: 12.25rem;
+  right: 11.25rem;
 }
 
 .trip-details-img {
-  width: 60%;
+  width: 80%;
   height: auto;
   border-radius: 0.45rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+}
+
+.active-current-image:hover .move-left,
+.active-current-image:hover .move-right {
+  opacity: 1;
 }
 
 .mobile-stepper {
@@ -227,7 +234,7 @@
 .nav-item {
   flex-direction: column;
   display: flex;
-  width: 40%;
+  width: 60%;
   margin-bottom: 1rem;
 }
 

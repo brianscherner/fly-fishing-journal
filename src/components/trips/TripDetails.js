@@ -64,34 +64,34 @@ function TripDetails(props) {
   console.log("Trip details: ", trip.images);
   return (
     <div className="trip-details">
-      {/* flexbox could be causing issue with images being displayed as different sizes */}
       <div className="images-carousel">
-        {trip.images.length >= 2 && (
-          <React.Fragment>
-            <div className="move-left">
-              <NavigateBeforeIcon
-                onClick={moveLeft}
-                fontSize="medium"/>
-            </div>
-            <div className="move-right">
-              <NavigateNextIcon
-                onClick={moveRight}
-                fontSize="medium"/>
-            </div>
-          </React.Fragment>
-        )}
-
         {trip.images.map((activeImage, index) =>
           <div
             key={index}
             className={index === currentImage ? "active-current-image" : 'current-image'}
           >
             {index === currentImage && (
-              <img
-                src={activeImage}
-                alt="Trip image"
-                className="trip-details-img"
-              />
+              <React.Fragment>
+                <img
+                  src={activeImage}
+                  alt="Trip image"
+                  className="trip-details-img"
+                />
+                {trip.images.length >= 2 && (
+                  <React.Fragment>
+                    <div className="move-left">
+                      <NavigateBeforeIcon
+                        onClick={moveLeft}
+                        fontSize="medium"/>
+                    </div>
+                    <div className="move-right">
+                      <NavigateNextIcon
+                        onClick={moveRight}
+                        fontSize="medium"/>
+                    </div>
+                  </React.Fragment>
+                )}
+              </React.Fragment>
             )}
           </div>
         )}
@@ -112,7 +112,6 @@ function TripDetails(props) {
             />
           </div>
         )}
-
       </div>
 
       {trip.images.length >= 1 && (
