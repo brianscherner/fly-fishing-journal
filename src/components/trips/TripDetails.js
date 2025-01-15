@@ -15,6 +15,7 @@ import NotesIcon from '@mui/icons-material/Notes';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
+import ImageSlider from "./ImageSlider";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -64,60 +65,12 @@ function TripDetails(props) {
   console.log("Trip details: ", trip.images);
   return (
     <div className="trip-details">
-      <div className="images-carousel">
-        {trip.images.map((activeImage, index) =>
-          <div
-            key={index}
-            className={index === currentImage ? "active-current-image" : 'current-image'}
-          >
-            {index === currentImage && (
-              <React.Fragment>
-                <img
-                  src={activeImage}
-                  alt="Trip image"
-                  className="trip-details-img"
-                />
-                {trip.images.length >= 2 && (
-                  <React.Fragment>
-                    <div className="move-left">
-                      <NavigateBeforeIcon
-                        onClick={moveLeft}
-                        fontSize="medium"/>
-                    </div>
-                    <div className="move-right">
-                      <NavigateNextIcon
-                        onClick={moveRight}
-                        fontSize="medium"/>
-                    </div>
-                  </React.Fragment>
-                )}
-              </React.Fragment>
-            )}
-          </div>
-        )}
-
-        {trip.images.length >= 2 && (
-          <div className="mobile-stepper">
-            <MobileStepper
-              variant="dots"
-              steps={trip.images.length}
-              position="static"
-              activeStep={currentImage}
-              sx={{
-                maxWidth: '100%',
-                flexGrow: 1,
-                borderRadius: '0.45rem',
-                backgroundColor: '#e8f8fe'
-              }}
-            />
-          </div>
-        )}
-      </div>
-
-      {trip.images.length >= 1 && (
-        <br/>
-      )}
-
+      <ImageSlider
+        trip={trip}
+        onMovingLeft={moveLeft}
+        onMovingRight={moveRight}
+        currentImage={currentImage}
+      />
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
