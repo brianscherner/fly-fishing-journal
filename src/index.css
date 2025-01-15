@@ -675,7 +675,7 @@ label {
 
 }
 
-/* @media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .trip-details-img {
     width: 85%;
   }
@@ -693,7 +693,7 @@ label {
     right: 9.5rem;
   }
 
-} */
+}
 
 @media (min-width: 1280px) {
   .trips-list-container {
@@ -706,7 +706,20 @@ label {
   }
 
   .trip-details-img {
-    width: 77.5%;
+    width: 73.5%;
+  }
+
+  .move-left, .move-right {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  .move-left {
+    left: 23.5rem;
+  }
+
+  .move-right {
+    right: 23.5rem;
   }
 
 }
@@ -723,7 +736,20 @@ label {
   }
 
   .trip-details-img {
-    width: 82.5%;
+    width: 63.5%;
+  }
+
+  .move-left, .move-right {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  .move-left {
+    left: 23.5rem;
+  }
+
+  .move-right {
+    right: 23.5rem;
   }
 
 }
