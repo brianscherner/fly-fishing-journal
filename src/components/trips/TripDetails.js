@@ -16,9 +16,6 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import MobileStepper from '@mui/material/MobileStepper';
 
 function TripDetails(props) {
   const {
