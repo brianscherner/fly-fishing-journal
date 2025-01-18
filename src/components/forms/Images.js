@@ -10,7 +10,7 @@ function Images(props) {
     onDeletingImage,
   } = props;
 
-  console.log("Form Data: ", formData);
+  // console.log("Form Data: ", formData);
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Photos</h4>

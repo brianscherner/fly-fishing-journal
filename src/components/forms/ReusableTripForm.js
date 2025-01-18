@@ -15,6 +15,7 @@ function ReusableTripForm(props) {
     formData,
     setFormData,
     formSubmissionHandler,
+    isLoading
   } = props;
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
@@ -230,9 +231,20 @@ function ReusableTripForm(props) {
                         onClick={nextPage} type="button">Next <ForwardIcon/>
                       </button>}
                     { page >= totalPages &&
-                      <button
-                        className="btn app-buttons" type="submit">Add Trip <AddCircleIcon/>
-                      </button>}
+                      <div className="buttons-container">
+                        <button
+                          className="btn btn app-buttons"
+                          type="submit">Add Trip <AddCircleIcon/>
+                        </button>
+                        {isLoading && (
+                          <button
+                            className="loader"
+                            type="button"
+                            disabled>
+                          </button>
+                        )}
+                      </div>
+                    }
                   </div>
                 </React.Fragment>
               )}
