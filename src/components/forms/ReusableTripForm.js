@@ -198,7 +198,7 @@ function ReusableTripForm(props) {
     }
   }
 
-  // console.log("Form data: ", formData);
+  console.log("Form data: ", formData);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
@@ -231,16 +231,18 @@ function ReusableTripForm(props) {
                         onClick={nextPage} type="button">Next <ForwardIcon/>
                       </button>}
                     { page >= totalPages &&
+                      // trying to replace the 'add trips' button with a loading animation while the trip data is uploaded
                       <div className="buttons-container">
                         <button
                           className="btn btn app-buttons"
-                          type="submit">Add Trip <AddCircleIcon/>
+                          type="submit"
+                          style={isLoading ? {display: "none"} : {}}>Add Trip <AddCircleIcon/>
                         </button>
                         {isLoading && (
                           <button
-                            className="loader"
+                            className="btn loader"
                             type="button"
-                            disabled>
+                            >
                           </button>
                         )}
                       </div>

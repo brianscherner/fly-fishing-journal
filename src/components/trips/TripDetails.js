@@ -59,7 +59,7 @@ function TripDetails(props) {
     setCurrentImage(currentImage === 0 ? trip.images.length - 1 : currentImage - 1);
   }
 
-  console.log("Trip details: ", trip.images);
+  console.log("Trip details: ", trip);
   return (
     <div className="trip-details">
       <ImageSlider

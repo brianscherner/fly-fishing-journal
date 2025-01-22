@@ -517,8 +517,8 @@ label {
 
 .loader {
   background: var(--accent-primary);
-  color: var(--background);
-  width: 10px;
+  /* color: var(--background); */
+  /* width: 10px; */
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
