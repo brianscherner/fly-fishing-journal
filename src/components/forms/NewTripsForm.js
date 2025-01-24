@@ -4,6 +4,7 @@ import ReusableTripForm from "./ReusableTripForm";
 import { auth } from "../../firebase.js";
 
 function NewTripsForm(props) {
+  // mock images for testing
   const mockImages = [
     {
       file: "test-image1.jpg",
@@ -33,19 +34,19 @@ function NewTripsForm(props) {
 
   const [formData, setFormData] = useState({
     // mock data for past trip testing
-    destination: "test",
-    fishCaught: "x",
-    fishingTackleUsed: "x",
-    fliesUsed: "x",
-    season: "Winter",
-    species: "x",
-    startDate: "2025-01-22",
-    state: "x",
-    county: 'x',
-    country: "x",
-    tripType: "Past",
-    waterBodyType: "River",
-    images: mockImages
+    // destination: "test",
+    // fishCaught: "x",
+    // fishingTackleUsed: "x",
+    // fliesUsed: "x",
+    // season: "Winter",
+    // species: "x",
+    // startDate: "2025-01-22",
+    // state: "x",
+    // county: 'x',
+    // country: "x",
+    // tripType: "Past",
+    // waterBodyType: "River",
+    // images: mockImages
 
     // mock data for future trip testing
     // clothingRequirements: "xxx",
@@ -62,7 +63,7 @@ function NewTripsForm(props) {
     // waterBodyType: "River",
     // images: mockImages
 
-    // images: []
+    images: []
   });
   const [isLoading, setIsLoading] = useState(false);
 

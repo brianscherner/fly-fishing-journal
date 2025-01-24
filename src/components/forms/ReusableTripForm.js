@@ -17,6 +17,7 @@ function ReusableTripForm(props) {
     formSubmissionHandler,
     isLoading
   } = props;
+
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
