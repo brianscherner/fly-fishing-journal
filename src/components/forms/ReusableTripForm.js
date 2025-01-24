@@ -222,30 +222,28 @@ function ReusableTripForm(props) {
                     { page > 0 &&
                       <button
                         className="btn back-button"
-                        onClick={prevPage} type="button"><ForwardIcon
+                        onClick={prevPage} type="button"
+                      >
+                        <ForwardIcon
                         style={{ transform: 'rotate(180deg)'}}/> Back
                       </button>}
                     { page < totalPages &&
                       <button
                         className="btn next-button"
-                        onClick={nextPage} type="button">Next <ForwardIcon/>
+                        onClick={nextPage} type="button"
+                      >
+                        Next <ForwardIcon/>
                       </button>}
                     { page >= totalPages &&
-                      // trying to replace the 'add trips' button with a loading animation while the trip data is uploaded
-                      <div className="buttons-container">
-                        <button
-                          className="btn btn app-buttons"
-                          type="submit"
-                          style={isLoading ? {display: "none"} : {}}>Add Trip <AddCircleIcon/>
-                        </button>
-                        {isLoading && (
-                          <button
-                            className="btn loader"
-                            type="button"
-                            >
-                          </button>
-                        )}
-                      </div>
+                      <button
+                        className={`btn app-buttons ${isLoading ? 'loader' : ''}`}
+                        type="submit"
+                        disabled={isLoading}
+                      >
+                        {isLoading ? <div className="loader"></div>
+                        :
+                        (<span>Add Trip <AddCircleIcon/></span>)}
+                      </button>
                     }
                   </div>
                 </React.Fragment>

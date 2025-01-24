@@ -515,15 +515,23 @@ label {
   padding-bottom: 4px;
 }
 
-.loader {
+.btn.app-buttons.loader {
   background: var(--accent-primary);
-  /* color: var(--background); */
-  /* width: 10px; */
+  width: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-primary);
+}
+
+.btn.app-buttons .loader {
+  width: 4px;
+  color: var(--background);
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
   transform: translateX(-38px);
-  animation: l21 .5s infinite alternate linear;
+  animation: l21 1s infinite alternate linear;
 }
 
 @keyframes l21 {
