@@ -22,7 +22,8 @@ function TripDetails(props) {
     trip,
     onClickingDelete,
     onClickingEdit,
-    onMarkingTripAsPast } = props;
+    onMarkingTripAsPast,
+    onOpeningDeleteModal } = props;
 
   const [destInfoToggled, setDestInfoToggled] = useState(true);
   const [tripCostsToggled, setTripCostsToggled] = useState(false);
@@ -148,7 +149,8 @@ function TripDetails(props) {
         {trip.tripType === "Future" && (
           <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}>Mark as Past <CheckCircleIcon/></button>
         )}
-        <button className="btn back-button" id="delete-button" onClick={() => onClickingDelete(trip.id)}>Delete <DeleteIcon/></button>
+        <button className="btn back-button" id="delete-button" onClick={() => onOpeningDeleteModal()}>Delete <DeleteIcon/></button>
+        {/* <button className="btn back-button" id="delete-button" onClick={() => onClickingDelete(trip.id)}>Delete <DeleteIcon/></button> */}
       </div>
     </div>
   );
@@ -158,7 +160,8 @@ TripDetails.propTypes = {
   trip: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
-  onMarkingTripAsPast: PropTypes.func
+  onMarkingTripAsPast: PropTypes.func,
+  onOpeningDeleteModal: PropTypes.func
 }
 
 export default TripDetails;
