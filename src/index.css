@@ -271,21 +271,21 @@
 }
 
 /* need to fix positioning issues */
-.close-modal {
+.close-modal-button {
   color: #333333;
   font-size: 2.25rem;
   font-weight: 700;
-  float: right;
   cursor: pointer;
   position: absolute;
-  top: -10px;
-  right: 185px;
+  /* z-index: 2; */
+  top: -30px;
+  right: -45px;
 }
 
-.deletion-modal-container {
+.modal-container {
   display: flex;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
   /* position: fixed; */
   z-index: 1;
   width: 100%;
@@ -293,9 +293,9 @@
   background-color: var(--background);
 }
 
-.deletion-modal-card {
+.modal-card {
   background-color: var(--background);
-  border: 2px solid var(--accent-primary);
+  border: 3px solid var(--accent-primary);
   border-radius: 0.45rem;
   width: 60%;
   display: flex;
@@ -303,6 +303,10 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+.modal-card-container {
+  position: relative;
 }
 
 .modal-buttons {

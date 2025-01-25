@@ -63,7 +63,6 @@ function TripDetails(props) {
   }
 
   const openDeletionModal = () => {
-    console.log("Activated!");
     setIsDeleteModalOpen(!isDeleteModalOpen);
   }
 

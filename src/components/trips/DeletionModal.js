@@ -10,16 +10,18 @@ function DeletionModal(props) {
   } = props;
 
   return (
-    <div className="deletion-modal-container">
-      <div className="deletion-modal-card">
-        <h4>Are you sure you want to delete this trip?</h4>
-        {/* <br/> */}
-        <span
-          className="close-modal"
-          onClick={() => onClosingDeleteModal()}
-        >
-          &times;
-        </span>
+    <div className="modal-container">
+      <div className="modal-card">
+        <div className="modal-card-container">
+          <h4>Delete trip? This action is irreversible!</h4>
+          {/* <br/> */}
+          <span
+            className="close-modal-button"
+            onClick={() => onClosingDeleteModal()}
+          >
+            &times;
+          </span>
+        </div>
         <div className="modal-buttons">
           <button
             className="btn app-buttons"
