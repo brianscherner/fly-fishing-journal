@@ -183,16 +183,18 @@ function TripDetails(props) {
           Delete <DeleteIcon/>
         </button>
 
-        {isDeleteModalOpen && (
-          <DeletionModal
-            onClickingDelete={onClickingDelete}
-            onClosingDeleteModal={openDeletionModal}
-            trip={trip}
-          />
-        )}
-
         {/* <button className="btn back-button" id="delete-button" onClick={() => onClickingDelete(trip.id)}>Delete <DeleteIcon/></button> */}
+
       </div>
+
+      {isDeleteModalOpen && (
+        <DeletionModal
+          onClickingDelete={onClickingDelete}
+          onClosingDeleteModal={openDeletionModal}
+          trip={trip}
+        />
+      )}
+
     </div>
   );
 }
