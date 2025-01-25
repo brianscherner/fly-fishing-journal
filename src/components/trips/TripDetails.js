@@ -16,6 +16,7 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
+import DeletionModal from "./DeletionModal";
 
 function TripDetails(props) {
   const {
@@ -23,7 +24,7 @@ function TripDetails(props) {
     onClickingDelete,
     onClickingEdit,
     onMarkingTripAsPast,
-    onOpeningDeleteModal } = props;
+  } = props;
 
   const [destInfoToggled, setDestInfoToggled] = useState(true);
   const [tripCostsToggled, setTripCostsToggled] = useState(false);
@@ -31,6 +32,7 @@ function TripDetails(props) {
   const [miscellaneousToggled, setMiscellaneousToggled] = useState(false);
   const [tripNotesToggled, setTripNotesToggled] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   const toggleDestInfo = () => {
     setDestInfoToggled(!destInfoToggled);
@@ -58,6 +60,11 @@ function TripDetails(props) {
 
   const moveLeft = () => {
     setCurrentImage(currentImage === 0 ? trip.images.length - 1 : currentImage - 1);
+  }
+
+  const openDeletionModal = () => {
+    console.log("Activated!");
+    setIsDeleteModalOpen(!isDeleteModalOpen);
   }
 
   console.log("Trip details: ", trip);
@@ -145,11 +152,45 @@ function TripDetails(props) {
       </div>
 
       <div className="trip-details-buttons">
-        <button className="btn app-buttons" onClick={() => onClickingEdit(trip.id)}>Edit <EditIcon/></button>
+        <button
+          className="btn app-buttons"
+          onClick={() => onClickingEdit(trip.id)}
+        >
+          Edit <EditIcon/>
+        </button>
+
         {trip.tripType === "Future" && (
-          <button className="btn app-buttons" onClick={() => onMarkingTripAsPast(trip.id)}>Mark as Past <CheckCircleIcon/></button>
+          <button
+            className="btn app-buttons"
+            onClick={() => onMarkingTripAsPast(trip.id)}
+          >
+            Mark as Past <CheckCircleIcon/>
+          </button>
         )}
-        <button className="btn back-button" id="delete-button" onClick={() => onOpeningDeleteModal()}>Delete <DeleteIcon/></button>
+
+        {/*
+          clicking delete should render a modal
+          this modal should have an option to select Yes/No, or close it
+          Clicking yes activates the deleteTrip function and deletes the trip
+          Clicking no simply changes the state variable back to false, making the modal disappear
+        */}
+
+        <button
+          className="btn back-button"
+          id="delete-button"
+          onClick={() => openDeletionModal()}
+        >
+          Delete <DeleteIcon/>
+        </button>
+
+        {isDeleteModalOpen && (
+          <DeletionModal
+            onClickingDelete={onClickingDelete}
+            onClosingDeleteModal={openDeletionModal}
+            trip={trip}
+          />
+        )}
+
         {/* <button className="btn back-button" id="delete-button" onClick={() => onClickingDelete(trip.id)}>Delete <DeleteIcon/></button> */}
       </div>
     </div>
@@ -161,7 +202,6 @@ TripDetails.propTypes = {
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
   onMarkingTripAsPast: PropTypes.func,
-  onOpeningDeleteModal: PropTypes.func
 }
 
 export default TripDetails;

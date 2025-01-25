@@ -15,7 +15,6 @@ function TripsControl() {
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -127,11 +126,6 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
-  const openDeletionModal = () => {
-    console.log("Activated!");
-    setIsDeleteModalOpen(!isDeleteModalOpen);
-  }
-
   const handleEditingTrip = async (tripToEdit) => {
     const images = [...tripToEdit.images];
     // filter out images that are already URLs
@@ -165,8 +159,6 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
-  console.log("delete modal state: ", isDeleteModalOpen);
-
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
@@ -196,7 +188,6 @@ function TripsControl() {
           onClickingEdit={handleEditClick}
           onClickingDelete={handleDeletingTrip}
           onMarkingTripAsPast={handleMarkingTripAsPast}
-          onOpeningDeleteModal={openDeletionModal}
         />
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
