@@ -64,9 +64,22 @@ function TripDetails(props) {
 
   const openDeletionModal = () => {
     setIsDeleteModalOpen(!isDeleteModalOpen);
+    // need to prevent scrolling when delete modal is open - WIP
+
+    // if (typeof window != 'undefined' && window.document) {
+    //   document.body.style.overflow = 'hidden';
+    // }
+    // if (isDeleteModalOpen == true) {
+    //   document.body.style.overflow = 'hidden';
+    // }
+
+    // if (isDeleteModalOpen == false) {
+    //   document.body.style.overflow = 'unset';
+    // }
   }
 
-  console.log("Trip details: ", trip);
+  // console.log("Trip details: ", trip);
+  console.log("Delete modal state: ", isDeleteModalOpen);
   return (
     <div className="trip-details">
       <ImageSlider
@@ -89,6 +102,14 @@ function TripDetails(props) {
               <DestinationInfo trip={trip}/>
             )}
           </li>
+
+          {isDeleteModalOpen && (
+            <DeletionModal
+              onClickingDelete={onClickingDelete}
+              onClosingDeleteModal={openDeletionModal}
+              trip={trip}
+            />
+          )}
 
           {trip.tripType === "Future" && (
             <React.Fragment>
@@ -186,13 +207,13 @@ function TripDetails(props) {
 
       </div>
 
-      {isDeleteModalOpen && (
+      {/* {isDeleteModalOpen && (
         <DeletionModal
           onClickingDelete={onClickingDelete}
           onClosingDeleteModal={openDeletionModal}
           trip={trip}
         />
-      )}
+      )} */}
 
     </div>
   );

@@ -14,7 +14,7 @@ function DeletionModal(props) {
       <div className="modal-card">
         <div className="modal-card-container">
           <h4>Delete trip? This action is irreversible!</h4>
-          {/* <br/> */}
+          <br/>
           <span
             className="close-modal-button"
             onClick={() => onClosingDeleteModal()}
