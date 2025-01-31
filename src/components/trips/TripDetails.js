@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import DestinationInfo from "../tables/DestinationInfo";
 import TripCosts from '../tables/TripCosts';
@@ -34,6 +34,10 @@ function TripDetails(props) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
+  // useEffect(() => {
+  //   setIsDeleteModalOpen(false);
+  // }, []);
+
   const toggleDestInfo = () => {
     setDestInfoToggled(!destInfoToggled);
   }
@@ -63,23 +67,19 @@ function TripDetails(props) {
   }
 
   const openDeletionModal = () => {
-    setIsDeleteModalOpen(!isDeleteModalOpen);
-    // need to prevent scrolling when delete modal is open - WIP
+    setIsDeleteModalOpen(true);
+    document.body.style.backgroundColor = "grey";
+    document.body.style.overflow = 'hidden';
+  }
 
-    // if (typeof window != 'undefined' && window.document) {
-    //   document.body.style.overflow = 'hidden';
-    // }
-    // if (isDeleteModalOpen == true) {
-    //   document.body.style.overflow = 'hidden';
-    // }
-
-    // if (isDeleteModalOpen == false) {
-    //   document.body.style.overflow = 'unset';
-    // }
+  const closeDeletionModal = () => {
+    setIsDeleteModalOpen(false);
+    document.body.style.overflow = 'auto';
   }
 
   // console.log("Trip details: ", trip);
   console.log("Delete modal state: ", isDeleteModalOpen);
+
   return (
     <div className="trip-details">
       <ImageSlider
@@ -106,7 +106,8 @@ function TripDetails(props) {
           {isDeleteModalOpen && (
             <DeletionModal
               onClickingDelete={onClickingDelete}
-              onClosingDeleteModal={openDeletionModal}
+              // onOpeningDeleteModal={openDeletionModal}
+              onClosingDeleteModal={closeDeletionModal}
               trip={trip}
             />
           )}
@@ -188,13 +189,6 @@ function TripDetails(props) {
           </button>
         )}
 
-        {/*
-          clicking delete should render a modal
-          this modal should have an option to select Yes/No, or close it
-          Clicking yes activates the deleteTrip function and deletes the trip
-          Clicking no simply changes the state variable back to false, making the modal disappear
-        */}
-
         <button
           className="btn back-button"
           id="delete-button"
@@ -203,18 +197,7 @@ function TripDetails(props) {
           Delete <DeleteIcon/>
         </button>
 
-        {/* <button className="btn back-button" id="delete-button" onClick={() => onClickingDelete(trip.id)}>Delete <DeleteIcon/></button> */}
-
       </div>
-
-      {/* {isDeleteModalOpen && (
-        <DeletionModal
-          onClickingDelete={onClickingDelete}
-          onClosingDeleteModal={openDeletionModal}
-          trip={trip}
-        />
-      )} */}
-
     </div>
   );
 }

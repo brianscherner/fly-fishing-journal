@@ -6,7 +6,8 @@ function DeletionModal(props) {
   const {
     onClickingDelete,
     trip,
-    onClosingDeleteModal
+    onClosingDeleteModal,
+    onOpeningDeleteModal
   } = props;
 
   return (
