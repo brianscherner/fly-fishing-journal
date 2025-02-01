@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function TripCosts(props) {
   const { trip } = props;
@@ -48,10 +47,6 @@ function TripCosts(props) {
       </div>
     </React.Fragment>
   )
-}
-
-TripCosts.propTypes = {
-  trip: PropTypes.object
 }
 
 export default TripCosts;

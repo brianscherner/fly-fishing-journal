@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import ReusableTripForm from "./ReusableTripForm";
 import { auth } from "../../firebase.js";
 
@@ -84,10 +83,6 @@ function NewTripsForm(props) {
         buttonText={"Add Trip"}/>
     </React.Fragment>
   )
-}
-
-NewTripsForm.propTypes = {
-  onNewTripCreation: PropTypes.func,
 }
 
 export default NewTripsForm;

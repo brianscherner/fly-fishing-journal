@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function DestinationInfoFields(props) {
   const { tripType, formData, setFormData, invalidFormFields } = props;
@@ -172,13 +171,6 @@ function DestinationInfoFields(props) {
       )}
     </React.Fragment>
   )
-}
-
-DestinationInfoFields.propTypes = {
-  tripType: PropTypes.string,
-  formData: PropTypes.object,
-  setFormData: PropTypes.func,
-  invalidFormFields: PropTypes.object
 }
 
 export default DestinationInfoFields;

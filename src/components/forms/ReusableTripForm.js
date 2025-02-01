@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import DestinationInfoFields from "./DestinationInfoFields";
 import GearRequirementsFields from "./GearRequirementsFields";
 import MiscellaneousFields from "./MiscellaneousFields";
@@ -254,15 +253,6 @@ function ReusableTripForm(props) {
       </form>
     </React.Fragment>
   )
-}
-
-ReusableTripForm.propTypes = {
-  trip: PropTypes.object,
-  formData: PropTypes.object,
-  setFormData: PropTypes.func,
-  formSubmissionHandler: PropTypes.func,
-  setIsFinalPageValid: PropTypes.func,
-  buttonText: PropTypes.string,
 }
 
 export default ReusableTripForm;

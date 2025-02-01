@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function GearRequirements(props) {
   const { formData, setFormData, invalidFormFields } = props;
@@ -49,11 +48,6 @@ function GearRequirements(props) {
       <br/>
     </React.Fragment>
   )
-}
-
-GearRequirements.propTypes = {
-  formData: PropTypes.object,
-  setFormData: PropTypes.func
 }
 
 export default GearRequirements;

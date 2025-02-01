@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import DeleteIcon from '@mui/icons-material/Delete';
 import UploadIcon from '@mui/icons-material/Upload';
 
@@ -10,7 +9,6 @@ function Images(props) {
     onDeletingImage,
   } = props;
 
-  // console.log("Form Data: ", formData);
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Photos</h4>
@@ -48,12 +46,6 @@ function Images(props) {
       <br/>
     </React.Fragment>
   )
-}
-
-Images.propTypes = {
-  formData: PropTypes.object,
-  onChangingImage: PropTypes.func,
-  onDeletingImage: PropTypes.func,
 }
 
 export default Images;

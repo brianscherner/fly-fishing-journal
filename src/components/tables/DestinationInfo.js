@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function DestinationInfo(props) {
   const { trip } = props;
@@ -69,10 +68,6 @@ function DestinationInfo(props) {
       </div>
     </React.Fragment>
   )
-}
-
-DestinationInfo.propTypes = {
-  trip: PropTypes.object
 }
 
 export default DestinationInfo;

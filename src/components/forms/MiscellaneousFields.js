@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function MiscellaneousFields(props) {
   const { formData, setFormData, tripType } = props;
@@ -96,12 +95,6 @@ function MiscellaneousFields(props) {
       )}
     </React.Fragment>
   )
-}
-
-MiscellaneousFields.propTypes = {
-  formData: PropTypes.object,
-  setFormData: PropTypes.func,
-  tripType: PropTypes.string
 }
 
 export default MiscellaneousFields;

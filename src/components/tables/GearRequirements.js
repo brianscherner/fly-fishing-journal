@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function GearRequirements(props) {
   const { trip } = props;
@@ -28,10 +27,6 @@ function GearRequirements(props) {
       </div>
     </React.Fragment>
   )
-}
-
-GearRequirements.propTypes = {
-  trip: PropTypes.object
 }
 
 export default GearRequirements;

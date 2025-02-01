@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function TripCostsFields(props) {
   const { formData, setFormData } = props;
@@ -91,11 +90,6 @@ function TripCostsFields(props) {
       <br/>
     </React.Fragment>
   )
-}
-
-TripCostsFields.propTypes = {
-  formData: PropTypes.object,
-  setFormData: PropTypes.func
 }
 
 export default TripCostsFields;

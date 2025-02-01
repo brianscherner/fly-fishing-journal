@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function Miscellaneous(props) {
   const { trip } = props;
@@ -53,10 +52,6 @@ function Miscellaneous(props) {
       </div>
     </React.Fragment>
   )
-}
-
-Miscellaneous.propTypes = {
-  trip: PropTypes.object
 }
 
 export default Miscellaneous;

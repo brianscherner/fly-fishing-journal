@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Trip from './Trip';
-import PropTypes from 'prop-types';
 
 function TripsList(props) {
   const { tripsList } = props;
@@ -95,12 +94,6 @@ function TripsList(props) {
       )}
     </React.Fragment>
   );
-}
-
-TripsList.propTypes = {
-  tripsList: PropTypes.array,
-  onTripSelection: PropTypes.func,
-  filterByTripType: PropTypes.func,
 }
 
 export default TripsList;

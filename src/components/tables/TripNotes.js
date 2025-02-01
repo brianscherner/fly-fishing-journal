@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 function TripNotes(props) {
   const { trip } = props;
@@ -36,10 +35,6 @@ function TripNotes(props) {
       </div>
     </React.Fragment>
   )
-}
-
-TripNotes.propTypes = {
-  trip: PropTypes.object
 }
 
 export default TripNotes;

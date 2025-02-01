@@ -1,12 +1,10 @@
-import React, { useEffect, useState} from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Trip(props) {
 
   return (
     <React.Fragment>
-      {/* update trip background to be first image from the image array, if there are images - otherwise leave it as is */}
       <div
         className="trip"
         onClick={() => props.whenTripClicked(props.id)}
@@ -32,17 +30,6 @@ function Trip(props) {
       </div>
     </React.Fragment>
   );
-}
-
-Trip.propTypes = {
-  destination: PropTypes.string,
-  startDate: PropTypes.string,
-  tripType: PropTypes.string,
-  fishCaught: PropTypes.string,
-  waterBodyType: PropTypes.string,
-  images: PropTypes.array,
-  id: PropTypes.string,
-  whenTripClicked: PropTypes.func
 }
 
 export default Trip;

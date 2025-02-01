@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -68,13 +67,6 @@ function ImageSlider(props) {
     </div>
 
   )
-}
-
-ImageSlider.propTypes = {
-  trip: PropTypes.object,
-  onMovingLeft: PropTypes.func,
-  onMovingRight: PropTypes.func,
-  currentImage: PropTypes.number
 }
 
 export default ImageSlider;

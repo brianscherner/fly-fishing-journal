@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from 'prop-types';
 import ReusableTripForm from "./ReusableTripForm";
 
 function EditTripForm(props) {
@@ -27,13 +26,6 @@ function EditTripForm(props) {
         />
     </React.Fragment>
   )
-}
-
-EditTripForm.propTypes = {
-  trip: PropTypes.object.isRequired,
-  formData: PropTypes.object,
-  handleTripTypeSelection: PropTypes.func,
-  onEditingTrip: PropTypes.func,
 }
 
 export default EditTripForm;
