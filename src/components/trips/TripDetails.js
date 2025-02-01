@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import DestinationInfo from "../tables/DestinationInfo";
 import TripCosts from '../tables/TripCosts';
 import GearRequirements from '../tables/GearRequirements';
@@ -24,7 +23,15 @@ function TripDetails(props) {
     onClickingDelete,
     onClickingEdit,
     onMarkingTripAsPast,
+    isDeleteModalOpen,
+    setIsDeleteModalOpen,
+    onOpeningDeleteModal,
+    onClosingDeleteModal
   } = props;
+
+  useEffect(() => {
+    setIsDeleteModalOpen(false);
+  }, [setIsDeleteModalOpen]);
 
   const [destInfoToggled, setDestInfoToggled] = useState(true);
   const [tripCostsToggled, setTripCostsToggled] = useState(false);
@@ -32,11 +39,6 @@ function TripDetails(props) {
   const [miscellaneousToggled, setMiscellaneousToggled] = useState(false);
   const [tripNotesToggled, setTripNotesToggled] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-
-  // useEffect(() => {
-  //   setIsDeleteModalOpen(false);
-  // }, []);
 
   const toggleDestInfo = () => {
     setDestInfoToggled(!destInfoToggled);
@@ -66,20 +68,6 @@ function TripDetails(props) {
     setCurrentImage(currentImage === 0 ? trip.images.length - 1 : currentImage - 1);
   }
 
-  const openDeletionModal = () => {
-    setIsDeleteModalOpen(true);
-    document.body.style.backgroundColor = "grey";
-    document.body.style.overflow = 'hidden';
-  }
-
-  const closeDeletionModal = () => {
-    setIsDeleteModalOpen(false);
-    document.body.style.overflow = 'auto';
-  }
-
-  // console.log("Trip details: ", trip);
-  console.log("Delete modal state: ", isDeleteModalOpen);
-
   return (
     <div className="trip-details">
       <ImageSlider
@@ -106,8 +94,8 @@ function TripDetails(props) {
           {isDeleteModalOpen && (
             <DeletionModal
               onClickingDelete={onClickingDelete}
-              // onOpeningDeleteModal={openDeletionModal}
-              onClosingDeleteModal={closeDeletionModal}
+              open={onOpeningDeleteModal}
+              closed={onClosingDeleteModal}
               trip={trip}
             />
           )}
@@ -192,7 +180,7 @@ function TripDetails(props) {
         <button
           className="btn back-button"
           id="delete-button"
-          onClick={() => openDeletionModal()}
+          onClick={onOpeningDeleteModal}
         >
           Delete <DeleteIcon/>
         </button>
@@ -200,13 +188,6 @@ function TripDetails(props) {
       </div>
     </div>
   );
-}
-
-TripDetails.propTypes = {
-  trip: PropTypes.object,
-  onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func,
-  onMarkingTripAsPast: PropTypes.func,
 }
 
 export default TripDetails;

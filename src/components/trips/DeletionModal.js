@@ -1,13 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import DeleteIcon from '@mui/icons-material/Delete';
 
 function DeletionModal(props) {
   const {
     onClickingDelete,
     trip,
-    onClosingDeleteModal,
-    onOpeningDeleteModal
+    closed
   } = props;
 
   return (
@@ -18,7 +16,7 @@ function DeletionModal(props) {
           <br/>
           <span
             className="close-modal-button"
-            onClick={() => onClosingDeleteModal()}
+            onClick={closed}
           >
             &times;
           </span>
@@ -26,7 +24,7 @@ function DeletionModal(props) {
         <div className="modal-buttons">
           <button
             className="btn app-buttons"
-            onClick={() => onClosingDeleteModal()}
+            onClick={closed}
           >
             No, Keep It
           </button>
@@ -41,12 +39,6 @@ function DeletionModal(props) {
       </div>
     </div>
   )
-}
-
-DeletionModal.propTypes = {
-  onClickingDelete: PropTypes.func,
-  trip: PropTypes.object,
-  onClosingDeleteModal: PropTypes.func,
 }
 
 export default DeletionModal;

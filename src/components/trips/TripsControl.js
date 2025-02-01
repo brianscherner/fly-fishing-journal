@@ -15,6 +15,7 @@ function TripsControl() {
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -37,6 +38,10 @@ function TripsControl() {
     );
 
     return () => unSubscribe();
+  }, []);
+
+  useEffect(() => {
+    setIsDeleteModalOpen(false);
   }, []);
 
   const handleClick = () => {
@@ -120,10 +125,22 @@ function TripsControl() {
     setSelectedTrip(tripSelection);
   }
 
+  const openDeletionModal = () => {
+    setIsDeleteModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  const closeDeletionModal = () => {
+    setIsDeleteModalOpen(false);
+    document.body.style.overflow = 'auto';
+  }
+
   const handleDeletingTrip = async (id) => {
     await deleteDoc(doc(db, "Trips", id));
     toast.success('Trip deleted.', { position: "bottom-right"});
     setSelectedTrip(null);
+    setIsDeleteModalOpen(false);
+    document.body.style.overflow = 'auto';
   }
 
   const handleEditingTrip = async (tripToEdit) => {
@@ -188,6 +205,10 @@ function TripsControl() {
           onClickingEdit={handleEditClick}
           onClickingDelete={handleDeletingTrip}
           onMarkingTripAsPast={handleMarkingTripAsPast}
+          isDeleteModalOpen={isDeleteModalOpen}
+          setIsDeleteModalOpen={setIsDeleteModalOpen}
+          onOpeningDeleteModal={openDeletionModal}
+          onClosingDeleteModal={closeDeletionModal}
         />
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
