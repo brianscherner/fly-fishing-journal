@@ -70,6 +70,14 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
+      {isDeleteModalOpen && (
+        <DeletionModal
+          onClickingDelete={onClickingDelete}
+          open={onOpeningDeleteModal}
+          closed={onClosingDeleteModal}
+          trip={trip}
+        />
+      )}
       <ImageSlider
         trip={trip}
         onMovingLeft={moveLeft}
@@ -90,15 +98,6 @@ function TripDetails(props) {
               <DestinationInfo trip={trip}/>
             )}
           </li>
-
-          {isDeleteModalOpen && (
-            <DeletionModal
-              onClickingDelete={onClickingDelete}
-              open={onOpeningDeleteModal}
-              closed={onClosingDeleteModal}
-              trip={trip}
-            />
-          )}
 
           {trip.tripType === "Future" && (
             <React.Fragment>
