@@ -277,8 +277,8 @@
   font-weight: 700;
   cursor: pointer;
   position: absolute;
-  top: -75px;
-  right: -60px;
+  top: -45px;
+  right: 4px;
 }
 
 .close-modal-button:hover {
@@ -306,7 +306,8 @@
   position: relative;
   border-radius: 0.45rem;
   width: 80%;
-  padding: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .modal-card-container {
