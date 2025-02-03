@@ -70,6 +70,7 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
+
       {isDeleteModalOpen && (
         <DeletionModal
           onClickingDelete={onClickingDelete}
@@ -78,12 +79,14 @@ function TripDetails(props) {
           trip={trip}
         />
       )}
+
       <ImageSlider
         trip={trip}
         onMovingLeft={moveLeft}
         onMovingRight={moveRight}
         currentImage={currentImage}
       />
+
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">

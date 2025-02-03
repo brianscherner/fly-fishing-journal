@@ -272,13 +272,22 @@
 
 /* need to fix positioning issues */
 .close-modal-button {
-  color: #333333;
+  color: #888;
   font-size: 2.25rem;
   font-weight: 700;
   cursor: pointer;
   position: absolute;
-  top: -30px;
-  right: -45px;
+  top: -75px;
+  right: -60px;
+}
+
+.close-modal-button:hover {
+  color: #333333;
+}
+
+.delete-modal-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .modal-container {
@@ -297,10 +306,6 @@
   position: relative;
   border-radius: 0.45rem;
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 4rem;
 }
 
