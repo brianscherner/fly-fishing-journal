@@ -271,6 +271,22 @@
 }
 
 /* need to fix positioning issues */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+/* .modal-wrappper {
+  display: flex;
+  align-items: center;
+} */
+
 .close-modal-button {
   color: #888;
   font-size: 2.25rem;
@@ -300,9 +316,7 @@
 }
 
 .modal-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(3px);
-  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: var(--background);
   position: relative;
   border-radius: 0.45rem;
   width: 80%;

@@ -72,12 +72,16 @@ function TripDetails(props) {
     <div className="trip-details">
 
       {isDeleteModalOpen && (
-        <DeletionModal
-          onClickingDelete={onClickingDelete}
-          open={onOpeningDeleteModal}
-          closed={onClosingDeleteModal}
-          trip={trip}
-        />
+        <div className="modal-wrapper">
+          {/* <div className="modal-wrappper"> */}
+            <DeletionModal
+              onClickingDelete={onClickingDelete}
+              open={onOpeningDeleteModal}
+              closed={onClosingDeleteModal}
+              trip={trip}
+            />
+          {/* </div> */}
+        </div>
       )}
 
       <ImageSlider
