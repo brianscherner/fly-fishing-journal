@@ -723,6 +723,10 @@ label {
     right: 0.25rem;
   }
 
+  .delete-modal-card {
+    width: 93%;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -741,6 +745,10 @@ label {
 
   .move-right {
     right: 9rem;
+  }
+
+  .delete-modal-card {
+    width: 62.5%;
   }
 
 }
@@ -812,6 +820,10 @@ label {
     right: 23.5rem;
   }
 
+  .delete-modal-card {
+    width: 41.5%;
+  }
+
 }
 
 @media (min-width: 1440px) {
@@ -840,6 +852,10 @@ label {
 
   .move-right {
     right: 23.5rem;
+  }
+
+  .delete-modal-card {
+    width: 31.5%;
   }
 
 }
