@@ -271,7 +271,7 @@
 }
 
 /* need to fix positioning issues */
-.modal-wrapper {
+.main-modal-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -282,10 +282,11 @@
   backdrop-filter: blur(3px);
 }
 
-/* .modal-wrappper {
-  display: flex;
-  align-items: center;
-} */
+.inner-modal-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
 
 .close-modal-button {
   color: #888;
