@@ -9,12 +9,12 @@ function DeletionModal(props) {
   } = props;
 
   return (
-    <div className="main-modal-wrapper">
-      <div className="inner-modal-wrapper">
+    <div className="delete-modal-overlay">
+      <div className="delete-modal-backdrop">
         <div className="delete-modal-wrapper">
-          <div className="modal-container">
-            <div className="modal-card">
-              <div className="modal-card-container">
+          <div className="delete-modal-container">
+            <div className="delete-modal-card">
+              <div className="delete-modal-card-container">
                 <h4>Delete trip?</h4>
                 <br/>
                 <span

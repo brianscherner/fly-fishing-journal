@@ -271,7 +271,7 @@
 }
 
 /* need to fix positioning issues */
-.main-modal-wrapper {
+.delete-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -282,7 +282,7 @@
   backdrop-filter: blur(3px);
 }
 
-.inner-modal-wrapper {
+.delete-modal-backdrop {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -307,7 +307,7 @@
   justify-content: center;
 }
 
-.modal-container {
+.delete-modal-container {
   display: flex;
   justify-content: center;
   position: fixed;
@@ -316,7 +316,7 @@
   overflow: auto;
 }
 
-.modal-card {
+.delete-modal-card {
   background: var(--background);
   position: relative;
   border-radius: 0.45rem;
@@ -325,7 +325,7 @@
   padding-bottom: 2rem;
 }
 
-.modal-card-container {
+.delete-modal-card-container {
   position: relative;
 }
 
