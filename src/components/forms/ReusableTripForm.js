@@ -8,6 +8,7 @@ import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Loader from "../ui/Loader";
 
 function ReusableTripForm(props) {
   const {
@@ -240,7 +241,7 @@ function ReusableTripForm(props) {
                         type="submit"
                         disabled={isLoading}
                       >
-                        {isLoading ? <div className="loader"></div>
+                        {isLoading ? <Loader/>
                         :
                         (<span>Add Trip <AddCircleIcon/></span>)}
                       </button>

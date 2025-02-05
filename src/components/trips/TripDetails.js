@@ -15,7 +15,7 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
-import DeletionModal from "./DeletionModal";
+import DeletionModal from "../ui/DeletionModal";
 
 function TripDetails(props) {
   const {
