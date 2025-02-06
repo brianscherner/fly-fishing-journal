@@ -7,8 +7,7 @@ import TripNotesFields from "./TripNotesFields";
 import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Loader from "../ui/Loader";
+import SubmitLoader from "../ui/SubmitLoader";
 
 function ReusableTripForm(props) {
   const {
@@ -236,15 +235,7 @@ function ReusableTripForm(props) {
                         Next <ForwardIcon/>
                       </button>}
                     { page >= totalPages &&
-                      <button
-                        className={`btn app-buttons ${isLoading ? 'loader' : ''}`}
-                        type="submit"
-                        disabled={isLoading}
-                      >
-                        {isLoading ? <Loader/>
-                        :
-                        (<span>Add Trip <AddCircleIcon/></span>)}
-                      </button>
+                      <SubmitLoader isLoading={isLoading}/>
                     }
                   </div>
                 </React.Fragment>
