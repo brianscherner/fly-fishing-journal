@@ -6,11 +6,11 @@ function SubmitLoader(props) {
 
   return (
     <button
-      className={`btn app-buttons ${isLoading ? 'loader' : ''}`}
+      className={`btn app-buttons ${isLoading ? 'submit-loader' : ''}`}
       type="submit"
       disabled={isLoading}
     >
-      {isLoading ? <div className="loader"></div>
+      {isLoading ? <div className="submit-loader"></div>
       :
       (<span>Add Trip <AddCircleIcon/></span>)}
     </button>
