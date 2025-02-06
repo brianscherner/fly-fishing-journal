@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-import { auth } from "../firebase.js";
+import { auth } from "../../firebase.js";
 import PhishingIcon from '@mui/icons-material/Phishing';
 
 function CustomNavbar() {

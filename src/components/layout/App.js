@@ -2,10 +2,10 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TripsControl from './trips/TripsControl';
-import Account from './auth/Account';
-import SignUp from './auth/SignUp';
-import ResetPassword from './auth/ResetPassword';
+import TripsControl from '../trips/TripsControl';
+import Account from '../auth/Account';
+import SignUp from '../auth/SignUp';
+import ResetPassword from '../auth/ResetPassword';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
