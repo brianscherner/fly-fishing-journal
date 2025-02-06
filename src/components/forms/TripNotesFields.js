@@ -6,7 +6,6 @@ function TripNotesFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Trip Notes</h4>
-      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
       <label>Flies Used<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input type="text"

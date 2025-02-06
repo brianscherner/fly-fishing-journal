@@ -6,7 +6,6 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
-      <p className="required-msg"><span className="required-asterik">*</span> indicates a required field</p>
       <label>Fishing Destination<span className="required-asterik">*</span></label>
       <div className="form-input-container">
         <input
