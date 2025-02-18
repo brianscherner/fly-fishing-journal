@@ -8,6 +8,7 @@ import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "fireb
 import { toast } from 'react-toastify';
 import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { useLoading } from "../context/LoadingContext";
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -16,6 +17,7 @@ function TripsControl() {
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const { isLoading, setIsLoading } = useLoading();
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -118,6 +120,7 @@ function TripsControl() {
     await addDoc(collection(db, "Trips"), tripDataToUpload);
     toast.success('Trip added.', { position: "bottom-right"});
     setFormVisibleOnPage(false);
+    setIsLoading(false);
   }
 
   const handleChangingSelectedTrip = (id) => {
@@ -220,7 +223,11 @@ function TripsControl() {
           onNewTripCreation={handleCreatingNewTrip}
         />
       mainButton =
-        <button className='btn control-button' onClick={handleClick}>
+        <button
+          className='btn control-button'
+          onClick={handleClick}
+          disabled={isLoading}
+        >
           <HomeIcon fontSize='large'/>
         </button>;
     } else {

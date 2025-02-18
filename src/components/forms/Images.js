@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
 import UploadIcon from '@mui/icons-material/Upload';
+import { useLoading } from "../context/LoadingContext";
 
 function Images(props) {
   const {
@@ -8,6 +9,7 @@ function Images(props) {
     onChangingImage,
     onDeletingImage,
   } = props;
+  const { isLoading } = useLoading();
 
   return (
     <React.Fragment>
@@ -21,6 +23,7 @@ function Images(props) {
             type="file"
             accept="image/*"
             multiple onChange={(e) => onChangingImage(e)}
+            disabled={isLoading}
           />
         </label>
       </div>
@@ -34,11 +37,13 @@ function Images(props) {
                 alt={`Preview ${index}`}
                 className="photo"
               />
-              <DeleteIcon
-                className="photo-delete-icon"
-                onClick={() => onDeletingImage(index)}
-                fontSize="large"
-              />
+              {!isLoading && (
+                <DeleteIcon
+                  className="photo-delete-icon"
+                  onClick={() => onDeletingImage(index)}
+                  fontSize="large"
+                />
+              )}
             </div>
           </div>
         ))}

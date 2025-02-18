@@ -691,6 +691,20 @@ label {
   color: var(--accent-primary);
 }
 
+/* global styles */
+/* Work in progress */
+.disabled {
+  pointer-events: none;
+  /* opacity: 0.5; */
+  cursor: not-allowed;
+}
+
+button:disabled {
+  pointer-events: none;
+  /* opacity: 0.5; */
+  cursor: not-allowed;
+}
+
 /* media queries */
 
 @media (max-width: 540px) {
