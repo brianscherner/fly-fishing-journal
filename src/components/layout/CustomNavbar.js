@@ -34,11 +34,11 @@ function CustomNavbar() {
           <Nav className="me-auto header-links">
             <div className="navbar-menu-links">
               {/* links are currenty not disabled when isLoading is true */}
-              <NavLink to="/trips" className="navbar-link" aria-disabled={isLoading}>Trips</NavLink>
+              <NavLink to="/trips" className={`navbar-link ${isLoading ? 'disabled' : ''}`}>Trips</NavLink>
               {!userSignedIn && (
-                <NavLink to="/sign-up" className="navbar-link" aria-disabled={isLoading}>Sign Up</NavLink>
+                <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'disabled' : ''}`}>Sign Up</NavLink>
               )}
-              <NavLink to="/account" className="navbar-link" aria-disabled={isLoading}>Account</NavLink>
+              <NavLink to="/account" className={`navbar-link ${isLoading ? 'disabled' : ''}`}>Account</NavLink>
             </div>
           </Nav>
         </Navbar.Collapse>
