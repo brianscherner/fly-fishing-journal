@@ -6,7 +6,7 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
-      <label>Fishing Destination<span className="required-asterik">*</span></label>
+      <label>Fishing Destination<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -33,7 +33,7 @@ function DestinationInfoFields(props) {
         <option value="International">International</option>
       </select>
       <br/>
-      <label>Season<span className="required-asterik">*</span></label>
+      <label>Season<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <select
           className={`${invalidFormFields.season ? "form-control invalid-field" : "form-control"}`}
@@ -51,7 +51,7 @@ function DestinationInfoFields(props) {
         )}
       </div>
       <br/>
-      <label>Start Date<span className="required-asterik">*</span></label>
+      <label>Start Date<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           className={`${invalidFormFields.startDate ? "form-control invalid-field" : "form-control"}`}
@@ -83,7 +83,7 @@ function DestinationInfoFields(props) {
         <option value="Saltwater">Saltwater</option>
       </select>
       <br/>
-      <label>Water Body Type<span className="required-asterik">*</span></label>
+      <label>Water Body Type<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <select
           className={`${invalidFormFields.waterBodyType ? "form-control invalid-field" : "form-control"}`}
@@ -101,7 +101,7 @@ function DestinationInfoFields(props) {
         )}
       </div>
       <br/>
-      <label>Fish Species<span className="required-asterik">*</span></label>
+      <label>Fish Species<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -114,7 +114,7 @@ function DestinationInfoFields(props) {
         )}
       </div>
       <br/>
-      <label>County<span className="required-asterik">*</span></label>
+      <label>County<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
         type="text"
@@ -127,7 +127,7 @@ function DestinationInfoFields(props) {
         )}
       </div>
       <br/>
-      <label>State<span className="required-asterik">*</span></label>
+      <label>State<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -140,7 +140,7 @@ function DestinationInfoFields(props) {
         )}
       </div>
       <br/>
-      <label>Country<span className="required-asterik">*</span></label>
+      <label>Country<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"

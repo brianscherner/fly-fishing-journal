@@ -6,7 +6,7 @@ function GearRequirements(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Gear Requirements</h4>
-      <label>Clothing Requirements<span className="required-asterik">*</span></label>
+      <label>Clothing Requirements<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -19,7 +19,7 @@ function GearRequirements(props) {
         )}
       </div>
       <br/>
-      <label>Fishing Requirements<span className="required-asterik">*</span></label>
+      <label>Fishing Requirements<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -32,7 +32,7 @@ function GearRequirements(props) {
         )}
       </div>
       <br/>
-      <label>Fly Requirements<span className="required-asterik">*</span></label>
+      <label>Fly Requirements<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"

@@ -6,7 +6,7 @@ function TripNotesFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Trip Notes</h4>
-      <label>Flies Used<span className="required-asterik">*</span></label>
+      <label>Flies Used<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input type="text"
           className={`${invalidFormFields.fliesUsed ? "form-control invalid-field" : "form-control"}`}
@@ -19,7 +19,7 @@ function TripNotesFields(props) {
         )}
       </div>
       <br/>
-      <label>Fish Caught<span className="required-asterik">*</span></label>
+      <label>Fish Caught<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
@@ -33,7 +33,7 @@ function TripNotesFields(props) {
         )}
       </div>
       <br/>
-      <label>Fishing Tackle<span className="required-asterik">*</span></label>
+      <label>Fishing Tackle<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
           type="text"
