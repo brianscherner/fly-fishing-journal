@@ -198,7 +198,7 @@ function ReusableTripForm(props) {
     }
   }
 
-  console.log("Form data: ", formData);
+  // console.log("Form data: ", formData);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
@@ -209,7 +209,13 @@ function ReusableTripForm(props) {
             <br/>
             {/* <br/> */}
             <label>Trip Type</label>
-            <select defaultValue="" className="form-select" name="tripType" onChange={(event) => handleTripTypeSelection(event)}>
+            <select
+              defaultValue=""
+              className={`form-select ${isLoading ? 'is-disabled' : ''}`}
+              name="tripType"
+              onChange={(event) => handleTripTypeSelection(event)}
+              disabled={isLoading}
+            >
               <option value="" disabled>Select one</option>
               <option value="Past">Past</option>
               <option value="Future">Future</option>
@@ -220,17 +226,23 @@ function ReusableTripForm(props) {
                   {conditionalComponent()}
                   <div className="form-buttons">
                     { page > 0 &&
-                      <button
-                        className="btn back-button"
-                        onClick={prevPage} type="button"
-                      >
-                        <ForwardIcon
-                        style={{ transform: 'rotate(180deg)'}}/> Back
-                      </button>}
+                      <div className={isLoading ? "disabled-wrapper" : ""}>
+                        <button
+                          className="btn back-button"
+                          onClick={prevPage}
+                          type="button"
+                          disabled={isLoading}
+                        >
+                          <ForwardIcon style={{ transform: 'rotate(180deg)'}}/> Back
+                        </button>
+                      </div>
+                    }
                     { page < totalPages &&
                       <button
                         className="btn next-button"
-                        onClick={nextPage} type="button"
+                        onClick={nextPage}
+                        type="button"
+                        disabled={isLoading}
                       >
                         Next <ForwardIcon/>
                       </button>}

@@ -5,9 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { auth } from "../../firebase.js";
 import PhishingIcon from '@mui/icons-material/Phishing';
+import { useLoading } from "../context/LoadingContext";
 
 function CustomNavbar() {
   const [userSignedIn, setUserSignedIn] = useState(false);
+  const { isLoading } = useLoading();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -27,15 +29,23 @@ function CustomNavbar() {
         <div></div>
         <h1 className='app-title'>Cast Tracker <PhishingIcon fontSize='large'/></h1>
         {/* put 1 sentence here explaining app's purpose */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+        <div className={isLoading ? 'disabled-wrapper' : ''}>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className={isLoading ? 'nav-is-disabled' : ''} disabled={isLoading}/>
+        </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto header-links">
             <div className="navbar-menu-links">
-              <NavLink to="/trips" className="navbar-link">Trips</NavLink>
+              <div className={isLoading ? 'disabled-wrapper' : ''}>
+                <NavLink to="/trips" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Trips</NavLink>
+              </div>
               {!userSignedIn && (
-                <NavLink to="/sign-up" className="navbar-link">Sign Up</NavLink>
+                <div className={isLoading ? 'disabled-wrapper' : ''}>
+                  <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Sign Up</NavLink>
+                </div>
               )}
-              <NavLink to="/account" className="navbar-link">Account</NavLink>
+              <div className={isLoading ? 'disabled-wrapper' : ''}>
+                <NavLink to="/account" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Account</NavLink>
+              </div>
             </div>
           </Nav>
         </Navbar.Collapse>

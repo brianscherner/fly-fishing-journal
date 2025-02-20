@@ -22,6 +22,11 @@
   font-family: "Cabin", sans-serif;
 }
 
+.navbar-link.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .navbar-link:link,
 .navbar-link:visited,
 .navbar-link:hover,
@@ -92,6 +97,7 @@
   color: var(--background);
   font-weight: 600;
   border-radius: 1.5rem;
+  height: 44px;
 }
 
 .btn.app-buttons:hover, .btn.control-button:hover, .btn.back-button:hover {
@@ -540,6 +546,11 @@ table {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.form-select.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .form-control {
   background-color: #F5F5F5;
   border: 1px solid var(--borders);
@@ -583,14 +594,14 @@ label {
 
 .btn.app-buttons.submit-loader {
   background: var(--accent-primary);
-  width: 92px;
+  min-width: 92px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--accent-primary);
 }
 
-.btn.app-buttons .submit-loader {
+.submit-loader-animation {
   width: 4px;
   color: var(--background);
   aspect-ratio: 1;
@@ -612,7 +623,7 @@ label {
   object-fit: cover;
   border-radius: 0.45rem;
   overflow: hidden;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .photo-upload-container {
@@ -687,8 +698,23 @@ label {
   display: none;
 }
 
+.upload-button.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .upload-icon {
   color: var(--accent-primary);
+}
+
+/* global styles */
+.disabled-wrapper {
+  cursor: not-allowed;
+}
+
+.nav-is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 /* media queries */

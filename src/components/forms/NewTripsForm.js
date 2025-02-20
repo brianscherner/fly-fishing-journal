@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReusableTripForm from "./ReusableTripForm";
 import { auth } from "../../firebase.js";
+import { useLoading } from "../context/LoadingContext";
 
 function NewTripsForm(props) {
   // mock images for testing
@@ -64,13 +65,13 @@ function NewTripsForm(props) {
 
     images: []
   });
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading, setIsLoading } = useLoading();
 
   function handleNewTripFormSubmission(event) {
     event.preventDefault();
     formData.userId = auth.currentUser.uid;
     props.onNewTripCreation(formData);
-    setIsLoading(!isLoading);
+    setIsLoading(true);
   }
 
   return (
