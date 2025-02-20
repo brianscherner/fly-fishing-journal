@@ -29,16 +29,23 @@ function CustomNavbar() {
         <div></div>
         <h1 className='app-title'>Cast Tracker <PhishingIcon fontSize='large'/></h1>
         {/* put 1 sentence here explaining app's purpose */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" disabled={isLoading}/>
+        <div className={isLoading ? 'disabled-wrapper' : ''}>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className={isLoading ? 'nav-is-disabled' : ''} disabled={isLoading}/>
+        </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto header-links">
             <div className="navbar-menu-links">
-              {/* links are currenty not disabled when isLoading is true */}
-              <NavLink to="/trips" className={`navbar-link ${isLoading ? 'disabled' : ''}`}>Trips</NavLink>
+              <div className={isLoading ? 'disabled-wrapper' : ''}>
+                <NavLink to="/trips" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Trips</NavLink>
+              </div>
               {!userSignedIn && (
-                <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'disabled' : ''}`}>Sign Up</NavLink>
+                <div className={isLoading ? 'disabled-wrapper' : ''}>
+                  <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Sign Up</NavLink>
+                </div>
               )}
-              <NavLink to="/account" className={`navbar-link ${isLoading ? 'disabled' : ''}`}>Account</NavLink>
+              <div className={isLoading ? 'disabled-wrapper' : ''}>
+                <NavLink to="/account" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Account</NavLink>
+              </div>
             </div>
           </Nav>
         </Navbar.Collapse>

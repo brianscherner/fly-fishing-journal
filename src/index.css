@@ -22,6 +22,11 @@
   font-family: "Cabin", sans-serif;
 }
 
+.navbar-link.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .navbar-link:link,
 .navbar-link:visited,
 .navbar-link:hover,
@@ -705,6 +710,11 @@ label {
 /* global styles */
 .disabled-wrapper {
   cursor: not-allowed;
+}
+
+.nav-is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 /* media queries */
