@@ -209,19 +209,17 @@ function ReusableTripForm(props) {
             <br/>
             {/* <br/> */}
             <label>Trip Type</label>
-            {/* <div className={isLoading ? "disabled-wrapper" : ""}> */}
-              <select
-                defaultValue=""
-                className="form-select"
-                name="tripType"
-                onChange={(event) => handleTripTypeSelection(event)}
-                disabled={isLoading}
-              >
-                <option value="" disabled>Select one</option>
-                <option value="Past">Past</option>
-                <option value="Future">Future</option>
-              </select>
-            {/* </div> */}
+            <select
+              defaultValue=""
+              className={`form-select ${isLoading ? 'is-disabled' : ''}`}
+              name="tripType"
+              onChange={(event) => handleTripTypeSelection(event)}
+              disabled={isLoading}
+            >
+              <option value="" disabled>Select one</option>
+              <option value="Past">Past</option>
+              <option value="Future">Future</option>
+            </select>
             <br/>
               {tripType && (
                 <React.Fragment>

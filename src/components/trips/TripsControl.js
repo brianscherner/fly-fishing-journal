@@ -223,13 +223,15 @@ function TripsControl() {
           onNewTripCreation={handleCreatingNewTrip}
         />
       mainButton =
-        <button
-          className='btn control-button'
-          onClick={handleClick}
-          disabled={isLoading}
-        >
-          <HomeIcon fontSize='large'/>
-        </button>;
+        <div className={isLoading ? 'disabled-wrapper' : ''}>
+          <button
+            className='btn control-button'
+            onClick={handleClick}
+            disabled={isLoading}
+          >
+            <HomeIcon fontSize='large'/>
+          </button>
+        </div>
     } else {
       currentlyVisibleState =
         <TripsList
