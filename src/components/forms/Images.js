@@ -16,7 +16,7 @@ function Images(props) {
       <h4 className="form-section-heading">Photos</h4>
       <p className="required-msg">Add up to 6 photos from your trip!</p>
       <div className="photo-upload-slot">
-        <label className="upload-button">
+        <label className={`upload-button ${isLoading ? 'is-disabled' : ''}`}>
           <UploadIcon fontSize="medium" className="upload-icon"/>
           <span className="upload-text">Upload</span>
           <input
