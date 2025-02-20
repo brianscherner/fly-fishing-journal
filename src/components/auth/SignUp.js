@@ -83,7 +83,7 @@ function SignUp() {
                     name="password"
                     />
                   {isPassWordIconClicked ?
-                    <VisibilityOffIcon          className="form-input-icon"     id="password-icon"
+                    <VisibilityOffIcon className="form-input-icon" id="password-icon"
                     onClick={handlePasswordIconClick}/>
                     :
                     <VisibilityIcon
@@ -99,7 +99,7 @@ function SignUp() {
                     name="confirmPassword"
                     />
                   {isPassWordIconClicked ?
-                    <VisibilityOffIcon        className="form-input-icon"     id="password-icon"
+                    <VisibilityOffIcon className="form-input-icon" id="password-icon"
                     onClick={handlePasswordIconClick}/>
                     :
                     <VisibilityIcon

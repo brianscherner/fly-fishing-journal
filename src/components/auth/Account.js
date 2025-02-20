@@ -92,7 +92,7 @@ function SignIn() {
                     name="signInPassword"
                     />
                   {isPassWordIconClicked ?
-                      <VisibilityOffIcon        className="form-input-icon"     id="password-icon"
+                      <VisibilityOffIcon className="form-input-icon" id="password-icon"
                       onClick={handlePasswordIconClick}/>
                       :
                       <VisibilityIcon
