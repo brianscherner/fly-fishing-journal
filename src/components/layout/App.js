@@ -9,9 +9,11 @@ import ResetPassword from '../auth/ResetPassword';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoadingProvider } from '../context/LoadingContext';
+import { AuthProvider } from '../context/AuthContext';
 
 function App() {
   return (
+    <AuthProvider>
     <LoadingProvider>
       <Router>
         <React.Fragment>
@@ -27,6 +29,7 @@ function App() {
       </React.Fragment>
       </Router>
     </LoadingProvider>
+    </AuthProvider>
   );
 }
 

@@ -9,9 +9,10 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { useAuth } from '../context/AuthContext.js';
 
 function SignIn() {
-  const [userSignedIn, setUserSignedIn] = useState(false);
+  const { userSignedIn, setUserSignedIn } = useAuth();
   const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
 
@@ -63,6 +64,7 @@ function SignIn() {
     navigate('/reset-password');
   }
 
+  console.log("current user: ", auth.currentUser);
   return (
     <React.Fragment>
       {!userSignedIn && (

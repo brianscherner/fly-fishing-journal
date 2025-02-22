@@ -38,11 +38,14 @@ function SignUp() {
     if (password === confirmPassword) {
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        sendEmailVerification(auth.currentUser)
-        signOut(auth);
-        toast.success(`Verification email sent to ${userCredential.user.email}!`, {
-          position: "bottom-right"});
-        navigate('/account');
+        toast.success(`Successfully signed up as ${userCredential.user.email}.`, {
+          position: "bottom-right",
+          autoClose: 6000});
+        sendEmailVerification(auth.currentUser);
+        toast.info(`Verification email sent to ${userCredential.user.email}.`, {
+          position: "bottom-right",
+          autoClose: 6000});
+        setTimeout(() => navigate('/trips'), 1000);
       })
       .catch((error) => {
         toast.error(`There was an error signing up: ${error.message}`, {

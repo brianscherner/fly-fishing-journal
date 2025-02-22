@@ -6,9 +6,10 @@ import Container from 'react-bootstrap/Container';
 import { auth } from "../../firebase.js";
 import PhishingIcon from '@mui/icons-material/Phishing';
 import { useLoading } from "../context/LoadingContext";
+import { useAuth } from '../context/AuthContext.js';
 
 function CustomNavbar() {
-  const [userSignedIn, setUserSignedIn] = useState(false);
+  const { userSignedIn, setUserSignedIn } = useAuth();
   const { isLoading } = useLoading();
 
   useEffect(() => {
@@ -38,14 +39,14 @@ function CustomNavbar() {
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/trips" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Trips</NavLink>
               </div>
+              <div className={isLoading ? 'disabled-wrapper' : ''}>
+                <NavLink to="/account" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Account</NavLink>
+              </div>
               {!userSignedIn && (
                 <div className={isLoading ? 'disabled-wrapper' : ''}>
                   <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Sign Up</NavLink>
                 </div>
               )}
-              <div className={isLoading ? 'disabled-wrapper' : ''}>
-                <NavLink to="/account" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Account</NavLink>
-              </div>
             </div>
           </Nav>
         </Navbar.Collapse>
