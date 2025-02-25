@@ -3,12 +3,13 @@ import NewTripsForm from '../forms/NewTripsForm.js';
 import TripsList from './TripsList.js';
 import TripDetails from './TripDetails.js';
 import EditTripForm from '../forms/EditTripForm.js';
-import { db, auth } from '../../firebase.js';
+import { db } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { toast } from 'react-toastify';
 import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useLoading } from "../context/LoadingContext";
+import { useAuth } from '../context/AuthContext.js';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -18,6 +19,7 @@ function TripsControl() {
   const [error, setError] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const { isLoading, setIsLoading } = useLoading();
+  const { currentUser, auth, isAuthLoading } = useAuth();
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -179,13 +181,13 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
-  if (auth.currentUser == null) {
+  if (currentUser === null) {
     return (
       <React.Fragment>
         <h2 className='auth-message'>Please sign in to your account to start adding trips.</h2>
       </React.Fragment>
     )
-  } else if (auth.currentUser != null) {
+  } else if (currentUser !== null) {
     let currentlyVisibleState = null;
     let mainButton = null;
 
