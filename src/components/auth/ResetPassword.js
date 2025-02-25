@@ -1,12 +1,13 @@
 import React from "react";
-import { auth } from "../../firebase.js";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
+import { useAuth } from '../context/AuthContext.js';
 
 function ResetPassword() {
+  const { auth } = useAuth();
   const navigate = useNavigate();
 
   function doResetPassword(event) {

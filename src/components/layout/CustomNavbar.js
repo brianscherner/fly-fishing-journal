@@ -1,28 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-import { auth } from "../../firebase.js";
 import PhishingIcon from '@mui/icons-material/Phishing';
 import { useLoading } from "../context/LoadingContext";
 import { useAuth } from '../context/AuthContext.js';
 
 function CustomNavbar() {
-  const { userSignedIn, setUserSignedIn } = useAuth();
+  const { currentUser } = useAuth();
   const { isLoading } = useLoading();
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUserSignedIn(true);
-      } else {
-        setUserSignedIn(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   return (
     <Navbar expand=''>
@@ -42,7 +29,7 @@ function CustomNavbar() {
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/account" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Account</NavLink>
               </div>
-              {!userSignedIn && (
+              {currentUser === null && (
                 <div className={isLoading ? 'disabled-wrapper' : ''}>
                   <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Sign Up</NavLink>
                 </div>

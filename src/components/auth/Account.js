@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../../firebase.js";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -12,21 +11,9 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useAuth } from '../context/AuthContext.js';
 
 function SignIn() {
-  const { userSignedIn, setUserSignedIn } = useAuth();
+  const { currentUser, auth } = useAuth();
   const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUserSignedIn(true);
-      } else {
-        setUserSignedIn(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   const handlePasswordIconClick = () => {
     setIsPasswordIconClicked(!isPassWordIconClicked);
@@ -64,10 +51,9 @@ function SignIn() {
     navigate('/reset-password');
   }
 
-  console.log("current user: ", auth.currentUser);
   return (
     <React.Fragment>
-      {!userSignedIn && (
+      {currentUser === null && (
         <React.Fragment>
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
@@ -115,13 +101,13 @@ function SignIn() {
         </React.Fragment>
       )}
 
-      {userSignedIn && (
+      {currentUser !== null && (
         <React.Fragment>
           <div className="current-user">
             <AccountCircleIcon
               fontSize="large"
               id="user-icon"/>
-            <p className="username">{auth.currentUser.email}</p>
+            <p className="username">{currentUser.email}</p>
           </div>
           <button
             className="btn app-buttons"

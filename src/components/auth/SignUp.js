@@ -1,29 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../../firebase.js";
-import { createUserWithEmailAndPassword, sendEmailVerification, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { useAuth } from '../context/AuthContext.js';
 
 function SignUp() {
-  const [userSignedUp, setUserSignedUp] = useState(false);
+  const { currentUser, auth } = useAuth();
   const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((createdUser) => {
-      if (createdUser) {
-        setUserSignedUp(true);
-      } else {
-        setUserSignedUp(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   const handlePasswordIconClick = () => {
     setIsPasswordIconClicked(!isPassWordIconClicked);
@@ -44,8 +32,8 @@ function SignUp() {
         sendEmailVerification(auth.currentUser);
         toast.info(`Verification email sent to ${userCredential.user.email}.`, {
           position: "bottom-right",
-          autoClose: 6000});
-        setTimeout(() => navigate('/trips'), 1000);
+          autoClose: 7000});
+        setTimeout(() => navigate('/trips'), 500);
       })
       .catch((error) => {
         toast.error(`There was an error signing up: ${error.message}`, {
@@ -59,7 +47,7 @@ function SignUp() {
 
   return (
     <React.Fragment>
-      {!userSignedUp && (
+      {currentUser === null && (
         <React.Fragment>
           <h2 className="sign-in-headings">Sign Up</h2>
           {/* <br/> */}
