@@ -9,9 +9,10 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import EmailIcon from '@mui/icons-material/Email';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useAuth } from '../context/AuthContext.js';
+import Spinner from '../ui/Spinner.js';
 
 function SignIn() {
-  const { currentUser, auth } = useAuth();
+  const { currentUser, auth, isAuthLoading } = useAuth();
   const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
 
@@ -53,7 +54,11 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      {currentUser === null && (
+      {isAuthLoading && currentUser !== null && (
+        <Spinner/>
+      )}
+
+      {!isAuthLoading && currentUser === null && (
         <React.Fragment>
           <div className="row justify-content-center">
             <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
@@ -101,7 +106,7 @@ function SignIn() {
         </React.Fragment>
       )}
 
-      {currentUser !== null && (
+      {!isAuthLoading && currentUser !== null && (
         <React.Fragment>
           <div className="current-user">
             <AccountCircleIcon

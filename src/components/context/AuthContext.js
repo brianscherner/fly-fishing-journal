@@ -5,14 +5,16 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isAuthLoading, setIsAuthLoading] = useState(false);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setCurrentUser(user);
+        setTimeout(() => setIsAuthLoading(false), 500);
       } else {
         setCurrentUser(null);
+        setIsAuthLoading(false);
       }
     });
 
