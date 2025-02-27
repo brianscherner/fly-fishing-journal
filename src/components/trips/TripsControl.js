@@ -10,6 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useLoading } from "../context/LoadingContext";
 import { useAuth } from '../context/AuthContext.js';
+import Spinner from '../ui/Spinner.js';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -19,12 +20,13 @@ function TripsControl() {
   const [error, setError] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const { isLoading, setIsLoading } = useLoading();
-  const { currentUser, auth, isAuthLoading } = useAuth();
+  const { currentUser, auth, isAuthLoading, setIsAuthLoading } = useAuth();
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
       collection(db, "Trips"),
       (collectionSnapshot) => {
+        setIsAuthLoading(true);
         const trips = [];
         collectionSnapshot.forEach((doc) => {
           if (doc.data().userId === auth.currentUser.uid) {
@@ -35,6 +37,7 @@ function TripsControl() {
           }
         });
         setMainTripsList(trips);
+        setIsAuthLoading(false);
       },
       (error) => {
         setError(error.message);
@@ -181,13 +184,17 @@ function TripsControl() {
     setSelectedTrip(null);
   }
 
-  if (currentUser === null) {
+  if (!isAuthLoading && currentUser === null) {
     return (
       <React.Fragment>
         <h2 className='auth-message'>Please sign in to your account to start adding trips.</h2>
       </React.Fragment>
     )
-  } else if (currentUser !== null) {
+  } else if (isAuthLoading && currentUser !== null) {
+    return (
+      <Spinner/>
+    )
+  } else if (!isAuthLoading && currentUser !== null) {
     let currentlyVisibleState = null;
     let mainButton = null;
 
