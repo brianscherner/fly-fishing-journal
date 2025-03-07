@@ -19,6 +19,7 @@ function TripsControl() {
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isDataFetched, setIsDataFetched] = useState(false);
   const { isLoading, setIsLoading } = useLoading();
   const { currentUser, auth, isAuthLoading, setIsAuthLoading } = useAuth();
 
@@ -38,6 +39,7 @@ function TripsControl() {
         });
         const sortedTripsList = trips.toSorted((a, b) => new Date(b.startDate) - new Date(a.startDate));
         setMainTripsList(sortedTripsList);
+        setIsDataFetched(true);
         setIsAuthLoading(false);
       },
       (error) => {
@@ -46,7 +48,7 @@ function TripsControl() {
     );
 
     return () => unSubscribe();
-  });
+  }, []);
 
   useEffect(() => {
     setIsDeleteModalOpen(false);
@@ -256,10 +258,16 @@ function TripsControl() {
 
     return (
       <React.Fragment>
-        {error ? null : mainButton}
-        <br/>
-        <br/>
-        {currentlyVisibleState}
+        {isDataFetched ?
+          <>
+            {error ? null : mainButton}
+            <br/>
+            <br/>
+            {currentlyVisibleState}
+          </>
+          :
+          <Spinner/>
+        }
       </React.Fragment>
     );
   }
