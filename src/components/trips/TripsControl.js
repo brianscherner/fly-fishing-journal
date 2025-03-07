@@ -36,7 +36,8 @@ function TripsControl() {
             });
           }
         });
-        setMainTripsList(trips);
+        const sortedTripsList = trips.toSorted((a, b) => new Date(b.startDate) - new Date(a.startDate));
+        setMainTripsList(sortedTripsList);
         setIsAuthLoading(false);
       },
       (error) => {
@@ -45,7 +46,7 @@ function TripsControl() {
     );
 
     return () => unSubscribe();
-  }, []);
+  });
 
   useEffect(() => {
     setIsDeleteModalOpen(false);

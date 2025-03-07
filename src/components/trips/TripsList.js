@@ -1,81 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useMemo } from "react";
 import Trip from './Trip';
 
 function TripsList(props) {
-  const { tripsList, setMainTripsList } = props;
-  const [filteredTripsList, setFilteredTripsList] = useState([]);
+  const { tripsList } = props;
+  const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    setFilteredTripsList(tripsList);
-  }, [tripsList]);
+  const filteredTripsList = useMemo(() => {
+
+    if (filter === "Past") {
+      return tripsList.filter(trip => trip.tripType === "Past");
+    } else if (filter === "Future") {
+      return tripsList.filter(trip => trip.tripType === "Future");
+    } else {
+      return tripsList;
+    }
+
+  }, [filter, tripsList]);
 
   const handleFilterSelection = (event) => {
-    const filterSelection = event.target.value;
-
-    if (filterSelection === "All") {
-      setFilteredTripsList(tripsList);
-    }
-
-    if (filterSelection === "Past") {
-      const pastTripsList = tripsList.filter(trip => trip.tripType === "Past");
-      setFilteredTripsList(pastTripsList);
-    } else if (filterSelection === "Future") {
-      const futureTripsList = tripsList.filter(trip => trip.tripType === "Future");
-      setFilteredTripsList(futureTripsList);
-    }
-
-  }
+    setFilter(event.target.value);
+  };
 
   return (
     <React.Fragment>
       <div className="row justify-content-center">
-
-        {tripsList.length === 0 && (
-          <p className="empty-trip-list-msg">Add your first trip to get started!</p>
-        )}
-
-        {/* can adjust width for greater responsiveness later */}
         <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
           {tripsList.length > 0 && (
             <React.Fragment>
-              <label style={{ justifyContent: "center" }}>Filter Trips</label>
+              <label style={{ justifyContent: "left" }}>Filter Trips</label>
               <select
+                defaultValue={filter}
                 className="form-select"
                 onChange={handleFilterSelection}>
-                <option value="" disabled>Select type</option>
+                <option value="" disabled>Select trip type</option>
                 <option value="All">All</option>
                 <option value="Past">Past</option>
                 <option value="Future">Future</option>
               </select>
-            <br/>
+              <br/>
             </React.Fragment>
           )}
         </div>
       </div>
 
-      {filteredTripsList.length === 0 && (
-        <p className="empty-trip-list-msg">No trips were found. Add a trip to get started!</p>
+      {(tripsList.length === 0 || filteredTripsList.length === 0) && (
+        <p className="empty-trip-list-msg">No trips to show. Add a trip to get started!</p>
       )}
 
-      {filteredTripsList.length > 0 && (
-        <div className="trips-list-container">
-          <div className="trips-list">
-            {filteredTripsList.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
-            .map((trip) => (
-            <Trip
-              whenTripClicked={props.onTripSelection}
-              destination={trip.destination}
-              startDate={trip.startDate}
-              tripType={trip.tripType}
-              fishCaught={trip.fishCaught}
-              waterBodyType={trip.waterBodyType}
-              images={trip.images}
-              id={trip.id}
-              key={trip.id}/>
-            ))}
-          </div>
+      <div className="trips-list-container">
+        <div className="trips-list">
+          {filteredTripsList.map((trip) => (
+          <Trip
+            whenTripClicked={props.onTripSelection}
+            destination={trip.destination}
+            startDate={trip.startDate}
+            tripType={trip.tripType}
+            fishCaught={trip.fishCaught}
+            waterBodyType={trip.waterBodyType}
+            images={trip.images}
+            id={trip.id}
+            key={trip.id}/>
+          ))}
         </div>
-      )}
+      </div>
 
     </React.Fragment>
   );
