@@ -178,6 +178,7 @@ function TripsControl() {
     toast.success('Trip edited.', { position: "bottom-right"});
     setEditing(false);
     setSelectedTrip(null);
+    setIsLoading(false);
   }
 
   const handleMarkingTripAsPast = async (tripToMark) => {
@@ -210,9 +211,15 @@ function TripsControl() {
           onEditingTrip={handleEditingTrip}
         />
       mainButton =
-        <button className='btn control-button' onClick={handleClick}>
-          <HomeIcon fontSize='large'/>
-        </button>;
+        <div className={isLoading ? 'disabled-wrapper' : ''}>
+          <button
+            className='btn control-button'
+            onClick={handleClick}
+            disabled={isLoading}
+          >
+            <HomeIcon fontSize='large'/>
+          </button>
+        </div>
     } else if (selectedTrip != null) {
       currentlyVisibleState =
         <TripDetails

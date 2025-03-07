@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import ReusableTripForm from "./ReusableTripForm";
+import { useLoading } from "../context/LoadingContext";
 
 function EditTripForm(props) {
   const { trip } = props;
   const [editFormData, setEditFormData] = useState(trip);
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading, setIsLoading } = useLoading();
 
   function handleEditTripFormSubmission(event) {
     event.preventDefault();
     const updatedTrip = {...trip, ...editFormData};
     props.onEditingTrip(updatedTrip);
-    setIsLoading(!isLoading);
+    setIsLoading(true);
   }
 
   return (
