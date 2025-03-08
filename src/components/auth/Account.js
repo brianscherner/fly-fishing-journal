@@ -114,6 +114,8 @@ function SignIn() {
 
       {!isAuthLoading && currentUser !== null && (
         <React.Fragment>
+          <h2 className="sign-in-headings">Account</h2>
+          {/* <br/> */}
           <div className="current-user-container">
             <div className="current-user-metadata">
               <div className="current-user">
@@ -132,13 +134,14 @@ function SignIn() {
                 <CalendarMonthIcon
                     fontSize="large"
                     id="user-icon"/>
-                <p className="user-metadata">Member since {formatMemberSince(currentUser.metadata.creationTime)}</p>
+                <p className="user-metadata">Joined {formatMemberSince(currentUser.metadata.creationTime)}</p>
               </div>
               <div className="current-user">
                 <p className="user-metadata">Email verified: {currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>}</p>
               </div>
             </div>
           </div>
+          {/* <br/> */}
           <button
             className="btn app-buttons"
             onClick={doSignOut}><LogoutIcon/> Sign Out
