@@ -14,6 +14,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { formatLastSignIn, formatMemberSince } from '../utils/DateUtils.js';
 
 function SignIn() {
   const { currentUser, auth, isAuthLoading } = useAuth();
@@ -125,13 +126,13 @@ function SignIn() {
                 <AccessTimeIcon
                   fontSize="large"
                   id="user-icon"/>
-                <p className="user-metadata">Last sign in {currentUser.metadata.lastSignInTime}</p>
+                <p className="user-metadata">Last sign in {formatLastSignIn(currentUser.metadata.lastSignInTime)}</p>
               </div>
               <div className="current-user">
                 <CalendarMonthIcon
                     fontSize="large"
                     id="user-icon"/>
-                <p className="user-metadata">Member since {currentUser.metadata.creationTime}</p>
+                <p className="user-metadata">Member since {formatMemberSince(currentUser.metadata.creationTime)}</p>
               </div>
               <div className="current-user">
                 <p className="user-metadata">Email verified: {currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>}</p>
