@@ -7,7 +7,7 @@ function SubmitLoader(props) {
   return (
     <div className={isLoading ? "disabled-wrapper" : ""}>
       <button
-        className={`btn app-buttons ${isLoading ? 'submit-loader' : ''}`}
+        className={`btn submit-button ${isLoading ? 'submit-loader' : ''}`}
         type="submit"
         disabled={isLoading}
       >

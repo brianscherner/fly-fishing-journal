@@ -174,6 +174,7 @@ function TripDetails(props) {
           <button
             className="btn app-buttons"
             onClick={() => onMarkingTripAsPast(trip.id)}
+            id="mark-past-button"
           >
             Mark as Past <CheckCircleIcon/>
           </button>
