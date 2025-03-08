@@ -26,13 +26,17 @@ function CustomNavbar() {
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/trips" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Trips</NavLink>
               </div>
+              <p className='menu-pipe'>|</p>
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/account" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Account</NavLink>
               </div>
               {currentUser === null && (
-                <div className={isLoading ? 'disabled-wrapper' : ''}>
-                  <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Sign Up</NavLink>
-                </div>
+                <React.Fragment>
+                  <p className='menu-pipe'>|</p>
+                  <div className={isLoading ? 'disabled-wrapper' : ''}>
+                    <NavLink to="/sign-up" className={`navbar-link ${isLoading ? 'nav-is-disabled' : ''}`}>Sign Up</NavLink>
+                  </div>
+                </React.Fragment>
               )}
             </div>
           </Nav>

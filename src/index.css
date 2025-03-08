@@ -16,6 +16,11 @@
 }
 
 /* navbar menu styling */
+.menu-pipe {
+  color: var(--background);
+  font-size: 1.3rem;
+}
+
 .navbar-link {
   color: var(--background);
   font-size: 1.5rem;
