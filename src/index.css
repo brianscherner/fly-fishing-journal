@@ -595,6 +595,7 @@ table {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 1.5rem;
   padding: 11px 14px;
+  font-size: 1.075rem;
 }
 
 .form-select.is-disabled {
@@ -611,6 +612,7 @@ table {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 1.5rem;
   padding: 11px 14px;
+  font-size: 1.075rem;
 }
 
 .form-control:focus, .form-select:focus {
@@ -622,7 +624,7 @@ table {
   display: flex;
   justify-content: flex-start;
   color: #D90429;
-  font-size: 0.925rem;
+  font-size: 1.05rem;
   font-weight: 500;
   padding-top: 4px;
 }
@@ -776,6 +778,10 @@ label {
 
 .MuiSvgIcon-root.auth-button-icons {
   font-size: 1.7rem;
+}
+
+.MuiSvgIcon-root.upload-icon {
+  font-size: 1.725rem;
 }
 
 .disabled-wrapper {
