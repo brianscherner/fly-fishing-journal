@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useAuth } from '../context/AuthContext.js';
 import Spinner from '../ui/Spinner.js';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 function SignIn() {
   const { currentUser, auth, isAuthLoading } = useAuth();
@@ -52,6 +56,7 @@ function SignIn() {
     navigate('/reset-password');
   }
 
+  console.log("Current user: ", currentUser);
   return (
     <React.Fragment>
       {isAuthLoading && currentUser !== null && (
@@ -108,11 +113,30 @@ function SignIn() {
 
       {!isAuthLoading && currentUser !== null && (
         <React.Fragment>
-          <div className="current-user">
-            <AccountCircleIcon
-              fontSize="large"
-              id="user-icon"/>
-            <p className="username">{currentUser.email}</p>
+          <div className="current-user-container">
+            <div className="current-user-metadata">
+              <div className="current-user">
+                <AccountCircleIcon
+                  fontSize="large"
+                  id="user-icon"/>
+                <p className="username">{currentUser.email}</p>
+              </div>
+              <div className="current-user">
+                <AccessTimeIcon
+                  fontSize="large"
+                  id="user-icon"/>
+                <p className="user-metadata">Last sign in {currentUser.metadata.lastSignInTime}</p>
+              </div>
+              <div className="current-user">
+                <CalendarMonthIcon
+                    fontSize="large"
+                    id="user-icon"/>
+                <p className="user-metadata">Member since {currentUser.metadata.creationTime}</p>
+              </div>
+              <div className="current-user">
+                <p className="user-metadata">Email verified: {currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>}</p>
+              </div>
+            </div>
           </div>
           <button
             className="btn app-buttons"

@@ -347,8 +347,17 @@
 .current-user {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 0.5rem;
+}
+
+.current-user-metadata {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-user-container {
+  display: flex;
+  justify-content: center;
 }
 
 .forgot-password {
@@ -382,6 +391,13 @@
 }
 
 .username {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary-text);
+}
+
+.user-metadata {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
