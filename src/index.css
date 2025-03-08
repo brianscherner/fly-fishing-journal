@@ -18,7 +18,7 @@
 /* navbar menu styling */
 .navbar-link {
   color: var(--background);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: "Cabin", sans-serif;
 }
 
@@ -822,6 +822,10 @@ label {
 @media (max-width: 540px) {
   .app-title {
     font-size: 2rem;
+  }
+
+  .navbar-link {
+    font-size: 1.45rem;
   }
 
   .btn.control-button {
