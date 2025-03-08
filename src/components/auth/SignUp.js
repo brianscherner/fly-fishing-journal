@@ -100,7 +100,7 @@ function SignUp() {
                 <br/>
                 <button
                   className="btn app-buttons"
-                  type="submit"><PersonAddIcon/> Sign Up
+                  type="submit"><PersonAddIcon className="auth-button-icons"/> Sign Up
                 </button>
               </form>
               <br/>

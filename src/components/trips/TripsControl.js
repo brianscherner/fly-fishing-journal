@@ -259,7 +259,7 @@ function TripsControl() {
         />
       mainButton =
         <button className='btn control-button' onClick={handleClick}>
-          <AddCircleIcon fontSize='large'/> Add Trips
+          <AddCircleIcon className='control-button-icon'/> Add Trips
         </button>
     }
 

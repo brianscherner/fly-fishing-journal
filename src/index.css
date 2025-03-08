@@ -652,7 +652,7 @@ label {
   justify-content: center;
   align-items: center;
   color: var(--accent-primary);
-  height: 55px;
+  height: 57px;
 }
 
 .submit-loader-animation {
@@ -762,6 +762,22 @@ label {
 }
 
 /* global styles */
+.MuiSvgIcon-root.control-button-icon {
+  font-size: 1.75rem;
+}
+
+.MuiSvgIcon-root.forward-icon {
+  font-size: 1.875rem;
+}
+
+.MuiSvgIcon-root.add-trip-icon {
+  font-size: 1.875rem;
+}
+
+.MuiSvgIcon-root.auth-button-icons {
+  font-size: 1.7rem;
+}
+
 .disabled-wrapper {
   cursor: not-allowed;
 }
@@ -800,6 +816,10 @@ label {
 @media (max-width: 540px) {
   .app-title {
     font-size: 2rem;
+  }
+
+  .btn.control-button {
+    font-size: 1.2rem;
   }
 
   .trips-list {

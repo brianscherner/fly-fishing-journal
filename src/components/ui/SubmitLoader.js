@@ -13,7 +13,7 @@ function SubmitLoader(props) {
       >
         {isLoading ? <div className="submit-loader-animation"></div>
         :
-        (<span>Add Trip <AddCircleIcon/></span>)}
+        (<span>Add Trip <AddCircleIcon className="add-trip-icon"/></span>)}
       </button>
     </div>
   )

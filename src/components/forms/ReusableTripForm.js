@@ -233,7 +233,7 @@ function ReusableTripForm(props) {
                           type="button"
                           disabled={isLoading}
                         >
-                          <ForwardIcon style={{ transform: 'rotate(180deg)'}}/> Back
+                          <ForwardIcon style={{ transform: 'rotate(180deg)'}} className="forward-icon"/> Back
                         </button>
                       </div>
                     }
@@ -244,7 +244,7 @@ function ReusableTripForm(props) {
                         type="button"
                         disabled={isLoading}
                       >
-                        Next <ForwardIcon/>
+                        Next <ForwardIcon className="forward-icon"/>
                       </button>}
                     { page >= totalPages &&
                       <SubmitLoader isLoading={isLoading}/>
