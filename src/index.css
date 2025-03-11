@@ -16,38 +16,54 @@
 }
 
 /* navbar menu styling */
-.menu-pipe {
+.header-title {
+  font-size: 2.45rem;
+  font-family: "Cabin", sans-serif;
+  font-weight: 700;
+  color: var(--background);
+  margin: 0;
+  justify-self: center;
+}
+
+.nav-links-wrapper {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: 'Merriweather';
+  color: var(--background);
+}
+
+.nav-divider {
   color: var(--background);
   font-size: 1.3rem;
 }
 
-.navbar-link {
+.nav-link {
   color: var(--background);
   font-size: 1.5rem;
   font-family: "Cabin", sans-serif;
 }
 
-.navbar-link.is-disabled {
+.nav-link.disabled-nav-link {
   opacity: 0.6;
   pointer-events: none;
 }
 
-.navbar-link:link,
-.navbar-link:visited,
-.navbar-link:hover,
-.navbar-link:active  {
+.nav-link:link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:active  {
   text-decoration: none;
 }
 
-.navbar-link:hover {
+.nav-link:active {
   color: var(--accent-secondary);
 }
 
-.navbar-nav.me-auto {
-  float: center;
+.nav-link:hover {
+  color: var(--accent-secondary);
 }
 
-.navbar {
+.header {
   background: var(--accent-primary);
   display: flex;
   margin-left: -1.5rem;
@@ -56,36 +72,19 @@
   padding-bottom: 4rem;
 }
 
-.navbar-collapse {
-  grid-column: span 3;
-}
-
-.navbar > .container {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  flex-wrap: inherit;
+.header-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
+  flex-direction: column;
   margin: 0 auto 0 auto;
-  padding: 0 0 0 0;
-  width: 100%;
 }
 
-.navbar-menu-links {
+.nav-links {
   display: flex;
   justify-content: center;
   gap: 0.65rem;
   margin-top: 0.5rem;
-}
-
-.navbar-toggler {
-  background-color: var(--background);
-  font-size: 0.8rem;
-  justify-self: flex-end;
-}
-
-.navbar-toggler:hover {
-  background-color: var(--accent-secondary);
 }
 
 /* styling for message telling user to sign in to access app */
@@ -189,22 +188,6 @@
   border-color: #A4031F;
 }
 
-/* styling for application header component */
-.app-title {
-  font-size: 2.45rem;
-  font-family: "Cabin", sans-serif;
-  font-weight: 700;
-  color: var(--background);
-  margin: 0;
-  justify-self: center;
-}
-
-.header-links {
-  font-size: 1.05rem;
-  font-weight: 600;
-  font-family: 'Merriweather';
-}
-
 /* styling for trip details */
 
 .flex-column {
@@ -301,10 +284,6 @@
 .detail-categories {
   font-family: "Open Sans", sans-serif;
   font-size: 1.075rem;
-}
-
-.nav-link {
-  color: var(--primary-text);
 }
 
 .trip-details-buttons, .form-buttons {

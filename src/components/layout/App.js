@@ -18,6 +18,7 @@ function App() {
       <Router>
         <React.Fragment>
         <Header/>
+        <br/>
         <Routes>
           <Route path="/trips" element={<TripsControl/>}/>
           <Route path="/account" element={<Account/>}/>
