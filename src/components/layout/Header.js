@@ -4,7 +4,8 @@ import PhishingIcon from '@mui/icons-material/Phishing';
 import { useLoading } from "../context/LoadingContext.js";
 import { useAuth } from '../context/AuthContext.js';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { responsiveFontSizes } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function Header() {
   const { currentUser } = useAuth();
@@ -35,7 +36,7 @@ function Header() {
               )}
               {currentUser === null && (
                 <React.Fragment>
-                  <p className='nav-divider'>|</p>
+                  <div className='nav-divider'>|</div>
                   <div className={isLoading ? 'disabled-wrapper' : ''}>
                     <NavLink to="/sign-up" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Sign Up</NavLink>
                   </div>
@@ -43,6 +44,14 @@ function Header() {
               )}
             </div>
           </div>
+          {isExpanded && (
+            <div className='account-dropdown'>
+              <p className='account-user'>
+                <AccountCircleIcon/> {currentUser.email}
+              </p>
+              <button id="account-dropdown-signout"><LogoutIcon/> Sign Out</button>
+            </div>
+          )}
         </div>
       </div>
     </div>
