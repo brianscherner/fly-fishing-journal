@@ -4,6 +4,7 @@ import PhishingIcon from '@mui/icons-material/Phishing';
 import { useLoading } from "../context/LoadingContext.js";
 import { useAuth } from '../context/AuthContext.js';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { responsiveFontSizes } from '@mui/material';
 
 function Header() {
   const { currentUser } = useAuth();
@@ -19,7 +20,7 @@ function Header() {
     <div className='app-header'>
       <div className='header'>
         <div className='header-container'>
-          <h1 className='header-title'>Cast Tracker <PhishingIcon fontSize='large'/></h1>
+          <h1 className='header-title'>Cast Tracker <PhishingIcon sx={{ fontSize: "2.75rem" }}/></h1>
           <div className='nav-links-wrapper'>
             <div className="nav-links">
               <div className={isLoading ? 'disabled-wrapper' : ''}>
@@ -30,7 +31,7 @@ function Header() {
                 <NavLink to="/account" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Account</NavLink>
               </div>
               {currentUser !== null && (
-                <KeyboardArrowDownIcon onClick={toggleAccountMenu} className='expand-account-arrow' style={isExpanded ? { transform: 'rotate(180deg)'} : {}} />
+                <KeyboardArrowDownIcon onClick={toggleAccountMenu} className='expand-account-arrow' style={isExpanded ? { transform: 'rotate(180deg)'} : {}}/>
               )}
               {currentUser === null && (
                 <React.Fragment>
