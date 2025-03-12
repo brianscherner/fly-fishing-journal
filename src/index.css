@@ -15,7 +15,7 @@
   background: var(--background);
 }
 
-/* navbar menu styling */
+/* menu styling */
 .header-title {
   font-size: 2.45rem;
   font-family: "Cabin", sans-serif;
@@ -34,7 +34,7 @@
 
 .nav-divider {
   color: var(--background);
-  font-size: 1.3rem;
+  font-size: 1.75rem;
 }
 
 .nav-link {
@@ -85,6 +85,12 @@
   justify-content: center;
   gap: 0.65rem;
   margin-top: 0.5rem;
+  align-items: center;
+}
+
+.expand-account-arrow {
+  cursor: pointer;
+  margin-left: -0.5rem;
 }
 
 /* styling for message telling user to sign in to access app */

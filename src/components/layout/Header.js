@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import { useLoading } from "../context/LoadingContext.js";
 import { useAuth } from '../context/AuthContext.js';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function Header() {
   const { currentUser } = useAuth();
   const { isLoading } = useLoading();
+  const [isExpanded, setIsExpanded] = useState(false);
 
+  const toggleAccountMenu = () => {
+    setIsExpanded(!isExpanded);
+  }
+
+  console.log("Is expanded: ", isExpanded);
   return (
     <div className='app-header'>
       <div className='header'>
@@ -18,10 +25,13 @@ function Header() {
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/trips" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Trips</NavLink>
               </div>
-              <p className='nav-divider'>|</p>
+              <div className='nav-divider'>|</div>
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/account" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Account</NavLink>
               </div>
+              {currentUser !== null && (
+                <KeyboardArrowDownIcon onClick={toggleAccountMenu} className='expand-account-arrow' style={isExpanded ? { transform: 'rotate(180deg)'} : {}} />
+              )}
               {currentUser === null && (
                 <React.Fragment>
                   <p className='nav-divider'>|</p>
