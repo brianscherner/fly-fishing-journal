@@ -1,22 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import { useLoading } from "../context/LoadingContext.js";
 import { useAuth } from '../context/AuthContext.js';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LogoutIcon from '@mui/icons-material/Logout';
 
 function Header() {
-  const { currentUser } = useAuth();
+  const { currentUser, isAuthLoading } = useAuth();
   const { isLoading } = useLoading();
-  const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggleAccountMenu = () => {
-    setIsExpanded(!isExpanded);
-  }
-
-  console.log("Is expanded: ", isExpanded);
+  console.log("Is auth loading: ", isAuthLoading);
   return (
     <div className='app-header'>
       <div className='header'>
@@ -31,10 +23,8 @@ function Header() {
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/account" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Account</NavLink>
               </div>
-              {currentUser !== null && (
-                <KeyboardArrowDownIcon onClick={toggleAccountMenu} className='expand-account-arrow' style={isExpanded ? { transform: 'rotate(180deg)'} : {}}/>
-              )}
-              {currentUser === null && (
+              {/* trying to fix issue of Sign Up flickering when user refreshes page */}
+              {currentUser === null && !isAuthLoading && (
                 <React.Fragment>
                   <div className='nav-divider'>|</div>
                   <div className={isLoading ? 'disabled-wrapper' : ''}>
@@ -42,16 +32,16 @@ function Header() {
                   </div>
                 </React.Fragment>
               )}
+              {/* {currentUser === null && (
+                <React.Fragment>
+                  <div className='nav-divider'>|</div>
+                  <div className={isLoading ? 'disabled-wrapper' : ''}>
+                    <NavLink to="/sign-up" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Sign Up</NavLink>
+                  </div>
+                </React.Fragment>
+              )} */}
             </div>
           </div>
-          {isExpanded && (
-            <div className='account-dropdown'>
-              <p className='account-user'>
-                <AccountCircleIcon/> {currentUser.email}
-              </p>
-              <button id="account-dropdown-signout"><LogoutIcon/> Sign Out</button>
-            </div>
-          )}
         </div>
       </div>
     </div>

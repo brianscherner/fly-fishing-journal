@@ -47,68 +47,63 @@ function SignUp() {
 
   return (
     <React.Fragment>
-      {currentUser === null && (
-        <React.Fragment>
-          <h2 className="sign-in-headings">Sign Up</h2>
-          {/* <br/> */}
-          <div className="row justify-content-center">
-            <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-              <form onSubmit={doSignUp}>
-                <label>Email</label>
-                <div className="form-input-container">
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="email"
-                    />
-                  <EmailIcon
-                      className="form-input-icon"
-                      id="email-icon"/>
-                  </div>
-                <br/>
-                <label>Password</label>
-                <div className="form-input-container">
-                  <input
-                    className="form-control"
-                    type={`${isPassWordIconClicked ? "text" : "password"}`}
-                    name="password"
-                    />
-                  {isPassWordIconClicked ?
-                    <VisibilityOffIcon className="form-input-icon" id="password-icon"
-                    onClick={handlePasswordIconClick}/>
-                    :
-                    <VisibilityIcon
-                      className="form-input-icon" id="password-icon"
-                      onClick={handlePasswordIconClick}/>}
-                </div>
-                <br/>
-                <label>Confirm Password</label>
-                <div className="form-input-container">
-                  <input
-                    className="form-control"
-                    type={`${isPassWordIconClicked ? "text" : "password"}`}
-                    name="confirmPassword"
-                    />
-                  {isPassWordIconClicked ?
-                    <VisibilityOffIcon className="form-input-icon" id="password-icon"
-                    onClick={handlePasswordIconClick}/>
-                    :
-                    <VisibilityIcon
-                      className="form-input-icon" id="password-icon"
-                      onClick={handlePasswordIconClick}/>}
-                </div>
-                <br/>
-                <button
-                  className="btn app-buttons"
-                  type="submit"><PersonAddIcon className="auth-button-icons"/> Sign Up
-                </button>
-              </form>
-              <br/>
+      <h2 className="sign-in-headings">Sign Up</h2>
+      {/* <br/> */}
+      <div className="row justify-content-center">
+        <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+          <form onSubmit={doSignUp}>
+            <label>Email</label>
+            <div className="form-input-container">
+              <input
+                className="form-control"
+                type="text"
+                name="email"
+                />
+              <EmailIcon
+                  className="form-input-icon"
+                  id="email-icon"/>
+              </div>
+            <br/>
+            <label>Password</label>
+            <div className="form-input-container">
+              <input
+                className="form-control"
+                type={`${isPassWordIconClicked ? "text" : "password"}`}
+                name="password"
+                />
+              {isPassWordIconClicked ?
+                <VisibilityOffIcon className="form-input-icon" id="password-icon"
+                onClick={handlePasswordIconClick}/>
+                :
+                <VisibilityIcon
+                  className="form-input-icon" id="password-icon"
+                  onClick={handlePasswordIconClick}/>}
             </div>
-          </div>
-        </React.Fragment>
-      )}
-
+            <br/>
+            <label>Confirm Password</label>
+            <div className="form-input-container">
+              <input
+                className="form-control"
+                type={`${isPassWordIconClicked ? "text" : "password"}`}
+                name="confirmPassword"
+                />
+              {isPassWordIconClicked ?
+                <VisibilityOffIcon className="form-input-icon" id="password-icon"
+                onClick={handlePasswordIconClick}/>
+                :
+                <VisibilityIcon
+                  className="form-input-icon" id="password-icon"
+                  onClick={handlePasswordIconClick}/>}
+            </div>
+            <br/>
+            <button
+              className="btn app-buttons"
+              type="submit"><PersonAddIcon className="auth-button-icons"/> Sign Up
+            </button>
+          </form>
+          <br/>
+        </div>
+      </div>
     </React.Fragment>
   )
 }
