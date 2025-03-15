@@ -5,10 +5,9 @@ import { useLoading } from "../context/LoadingContext.js";
 import { useAuth } from '../context/AuthContext.js';
 
 function Header() {
-  const { currentUser, isAuthLoading } = useAuth();
+  const { currentUser } = useAuth();
   const { isLoading } = useLoading();
 
-  console.log("Is auth loading: ", isAuthLoading);
   return (
     <div className='app-header'>
       <div className='header'>
@@ -23,23 +22,10 @@ function Header() {
               <div className={isLoading ? 'disabled-wrapper' : ''}>
                 <NavLink to="/account" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Account</NavLink>
               </div>
-              {/* trying to fix issue of Sign Up flickering when user refreshes page */}
-              {currentUser === null && !isAuthLoading && (
-                <React.Fragment>
-                  <div className='nav-divider'>|</div>
-                  <div className={isLoading ? 'disabled-wrapper' : ''}>
-                    <NavLink to="/sign-up" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Sign Up</NavLink>
-                  </div>
-                </React.Fragment>
-              )}
-              {/* {currentUser === null && (
-                <React.Fragment>
-                  <div className='nav-divider'>|</div>
-                  <div className={isLoading ? 'disabled-wrapper' : ''}>
-                    <NavLink to="/sign-up" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`}>Sign Up</NavLink>
-                  </div>
-                </React.Fragment>
-              )} */}
+              <div className='nav-divider'>|</div>
+              <div className={isLoading ? 'disabled-wrapper' : ''} id={currentUser ? 'disabled-sign-up-wrapper' : ''}>
+                <NavLink to="/sign-up" className={`nav-link ${isLoading ? 'disabled-nav-link' : ''}`} id={currentUser ? 'disabled-sign-up' : ''}>Sign Up</NavLink>
+              </div>
             </div>
           </div>
         </div>

@@ -87,8 +87,13 @@
   align-items: center;
 }
 
-#hidden-signup {
-  display: none;
+#disabled-sign-up-wrapper {
+  cursor: not-allowed;
+}
+
+#disabled-sign-up {
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 /* styling for message telling user to sign in to access app */
