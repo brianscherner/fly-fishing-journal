@@ -23,6 +23,7 @@ function Trip(props) {
         <div className="trip-details-wrapper">
           <br/>
           <p className="trip-details-in-list">{props.waterBodyType}</p>
+          <p className="trip-details-in-list">{props.season}</p>
           <p className="trip-details-in-list">{props.tripType}</p>
           <p className="trip-details-in-list">{props.fishCaught} fish caught</p>
           <p className="trip-details-in-list">{props.startDate}</p>

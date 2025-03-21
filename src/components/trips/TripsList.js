@@ -11,62 +11,20 @@ function TripsList(props) {
     tripType: ""
   });
 
-  const filteredTripsList = useMemo(() => {
-    // filter by trip type
-    // filter by past trip type and additional criteria
-    if (filters.tripType === "Past") {
-      if (filters.waterBodyType === "River") {
-        return tripsList.filter(trip => trip.tripType === "Past").filter(trip => trip.waterBodyType === "River");
-      }
-      if (filters.waterBodyType === "Lake") {
-        return tripsList.filter(trip => trip.tripType === "Past").filter(trip => trip.waterBodyType === "Lake");
-      }
-      if (filters.waterBodyType === "Ocean") {
-        return tripsList.filter(trip => trip.tripType === "Past").filter(trip => trip.waterBodyType === "Ocean");
-      }
-      if (filters.waterBodyType === "Mix") {
-        return tripsList.filter(trip => trip.tripType === "Past").filter(trip => trip.waterBodyType === "Mix");
-      }
-      return tripsList.filter(trip => trip.tripType === "Past");
-    }
+  // location will be a search (use includes() method)
+  // use a slider or dropdown with ranges for fish caught
+  // do location and fish caught last
+  // should have a 'clear' feature that resets all filters to "All" or ""
 
-    // filter by future trip type and additional criteria
-    if (filters.tripType === "Future") {
-      if (filters.waterBodyType === "River") {
-        return tripsList.filter(trip => trip.tripType === "Future").filter(trip => trip.waterBodyType === "River");
-      }
-      if (filters.waterBodyType === "Lake") {
-        return tripsList.filter(trip => trip.tripType === "Future").filter(trip => trip.waterBodyType === "Lake");
-      }
-      if (filters.waterBodyType === "Ocean") {
-        return tripsList.filter(trip => trip.tripType === "Future").filter(trip => trip.waterBodyType === "Ocean");
-      }
-      if (filters.waterBodyType === "Mix") {
-        return tripsList.filter(trip => trip.tripType === "Future").filter(trip => trip.waterBodyType === "Mix");
-      }
-      return tripsList.filter(trip => trip.tripType === "Future");
-    }
+  const filteredTripsList = tripsList.filter(trip => {
+    return (
+      ((filters.tripType === "" || filters.tripType === "All" || filters.tripType === null) || trip.tripType === filters.tripType) &&
 
-    // filter by water body type for all trips
-    if (filters.waterBodyType === "River") {
-      return tripsList.filter(trip => trip.waterBodyType === "River");
-    }
+      ((filters.waterBodyType === "" || filters.waterBodyType === "All" || filters.season === null) || trip.waterBodyType === filters.waterBodyType) &&
 
-    if (filters.waterBodyType === "Lake") {
-      return tripsList.filter(trip => trip.waterBodyType === "Lake");
-    }
-
-    if (filters.waterBodyType === "Ocean") {
-      return tripsList.filter(trip => trip.waterBodyType === "Ocean");
-    }
-
-    if (filters.waterBodyType === "Mix") {
-      return tripsList.filter(trip => trip.waterBodyType === "Mix");
-    }
-
-    return tripsList;
-
-  }, [filters, tripsList]);
+      ((filters.season === "" || filters.season === "All" || filters.season === null) || trip.season === filters.season)
+    );
+  });
 
   const handleTypeSelection = (event) => {
     setFilters(prev => ({ ...prev, tripType: event.target.value }));
@@ -74,13 +32,18 @@ function TripsList(props) {
 
   const handleWaterBodySelection = (event) => {
     setFilters(prev => ({ ...prev, waterBodyType: event.target.value }));
-  }
+  };
+
+  const handleSeasonSelection = (event) => {
+    setFilters(prev => ({ ...prev, season: event.target.value }));
+  };
 
   console.log("Filters: ", filters);
+  console.log("Trips list: ", tripsList);
   return (
     <React.Fragment>
       <div className="row justify-content-center">
-        <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+        <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-8">
           {tripsList.length > 0 && (
             <div className="filter-options">
               <label style={{ justifyContent: "left" }}>Filter Trips</label>
@@ -98,11 +61,22 @@ function TripsList(props) {
                 className="form-select"
                 onChange={handleWaterBodySelection}>
                 <option value="" disabled>Select water body type</option>
-                <option value="Any">Any</option>
+                <option value="All">All</option>
                 <option value="River">River</option>
                 <option value="Lake">Lake</option>
                 <option value="Ocean">Ocean</option>
                 <option value="Mix">Mix</option>
+              </select>
+              <select
+                defaultValue={filters}
+                className="form-select"
+                onChange={handleSeasonSelection}>
+                <option value="" disabled>Select a season</option>
+                <option value="All">All</option>
+                <option value="Winter">Winter</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
               </select>
               <br/>
             </div>
@@ -125,6 +99,7 @@ function TripsList(props) {
             fishCaught={trip.fishCaught}
             waterBodyType={trip.waterBodyType}
             images={trip.images}
+            season={trip.season}
             id={trip.id}
             key={trip.id}/>
           ))}
