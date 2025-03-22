@@ -4,16 +4,14 @@ import Trip from './Trip';
 function TripsList(props) {
   const { tripsList } = props;
   const [filters, setFilters] = useState({
-    location: "",
+    destination: "",
     waterBodyType: "",
     season: "",
     fishCaught: "",
     tripType: ""
   });
 
-  // location will be a search (use includes() method)
   // use a slider or dropdown with ranges for fish caught
-  // do location and fish caught last
   // should have a 'clear' feature that resets all filters to "All" or ""
 
   const filteredTripsList = tripsList.filter(trip => {
@@ -22,10 +20,13 @@ function TripsList(props) {
 
       ((filters.waterBodyType === "" || filters.waterBodyType === "All" || filters.season === null) || trip.waterBodyType === filters.waterBodyType) &&
 
-      ((filters.season === "" || filters.season === "All" || filters.season === null) || trip.season === filters.season)
+      ((filters.season === "" || filters.season === "All" || filters.season === null) || trip.season === filters.season) &&
+
+      ((filters.destination === "" || filters.destination === "All" || filters.destination === null) || trip.destination.toLowerCase().includes(filters.destination.toLowerCase()))
     );
   });
 
+  // could later be refactored into one function
   const handleTypeSelection = (event) => {
     setFilters(prev => ({ ...prev, tripType: event.target.value }));
   };
@@ -38,6 +39,10 @@ function TripsList(props) {
     setFilters(prev => ({ ...prev, season: event.target.value }));
   };
 
+  const handleSearch = (event) => {
+    setFilters(prev => ({ ...prev, destination: event.target.value }));
+  }
+
   console.log("Filters: ", filters);
   console.log("Trips list: ", tripsList);
   return (
@@ -45,41 +50,56 @@ function TripsList(props) {
       <div className="row justify-content-center">
         <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-8">
           {tripsList.length > 0 && (
-            <div className="filter-options">
-              <label style={{ justifyContent: "left" }}>Filter Trips</label>
-              <select
-                defaultValue={filters}
-                className="form-select"
-                onChange={handleTypeSelection}>
-                <option value="" disabled>Select trip type</option>
-                <option value="All">All</option>
-                <option value="Past">Past</option>
-                <option value="Future">Future</option>
-              </select>
-              <select
-                defaultValue={filters}
-                className="form-select"
-                onChange={handleWaterBodySelection}>
-                <option value="" disabled>Select water body type</option>
-                <option value="All">All</option>
-                <option value="River">River</option>
-                <option value="Lake">Lake</option>
-                <option value="Ocean">Ocean</option>
-                <option value="Mix">Mix</option>
-              </select>
-              <select
-                defaultValue={filters}
-                className="form-select"
-                onChange={handleSeasonSelection}>
-                <option value="" disabled>Select a season</option>
-                <option value="All">All</option>
-                <option value="Winter">Winter</option>
-                <option value="Spring">Spring</option>
-                <option value="Summer">Summer</option>
-                <option value="Fall">Fall</option>
-              </select>
-              <br/>
-            </div>
+            <React.Fragment>
+              <div className="filter-label">
+                <label style={{ justifyContent: "center" }}>Filter Trips</label>
+                <br/>
+              </div>
+              <div className="filter-options">
+                <label style={{ justifyContent: "left" }}>By Type</label>
+                <select
+                  defaultValue={filters}
+                  className="form-select"
+                  onChange={handleTypeSelection}>
+                  <option value="" disabled>Select trip type</option>
+                  <option value="All">All</option>
+                  <option value="Past">Past</option>
+                  <option value="Future">Future</option>
+                </select>
+                <label style={{ justifyContent: "left" }}>By Water Body</label>
+                <select
+                  defaultValue={filters}
+                  className="form-select"
+                  onChange={handleWaterBodySelection}>
+                  <option value="" disabled>Select water body type</option>
+                  <option value="All">All</option>
+                  <option value="River">River</option>
+                  <option value="Lake">Lake</option>
+                  <option value="Ocean">Ocean</option>
+                  <option value="Mix">Mix</option>
+                </select>
+                <label style={{ justifyContent: "left" }}>By Season</label>
+                <select
+                  defaultValue={filters}
+                  className="form-select"
+                  onChange={handleSeasonSelection}>
+                  <option value="" disabled>Select a season</option>
+                  <option value="All">All</option>
+                  <option value="Winter">Winter</option>
+                  <option value="Spring">Spring</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Fall">Fall</option>
+                </select>
+                <label style={{ justifyContent: "left" }}>Search Trips</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter a location"
+                  onChange={handleSearch}
+                />
+                <br/>
+              </div>
+            </React.Fragment>
           )}
         </div>
       </div>
