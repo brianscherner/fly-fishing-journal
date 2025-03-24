@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Trip from './Trip';
 import Switch from '@mui/material/Switch';
 
@@ -12,8 +12,6 @@ function TripsList(props) {
     tripType: "",
     images: false
   });
-
-  // should have a 'clear' feature that resets all filters to ""
 
   const filteredTripsList = tripsList.filter(trip => {
     return (
@@ -44,15 +42,33 @@ function TripsList(props) {
 
   const handleSearch = (event) => {
     setFilters(prev => ({ ...prev, destination: event.target.value }));
-  }
+  };
 
   const handleImageToggle = () => {
     const toggleValue = !isToggled;
     setIsToggled(toggleValue);
     setFilters(prev => ({ ...prev, images: toggleValue }));
-  }
+  };
 
+  // it resets all of the filters, but doesn't render in UI correctly - doesn't appear to trigger another render
+  // also doesn't reset value of isToggled which could cause issues
+
+  const handleFilterReset = () => {
+    const notToggled = false;
+    setIsToggled(notToggled);
+    setFilters(prev => ({
+      ...prev,
+      destination: "",
+      waterBodyType: "",
+      season: "",
+      tripType: "",
+      images: notToggled
+    }));
+  };
+
+  console.log("Is toggled: ", isToggled);
   console.log("Filters: ", filters);
+  console.log("Filtered list: ", filteredTripsList);
   return (
     <React.Fragment>
       <div className="row justify-content-center">
@@ -110,6 +126,7 @@ function TripsList(props) {
                   onChange={handleImageToggle}
                   inputProps={{ 'aria-label': 'controlled' }}
                 />
+                <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
                 <br/>
               </div>
             </React.Fragment>

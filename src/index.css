@@ -542,6 +542,22 @@ table {
   flex-direction: row;
   gap: 0.5rem;
 }
+
+.filters-reset-button {
+  font-family: "Open Sans", sans-serif;
+  color: #333333;
+  border: 3px solid var(--accent-primary);
+  border-radius: 1.5rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  font-size: 1.2rem;
+}
+
+.filters-reset-button:hover {
+  background: var(--accent-primary);
+  color: var(--background);
+}
+
 /* form styling */
 .calendar {
   font-family: "Open Sans", sans-serif;
