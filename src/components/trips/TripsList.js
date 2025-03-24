@@ -1,18 +1,19 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import Trip from './Trip';
+import Switch from '@mui/material/Switch';
 
 function TripsList(props) {
   const { tripsList } = props;
+  const [isToggled, setIsToggled] = useState(false);
   const [filters, setFilters] = useState({
     destination: "",
     waterBodyType: "",
     season: "",
-    fishCaught: "",
-    tripType: ""
+    tripType: "",
+    images: false
   });
 
-  // use a slider or dropdown with ranges for fish caught
-  // should have a 'clear' feature that resets all filters to "All" or ""
+  // should have a 'clear' feature that resets all filters to ""
 
   const filteredTripsList = tripsList.filter(trip => {
     return (
@@ -22,11 +23,13 @@ function TripsList(props) {
 
       ((filters.season === "" || filters.season === "All" || filters.season === null) || trip.season === filters.season) &&
 
-      ((filters.destination === "" || filters.destination === "All" || filters.destination === null) || trip.destination.toLowerCase().includes(filters.destination.toLowerCase()))
+      (filters.destination === "" || trip.destination.toLowerCase().includes(filters.destination.toLowerCase())) &&
+
+      ((filters.images === false) || (filters.images === true && trip.images.length > 0))
     );
   });
 
-  // could later be refactored into one function
+  // these could be refactored into one function
   const handleTypeSelection = (event) => {
     setFilters(prev => ({ ...prev, tripType: event.target.value }));
   };
@@ -43,8 +46,13 @@ function TripsList(props) {
     setFilters(prev => ({ ...prev, destination: event.target.value }));
   }
 
+  const handleImageToggle = () => {
+    const toggleValue = !isToggled;
+    setIsToggled(toggleValue);
+    setFilters(prev => ({ ...prev, images: toggleValue }));
+  }
+
   console.log("Filters: ", filters);
-  console.log("Trips list: ", tripsList);
   return (
     <React.Fragment>
       <div className="row justify-content-center">
@@ -96,6 +104,11 @@ function TripsList(props) {
                   className="form-control"
                   placeholder="Enter a location"
                   onChange={handleSearch}
+                />
+                <label style={{ justifyContent: "left" }}>Has Photos</label>
+                <Switch
+                  onChange={handleImageToggle}
+                  inputProps={{ 'aria-label': 'controlled' }}
                 />
                 <br/>
               </div>
