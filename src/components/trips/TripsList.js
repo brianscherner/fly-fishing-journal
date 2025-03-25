@@ -63,13 +63,15 @@ function TripsList(props) {
     }));
   };
 
-  console.log("Is toggled: ", isToggled);
-  console.log("Filters: ", filters);
-  console.log("Filtered list: ", filteredTripsList);
+  // refactor layout of trip filters
+  // default desktop/tablet views
+  // have 3 filters on one row
+  // have other 2 and clear button on bottom
+  // stack in single column for mobile views
   return (
     <React.Fragment>
-      <div className="row justify-content-center">
-        <div className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-8">
+      <div className="trip-filters-container">
+        <div className="trip-filters">
           {tripsList.length > 0 && (
             <React.Fragment>
               <div className="filter-label">
@@ -77,16 +79,14 @@ function TripsList(props) {
                 <br/>
               </div>
               <div className="filter-options">
-                <label style={{ justifyContent: "left" }}>By Type</label>
-                <select
-                  value={filters.tripType}
-                  className="form-select"
-                  onChange={handleTypeSelection}>
-                  <option value="" disabled>Select trip type</option>
-                  <option value="All">All</option>
-                  <option value="Past">Past</option>
-                  <option value="Future">Future</option>
-                </select>
+                <label style={{ justifyContent: "left" }}>Search Trips</label>
+                  <input
+                    value={filters.destination}
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter a location"
+                    onChange={handleSearch}
+                  />
                 <label style={{ justifyContent: "left" }}>By Water Body</label>
                 <select
                   value={filters.waterBodyType}
@@ -111,14 +111,16 @@ function TripsList(props) {
                   <option value="Summer">Summer</option>
                   <option value="Fall">Fall</option>
                 </select>
-                <label style={{ justifyContent: "left" }}>Search Trips</label>
-                <input
-                  value={filters.destination}
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter a location"
-                  onChange={handleSearch}
-                />
+                <label style={{ justifyContent: "left" }}>By Type</label>
+                <select
+                  value={filters.tripType}
+                  className="form-select"
+                  onChange={handleTypeSelection}>
+                  <option value="" disabled>Select trip type</option>
+                  <option value="All">All</option>
+                  <option value="Past">Past</option>
+                  <option value="Future">Future</option>
+                </select>
                 <label style={{ justifyContent: "left" }}>Has Photos</label>
                 <Switch
                   checked={filters.images}
