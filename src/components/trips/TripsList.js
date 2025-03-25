@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Trip from './Trip';
 import Switch from '@mui/material/Switch';
 
@@ -50,9 +50,6 @@ function TripsList(props) {
     setFilters(prev => ({ ...prev, images: toggleValue }));
   };
 
-  // it resets all of the filters, but doesn't render in UI correctly - doesn't appear to trigger another render
-  // also doesn't reset value of isToggled which could cause issues
-
   const handleFilterReset = () => {
     const notToggled = false;
     setIsToggled(notToggled);
@@ -82,7 +79,7 @@ function TripsList(props) {
               <div className="filter-options">
                 <label style={{ justifyContent: "left" }}>By Type</label>
                 <select
-                  defaultValue={filters}
+                  value={filters.tripType}
                   className="form-select"
                   onChange={handleTypeSelection}>
                   <option value="" disabled>Select trip type</option>
@@ -92,7 +89,7 @@ function TripsList(props) {
                 </select>
                 <label style={{ justifyContent: "left" }}>By Water Body</label>
                 <select
-                  defaultValue={filters}
+                  value={filters.waterBodyType}
                   className="form-select"
                   onChange={handleWaterBodySelection}>
                   <option value="" disabled>Select water body type</option>
@@ -104,7 +101,7 @@ function TripsList(props) {
                 </select>
                 <label style={{ justifyContent: "left" }}>By Season</label>
                 <select
-                  defaultValue={filters}
+                  value={filters.season}
                   className="form-select"
                   onChange={handleSeasonSelection}>
                   <option value="" disabled>Select a season</option>
@@ -116,6 +113,7 @@ function TripsList(props) {
                 </select>
                 <label style={{ justifyContent: "left" }}>Search Trips</label>
                 <input
+                  value={filters.destination}
                   type="text"
                   className="form-control"
                   placeholder="Enter a location"
@@ -123,6 +121,7 @@ function TripsList(props) {
                 />
                 <label style={{ justifyContent: "left" }}>Has Photos</label>
                 <Switch
+                  checked={filters.images}
                   onChange={handleImageToggle}
                   inputProps={{ 'aria-label': 'controlled' }}
                 />
