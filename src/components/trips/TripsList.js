@@ -68,25 +68,28 @@ function TripsList(props) {
   // have 3 filters on one row
   // have other 2 and clear button on bottom
   // stack in single column for mobile views
+
   return (
     <React.Fragment>
-      <div className="trip-filters-container">
-        <div className="trip-filters">
-          {tripsList.length > 0 && (
-            <React.Fragment>
-              <div className="filter-label">
-                <label style={{ justifyContent: "center" }}>Filter Trips</label>
-                <br/>
-              </div>
-              <div className="filter-options">
+      {tripsList.length > 0 && (
+        <React.Fragment>
+          <div className="filter-label mb-2">
+            <label style={{ justifyContent: "center" }}>Filter Trips</label>
+            {/* <br/> */}
+          </div>
+          <div className="d-flex justify-content-center">
+            <div className="row mb-3">
+              <div className="col-md-4 mb-2">
                 <label style={{ justifyContent: "left" }}>Search Trips</label>
-                  <input
-                    value={filters.destination}
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter a location"
-                    onChange={handleSearch}
-                  />
+                <input
+                  value={filters.destination}
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter a location"
+                  onChange={handleSearch}
+                />
+              </div>
+              <div className="col-md-3 mb-2">
                 <label style={{ justifyContent: "left" }}>By Water Body</label>
                 <select
                   value={filters.waterBodyType}
@@ -99,6 +102,8 @@ function TripsList(props) {
                   <option value="Ocean">Ocean</option>
                   <option value="Mix">Mix</option>
                 </select>
+              </div>
+              <div className="col-md-3 mb-2">
                 <label style={{ justifyContent: "left" }}>By Season</label>
                 <select
                   value={filters.season}
@@ -111,29 +116,35 @@ function TripsList(props) {
                   <option value="Summer">Summer</option>
                   <option value="Fall">Fall</option>
                 </select>
-                <label style={{ justifyContent: "left" }}>By Type</label>
-                <select
-                  value={filters.tripType}
-                  className="form-select"
-                  onChange={handleTypeSelection}>
-                  <option value="" disabled>Select trip type</option>
-                  <option value="All">All</option>
-                  <option value="Past">Past</option>
-                  <option value="Future">Future</option>
-                </select>
-                <label style={{ justifyContent: "left" }}>Has Photos</label>
-                <Switch
-                  checked={filters.images}
-                  onChange={handleImageToggle}
-                  inputProps={{ 'aria-label': 'controlled' }}
-                />
-                <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
+              </div>
+              <div className="row justify-content-center align-items-end">
+                <div className="col-md-3 mb-2">
+                  <label style={{ justifyContent: "left" }}>By Type</label>
+                  <select
+                    value={filters.tripType}
+                    className="form-select"
+                    onChange={handleTypeSelection}>
+                    <option value="" disabled>Select trip type</option>
+                    <option value="All">All</option>
+                    <option value="Past">Past</option>
+                    <option value="Future">Future</option>
+                  </select>
+                </div>
+                <div className="col-md-4 mb-2 d-flex justify-content-between align-items-center">
+                  <label style={{ justifyContent: "left" }}>Has Photos?</label>
+                  <Switch
+                    checked={filters.images}
+                    onChange={handleImageToggle}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                  />
+                  <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
+                </div>
                 <br/>
               </div>
-            </React.Fragment>
-          )}
-        </div>
-      </div>
+            </div>
+          </div>
+        </React.Fragment>
+      )}
 
       {(tripsList.length === 0 || filteredTripsList.length === 0) && (
         <p className="empty-trip-list-msg">No trips to show. Add a trip to get started!</p>
