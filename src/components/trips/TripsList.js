@@ -63,10 +63,7 @@ function TripsList(props) {
     }));
   };
 
-  // make layout responsive across all devices
-  // add an option to collapse or expand filters?
-  // currently fine tuning layout of filters - trying to keep balanced while ensuring responsiveness
-
+  // fix responsiveness for tablet views (768px and up)
   return (
     <React.Fragment>
       {tripsList.length > 0 && (
@@ -76,8 +73,8 @@ function TripsList(props) {
               <div className="filter-label mb-3">
                 <label style={{ justifyContent: "center", fontSize: '1.35rem', fontWeight: '700' }}>Filter Trips</label>
               </div>
-              <div className="row justify-content-center mb-4">
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+              <div className="row justify-content-center mb-3">
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
                   <label style={{ justifyContent: "left" }}>Search Trips</label>
                   <input
                     value={filters.destination}
@@ -87,7 +84,7 @@ function TripsList(props) {
                     onChange={handleSearch}
                   />
                 </div>
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
                   <label style={{ justifyContent: "left" }}>By Water Type</label>
                   <select
                     value={filters.waterBodyType}
@@ -101,7 +98,7 @@ function TripsList(props) {
                     <option value="Mix">Mix</option>
                   </select>
                 </div>
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-1">
                   <label style={{ justifyContent: "left" }}>By Season</label>
                   <select
                     value={filters.season}
@@ -115,28 +112,31 @@ function TripsList(props) {
                     <option value="Fall">Fall</option>
                   </select>
                 </div>
-                <div className="row justify-content-center mb-3">
-                  <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2">
-                    <label style={{ justifyContent: "left" }}>By Trip Type</label>
-                    <select
-                      value={filters.tripType}
-                      className="form-select"
-                      onChange={handleTypeSelection}>
-                      <option value="" disabled>Select trip type</option>
-                      <option value="All">All</option>
-                      <option value="Past">Past</option>
-                      <option value="Future">Future</option>
-                    </select>
-                  </div>
-                  <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-4 mb-2 d-flex align-items-center gap-3">
-                    <label style={{ justifyContent: "left" }}>Has Photos?</label>
-                    <Switch
-                      checked={filters.images}
-                      onChange={handleImageToggle}
-                      inputProps={{ 'aria-label': 'controlled' }}
-                    />
-                    <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
-                  </div>
+              </div>
+              <div className="row justify-content-center mb-3">
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+                  <label style={{ justifyContent: "left" }}>By Trip Type</label>
+                  <select
+                    value={filters.tripType}
+                    className="form-select"
+                    onChange={handleTypeSelection}>
+                    <option value="" disabled>Select trip type</option>
+                    <option value="All">All</option>
+                    <option value="Past">Past</option>
+                    <option value="Future">Future</option>
+                  </select>
+                </div>
+                {/* fix alignment of Has Photos? and button so they are in line with the Trip Type dropdown menu */}
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-2 mb-3 d-flex align-items-center justify-content-center gap-2">
+                  <label style={{ justifyContent: "left", textAlign: "left" }}>Has Photos?</label>
+                  <Switch
+                    checked={filters.images}
+                    onChange={handleImageToggle}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                  />
+                </div>
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-2 mb-3 d-flex align-items-center justify-content-center">
+                  <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
                 </div>
               </div>
             </div>
