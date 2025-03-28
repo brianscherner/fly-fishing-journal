@@ -137,7 +137,7 @@ function SignIn() {
                 <p className="user-metadata">Joined {formatMemberSince(currentUser.metadata.creationTime)}</p>
               </div>
               <div className="current-user">
-                <p className="user-metadata">Email verified: {currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>}</p>
+                <p className="user-metadata">{currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>} Email verified</p>
               </div>
             </div>
           </div>

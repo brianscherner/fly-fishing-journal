@@ -63,83 +63,81 @@ function TripsList(props) {
     }));
   };
 
-  // refactor layout of trip filters
-  // default desktop/tablet views
-  // have 3 filters on one row
-  // have other 2 and clear button on bottom
-  // stack in single column for mobile views
+  // make layout responsive across all devices
+  // add an option to collapse or expand filters?
+  // currently fine tuning layout of filters - trying to keep balanced while ensuring responsiveness
 
   return (
     <React.Fragment>
       {tripsList.length > 0 && (
         <React.Fragment>
-          <div className="filter-label mb-2">
-            <label style={{ justifyContent: "center" }}>Filter Trips</label>
-            {/* <br/> */}
-          </div>
-          <div className="d-flex justify-content-center">
-            <div className="row mb-3">
-              <div className="col-md-4 mb-2">
-                <label style={{ justifyContent: "left" }}>Search Trips</label>
-                <input
-                  value={filters.destination}
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter a location"
-                  onChange={handleSearch}
-                />
+          <div className="trip-filters-container">
+            <div className="trip-filters">
+              <div className="filter-label mb-3">
+                <label style={{ justifyContent: "center", fontSize: '1.35rem', fontWeight: '700' }}>Filter Trips</label>
               </div>
-              <div className="col-md-3 mb-2">
-                <label style={{ justifyContent: "left" }}>By Water Body</label>
-                <select
-                  value={filters.waterBodyType}
-                  className="form-select"
-                  onChange={handleWaterBodySelection}>
-                  <option value="" disabled>Select water body type</option>
-                  <option value="All">All</option>
-                  <option value="River">River</option>
-                  <option value="Lake">Lake</option>
-                  <option value="Ocean">Ocean</option>
-                  <option value="Mix">Mix</option>
-                </select>
-              </div>
-              <div className="col-md-3 mb-2">
-                <label style={{ justifyContent: "left" }}>By Season</label>
-                <select
-                  value={filters.season}
-                  className="form-select"
-                  onChange={handleSeasonSelection}>
-                  <option value="" disabled>Select a season</option>
-                  <option value="All">All</option>
-                  <option value="Winter">Winter</option>
-                  <option value="Spring">Spring</option>
-                  <option value="Summer">Summer</option>
-                  <option value="Fall">Fall</option>
-                </select>
-              </div>
-              <div className="row justify-content-center align-items-end">
-                <div className="col-md-3 mb-2">
-                  <label style={{ justifyContent: "left" }}>By Type</label>
+              <div className="row justify-content-center mb-4">
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+                  <label style={{ justifyContent: "left" }}>Search Trips</label>
+                  <input
+                    value={filters.destination}
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter a location"
+                    onChange={handleSearch}
+                  />
+                </div>
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+                  <label style={{ justifyContent: "left" }}>By Water Type</label>
                   <select
-                    value={filters.tripType}
+                    value={filters.waterBodyType}
                     className="form-select"
-                    onChange={handleTypeSelection}>
-                    <option value="" disabled>Select trip type</option>
+                    onChange={handleWaterBodySelection}>
+                    <option value="" disabled>Select water type</option>
                     <option value="All">All</option>
-                    <option value="Past">Past</option>
-                    <option value="Future">Future</option>
+                    <option value="River">River</option>
+                    <option value="Lake">Lake</option>
+                    <option value="Ocean">Ocean</option>
+                    <option value="Mix">Mix</option>
                   </select>
                 </div>
-                <div className="col-md-4 mb-2 d-flex justify-content-between align-items-center">
-                  <label style={{ justifyContent: "left" }}>Has Photos?</label>
-                  <Switch
-                    checked={filters.images}
-                    onChange={handleImageToggle}
-                    inputProps={{ 'aria-label': 'controlled' }}
-                  />
-                  <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+                  <label style={{ justifyContent: "left" }}>By Season</label>
+                  <select
+                    value={filters.season}
+                    className="form-select"
+                    onChange={handleSeasonSelection}>
+                    <option value="" disabled>Select a season</option>
+                    <option value="All">All</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                  </select>
                 </div>
-                <br/>
+                <div className="row justify-content-center mb-3">
+                  <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2">
+                    <label style={{ justifyContent: "left" }}>By Trip Type</label>
+                    <select
+                      value={filters.tripType}
+                      className="form-select"
+                      onChange={handleTypeSelection}>
+                      <option value="" disabled>Select trip type</option>
+                      <option value="All">All</option>
+                      <option value="Past">Past</option>
+                      <option value="Future">Future</option>
+                    </select>
+                  </div>
+                  <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-4 mb-2 d-flex align-items-center gap-3">
+                    <label style={{ justifyContent: "left" }}>Has Photos?</label>
+                    <Switch
+                      checked={filters.images}
+                      onChange={handleImageToggle}
+                      inputProps={{ 'aria-label': 'controlled' }}
+                    />
+                    <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
