@@ -68,9 +68,9 @@ function TripsList(props) {
     <React.Fragment>
       {tripsList.length > 0 && (
         <React.Fragment>
-          <div className="trip-filters-container">
+          <div className="trip-filters-container mb-2">
             <div className="trip-filters">
-              <div className="filter-label mb-3">
+              <div className="filter-label mb-3 mt-3">
                 <label style={{ justifyContent: "center", fontSize: '1.35rem', fontWeight: '700' }}>Filter Trips</label>
               </div>
               <div className="row justify-content-center mb-3">
@@ -113,7 +113,7 @@ function TripsList(props) {
                   </select>
                 </div>
               </div>
-              <div className="row justify-content-center mb-3">
+              <div className="row justify-content-center mb-2">
                 <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
                   <label style={{ justifyContent: "left" }}>By Trip Type</label>
                   <select

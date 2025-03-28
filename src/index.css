@@ -127,8 +127,12 @@
   color: var(--background);
   font-weight: 700;
   border-radius: 1.5rem;
-  font-size: 1.275rem;
-  padding: 10px 16px;
+  font-size: 1.5rem;
+  padding: 16px 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  min-width: 255px;
+  min-height: 65px;
 }
 
 .btn.back-button {
@@ -794,7 +798,7 @@ label {
 
 /* global styles */
 .MuiSvgIcon-root.control-button-icon {
-  font-size: 1.75rem;
+  font-size: 1.95rem;
 }
 
 .MuiSvgIcon-root.forward-icon {
