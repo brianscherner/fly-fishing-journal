@@ -74,7 +74,7 @@ function TripsList(props) {
                 <label style={{ justifyContent: "center", fontSize: '1.35rem', fontWeight: '700' }}>Filter Trips</label>
               </div>
               <div className="row justify-content-center mb-3">
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
+                <div className="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
                   <label style={{ justifyContent: "left" }}>Search Trips</label>
                   <input
                     value={filters.destination}
@@ -84,7 +84,7 @@ function TripsList(props) {
                     onChange={handleSearch}
                   />
                 </div>
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
+                <div className="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
                   <label style={{ justifyContent: "left" }}>By Water Type</label>
                   <select
                     value={filters.waterBodyType}
@@ -98,7 +98,7 @@ function TripsList(props) {
                     <option value="Mix">Mix</option>
                   </select>
                 </div>
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-1">
+                <div className="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-1">
                   <label style={{ justifyContent: "left" }}>By Season</label>
                   <select
                     value={filters.season}
@@ -113,8 +113,8 @@ function TripsList(props) {
                   </select>
                 </div>
               </div>
-              <div className="row justify-content-center mb-2">
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
+              <div className="row justify-content-center align-items-end mb-2">
+                <div className="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
                   <label style={{ justifyContent: "left" }}>By Trip Type</label>
                   <select
                     value={filters.tripType}
@@ -127,15 +127,15 @@ function TripsList(props) {
                   </select>
                 </div>
                 {/* fix alignment of Has Photos? and button so they are in line with the Trip Type dropdown menu */}
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-2 mb-3 d-flex align-items-center justify-content-center gap-2">
-                  <label style={{ justifyContent: "left", textAlign: "left" }}>Has Photos?</label>
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4 d-flex align-items-center justify-content-center gap-3 gap-md-2">
+                  <label className="text-md-start">Has Photos?</label>
                   <Switch
                     checked={filters.images}
                     onChange={handleImageToggle}
                     inputProps={{ 'aria-label': 'controlled' }}
                   />
                 </div>
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-2 mb-3 d-flex align-items-center justify-content-center">
+                <div className="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-flex align-items-center justify-content-center">
                   <button type="button" className="btn filters-reset-button" onClick={handleFilterReset}>Clear Filters</button>
                 </div>
               </div>

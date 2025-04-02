@@ -922,6 +922,10 @@ label {
     width: 62.5%;
   }
 
+  .trip-filters {
+    width: 100%;
+  }
+
 }
 
 @media (min-width: 820px) {
@@ -946,7 +950,7 @@ label {
 
 @media (min-width: 1024px) {
   .trips-list-container {
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -967,11 +971,15 @@ label {
     right: 9.5rem;
   }
 
+  .trip-filters {
+    width: 95%;
+  }
+
 }
 
 @media (min-width: 1280px) {
   .trips-list-container {
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -1032,6 +1040,10 @@ label {
 
   .delete-modal-card {
     width: 31.5%;
+  }
+
+  .trip-filters {
+    width: 85%;
   }
 
 }
