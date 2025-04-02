@@ -5,47 +5,47 @@ import { useLoading } from "../context/LoadingContext";
 
 function NewTripsForm(props) {
   // mock images for testing
-  const mockImages = [
-    {
-      file: "test-image1.jpg",
-      preview: "https://via.placeholder.com/150",
-    },
-    {
-      file: "test-image2.jpg",
-      preview: "https://via.placeholder.com/150",
-    },
-    {
-      file: "test-image3.jpg",
-      preview: "https://via.placeholder.com/150",
-    },
-    {
-      file: "test-image4.jpg",
-      preview: "https://via.placeholder.com/150",
-    },
-    {
-      file: "test-image5.jpg",
-      preview: "https://via.placeholder.com/150",
-    },
-    {
-      file: "test-image6.jpg",
-      preview: "https://via.placeholder.com/150",
-    }
-  ];
+  // const mockImages = [
+  //   {
+  //     file: "test-image1.jpg",
+  //     preview: "https://via.placeholder.com/150",
+  //   },
+  //   {
+  //     file: "test-image2.jpg",
+  //     preview: "https://via.placeholder.com/150",
+  //   },
+  //   {
+  //     file: "test-image3.jpg",
+  //     preview: "https://via.placeholder.com/150",
+  //   },
+  //   {
+  //     file: "test-image4.jpg",
+  //     preview: "https://via.placeholder.com/150",
+  //   },
+  //   {
+  //     file: "test-image5.jpg",
+  //     preview: "https://via.placeholder.com/150",
+  //   },
+  //   {
+  //     file: "test-image6.jpg",
+  //     preview: "https://via.placeholder.com/150",
+  //   }
+  // ];
 
   const [formData, setFormData] = useState({
     // mock data for past trip testing
-    destination: "test",
-    fishCaught: "x",
-    fishingTackleUsed: "x",
-    fliesUsed: "x",
-    season: "Winter",
-    species: "x",
-    startDate: "2025-01-22",
-    state: "x",
-    county: 'x',
-    country: "x",
-    tripType: "Past",
-    waterBodyType: "River",
+    // destination: "test",
+    // fishCaught: "x",
+    // fishingTackleUsed: "x",
+    // fliesUsed: "x",
+    // season: "Winter",
+    // species: "x",
+    // startDate: "2025-01-22",
+    // state: "x",
+    // county: 'x',
+    // country: "x",
+    // tripType: "Past",
+    // waterBodyType: "River",
     // images: mockImages
 
     // mock data for future trip testing

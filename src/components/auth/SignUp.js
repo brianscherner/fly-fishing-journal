@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
@@ -9,7 +9,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useAuth } from '../context/AuthContext.js';
 
 function SignUp() {
-  const { currentUser, auth } = useAuth();
+  const { auth } = useAuth();
   const [isPassWordIconClicked, setIsPasswordIconClicked] = useState(false);
   const navigate = useNavigate();
 
