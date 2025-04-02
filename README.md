@@ -1,33 +1,44 @@
-# Fly Fishing Journal
+# Cast Tracker
 
-#### An application that allows fly fishing enthusiasts to efficiently manage their past and future trips.
+#### An application that allows fly fishing enthusiasts to keep a virtual journal and photo gallery of their adventures.
 
 #### By Brian Scherner
 
 ## Technologies Used
 
+#### Frontend:
 * React
-* React Bootstrap
 * React Router
-* React Toastify
 * JavaScript
-* HTML
-* CSS
+* HTML5
+* CSS3
+
+#### Styling and UI:
+* React Toastify
 * Bootstrap
 * Material UI
 * PopperJS
+
+#### Tooling:
 * Webpack
 * Node Package Manager
 * ESLint
-* Firebase
+
+#### Backend and Database:
+* Firestore
+* Cloudinary
 
 ## Description
 
-The purpose of this application is to allow a user to keep a virtual journal of their past and future fly fishing trips.
+[Live Site](https://fly-fishing-journal.web.app/)
 
-In order to use the application, users must first sign up for an account. Once an account has been created and their email verified, they can sign in to their account and access the application. Users can add trips to the journal by their type, "Past" or "Future". Depending on the type of trip, a different multi-step form will be rendered, which contains different types of information that a user can enter. Users can click on a trip and view its details by toggling the different categories that are listed. Users can also edit trips from the journal, and mark a "Future" trip as "Past" if they eventually go on the trip and want to update their journal. Users can also delete trips from the journal. All users trips and account information will be stored on a Firestore database.
+Cast Tracker is a full-stack web application that allows users to document and manage their fly fishing adventures in a streamlined, journal-style format. Each trip entry can include detailed information and up to six uploaded photos.
 
-The live site can be visited [here](https://fly-fishing-journal.web.app/).
+The trip list is fully interactive and features dynamic filtering options by type, season, water body, and more—making it easy to locate specific trips without endlessly scrolling. A search function and photo filter enhance the experience further, offering a fast, intuitive way to explore logged trips.
+
+To use the application, users must first create an account. Once signed in, they can add new trips categorized as either Past or Future, each with its own tailored multi-step form to capture relevant details.
+
+Users can view each trip’s details in an expandable card layout, update trip information, convert a "Future" trip to "Past" status, or delete trips as needed. All user data, including trips and authentication info, is securely stored in a Firestore database.
 
 ## Setup/Installation Requirements
 
@@ -49,4 +60,4 @@ None.
 
 MIT
 
-Copyright(c) 2024 Brian Scherner
+Copyright(c) 2025 Brian Scherner
