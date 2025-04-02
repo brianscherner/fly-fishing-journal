@@ -57,7 +57,6 @@ function SignIn() {
     navigate('/reset-password');
   }
 
-  console.log("Current user: ", currentUser);
   return (
     <React.Fragment>
       {isAuthLoading && currentUser !== null && (

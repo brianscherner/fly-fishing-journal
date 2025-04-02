@@ -78,7 +78,7 @@ function TripsList(props) {
           <div className="trip-filters-container mb-2">
             <div className="trip-filters">
               <div className="filter-label mb-3 mt-3">
-                <label style={{ justifyContent: "center", fontSize: '1.35rem', fontWeight: '700' }}><FilterListIcon/>&nbsp;Filters</label>
+                <label style={{ justifyContent: "center", fontSize: '1.35rem', fontWeight: '700', alignItems: "center" }}><FilterListIcon/>&nbsp;Filters</label>
               </div>
               <div className="row justify-content-center mb-3">
                 <div className="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
@@ -133,9 +133,8 @@ function TripsList(props) {
                     <option value="Future">Future</option>
                   </select>
                 </div>
-                {/* fix alignment of Has Photos? and button so they are in line with the Trip Type dropdown menu */}
-                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4 d-flex align-items-center justify-content-center gap-2 gap-md-2">
-                  <label className="text-md-start align-items-center"><PanoramaIcon/>&nbsp;Has Photos?</label>
+                <div className="col-11 col-sm-6 col-md-3 col-lg-3 col-xl-2 mb-4 d-flex align-items-center justify-content-center gap-2 gap-md-2">
+                  <label className="text-md-start align-items-center">Has Photos?</label>
                   <Switch
                     checked={filters.images}
                     onChange={handleImageToggle}
