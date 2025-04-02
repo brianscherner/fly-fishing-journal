@@ -377,6 +377,20 @@
 
 /* styling for sign in page */
 
+.account-container {
+  display: flex;
+  justify-content: center;
+}
+
+.account {
+  background: #d0f1fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  width: 30%;
+}
+
 .current-user {
   display: flex;
   flex-direction: row;
@@ -856,6 +870,10 @@ label {
 /* media queries */
 
 @media (max-width: 540px) {
+  .account {
+    width: 100%;
+  }
+
   .app-title {
     font-size: 2rem;
   }
@@ -904,6 +922,10 @@ label {
 }
 
 @media (min-width: 768px) {
+  .account {
+    width: 50%;
+  }
+
   .trip-details-img {
     width: 65%;
   }
@@ -952,6 +974,10 @@ label {
 }
 
 @media (min-width: 1024px) {
+  .account {
+    width: 40%;
+  }
+
   .trips-list-container {
     width: 95%;
     margin: 0 auto;

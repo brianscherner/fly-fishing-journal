@@ -113,30 +113,33 @@ function SignIn() {
 
       {!isAuthLoading && currentUser !== null && (
         <React.Fragment>
-          <h2 className="sign-in-headings">Account</h2>
-          {/* <br/> */}
-          <div className="current-user-container">
-            <div className="current-user-metadata">
-              <div className="current-user">
-                <AccountCircleIcon
-                  fontSize="large"
-                  id="user-icon"/>
-                <p className="username">{currentUser.email}</p>
-              </div>
-              <div className="current-user">
-                <AccessTimeIcon
-                  fontSize="large"
-                  id="user-icon"/>
-                <p className="user-metadata">Last sign in {formatLastSignIn(currentUser.metadata.lastSignInTime)}</p>
-              </div>
-              <div className="current-user">
-                <CalendarMonthIcon
-                    fontSize="large"
-                    id="user-icon"/>
-                <p className="user-metadata">Joined {formatMemberSince(currentUser.metadata.creationTime)}</p>
-              </div>
-              <div className="current-user">
-                <p className="user-metadata">{currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>} Email verified</p>
+          <div className="account-container">
+            <div className="account">
+              <h2 className="sign-in-headings" style={{ marginBottom: "14px"}}>Account</h2>
+              <div className="current-user-container">
+                <div className="current-user-metadata">
+                  <div className="current-user">
+                    <AccountCircleIcon
+                      fontSize="large"
+                      id="user-icon"/>
+                    <p className="username">{currentUser.email}</p>
+                  </div>
+                  <div className="current-user">
+                    <AccessTimeIcon
+                      fontSize="large"
+                      id="user-icon"/>
+                    <p className="user-metadata">Last sign in {formatLastSignIn(currentUser.metadata.lastSignInTime)}</p>
+                  </div>
+                  <div className="current-user">
+                    <CalendarMonthIcon
+                        fontSize="large"
+                        id="user-icon"/>
+                    <p className="user-metadata">Joined {formatMemberSince(currentUser.metadata.creationTime)}</p>
+                  </div>
+                  <div className="current-user">
+                    <p className="user-metadata">{currentUser.emailVerified ? <CheckCircleIcon fontSize="large" id="user-icon"/> : <CancelIcon fontSize="large" id="user-icon"/>} Email verified</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
