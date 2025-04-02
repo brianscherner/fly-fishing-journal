@@ -6,7 +6,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import WaterIcon from '@mui/icons-material/Water';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import EventIcon from '@mui/icons-material/Event';
-import PanoramaIcon from '@mui/icons-material/Panorama';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 
 function TripsList(props) {
@@ -34,7 +33,6 @@ function TripsList(props) {
     );
   });
 
-  // these could be refactored into one function
   const handleTypeSelection = (event) => {
     setFilters(prev => ({ ...prev, tripType: event.target.value }));
   };
@@ -70,7 +68,6 @@ function TripsList(props) {
     }));
   };
 
-  // fix responsiveness for tablet views (768px and up)
   return (
     <React.Fragment>
       {tripsList.length > 0 && (
