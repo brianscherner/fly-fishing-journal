@@ -115,7 +115,6 @@
 }
 
 .btn.app-buttons:hover,
-.btn.control-button:hover,
 .btn.back-button:hover,
 .btn.submit-button:hover {
   background: #003f81;
@@ -123,7 +122,7 @@
 
 .btn.control-button {
   font-family: "Open Sans", sans-serif;
-  background: var(--accent-primary);
+  background: linear-gradient(135deg, #00a99d 0%, #008ca4 100%);
   color: var(--background);
   font-weight: 700;
   border-radius: 1.5rem;
@@ -131,8 +130,12 @@
   padding: 16px 20px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  min-width: 255px;
+  max-width: 255px;
   min-height: 65px;
+}
+
+.btn.control-button:hover {
+  background: linear-gradient(135deg, #009e8f, #007a99);
 }
 
 .btn.back-button {
