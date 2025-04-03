@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import {useNavigate} from 'react-router-dom';
 import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
-import { useAuth } from '../context/AuthContext.js';
+import { useAuth } from '../context/AuthContext';
 
 function ResetPassword() {
   const { auth } = useAuth();

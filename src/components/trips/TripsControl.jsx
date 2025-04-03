@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import NewTripsForm from '../forms/NewTripsForm.js';
-import TripsList from './TripsList.js';
-import TripDetails from './TripDetails.js';
-import EditTripForm from '../forms/EditTripForm.js';
+import NewTripsForm from '../forms/NewTripsForm';
+import TripsList from './TripsList';
+import TripDetails from './TripDetails.jsx';
+import EditTripForm from '../forms/EditTripForm';
 import { db } from '../../firebase.js';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { toast } from 'react-toastify';
 import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useLoading } from "../context/LoadingContext";
-import { useAuth } from '../context/AuthContext.js';
-import Spinner from '../ui/Spinner.js';
+import { useAuth } from '../context/AuthContext';
+import Spinner from '../ui/Spinner';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);

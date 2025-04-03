@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PhishingIcon from '@mui/icons-material/Phishing';
-import { useLoading } from "../context/LoadingContext.js";
-import { useAuth } from '../context/AuthContext.js';
+import { useLoading } from "../context/LoadingContext";
+import { useAuth } from '../context/AuthContext';
 
 function Header() {
   const { currentUser } = useAuth();
