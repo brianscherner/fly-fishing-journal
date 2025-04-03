@@ -204,7 +204,7 @@ function ReusableTripForm(props) {
       <form onSubmit={formSubmissionHandler}>
         <div className="row justify-content-center">
           {/* look into adjusting for greater responsiveness */}
-          <div className="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
             <label className="form-instruction">Please select a trip type to get started.</label>
             <br/>
             {/* <br/> */}

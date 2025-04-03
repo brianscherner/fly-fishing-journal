@@ -29,7 +29,7 @@ function ResetPassword() {
     <React.Fragment>
       <div className="row justify-content-center">
         {/* look into adjusting width for responsiveness */}
-        <div className="col-9 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+        <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
           <h2 className="sign-in-headings">Reset Password</h2>
           {/* <br/> */}
           <form onSubmit={doResetPassword}>
