@@ -1,6 +1,6 @@
 # Cast Tracker
 
-#### [Live Site](https://fly-fishing-journal.web.app/) 
+[Live Site](https://fly-fishing-journal.web.app/) 
 #### An application that allows fly fishing enthusiasts to keep a virtual journal and photo gallery of their adventures.
 
 #### By Brian Scherner
