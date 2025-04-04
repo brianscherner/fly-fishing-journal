@@ -1,5 +1,6 @@
 # Cast Tracker
 
+#### [Live Site](https://fly-fishing-journal.web.app/) 
 #### An application that allows fly fishing enthusiasts to keep a virtual journal and photo gallery of their adventures.
 
 #### By Brian Scherner
@@ -29,8 +30,6 @@
 * Cloudinary
 
 ## Description
-
-[Live Site](https://fly-fishing-journal.web.app/)
 
 Cast Tracker is a full-stack web application that allows users to document and manage their fly fishing adventures in a streamlined, journal-style format. Each trip entry can include detailed information and up to six uploaded photos.
 
