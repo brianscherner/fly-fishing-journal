@@ -6,7 +6,7 @@ function DestinationInfo(props) {
 
   return (
     <React.Fragment>
-      <div className="trip-card">
+      <div className="trip-card" id="dest-info-card">
         <h4 className="category-header"><LocationOnIcon/> Destination Info</h4>
         <br/>
         <div className="dest-info-container">

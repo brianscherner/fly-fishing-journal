@@ -8,7 +8,7 @@ function Miscellaneous(props) {
 
   return (
     <React.Fragment>
-      <div className="trip-card" onClick={onTogglingMiscellaneous}>
+      <div className="trip-card" id="misc-card" onClick={onTogglingMiscellaneous}>
         <h4 className="category-header"><MiscellaneousServicesIcon/> Additional Notes {miscellaneousToggled ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</h4>
         {miscellaneousToggled && (
           <>

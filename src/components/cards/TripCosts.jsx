@@ -8,7 +8,7 @@ function TripCosts(props) {
 
   return (
     <React.Fragment>
-      <div className="trip-card" onClick={onTogglingTripCosts}>
+      <div className="trip-card" id="trip-costs-card" onClick={onTogglingTripCosts}>
         <h4 className="category-header"><AttachMoneyIcon/> Trip Costs {tripCostsToggled ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</h4>
         {tripCostsToggled && (
           <>

@@ -8,7 +8,7 @@ function GearRequirements(props) {
 
   return (
     <React.Fragment>
-      <div className="trip-card" onClick={onTogglingGearRequirements}>
+      <div className="trip-card" id="gear-card" onClick={onTogglingGearRequirements}>
         <h4 className="category-header"><PhishingIcon/> Gear Requirements{gearRequirementsToggled ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</h4>
         {gearRequirementsToggled && (
           <>

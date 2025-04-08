@@ -454,30 +454,7 @@
   color: var(--primary-text);
 }
 
-/* table styling for trip details categories */
-table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 0.45rem;
-  overflow: hidden;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: var(--background);
-}
-
-.table th, .table td {
-  border: 3px solid var(--borders);
-  background-color: var(--background);
-  color: var(--primary-text);
-  padding: 0.75rem;
-  overflow-wrap: break-word;
-  white-space: normal
-}
-
-.table-container {
-  margin-left: 0.7rem;
-  margin-right: 0.7rem;
-}
+/* card styling for trip details categories */
 
 .dest-info-data,
 .gear-data,
@@ -550,6 +527,26 @@ table {
 
 .category-header {
   font-weight: 700;
+}
+
+#dest-info-card {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#trip-notes-card {
+  background-color: rgba(255, 255, 255, 0.6)
+}
+
+#misc-card {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#gear-card {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#trip-costs-card {
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* trip list styling */
