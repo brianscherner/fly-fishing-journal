@@ -154,7 +154,7 @@ function TripDetails(props) {
           className="btn app-buttons"
           onClick={() => onClickingEdit(trip.id)}
         >
-          Edit <EditIcon/>
+          <EditIcon/> Edit
         </button>
 
         {trip.tripType === "Future" && (
@@ -163,7 +163,7 @@ function TripDetails(props) {
             onClick={() => onMarkingTripAsPast(trip.id)}
             id="mark-past-button"
           >
-            Mark as Past <CheckCircleIcon/>
+            <CheckCircleIcon/> Mark as Past
           </button>
         )}
 
@@ -172,7 +172,7 @@ function TripDetails(props) {
           id="delete-button"
           onClick={onOpeningDeleteModal}
         >
-          Delete <DeleteIcon/>
+          <DeleteIcon/> Delete
         </button>
 
       </div>

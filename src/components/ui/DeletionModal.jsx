@@ -36,7 +36,7 @@ function DeletionModal(props) {
                   onClick={() => onClickingDelete(trip.id)}
                   id="delete-button"
                 >
-                  Yes, Delete It <DeleteIcon/>
+                  <DeleteIcon/> Yes, Delete It
                 </button>
               </div>
             </div>
