@@ -1,37 +1,44 @@
 import React from "react";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import NotesIcon from '@mui/icons-material/Notes';
 
 function TripNotes(props) {
-  const { trip } = props;
+  const { trip, onTogglingTripNotes, tripNotesToggled } = props;
 
   return (
     <React.Fragment>
-      <div className='table-container'>
-        <div className='row justify-content-center'>
-          <table className='table'>
-            <tbody>
-              <tr className="trip-notes-table">
-                <th>Fishing Method</th>
-                <td className="trip-notes-data">{trip.fishingMethod ? trip.fishingMethod : "N/A"}</td>
-              </tr>
-              <tr className="trip-notes-table">
-                <th>Flies Used</th>
-                <td className="trip-notes-data">{trip.fliesUsed ? trip.fliesUsed : "N/A"}</td>
-              </tr>
-              <tr className="trip-notes-table">
-                <th>Fish Caught</th>
-                <td className="trip-notes-data">{trip.fishCaught ? trip.fishCaught : "N/A"}</td>
-              </tr>
-              <tr className="trip-notes-table">
-                <th>Fishing Tackle Used</th>
-                <td className="trip-notes-data">{trip.fishingTackleUsed ? trip.fishingTackleUsed : "N/A"}</td>
-              </tr>
-              <tr className="trip-notes-table">
-                <th>River Flow Levels</th>
-                <td className="trip-notes-data">{trip.riverFlowLevels ? trip.riverFlowLevels : "N/A"}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="trip-card" onClick={onTogglingTripNotes}>
+        <h4 className="category-header"><NotesIcon/> Trip Notes {tripNotesToggled ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</h4>
+        {tripNotesToggled && (
+          <>
+            <br/>
+            <div className="trip-notes-container">
+              <div className="trip-notes-details">
+                <div className="trip-notes-data">
+                  <h5>Fishing Method</h5>
+                  <p>{trip.fishingMethod ? trip.fishingMethod : "N/A"}</p>
+                </div>
+                <div className="trip-notes-data">
+                  <h5>Flies Used</h5>
+                  <p>{trip.fliesUsed ? trip.fliesUsed : "N/A"}</p>
+                </div>
+                <div className="trip-notes-data">
+                  <h5>Fish Caught</h5>
+                  <p>{trip.fishCaught ? trip.fishCaught : "N/A"}</p>
+                </div>
+                <div className="trip-notes-data">
+                  <h5>Fishing Tackle Used</h5>
+                  <p>{trip.fishingTackleUsed ? trip.fishingTackleUsed : "N/A"}</p>
+                </div>
+                <div className="trip-notes-data">
+                  <h5>River Flow Levels</h5>
+                  <p>{trip.riverFlowLevels ? trip.riverFlowLevels : "N/A"}</p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </React.Fragment>
   )

@@ -7,14 +7,13 @@ import TripNotes from '../tables/TripNotes';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import NotesIcon from '@mui/icons-material/Notes';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
 import DeletionModal from "../ui/DeletionModal";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 function TripDetails(props) {
   const {
@@ -107,8 +106,17 @@ function TripDetails(props) {
                 )}
                 <br/>
                 {tripCostsToggled && (
-                  <TripCosts trip={trip}/>
+                  <TripCosts
+                    trip={trip}
+                    onTogglingTripCosts={toggleTripCosts}
+                    tripCostsToggled={tripCostsToggled}
+                  />
                 )}
+                {/* <TripCosts
+                  trip={trip}
+                  onTogglingTripCosts={toggleTripCosts}
+                  tripCostsToggled={tripCostsToggled}
+                /> */}
               </li>
 
               <li className="nav-item">
@@ -128,16 +136,11 @@ function TripDetails(props) {
 
           {trip.tripType === "Past" && (
             <li className="nav-item">
-              {tripNotesToggled && (
-                <button className='nav-link details' onClick={() => toggleTripNotes()}><NotesIcon/> Trip Notes<ArrowDropUpIcon/></button>
-              )}
-              {!tripNotesToggled && (
-                <button className='nav-link details' onClick={() => toggleTripNotes()}><NotesIcon/> Trip Notes<ArrowDropDownIcon/></button>
-              )}
-              <br/>
-              {tripNotesToggled && (
-                <TripNotes trip={trip}/>
-              )}
+              <TripNotes
+                trip={trip}
+                onTogglingTripNotes={toggleTripNotes}
+                tripNotesToggled={tripNotesToggled}
+              />
             </li>
           )}
 
