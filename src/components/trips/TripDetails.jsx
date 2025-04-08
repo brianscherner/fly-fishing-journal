@@ -30,16 +30,11 @@ function TripDetails(props) {
     setIsDeleteModalOpen(false);
   }, [setIsDeleteModalOpen]);
 
-  const [destInfoToggled, setDestInfoToggled] = useState(true);
   const [tripCostsToggled, setTripCostsToggled] = useState(false);
   const [gearRequirementsToggled, setGearRequirementsToggled] = useState(false);
   const [miscellaneousToggled, setMiscellaneousToggled] = useState(false);
   const [tripNotesToggled, setTripNotesToggled] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-
-  const toggleDestInfo = () => {
-    setDestInfoToggled(!destInfoToggled);
-  }
 
   const toggleTripCosts = () => {
     setTripCostsToggled(!tripCostsToggled);
@@ -89,8 +84,6 @@ function TripDetails(props) {
           <li className="nav-item">
             <DestinationInfo
               trip={trip}
-              onTogglingDestInfo={toggleDestInfo}
-              destInfoToggled={destInfoToggled}
             />
           </li>
 
@@ -134,15 +127,18 @@ function TripDetails(props) {
           )}
 
           {trip.tripType === "Past" && (
-            <li className="nav-item">
-              <TripNotes
-                trip={trip}
-                onTogglingTripNotes={toggleTripNotes}
-                tripNotesToggled={tripNotesToggled}
-              />
-            </li>
+            <>
+              <br/>
+              <li className="nav-item">
+                <TripNotes
+                  trip={trip}
+                  onTogglingTripNotes={toggleTripNotes}
+                  tripNotesToggled={tripNotesToggled}
+                />
+              </li>
+            </>
           )}
-
+          <br/>
           <li className="nav-item">
             <Miscellaneous
               trip={trip}
@@ -152,7 +148,7 @@ function TripDetails(props) {
           </li>
         </ul>
       </div>
-
+      <br/>
       <div className="trip-details-buttons">
         <button
           className="btn app-buttons"
