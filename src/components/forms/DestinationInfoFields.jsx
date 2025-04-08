@@ -22,7 +22,7 @@ function DestinationInfoFields(props) {
           <small className="form-field-error" aria-live="polite">{invalidFormFields.destination}</small>
         )}
         {formData.destination.length >= 56 && (
-          <small className="form-field-error" aria-live="polite">{formData.destination.length}/56 - limit reached.</small>
+          <small className="form-field-warning" aria-live="polite">{formData.destination.length}/56</small>
         )}
       </div>
       <br/>

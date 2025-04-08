@@ -198,8 +198,6 @@ function ReusableTripForm(props) {
     }
   }
 
-  console.log("Form data: ", formData);
-  console.log("Dest length: ", formData.destination.length, "Invalid fields: ", invalidFormFields);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
