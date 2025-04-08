@@ -4,18 +4,17 @@ import TripCosts from '../tables/TripCosts';
 import GearRequirements from '../tables/GearRequirements';
 import Miscellaneous from '../tables/Miscellaneous';
 import TripNotes from '../tables/TripNotes';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import NotesIcon from '@mui/icons-material/Notes';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
 import DeletionModal from "../ui/DeletionModal";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function TripDetails(props) {
   const {
@@ -90,16 +89,11 @@ function TripDetails(props) {
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
-            {destInfoToggled && (
-              <button className='nav-link details' onClick={() => toggleDestInfo()}><LocationOnIcon/>  Destination Info <ArrowDropUpIcon/></button>
-            )}
-            {!destInfoToggled && (
-              <button className='nav-link details' onClick={() => toggleDestInfo()}><LocationOnIcon/> Destination Info <ArrowDropDownIcon/></button>
-            )}
-            <br/>
-            {destInfoToggled && (
-              <DestinationInfo trip={trip}/>
-            )}
+            <DestinationInfo
+              trip={trip}
+              onTogglingDestInfo={toggleDestInfo}
+              destInfoToggled={destInfoToggled}
+            />
           </li>
 
           {trip.tripType === "Future" && (

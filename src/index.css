@@ -309,7 +309,6 @@
   gap: 0.5rem;
 }
 
-/* need to fix positioning issues */
 .delete-modal-overlay {
   position: fixed;
   top: 0;
@@ -485,9 +484,47 @@ table {
 .misc-data,
 .trip-costs-data,
 .trip-notes-data {
-  max-width: 30vw;
   overflow: auto;
   font-weight: 600;
+  border-radius: 0.45rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+}
+
+.dest-info-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1rem;
+}
+
+.dest-info-details h5,
+.dest-info-details p {
+  text-align: left;
+}
+
+.dest-info-details h5 {
+  font-weight: 600;
+}
+
+.dest-info-container {
+  display: flex;
+  justify-content: center;
+}
+
+.trip-card {
+  border-radius: 0.45rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  padding: 2.5rem 1rem;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  justify-content: center;
+}
+
+.category-header {
+  font-weight: 700;
 }
 
 /* trip list styling */
