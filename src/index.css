@@ -492,7 +492,8 @@ table {
 }
 
 .dest-info-details,
-.trip-notes-details {
+.trip-notes-details,
+.misc-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem 1rem;
@@ -501,17 +502,21 @@ table {
 .dest-info-details h5,
 .dest-info-details p,
 .trip-notes-details h5,
-.trip-notes-details p {
+.trip-notes-details p,
+.misc-details h5,
+.misc-details p {
   text-align: left;
 }
 
 .dest-info-details h5,
-.trip-notes-details h5 {
+.trip-notes-details h5,
+.misc-details h5 {
   font-weight: 600;
 }
 
 .dest-info-container,
-.trip-notes-container {
+.trip-notes-container,
+.misc-container {
   display: flex;
   justify-content: center;
 }

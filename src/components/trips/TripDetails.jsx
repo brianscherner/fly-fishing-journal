@@ -7,7 +7,6 @@ import TripNotes from '../tables/TripNotes';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
 import DeletionModal from "../ui/DeletionModal";
@@ -145,16 +144,11 @@ function TripDetails(props) {
           )}
 
           <li className="nav-item">
-            {miscellaneousToggled && (
-              <button className='nav-link details' onClick={() => toggleMiscellaneous()}><MiscellaneousServicesIcon/> Miscellaneous<ArrowDropUpIcon/></button>
-            )}
-            {!miscellaneousToggled && (
-              <button className='nav-link details' onClick={() => toggleMiscellaneous()}><MiscellaneousServicesIcon/> Miscellaneous<ArrowDropDownIcon/></button>
-            )}
-            <br/>
-            {miscellaneousToggled && (
-              <Miscellaneous trip={trip}/>
-            )}
+            <Miscellaneous
+              trip={trip}
+              onTogglingMiscellaneous={toggleMiscellaneous}
+              miscellaneousToggled={miscellaneousToggled}
+            />
           </li>
         </ul>
       </div>
