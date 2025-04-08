@@ -198,12 +198,12 @@ function ReusableTripForm(props) {
     }
   }
 
-  // console.log("Form data: ", formData);
+  console.log("Form data: ", formData);
+  console.log("Dest length: ", formData.destination.length, "Invalid fields: ", invalidFormFields);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
         <div className="row justify-content-center">
-          {/* look into adjusting for greater responsiveness */}
           <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
             <label className="form-instruction">Please select a trip type to get started.</label>
             <br/>

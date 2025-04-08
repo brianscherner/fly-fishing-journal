@@ -16,9 +16,13 @@ function DestinationInfoFields(props) {
           onChange={(e) => setFormData({
             ...formData, destination: e.target.value
           })}
+          maxLength={56}
         />
         {invalidFormFields.destination && (
-          <small className="form-field-error">{invalidFormFields.destination}</small>
+          <small className="form-field-error" aria-live="polite">{invalidFormFields.destination}</small>
+        )}
+        {formData.destination.length >= 56 && (
+          <small className="form-field-error" aria-live="polite">{formData.destination.length}/56 - limit reached.</small>
         )}
       </div>
       <br/>
