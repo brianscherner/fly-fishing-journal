@@ -7,11 +7,8 @@ import TripNotes from '../tables/TripNotes';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import PhishingIcon from '@mui/icons-material/Phishing';
 import ImageSlider from "./ImageSlider";
 import DeletionModal from "../ui/DeletionModal";
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function TripDetails(props) {
   const {
@@ -92,17 +89,13 @@ function TripDetails(props) {
                   tripCostsToggled={tripCostsToggled}
                 />
               </li>
+              <br/>
               <li className="nav-item">
-                {gearRequirementsToggled && (
-                  <button className='nav-link details' onClick={() => toggleGearRequirements()}><PhishingIcon/> Gear Requirements <ArrowDropUpIcon/></button>
-                )}
-                {!gearRequirementsToggled && (
-                  <button className='nav-link details' onClick={() => toggleGearRequirements()}><PhishingIcon/> Gear Requirements <ArrowDropDownIcon/></button>
-                )}
-                <br/>
-                {gearRequirementsToggled && (
-                  <GearRequirements trip={trip}/>
-                )}
+                <GearRequirements
+                  trip={trip}
+                  onTogglingGearRequirements={toggleGearRequirements}
+                  gearRequirementsToggled={gearRequirementsToggled}
+                />
               </li>
             </>
           )}

@@ -1,29 +1,36 @@
 import React from "react";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import PhishingIcon from '@mui/icons-material/Phishing';
 
 function GearRequirements(props) {
-  const { trip } = props;
+  const { trip, onTogglingGearRequirements, gearRequirementsToggled } = props;
 
   return (
     <React.Fragment>
-      <div className='table-container'>
-        <div className='row justify-content-center'>
-          <table className='table'>
-            <tbody>
-              <tr className="gear-requir-table">
-                <th>Clothing</th>
-                <td className="gear-data">{trip.clothingRequirements ? trip.clothingRequirements : "N/A"}</td>
-              </tr>
-              <tr className="gear-requir-table">
-                <th>Fishing Gear</th>
-                <td className="gear-data">{trip.gearRequirements ? trip.gearRequirements : "N/A"}</td>
-              </tr>
-              <tr className="gear-requir-table">
-                <th>Flies</th>
-                <td className="gear-data">{trip.flyRequirements ? trip.flyRequirements : "N/A"}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="trip-card" onClick={onTogglingGearRequirements}>
+        <h4 className="category-header"><PhishingIcon/> Gear Requirements{gearRequirementsToggled ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</h4>
+        {gearRequirementsToggled && (
+          <>
+            <br/>
+            <div className="gear-container">
+              <div className="gear-details">
+                <div className="gear-data">
+                  <h5>Clothing</h5>
+                  <p>{trip.clothingRequirements ? trip.clothingRequirements : "N/A"}</p>
+                </div>
+                <div className="gear-data">
+                  <h5>Fishing Gear</h5>
+                  <p>{trip.gearRequirements ? trip.gearRequirements : "N/A"}</p>
+                </div>
+                <div className="gear-data">
+                  <h5>Flies</h5>
+                  <p>{trip.flyRequirements ? trip.flyRequirements : "N/A"}</p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </React.Fragment>
   )

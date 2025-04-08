@@ -500,6 +500,12 @@ table {
   gap: 1rem 1rem;
 }
 
+.gear-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 1rem;
+}
+
 .dest-info-details h5,
 .dest-info-details p,
 .trip-notes-details h5,
@@ -507,21 +513,25 @@ table {
 .misc-details h5,
 .misc-details p,
 .trip-costs-data h5,
-.trip-costs-data p {
+.trip-costs-data p,
+.gear-details h5,
+.gear-details p {
   text-align: left;
 }
 
 .dest-info-details h5,
 .trip-notes-details h5,
 .misc-details h5,
-.trip-costs h5 {
+.trip-costs h5,
+.gear-details h5 {
   font-weight: 600;
 }
 
 .dest-info-container,
 .trip-notes-container,
 .misc-container,
-.trips-costs-container {
+.trips-costs-container,
+.gear-container {
   display: flex;
   justify-content: center;
 }
@@ -969,6 +979,12 @@ label {
 
   .trip-filters {
     width: 100%;
+  }
+
+  .gear-details {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
   }
 
 }
