@@ -1,49 +1,44 @@
 import React from "react";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 function TripCosts(props) {
-  const { trip } = props;
+  const { trip, onTogglingTripCosts, tripCostsToggled } = props;
 
   return (
     <React.Fragment>
-      <div className="table-container">
-        <div className="row justify-content-center">
-          <table className="table">
-            <tbody>
-              <tr className="trip-costs-table">
-                <th>Travel Documents</th>
-                <td className="trip-costs-data">{trip.travelDocs ? trip.travelDocs : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Travel Costs</th>
-                <td className="trip-costs-data">{trip.travelCosts ? trip.travelCosts : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Trip Expenses</th>
-                <td className="trip-costs-data">{trip.tripExpenses ? trip.tripExpenses : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Baggage/Luggage Fees</th>
-                <td className="trip-costs-data">{trip.baggageLuggage ? trip.baggageLuggage : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Trip Insurance</th>
-                <td className="trip-costs-data">{trip.tripInsurance ? trip.tripInsurance : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Evacuation Insurance</th>
-                <td className="trip-costs-data">{trip.evacInsurance ? trip.evacInsurance : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Deposit Terms</th>
-                <td className="trip-costs-data">{trip.depositTerms ? trip.depositTerms : "N/A"}</td>
-              </tr>
-              <tr className="trip-costs-table">
-                <th>Cancellation Policy</th>
-                <td className="trip-costs-data">{trip.cancellationPolicy ? trip.cancellationPolicy : "N/A"}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="trip-card" onClick={onTogglingTripCosts}>
+        <h4 className="category-header"><AttachMoneyIcon/> Trip Costs {tripCostsToggled ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</h4>
+        {tripCostsToggled && (
+          <>
+            <br/>
+            <div className="trip-costs-container">
+              <div className="trip-costs-details">
+                <div className="trip-costs-data">
+                  <h5>Fishing Method</h5>
+                  <p>{trip.fishingMethod ? trip.fishingMethod : "N/A"}</p>
+                </div>
+                <div className="trip-costs-data">
+                  <h5>Flies Used</h5>
+                  <p>{trip.fliesUsed ? trip.fliesUsed : "N/A"}</p>
+                </div>
+                <div className="trip-costs-data">
+                  <h5>Fish Caught</h5>
+                  <p>{trip.fishCaught ? trip.fishCaught : "N/A"}</p>
+                </div>
+                <div className="trip-costs-data">
+                  <h5>Fishing Tackle Used</h5>
+                  <p>{trip.fishingTackleUsed ? trip.fishingTackleUsed : "N/A"}</p>
+                </div>
+                <div className="trip-costs-data">
+                  <h5>River Flow Levels</h5>
+                  <p>{trip.riverFlowLevels ? trip.riverFlowLevels : "N/A"}</p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </React.Fragment>
   )

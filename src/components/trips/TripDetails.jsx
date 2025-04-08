@@ -12,7 +12,6 @@ import ImageSlider from "./ImageSlider";
 import DeletionModal from "../ui/DeletionModal";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 function TripDetails(props) {
   const {
@@ -62,7 +61,6 @@ function TripDetails(props) {
 
   return (
     <div className="trip-details">
-
       {isDeleteModalOpen && (
         <DeletionModal
           onClickingDelete={onClickingDelete}
@@ -71,14 +69,12 @@ function TripDetails(props) {
           trip={trip}
         />
       )}
-
       <ImageSlider
         trip={trip}
         onMovingLeft={moveLeft}
         onMovingRight={moveRight}
         currentImage={currentImage}
       />
-
       <div className="detail-categories">
         <ul className="nav flex-column">
           <li className="nav-item">
@@ -86,31 +82,16 @@ function TripDetails(props) {
               trip={trip}
             />
           </li>
-
           {trip.tripType === "Future" && (
-            <React.Fragment>
+            <>
+              <br/>
               <li className="nav-item">
-                {tripCostsToggled && (
-                  <button className='nav-link details' onClick={() => toggleTripCosts()}><AttachMoneyIcon/> Trip Costs <ArrowDropUpIcon/></button>
-                )}
-                {!tripCostsToggled && (
-                  <button className='nav-link details' onClick={() => toggleTripCosts()}><AttachMoneyIcon/> Trip Costs <ArrowDropDownIcon/></button>
-                )}
-                <br/>
-                {tripCostsToggled && (
-                  <TripCosts
-                    trip={trip}
-                    onTogglingTripCosts={toggleTripCosts}
-                    tripCostsToggled={tripCostsToggled}
-                  />
-                )}
-                {/* <TripCosts
+                <TripCosts
                   trip={trip}
                   onTogglingTripCosts={toggleTripCosts}
                   tripCostsToggled={tripCostsToggled}
-                /> */}
+                />
               </li>
-
               <li className="nav-item">
                 {gearRequirementsToggled && (
                   <button className='nav-link details' onClick={() => toggleGearRequirements()}><PhishingIcon/> Gear Requirements <ArrowDropUpIcon/></button>
@@ -123,9 +104,8 @@ function TripDetails(props) {
                   <GearRequirements trip={trip}/>
                 )}
               </li>
-            </React.Fragment>
+            </>
           )}
-
           {trip.tripType === "Past" && (
             <>
               <br/>
@@ -156,7 +136,6 @@ function TripDetails(props) {
         >
           <EditIcon/> Edit
         </button>
-
         {trip.tripType === "Future" && (
           <button
             className="btn app-buttons"
@@ -166,7 +145,6 @@ function TripDetails(props) {
             <CheckCircleIcon/> Mark as Past
           </button>
         )}
-
         <button
           className="btn back-button"
           id="delete-button"
@@ -174,7 +152,6 @@ function TripDetails(props) {
         >
           <DeleteIcon/> Delete
         </button>
-
       </div>
     </div>
   );

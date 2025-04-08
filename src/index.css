@@ -493,7 +493,8 @@ table {
 
 .dest-info-details,
 .trip-notes-details,
-.misc-details {
+.misc-details,
+.trip-costs-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem 1rem;
@@ -504,19 +505,23 @@ table {
 .trip-notes-details h5,
 .trip-notes-details p,
 .misc-details h5,
-.misc-details p {
+.misc-details p,
+.trip-costs-data h5,
+.trip-costs-data p {
   text-align: left;
 }
 
 .dest-info-details h5,
 .trip-notes-details h5,
-.misc-details h5 {
+.misc-details h5,
+.trip-costs h5 {
   font-weight: 600;
 }
 
 .dest-info-container,
 .trip-notes-container,
-.misc-container {
+.misc-container,
+.trips-costs-container {
   display: flex;
   justify-content: center;
 }
