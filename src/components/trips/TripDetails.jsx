@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import DestinationInfo from "../tables/DestinationInfo";
-import TripCosts from '../tables/TripCosts';
-import GearRequirements from '../tables/GearRequirements';
-import Miscellaneous from '../tables/Miscellaneous';
-import TripNotes from '../tables/TripNotes';
+import DestinationInfo from "../cards/DestinationInfo";
+import TripCosts from '../cards/TripCosts';
+import GearRequirements from '../cards/GearRequirements';
+import Miscellaneous from '../cards/Miscellaneous';
+import TripNotes from '../cards/TripNotes';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
