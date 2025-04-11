@@ -112,9 +112,14 @@ function DestinationInfoFields(props) {
           className={`${invalidFormFields.species ? "form-control invalid-field" : "form-control"}`}
           name="species"
           placeholder="Example: salmon"
-          defaultValue={formData.species ??= ''} onChange={(e) => setFormData({...formData, species: e.target.value})}/>
+          defaultValue={formData.species ??= ''} onChange={(e) => setFormData({...formData, species: e.target.value})}
+          maxLength={120}
+        />
         {invalidFormFields.species && (
           <small className="form-field-error">{invalidFormFields.species}</small>
+        )}
+        {formData.species.length >= 120 && (
+          <small className="form-field-warning" aria-live="polite">{formData.species.length}/120</small>
         )}
       </div>
       <br/>
@@ -125,9 +130,14 @@ function DestinationInfoFields(props) {
         className={`${invalidFormFields.county ? "form-control invalid-field" : "form-control"}`}
         name="county"
         defaultValue={formData.county ??= ''}
-        onChange={(e) => setFormData({...formData, county: e.target.value})}/>
+        onChange={(e) => setFormData({...formData, county: e.target.value})}
+        maxLength={56}
+        />
         {invalidFormFields.county && (
           <small className="form-field-error">{invalidFormFields.county}</small>
+        )}
+        {formData.county.length >= 56 && (
+          <small className="form-field-warning" aria-live="polite">{formData.county.length}/56</small>
         )}
       </div>
       <br/>
@@ -138,9 +148,14 @@ function DestinationInfoFields(props) {
           className={`${invalidFormFields.state ? "form-control invalid-field" : "form-control"}`}
           name="state"
           defaultValue={formData.state ??= ''}
-          onChange={(e) => setFormData({...formData, state: e.target.value})}/>
+          onChange={(e) => setFormData({...formData, state: e.target.value})}
+          maxLength={56}
+          />
         {invalidFormFields.state && (
           <small className="form-field-error">{invalidFormFields.state}</small>
+        )}
+        {formData.state.length >= 56 && (
+          <small className="form-field-warning" aria-live="polite">{formData.state.length}/56</small>
         )}
       </div>
       <br/>
@@ -151,9 +166,14 @@ function DestinationInfoFields(props) {
           className={`${invalidFormFields.country ? "form-control invalid-field" : "form-control"}`}
           name="country"
           defaultValue={formData.country ??= ''}
-          onChange={(e) => setFormData({...formData, country: e.target.value})}/>
+          onChange={(e) => setFormData({...formData, country: e.target.value})}
+          maxLength={56}
+          />
         {invalidFormFields.country && (
           <small className="form-field-error">{invalidFormFields.country}</small>
+        )}
+        {formData.country.length >= 56 && (
+          <small className="form-field-warning" aria-live="polite">{formData.country.length}/56</small>
         )}
       </div>
       <br/>
@@ -167,7 +187,12 @@ function DestinationInfoFields(props) {
               name="climate"
               placeholder="Example: desert"
               defaultValue={formData.climate ??= ''}
-              onChange={(e) => setFormData({...formData, climate: e.target.value})}/>
+              onChange={(e) => setFormData({...formData, climate: e.target.value})}
+              maxLength={56}
+              />
+              {formData.climate.length >= 56 && (
+                <small className="form-field-warning" aria-live="polite">{formData.climate.length}/56</small>
+              )}
           </div>
           <br/>
         </React.Fragment>
