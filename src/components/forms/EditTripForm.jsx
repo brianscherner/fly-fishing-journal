@@ -24,7 +24,7 @@ function EditTripForm(props) {
         tripType={trip.tripType}
         trip={trip}
         isLoading={isLoading}
-        />
+      />
     </React.Fragment>
   )
 }

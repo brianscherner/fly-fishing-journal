@@ -14,27 +14,25 @@ function DestinationInfoFields(props) {
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
       <label>Fishing Destination<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <input
-          type="text"
-          className={`${formErrors.destination ? "form-control invalid-field" : "form-control"}`}
-          name="destination"
-          defaultValue={formData.destination ??= ''}
-          onChange={(e) =>  {
-            setFormData({
-              ...formData, destination: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        />
-        <div className="form-validation-wrapper">
-          {formErrors.destination && (
-            <small className="form-field-error" aria-live="polite">{formErrors.destination}</small>
-          )}
-          {formWarnings.destination && (
-            <small className="form-field-warning" aria-live="polite">{formWarnings.destination}</small>
-          )}
-        </div>
+      <input
+        type="text"
+        className={`${formErrors.destination ? "form-control invalid-field" : "form-control"}`}
+        name="destination"
+        defaultValue={formData.destination ??= ''}
+        onChange={(e) =>  {
+          setFormData({
+            ...formData, destination: e.target.value
+          });
+          handleCharacterLimitCheck(e);
+        }}
+      />
+      <div className="form-validation-wrapper">
+        {formErrors.destination && (
+          <small className="form-field-error" aria-live="polite">{formErrors.destination}</small>
+        )}
+        {formWarnings.destination && (
+          <small className="form-field-warning" aria-live="polite">{formWarnings.destination}</small>
+        )}
       </div>
       <br/>
       <label>Destination Type</label>
@@ -62,7 +60,7 @@ function DestinationInfoFields(props) {
           <option value="Fall">Fall</option>
         </select>
         {formErrors.season && (
-          <small className="form-field-error">{formErrors.season}</small>
+          <small className="form-field-error" aria-live="polite">{formErrors.season}</small>
         )}
       </div>
       <br/>
@@ -75,7 +73,7 @@ function DestinationInfoFields(props) {
           defaultValue={formData.startDate ??= ''}
           onChange={(e) => setFormData({...formData, startDate: e.target.value})}/>
         {formErrors.startDate && (
-          <small className="form-field-error">{formErrors.startDate}</small>
+          <small className="form-field-error" aria-live="polite">{formErrors.startDate}</small>
         )}
       </div>
       <br/>
@@ -112,7 +110,7 @@ function DestinationInfoFields(props) {
           <option value="Mix">Mix</option>
         </select>
         {formErrors.waterBodyType && (
-          <small className="form-field-error">{formErrors.waterBodyType}</small>
+          <small className="form-field-error" aria-live="polite">{formErrors.waterBodyType}</small>
         )}
       </div>
       <br/>
@@ -133,7 +131,7 @@ function DestinationInfoFields(props) {
         />
         <div className="form-validation-wrapper">
           {formErrors.species && (
-            <small className="form-field-error">{formErrors.species}</small>
+            <small className="form-field-error" aria-live="polite">{formErrors.species}</small>
           )}
           {formWarnings.species && (
             <small className="form-field-warning" aria-live="polite">{formWarnings.species}</small>
@@ -148,14 +146,21 @@ function DestinationInfoFields(props) {
         className={`${formErrors.county ? "form-control invalid-field" : "form-control"}`}
         name="county"
         defaultValue={formData.county ??= ''}
-        onChange={(e) => setFormData({...formData, county: e.target.value})}
+        onChange={(e) => {
+            setFormData({
+              ...formData, county: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
-        {formErrors.county && (
-          <small className="form-field-error">{formErrors.county}</small>
-        )}
-        {formData.county.length >= 56 && (
-          <small className="form-field-warning" aria-live="polite">{formData.county.length}/56</small>
-        )}
+        <div className="form-validation-wrapper">
+          {formErrors.county && (
+            <small className="form-field-error" aria-live="polite">{formErrors.county}</small>
+          )}
+          {formWarnings.county && (
+            <small className="form-field-warning" aria-live="polite">{formWarnings.county}</small>
+          )}
+        </div>
       </div>
       <br/>
       <label>State<span className="required-asterik">&nbsp;*</span></label>
@@ -165,14 +170,21 @@ function DestinationInfoFields(props) {
           className={`${formErrors.state ? "form-control invalid-field" : "form-control"}`}
           name="state"
           defaultValue={formData.state ??= ''}
-          onChange={(e) => setFormData({...formData, state: e.target.value})}
+          onChange={(e) => {
+            setFormData({
+              ...formData, state: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
-        {formErrors.state && (
-          <small className="form-field-error">{formErrors.state}</small>
-        )}
-        {formData.state.length >= 56 && (
-          <small className="form-field-warning" aria-live="polite">{formData.state.length}/56</small>
-        )}
+        <div className="form-validation-wrapper">
+          {formErrors.state && (
+            <small className="form-field-error" aria-live="polite">{formErrors.state}</small>
+          )}
+          {formWarnings.state && (
+            <small className="form-field-warning" aria-live="polite">{formWarnings.state}</small>
+          )}
+        </div>
       </div>
       <br/>
       <label>Country<span className="required-asterik">&nbsp;*</span></label>
@@ -182,14 +194,20 @@ function DestinationInfoFields(props) {
           className={`${formErrors.country ? "form-control invalid-field" : "form-control"}`}
           name="country"
           defaultValue={formData.country ??= ''}
-          onChange={(e) => setFormData({...formData, country: e.target.value})}
+          onChange={(e) => {
+            setFormData({...formData, country: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
-        {formErrors.country && (
-          <small className="form-field-error">{formErrors.country}</small>
-        )}
-        {formData.country.length >= 56 && (
-          <small className="form-field-warning" aria-live="polite">{formData.country.length}/56</small>
-        )}
+        <div className="form-validation-wrapper">
+          {formErrors.country && (
+            <small className="form-field-error" aria-live="polite">{formErrors.country}</small>
+          )}
+          {formWarnings.country && (
+            <small className="form-field-warning" aria-live="polite">{formWarnings.country}</small>
+          )}
+        </div>
       </div>
       <br/>
       {tripType === "Future" && (
@@ -202,11 +220,21 @@ function DestinationInfoFields(props) {
               name="climate"
               placeholder="Example: desert"
               defaultValue={formData.climate ??= ''}
-              onChange={(e) => setFormData({...formData, climate: e.target.value})}
+              onChange={(e) => {
+                setFormData({
+                  ...formData, climate: e.target.value
+                });
+                handleCharacterLimitCheck(e);
+              }}
             />
-              {formData.climate.length >= 56 && (
-                <small className="form-field-warning" aria-live="polite">{formData.climate.length}/56</small>
+            <div className="form-validation-wrapper">
+              {formErrors.climate && (
+                <small className="form-field-error" aria-live="polite">{formErrors.climate}</small>
               )}
+              {formWarnings.climate && (
+                <small className="form-field-warning" aria-live="polite">{formWarnings.climate}</small>
+              )}
+            </div>
           </div>
           <br/>
         </React.Fragment>

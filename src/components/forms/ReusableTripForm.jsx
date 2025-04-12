@@ -28,6 +28,7 @@ function ReusableTripForm(props) {
     state: 56,
     country: 56,
     species: 120,
+    climate: 56
   };
 
   useEffect(() => {
@@ -162,6 +163,11 @@ function ReusableTripForm(props) {
 
   // checks if required form fields are empty or exceed character limits when user clicks "Next"
   // blocks user from advancing to next page if so
+
+  // Before moving on, refactor validatePage to be DRY to avoid redundant if checks
+  // **continue adding input check validation to all form fields**
+  // **consider removing some required fields**
+
   const validatePage = () => {
     const formErrors = {};
 
@@ -170,20 +176,39 @@ function ReusableTripForm(props) {
         if (!formData.destination) {
           formErrors.destination = "A fishing destination is required.";
         } else if (formData.destination.length > formCharacterLimits.destination) {
-          formErrors.destination = "Character limit exceeded.";
+          formErrors.destination = "Max character limit exceeded.";
         }
 
         if (!formData.season) formErrors.season = "A season is required.";
         if (!formData.startDate) formErrors.startDate = "A start date is required.";
-        if (!formData.waterBodyType) formErrors.waterBodyType = " A water body type is required.";
-        if (!formData.state) formErrors.state = "A state is required.";
-        if (!formData.county) formErrors.county = "A county is required.";
-        if (!formData.country) formErrors.country = "A country is required.";
+        if (!formData.waterBodyType) formErrors.waterBodyType = "A water body type is required.";
+
+        if (!formData.state) {
+          formErrors.state = "A state is required.";
+        } else if (formData.state.length > formCharacterLimits.state) {
+          formErrors.state = "Max character limit exceeded.";
+        }
+
+        if (!formData.county) {
+          formErrors.county = "A county is required.";
+        } else if (formData.county.length > formCharacterLimits.county) {
+          formErrors.county = "Max character limit exceeded.";
+        }
+
+        if (!formData.country) {
+          formErrors.country = "A country is required.";
+        } else if (formData.country.length > formCharacterLimits.country) {
+          formErrors.country = "Max character limit exceeded.";
+        }
 
         if (!formData.species) {
           formErrors.species = "A fish species is required.";
         } else if (formData.species.length > formCharacterLimits.species) {
-          formErrors.species = "Character limit exceeded.";
+          formErrors.species = "Max character limit exceeded.";
+        }
+
+        if (formData.climate.length > formCharacterLimits.climate) {
+          formErrors.climate = "Max character limit exceeded."
         }
         break;
       case 1:
@@ -216,7 +241,7 @@ function ReusableTripForm(props) {
     if (validatePage()) {
       setPage(page + 1);
     } else {
-      toast.error("Please fix errors to continue.", { position: "bottom-right" });
+      toast.error("Please fix the highlighted errors to continue.", { position: "bottom-right" });
     }
   }
 
