@@ -1,7 +1,14 @@
 import React from "react";
 
 function DestinationInfoFields(props) {
-  const { tripType, formData, setFormData, invalidFormFields } = props;
+  const {
+    tripType,
+    formData,
+    setFormData,
+    formErrors,
+    handleCharacterLimitCheck,
+    formWarnings
+  } = props;
 
   return (
     <React.Fragment>
@@ -10,20 +17,24 @@ function DestinationInfoFields(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.destination ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.destination ? "form-control invalid-field" : "form-control"}`}
           name="destination"
           defaultValue={formData.destination ??= ''}
-          onChange={(e) => setFormData({
-            ...formData, destination: e.target.value
-          })}
-          maxLength={56}
+          onChange={(e) =>  {
+            setFormData({
+              ...formData, destination: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
-        {invalidFormFields.destination && (
-          <small className="form-field-error" aria-live="polite">{invalidFormFields.destination}</small>
-        )}
-        {formData.destination.length >= 56 && (
-          <small className="form-field-warning" aria-live="polite">{formData.destination.length}/56</small>
-        )}
+        <div className="form-validation-wrapper">
+          {formErrors.destination && (
+            <small className="form-field-error" aria-live="polite">{formErrors.destination}</small>
+          )}
+          {formWarnings.destination && (
+            <small className="form-field-warning" aria-live="polite">{formWarnings.destination}</small>
+          )}
+        </div>
       </div>
       <br/>
       <label>Destination Type</label>
@@ -40,7 +51,7 @@ function DestinationInfoFields(props) {
       <label>Season<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <select
-          className={`${invalidFormFields.season ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.season ? "form-control invalid-field" : "form-control"}`}
           name="season"
           defaultValue={formData.season ??= ''}
           onChange={(e) => setFormData({...formData, season: e.target.value})}>
@@ -50,21 +61,21 @@ function DestinationInfoFields(props) {
           <option value="Summer">Summer</option>
           <option value="Fall">Fall</option>
         </select>
-        {invalidFormFields.season && (
-          <small className="form-field-error">{invalidFormFields.season}</small>
+        {formErrors.season && (
+          <small className="form-field-error">{formErrors.season}</small>
         )}
       </div>
       <br/>
       <label>Start Date<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
-          className={`${invalidFormFields.startDate ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.startDate ? "form-control invalid-field" : "form-control"}`}
           aria-label="Date"
           type="date"
           defaultValue={formData.startDate ??= ''}
           onChange={(e) => setFormData({...formData, startDate: e.target.value})}/>
-        {invalidFormFields.startDate && (
-          <small className="form-field-error">{invalidFormFields.startDate}</small>
+        {formErrors.startDate && (
+          <small className="form-field-error">{formErrors.startDate}</small>
         )}
       </div>
       <br/>
@@ -90,7 +101,7 @@ function DestinationInfoFields(props) {
       <label>Water Body Type<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <select
-          className={`${invalidFormFields.waterBodyType ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.waterBodyType ? "form-control invalid-field" : "form-control"}`}
           name="waterBodyType"
           defaultValue={formData.waterBodyType ??= ''}
           onChange={(e) => setFormData({...formData, waterBodyType: e.target.value})}>
@@ -100,8 +111,8 @@ function DestinationInfoFields(props) {
           <option value="Ocean">Ocean</option>
           <option value="Mix">Mix</option>
         </select>
-        {invalidFormFields.waterBodyType && (
-          <small className="form-field-error">{invalidFormFields.waterBodyType}</small>
+        {formErrors.waterBodyType && (
+          <small className="form-field-error">{formErrors.waterBodyType}</small>
         )}
       </div>
       <br/>
@@ -109,32 +120,38 @@ function DestinationInfoFields(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.species ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.species ? "form-control invalid-field" : "form-control"}`}
           name="species"
           placeholder="Example: salmon"
-          defaultValue={formData.species ??= ''} onChange={(e) => setFormData({...formData, species: e.target.value})}
-          maxLength={120}
+          defaultValue={formData.species ??= ''}
+          onChange={(e) => {
+            setFormData({
+              ...formData, species: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
-        {invalidFormFields.species && (
-          <small className="form-field-error">{invalidFormFields.species}</small>
-        )}
-        {formData.species.length >= 120 && (
-          <small className="form-field-warning" aria-live="polite">{formData.species.length}/120</small>
-        )}
+        <div className="form-validation-wrapper">
+          {formErrors.species && (
+            <small className="form-field-error">{formErrors.species}</small>
+          )}
+          {formWarnings.species && (
+            <small className="form-field-warning" aria-live="polite">{formWarnings.species}</small>
+          )}
+        </div>
       </div>
       <br/>
       <label>County<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input
         type="text"
-        className={`${invalidFormFields.county ? "form-control invalid-field" : "form-control"}`}
+        className={`${formErrors.county ? "form-control invalid-field" : "form-control"}`}
         name="county"
         defaultValue={formData.county ??= ''}
         onChange={(e) => setFormData({...formData, county: e.target.value})}
-        maxLength={56}
         />
-        {invalidFormFields.county && (
-          <small className="form-field-error">{invalidFormFields.county}</small>
+        {formErrors.county && (
+          <small className="form-field-error">{formErrors.county}</small>
         )}
         {formData.county.length >= 56 && (
           <small className="form-field-warning" aria-live="polite">{formData.county.length}/56</small>
@@ -145,14 +162,13 @@ function DestinationInfoFields(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.state ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.state ? "form-control invalid-field" : "form-control"}`}
           name="state"
           defaultValue={formData.state ??= ''}
           onChange={(e) => setFormData({...formData, state: e.target.value})}
-          maxLength={56}
-          />
-        {invalidFormFields.state && (
-          <small className="form-field-error">{invalidFormFields.state}</small>
+        />
+        {formErrors.state && (
+          <small className="form-field-error">{formErrors.state}</small>
         )}
         {formData.state.length >= 56 && (
           <small className="form-field-warning" aria-live="polite">{formData.state.length}/56</small>
@@ -163,14 +179,13 @@ function DestinationInfoFields(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.country ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.country ? "form-control invalid-field" : "form-control"}`}
           name="country"
           defaultValue={formData.country ??= ''}
           onChange={(e) => setFormData({...formData, country: e.target.value})}
-          maxLength={56}
-          />
-        {invalidFormFields.country && (
-          <small className="form-field-error">{invalidFormFields.country}</small>
+        />
+        {formErrors.country && (
+          <small className="form-field-error">{formErrors.country}</small>
         )}
         {formData.country.length >= 56 && (
           <small className="form-field-warning" aria-live="polite">{formData.country.length}/56</small>
@@ -188,8 +203,7 @@ function DestinationInfoFields(props) {
               placeholder="Example: desert"
               defaultValue={formData.climate ??= ''}
               onChange={(e) => setFormData({...formData, climate: e.target.value})}
-              maxLength={56}
-              />
+            />
               {formData.climate.length >= 56 && (
                 <small className="form-field-warning" aria-live="polite">{formData.climate.length}/56</small>
               )}

@@ -20,7 +20,15 @@ function ReusableTripForm(props) {
   const [tripType, setTripType] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [invalidFormFields, setInvalidFormFields] = useState({});
+  const [formErrors, setFormErrors] = useState({});
+  const [formWarnings, setFormWarnings] = useState({});
+  const formCharacterLimits = {
+    destination: 56,
+    county: 56,
+    state: 56,
+    country: 56,
+    species: 120,
+  };
 
   useEffect(() => {
     let total = 0;
@@ -87,14 +95,16 @@ function ReusableTripForm(props) {
           tripType={tripType}
           formData={formData}
           setFormData={setFormData}
-          invalidFormFields={invalidFormFields}
+          formErrors={formErrors}
+          handleCharacterLimitCheck={handleCharacterLimitCheck}
+          formWarnings={formWarnings}
           />;
       case 1:
         if (tripType === "Past") {
           return <TripNotesFields
             formData={formData}
             setFormData={setFormData}
-            invalidFormFields={invalidFormFields}
+            formErrors={formErrors}
             />;
         }
         if (tripType === "Future") {
@@ -114,7 +124,7 @@ function ReusableTripForm(props) {
           return <GearRequirementsFields
             formData={formData}
             setFormData={setFormData}
-            invalidFormFields={invalidFormFields}/>;
+            formErrors={formErrors}/>;
         }
         break;
       case 3:
@@ -150,40 +160,52 @@ function ReusableTripForm(props) {
     }
   }
 
+  // checks if required form fields are empty or exceed character limits when user clicks "Next"
+  // blocks user from advancing to next page if so
   const validatePage = () => {
-    const invalidFields = {};
+    const formErrors = {};
 
     switch (page) {
       case 0:
-        if (!formData.destination) invalidFields.destination = "A fishing destination is required.";
-        if (!formData.season) invalidFields.season = "A season is required.";
-        if (!formData.startDate) invalidFields.startDate = "A start date is required.";
-        if (!formData.waterBodyType) invalidFields.waterBodyType = " A water body type is required.";
-        if (!formData.state) invalidFields.state = "A state is required.";
-        if (!formData.county) invalidFields.county = "A county is required.";
-        if (!formData.country) invalidFields.country = "A country is required.";
-        if (!formData.species) invalidFields.species = "A fish species is required.";
+        if (!formData.destination) {
+          formErrors.destination = "A fishing destination is required.";
+        } else if (formData.destination.length > formCharacterLimits.destination) {
+          formErrors.destination = "Character limit exceeded.";
+        }
+
+        if (!formData.season) formErrors.season = "A season is required.";
+        if (!formData.startDate) formErrors.startDate = "A start date is required.";
+        if (!formData.waterBodyType) formErrors.waterBodyType = " A water body type is required.";
+        if (!formData.state) formErrors.state = "A state is required.";
+        if (!formData.county) formErrors.county = "A county is required.";
+        if (!formData.country) formErrors.country = "A country is required.";
+
+        if (!formData.species) {
+          formErrors.species = "A fish species is required.";
+        } else if (formData.species.length > formCharacterLimits.species) {
+          formErrors.species = "Character limit exceeded.";
+        }
         break;
       case 1:
         if (tripType === "Past") {
-          if (!formData.fliesUsed) invalidFields.fliesUsed = "Please enter flies used.";
-          if (!formData.fishCaught) invalidFields.fishCaught = "Please enter fish caught.";
-          if (!formData.fishingTackleUsed) invalidFields.fishingTackleUsed = "Please enter fishing tackle used.";
+          if (!formData.fliesUsed) formErrors.fliesUsed = "Please enter flies used.";
+          if (!formData.fishCaught) formErrors.fishCaught = "Please enter fish caught.";
+          if (!formData.fishingTackleUsed) formErrors.fishingTackleUsed = "Please enter fishing tackle used.";
         }
         break;
       case 2:
         if (tripType === "Future") {
-          if (!formData.clothingRequirements) invalidFields.clothingRequirements = "Please enter clothing requirements.";
-          if (!formData.gearRequirements) invalidFields.gearRequirements = "Please enter fishing requirements.";
-          if (!formData.flyRequirements) invalidFields.flyRequirements = "Please enter fly requirements.";
+          if (!formData.clothingRequirements) formErrors.clothingRequirements = "Please enter clothing requirements.";
+          if (!formData.gearRequirements) formErrors.gearRequirements = "Please enter fishing requirements.";
+          if (!formData.flyRequirements) formErrors.flyRequirements = "Please enter fly requirements.";
         }
         break;
       default:
         return true;
     }
 
-    setInvalidFormFields(invalidFields);
-    return Object.keys(invalidFields).length === 0;
+    setFormErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
   }
 
   const prevPage = () => {
@@ -194,7 +216,24 @@ function ReusableTripForm(props) {
     if (validatePage()) {
       setPage(page + 1);
     } else {
-      toast.error("Please fill out all required fields.", { position: "bottom-right" });
+      toast.error("Please fix errors to continue.", { position: "bottom-right" });
+    }
+  }
+
+  // actively checks input length for form fields and shows warnings if exceeded
+  const handleCharacterLimitCheck = (e) => {
+    const { name, value } = e.target;
+    if (value.length > formCharacterLimits[name]) {
+      setFormWarnings(prev => ({
+        ...prev,
+        [name]: `${value.length}/${formCharacterLimits[name]}`
+      }));
+    } else {
+      setFormWarnings({});
+      setFormErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
     }
   }
 

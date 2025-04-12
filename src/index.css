@@ -731,7 +731,7 @@
 
 .form-field-error {
   display: flex;
-  justify-content: flex-start;
+  justify-content: left;
   color: #D90429;
   font-size: 1.05rem;
   font-weight: 500;
@@ -740,11 +740,17 @@
 
 .form-field-warning {
   display: flex;
-  justify-content: flex-end;
-  color: #B37400;
+  justify-content: flex-start;
+  color: #D90429;
   font-size: 1.05rem;
   font-weight: 500;
   padding-top: 4px;
+}
+
+.form-validation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input::placeholder {

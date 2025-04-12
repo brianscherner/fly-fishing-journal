@@ -1,7 +1,7 @@
 import React from "react";
 
 function TripNotesFields(props) {
-  const { formData, setFormData, invalidFormFields } = props;
+  const { formData, setFormData, formErrors } = props;
 
   return (
     <React.Fragment>
@@ -9,13 +9,13 @@ function TripNotesFields(props) {
       <label>Flies Used<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <input type="text"
-          className={`${invalidFormFields.fliesUsed ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.fliesUsed ? "form-control invalid-field" : "form-control"}`}
           name="fliesUsed"
           placeholder="Example: Elk Hair Caddis (Size 16)"
           defaultValue={formData.fliesUsed ??= ''}
           onChange={(e) => setFormData({...formData, fliesUsed: e.target.value})}/>
-        {invalidFormFields.fliesUsed && (
-          <small className="form-field-error">{invalidFormFields.fliesUsed}</small>
+        {formErrors.fliesUsed && (
+          <small className="form-field-error">{formErrors.fliesUsed}</small>
         )}
       </div>
       <br/>
@@ -23,13 +23,13 @@ function TripNotesFields(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.fishCaught ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.fishCaught ? "form-control invalid-field" : "form-control"}`}
           name="fishCaught"
           placeholder="Example: 5 rainbow trout"
           defaultValue={formData.fishCaught ??= ''}
           onChange={(e) => setFormData({...formData, fishCaught: e.target.value})}/>
-        {invalidFormFields.fishCaught && (
-          <small className="form-field-error">{invalidFormFields.fishCaught}</small>
+        {formErrors.fishCaught && (
+          <small className="form-field-error">{formErrors.fishCaught}</small>
         )}
       </div>
       <br/>
@@ -37,12 +37,12 @@ function TripNotesFields(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.fishingTackleUsed ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.fishingTackleUsed ? "form-control invalid-field" : "form-control"}`}
           name="fishingTackleUsed"
           placeholder="Example: floating line"
           defaultValue={formData.fishingTackleUsed ??= ''} onChange={(e) => setFormData({...formData, fishingTackleUsed: e.target.value})}/>
-        {invalidFormFields.fishingTackleUsed && (
-          <small className="form-field-error">{invalidFormFields.fishingTackleUsed}</small>
+        {formErrors.fishingTackleUsed && (
+          <small className="form-field-error">{formErrors.fishingTackleUsed}</small>
         )}
       </div>
       <br/>
