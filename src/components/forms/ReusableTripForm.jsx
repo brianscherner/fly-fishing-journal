@@ -30,6 +30,55 @@ function ReusableTripForm(props) {
     species: 120,
     climate: 56
   };
+  const destInfoRequiredFields = [
+    {
+      field: "destination",
+      emptyMessage: "A fishing destination is required.",
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.destination
+    },
+    {
+      field: "season",
+      emptyMessage: "A season is required.",
+    },
+    {
+      field: "startDate",
+      emptyMessage: "A start date is required."
+    },
+    {
+      field: "waterBodyType",
+      emptyMessage: "A water body type is required."
+    },
+    {
+      field: "species",
+      emptyMessage: "A fish species is required.",
+      limitMessage: "Max character length exceeded.",
+      limit: formCharacterLimits.species
+    },
+    {
+      field: 'county',
+      emptyMessage: "A county is required.",
+      limitMessage: "Max character length exceeded.",
+      limit: formCharacterLimits.county
+    },
+    {
+      field: "state",
+      emptyMessage: "A state is required.",
+      limitMessage: "Max character length exceeded.",
+      limit: formCharacterLimits.state
+    },
+    {
+      field: 'country',
+      emptyMessage: 'A country is required.',
+      limitMessage: "Max character length exceeded.",
+      limit: formCharacterLimits.country
+    },
+    {
+      field: 'climate',
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.climate
+    }
+  ];
 
   useEffect(() => {
     let total = 0;
@@ -163,74 +212,55 @@ function ReusableTripForm(props) {
 
   // checks if required form fields are empty or exceed character limits when user clicks "Next"
   // blocks user from advancing to next page if so
-
-  // Before moving on, refactor validatePage to be DRY to avoid redundant if checks
+  // keep refactoring validatePage to be DRY to avoid redundant if checks
   // **continue adding input check validation to all form fields**
   // **consider removing some required fields**
 
+  const validateFields = (formFields, requiredFields) => {
+    const errors = {};
+
+    Object.keys(formFields).forEach(key => {
+      requiredFields.forEach(index => {
+        if (key === index.field) {
+          if (!formFields[key]) {
+            errors[key] = `${index.emptyMessage}`;
+          } else if (formFields[key].length > index.limit) {
+            errors[key] = `${index.limitMessage}`;
+          }
+        }
+      })
+    });
+
+    return errors;
+  }
+
   const validatePage = () => {
-    const formErrors = {};
+    let errors = {};
 
     switch (page) {
       case 0:
-        if (!formData.destination) {
-          formErrors.destination = "A fishing destination is required.";
-        } else if (formData.destination.length > formCharacterLimits.destination) {
-          formErrors.destination = "Max character limit exceeded.";
-        }
-
-        if (!formData.season) formErrors.season = "A season is required.";
-        if (!formData.startDate) formErrors.startDate = "A start date is required.";
-        if (!formData.waterBodyType) formErrors.waterBodyType = "A water body type is required.";
-
-        if (!formData.state) {
-          formErrors.state = "A state is required.";
-        } else if (formData.state.length > formCharacterLimits.state) {
-          formErrors.state = "Max character limit exceeded.";
-        }
-
-        if (!formData.county) {
-          formErrors.county = "A county is required.";
-        } else if (formData.county.length > formCharacterLimits.county) {
-          formErrors.county = "Max character limit exceeded.";
-        }
-
-        if (!formData.country) {
-          formErrors.country = "A country is required.";
-        } else if (formData.country.length > formCharacterLimits.country) {
-          formErrors.country = "Max character limit exceeded.";
-        }
-
-        if (!formData.species) {
-          formErrors.species = "A fish species is required.";
-        } else if (formData.species.length > formCharacterLimits.species) {
-          formErrors.species = "Max character limit exceeded.";
-        }
-
-        if (formData.climate.length > formCharacterLimits.climate) {
-          formErrors.climate = "Max character limit exceeded."
-        }
+        errors = validateFields(formData, destInfoRequiredFields);
         break;
       case 1:
         if (tripType === "Past") {
-          if (!formData.fliesUsed) formErrors.fliesUsed = "Please enter flies used.";
-          if (!formData.fishCaught) formErrors.fishCaught = "Please enter fish caught.";
-          if (!formData.fishingTackleUsed) formErrors.fishingTackleUsed = "Please enter fishing tackle used.";
+          if (!formData.fliesUsed) errors.fliesUsed = "Please enter flies used.";
+          if (!formData.fishCaught) errors.fishCaught = "Please enter fish caught.";
+          if (!formData.fishingTackleUsed) errors.fishingTackleUsed = "Please enter fishing tackle used.";
         }
         break;
       case 2:
         if (tripType === "Future") {
-          if (!formData.clothingRequirements) formErrors.clothingRequirements = "Please enter clothing requirements.";
-          if (!formData.gearRequirements) formErrors.gearRequirements = "Please enter fishing requirements.";
-          if (!formData.flyRequirements) formErrors.flyRequirements = "Please enter fly requirements.";
+          if (!formData.clothingRequirements) errors.clothingRequirements = "Please enter clothing requirements.";
+          if (!formData.gearRequirements) errors.gearRequirements = "Please enter fishing requirements.";
+          if (!formData.flyRequirements) errors.flyRequirements = "Please enter fly requirements.";
         }
         break;
       default:
         return true;
     }
 
-    setFormErrors(formErrors);
-    return Object.keys(formErrors).length === 0;
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
   }
 
   const prevPage = () => {
