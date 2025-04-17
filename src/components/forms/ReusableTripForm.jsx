@@ -22,14 +22,21 @@ function ReusableTripForm(props) {
   const [totalPages, setTotalPages] = useState(0);
   const [formErrors, setFormErrors] = useState({});
   const [formWarnings, setFormWarnings] = useState({});
+
   const formCharacterLimits = {
     destination: 56,
     county: 56,
     state: 56,
     country: 56,
     species: 120,
-    climate: 56
+    climate: 56,
+    fliesUsed: 120,
+    fishCaught: 120,
+    fishingTackleUsed: 150,
+    fishingMethod: 100,
+    riverFlowLevels: 56
   };
+
   const destInfoRequiredFields = [
     {
       field: "destination",
@@ -79,6 +86,37 @@ function ReusableTripForm(props) {
       limit: formCharacterLimits.climate
     }
   ];
+
+  const tripNotesRequiredFields = [
+    {
+      field: 'fliesUsed',
+      emptyMessage: 'Please enter flies used.',
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.fliesUsed
+    },
+    {
+      field: "fishCaught",
+      emptyMessage: 'Please enter fish caught.',
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.fishCaught
+    },
+    {
+      field: "fishingTackleUsed",
+      emptyMessage: "Please enter fishing tackle.",
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.fishingTackleUsed
+    },
+    {
+      field: "fishingMethod",
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.fishingMethod
+    },
+    {
+      field: "riverFlowLevels",
+      limitMessage: "Please enter river flow levels",
+      limit: formCharacterLimits.riverFlowLevels
+    }
+  ]
 
   useEffect(() => {
     let total = 0;
@@ -142,79 +180,88 @@ function ReusableTripForm(props) {
     switch (page) {
       case 0:
         return <DestinationInfoFields
-          tripType={tripType}
-          formData={formData}
-          setFormData={setFormData}
-          formErrors={formErrors}
-          handleCharacterLimitCheck={handleCharacterLimitCheck}
-          formWarnings={formWarnings}
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}
+            formErrors={formErrors}
+            handleCharacterLimitCheck={handleCharacterLimitCheck}
+            formWarnings={formWarnings}
           />;
       case 1:
         if (tripType === "Past") {
           return <TripNotesFields
-            formData={formData}
-            setFormData={setFormData}
-            formErrors={formErrors}
+              formData={formData}
+              setFormData={setFormData}
+              formErrors={formErrors}
+              handleCharacterLimitCheck={handleCharacterLimitCheck}
+              formWarnings={formWarnings}
             />;
         }
         if (tripType === "Future") {
           return <TripCostsFields
-            formData={formData}
-            setFormData={setFormData}/>;
+              formData={formData}
+              setFormData={setFormData}
+            />;
         }
         break;
       case 2:
         if (tripType === "Past") {
           return <MiscellaneousFields
-            tripType={tripType}
-            formData={formData}
-            setFormData={setFormData}/>;
+              tripType={tripType}
+              formData={formData}
+              setFormData={setFormData}
+            />;
         }
         if (tripType === "Future") {
           return <GearRequirementsFields
-            formData={formData}
-            setFormData={setFormData}
-            formErrors={formErrors}/>;
+              formData={formData}
+              setFormData={setFormData}
+              formErrors={formErrors}
+            />;
         }
         break;
       case 3:
         if (tripType === "Past") {
           return <Images
+              tripType={tripType}
+              formData={formData}
+              setFormData={setFormData}
+              onChangingImage={handleImageChange}
+              onDeletingImage={handleDeletingImage}
+            />;
+        }
+        if (tripType === "Future") {
+          return <MiscellaneousFields
+              tripType={tripType}
+              formData={formData}
+              setFormData={setFormData}
+            />;
+        }
+        break;
+      case 4:
+        return <Images
             tripType={tripType}
             formData={formData}
             setFormData={setFormData}
             onChangingImage={handleImageChange}
             onDeletingImage={handleDeletingImage}
-            />;
-        }
-        if (tripType === "Future") {
-          return <MiscellaneousFields
-            tripType={tripType}
-            formData={formData}
-            setFormData={setFormData}/>;
-        }
-        break;
-      case 4:
-        return <Images
-          tripType={tripType}
-          formData={formData}
-          setFormData={setFormData}
-          onChangingImage={handleImageChange}
-          onDeletingImage={handleDeletingImage}
           />;
       default:
         return <DestinationInfoFields
-          tripType={tripType}
-          formData={formData}
-          setFormData={setFormData}/>;
+            tripType={tripType}
+            formData={formData}
+            setFormData={setFormData}
+          />;
     }
   }
 
   // checks if required form fields are empty or exceed character limits when user clicks "Next"
   // blocks user from advancing to next page if so
-  // keep refactoring validatePage to be DRY to avoid redundant if checks
-  // **continue adding input check validation to all form fields**
-  // **consider removing some required fields**
+
+  // TO-DO:
+  // currently working on TripNotes validation
+  // BUG: unrequired fields with limit checks that are left empty are blocking the user from advancing and returning 'undefined' for formWarnings
+  // fix validation issue with date picker
 
   const validateFields = (formFields, requiredFields) => {
     const errors = {};
@@ -224,7 +271,8 @@ function ReusableTripForm(props) {
         if (key === index.field) {
           if (!formFields[key]) {
             errors[key] = `${index.emptyMessage}`;
-          } else if (formFields[key].length > index.limit) {
+          }
+          if (formFields[key].length > index.limit) {
             errors[key] = `${index.limitMessage}`;
           }
         }
@@ -243,9 +291,7 @@ function ReusableTripForm(props) {
         break;
       case 1:
         if (tripType === "Past") {
-          if (!formData.fliesUsed) errors.fliesUsed = "Please enter flies used.";
-          if (!formData.fishCaught) errors.fishCaught = "Please enter fish caught.";
-          if (!formData.fishingTackleUsed) errors.fishingTackleUsed = "Please enter fishing tackle used.";
+          errors = validateFields(formData, tripNotesRequiredFields);
         }
         break;
       case 2:
