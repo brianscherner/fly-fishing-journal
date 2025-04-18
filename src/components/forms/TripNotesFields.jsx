@@ -112,7 +112,22 @@ function TripNotesFields(props) {
           className="form-control"
           name="riverFlowLevels"
           placeholder="Example: 250 cfs"
-          defaultValue={formData.riverFlowLevels ??= ''} onChange={(e) => setFormData({...formData, riverFlowLevels: e.target.value})}/>
+          defaultValue={formData.riverFlowLevels ??= ''}
+          onChange={(e) => {
+            setFormData({
+              ...formData, riverFlowLevels: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
+        />
+        <div className="form-validation-wrapper">
+          {formErrors.riverFlowLevels && (
+            <small className="form-field-error" aria-live="polite">{formErrors.riverFlowLevels}</small>
+          )}
+          {formWarnings.riverFlowLevels && (
+            <small className="form-field-error" aria-live="polite">{formWarnings.riverFlowLevels}</small>
+          )}
+        </div>
       </div>
       <br/>
     </React.Fragment>

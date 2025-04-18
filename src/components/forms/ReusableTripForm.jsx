@@ -37,86 +37,100 @@ function ReusableTripForm(props) {
     riverFlowLevels: 56
   };
 
-  const destInfoRequiredFields = [
+  const destInfoFields = [
     {
       field: "destination",
       emptyMessage: "A fishing destination is required.",
       limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.destination
+      limit: formCharacterLimits.destination,
+      required: true
     },
     {
       field: "season",
       emptyMessage: "A season is required.",
+      required: true
     },
     {
       field: "startDate",
-      emptyMessage: "A start date is required."
+      emptyMessage: "A start date is required.",
+      required: true
     },
     {
       field: "waterBodyType",
-      emptyMessage: "A water body type is required."
+      emptyMessage: "A water body type is required.",
+      required: true
     },
     {
       field: "species",
       emptyMessage: "A fish species is required.",
       limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.species
+      limit: formCharacterLimits.species,
+      required: true
     },
     {
       field: 'county',
       emptyMessage: "A county is required.",
       limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.county
+      limit: formCharacterLimits.county,
+      required: true
     },
     {
       field: "state",
       emptyMessage: "A state is required.",
       limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.state
+      limit: formCharacterLimits.state,
+      required: true
     },
     {
       field: 'country',
       emptyMessage: 'A country is required.',
       limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.country
+      limit: formCharacterLimits.country,
+      required: true
     },
     {
       field: 'climate',
       limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.climate
+      limit: formCharacterLimits.climate,
+      required: false
     }
   ];
 
-  const tripNotesRequiredFields = [
+  const tripNotesFields = [
     {
       field: 'fliesUsed',
       emptyMessage: 'Please enter flies used.',
       limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fliesUsed
+      limit: formCharacterLimits.fliesUsed,
+      required: true
     },
     {
       field: "fishCaught",
       emptyMessage: 'Please enter fish caught.',
       limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fishCaught
+      limit: formCharacterLimits.fishCaught,
+      required: true
     },
     {
       field: "fishingTackleUsed",
       emptyMessage: "Please enter fishing tackle.",
       limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fishingTackleUsed
+      limit: formCharacterLimits.fishingTackleUsed,
+      required: true
     },
     {
       field: "fishingMethod",
       limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fishingMethod
+      limit: formCharacterLimits.fishingMethod,
+      required: false
     },
     {
       field: "riverFlowLevels",
-      limitMessage: "Please enter river flow levels",
-      limit: formCharacterLimits.riverFlowLevels
+      limitMessage: "Max character limit exceeded.",
+      limit: formCharacterLimits.riverFlowLevels,
+      required: false
     }
-  ]
+  ];
 
   useEffect(() => {
     let total = 0;
@@ -259,9 +273,8 @@ function ReusableTripForm(props) {
   // blocks user from advancing to next page if so
 
   // TO-DO:
-  // currently working on TripNotes validation
-  // BUG: unrequired fields with limit checks that are left empty are blocking the user from advancing and returning 'undefined' for formWarnings
-  // fix validation issue with date picker
+  // currently working on Misc validation
+  // fix validation issue with date picker later
 
   const validateFields = (formFields, requiredFields) => {
     const errors = {};
@@ -269,10 +282,9 @@ function ReusableTripForm(props) {
     Object.keys(formFields).forEach(key => {
       requiredFields.forEach(index => {
         if (key === index.field) {
-          if (!formFields[key]) {
+          if (!formFields[key] && index.required) {
             errors[key] = `${index.emptyMessage}`;
-          }
-          if (formFields[key].length > index.limit) {
+          } else if (formFields[key].length > index.limit) {
             errors[key] = `${index.limitMessage}`;
           }
         }
@@ -287,11 +299,11 @@ function ReusableTripForm(props) {
 
     switch (page) {
       case 0:
-        errors = validateFields(formData, destInfoRequiredFields);
+        errors = validateFields(formData, destInfoFields);
         break;
       case 1:
         if (tripType === "Past") {
-          errors = validateFields(formData, tripNotesRequiredFields);
+          errors = validateFields(formData, tripNotesFields);
         }
         break;
       case 2:
