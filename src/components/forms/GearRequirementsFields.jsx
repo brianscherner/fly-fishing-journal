@@ -1,7 +1,7 @@
 import React from "react";
 
 function GearRequirements(props) {
-  const { formData, setFormData, invalidFormFields } = props;
+  const { formData, setFormData, formErrors } = props;
 
   return (
     <React.Fragment>
@@ -10,12 +10,12 @@ function GearRequirements(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.clothingRequirements ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.clothingRequirements ? "form-control invalid-field" : "form-control"}`}
           name="clothingRequirements"
           placeholder="Example: Waterproof jacket"
           defaultValue={formData.clothingRequirements ??= ''} onChange={(e) => setFormData({...formData, clothingRequirements: e.target.value})}/>
-        {invalidFormFields.clothingRequirements && (
-          <small className="form-field-error">{invalidFormFields.clothingRequirements}</small>
+        {formErrors.clothingRequirements && (
+          <small className="form-field-error">{formErrors.clothingRequirements}</small>
         )}
       </div>
       <br/>
@@ -23,12 +23,12 @@ function GearRequirements(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.gearRequirements ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.gearRequirements ? "form-control invalid-field" : "form-control"}`}
           name="gearRequirements"
           placeholder="Example: 9ft 5wt fly rod"
           defaultValue={formData.gearRequirements ??= ''} onChange={(e) => setFormData({...formData, gearRequirements: e.target.value})}/>
-        {invalidFormFields.gearRequirements && (
-          <small className="form-field-error">{invalidFormFields.gearRequirements}</small>
+        {formErrors.gearRequirements && (
+          <small className="form-field-error">{formErrors.gearRequirements}</small>
         )}
       </div>
       <br/>
@@ -36,12 +36,12 @@ function GearRequirements(props) {
       <div className="form-input-container">
         <input
           type="text"
-          className={`${invalidFormFields.flyRequirements ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.flyRequirements ? "form-control invalid-field" : "form-control"}`}
           name="flyRequirements"
           placeholder="Example: Elk Hair Caddis (Size 16)"
           defaultValue={formData.flyRequirements ??= ''} onChange={(e) => setFormData({...formData, flyRequirements: e.target.value})}/>
-        {invalidFormFields.flyRequirements && (
-          <small className="form-field-error">{invalidFormFields.flyRequirements}</small>
+        {formErrors.flyRequirements && (
+          <small className="form-field-error">{formErrors.flyRequirements}</small>
         )}
       </div>
       <br/>

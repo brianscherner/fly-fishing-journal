@@ -8,6 +8,7 @@ import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import SubmitLoader from "../ui/SubmitLoader";
+import { formCharacterLimits, destInfoFields, tripCostsFields, tripNotesFields } from "./FormConfig";
 
 function ReusableTripForm(props) {
   const {
@@ -22,115 +23,6 @@ function ReusableTripForm(props) {
   const [totalPages, setTotalPages] = useState(0);
   const [formErrors, setFormErrors] = useState({});
   const [formWarnings, setFormWarnings] = useState({});
-
-  const formCharacterLimits = {
-    destination: 56,
-    county: 56,
-    state: 56,
-    country: 56,
-    species: 120,
-    climate: 56,
-    fliesUsed: 120,
-    fishCaught: 120,
-    fishingTackleUsed: 150,
-    fishingMethod: 100,
-    riverFlowLevels: 56
-  };
-
-  const destInfoFields = [
-    {
-      field: "destination",
-      emptyMessage: "A fishing destination is required.",
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.destination,
-      required: true
-    },
-    {
-      field: "season",
-      emptyMessage: "A season is required.",
-      required: true
-    },
-    {
-      field: "startDate",
-      emptyMessage: "A start date is required.",
-      required: true
-    },
-    {
-      field: "waterBodyType",
-      emptyMessage: "A water body type is required.",
-      required: true
-    },
-    {
-      field: "species",
-      emptyMessage: "A fish species is required.",
-      limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.species,
-      required: true
-    },
-    {
-      field: 'county',
-      emptyMessage: "A county is required.",
-      limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.county,
-      required: true
-    },
-    {
-      field: "state",
-      emptyMessage: "A state is required.",
-      limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.state,
-      required: true
-    },
-    {
-      field: 'country',
-      emptyMessage: 'A country is required.',
-      limitMessage: "Max character length exceeded.",
-      limit: formCharacterLimits.country,
-      required: true
-    },
-    {
-      field: 'climate',
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.climate,
-      required: false
-    }
-  ];
-
-  const tripNotesFields = [
-    {
-      field: 'fliesUsed',
-      emptyMessage: 'Please enter flies used.',
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fliesUsed,
-      required: true
-    },
-    {
-      field: "fishCaught",
-      emptyMessage: 'Please enter fish caught.',
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fishCaught,
-      required: true
-    },
-    {
-      field: "fishingTackleUsed",
-      emptyMessage: "Please enter fishing tackle.",
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fishingTackleUsed,
-      required: true
-    },
-    {
-      field: "fishingMethod",
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.fishingMethod,
-      required: false
-    },
-    {
-      field: "riverFlowLevels",
-      limitMessage: "Max character limit exceeded.",
-      limit: formCharacterLimits.riverFlowLevels,
-      required: false
-    }
-  ];
 
   useEffect(() => {
     let total = 0;
@@ -215,6 +107,9 @@ function ReusableTripForm(props) {
           return <TripCostsFields
               formData={formData}
               setFormData={setFormData}
+              formErrors={formErrors}
+              handleCharacterLimitCheck={handleCharacterLimitCheck}
+              formWarnings={formWarnings}
             />;
         }
         break;
@@ -305,12 +200,15 @@ function ReusableTripForm(props) {
         if (tripType === "Past") {
           errors = validateFields(formData, tripNotesFields);
         }
+        if (tripType === "Future") {
+          errors = validateFields(formData, tripCostsFields);
+        }
         break;
       case 2:
         if (tripType === "Future") {
-          if (!formData.clothingRequirements) errors.clothingRequirements = "Please enter clothing requirements.";
-          if (!formData.gearRequirements) errors.gearRequirements = "Please enter fishing requirements.";
-          if (!formData.flyRequirements) errors.flyRequirements = "Please enter fly requirements.";
+          // if (!formData.clothingRequirements) errors.clothingRequirements = "Please enter clothing requirements.";
+          // if (!formData.gearRequirements) errors.gearRequirements = "Please enter fishing requirements.";
+          // if (!formData.flyRequirements) errors.flyRequirements = "Please enter fly requirements.";
         }
         break;
       default:

@@ -14,11 +14,11 @@ function TripNotesFields(props) {
           placeholder="Example: Elk Hair Caddis (Size 16)"
           defaultValue={formData.fliesUsed ??= ''}
           onChange={(e) => {
-              setFormData({
-                ...formData, fliesUsed: e.target.value
-              });
-              handleCharacterLimitCheck(e);
-            }}
+            setFormData({
+              ...formData, fliesUsed: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
         <div className="form-validation-wrapper">
           {formErrors.fliesUsed && (
@@ -39,11 +39,11 @@ function TripNotesFields(props) {
           placeholder="Example: 5 rainbow trout"
           defaultValue={formData.fishCaught ??= ''}
           onChange={(e) => {
-              setFormData({
-                ...formData, fishCaught: e.target.value
-              });
-              handleCharacterLimitCheck(e);
-            }}
+            setFormData({
+              ...formData, fishCaught: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
         />
         <div className="form-validation-wrapper">
           {formErrors.fishCaught && (
