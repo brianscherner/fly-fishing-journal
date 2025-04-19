@@ -23,7 +23,10 @@ export const formCharacterLimits = {
   timeOfDay: 56,
   travelTime: 100,
   communications: 100,
-  gratuity: 100
+  gratuity: 100,
+  clothingRequirements: 100,
+  gearRequirements: 100,
+  flyRequirements: 100
 };
 
 export const destInfoFields = [
@@ -216,3 +219,27 @@ export const miscellaneousFields = [
     required: false
   },
 ];
+
+export const gearRequirementsFields = [
+  {
+    field: 'clothingRequirements',
+    emptyMessage: "Please enter clothing requirements.",
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.clothingRequirements,
+    required: true
+  },
+  {
+    field: 'gearRequirements',
+    emptyMessage: "Please enter fishing gear requirements.",
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.gearRequirements,
+    required: true
+  },
+  {
+    field: 'flyRequirements',
+    emptyMessage: "Please enter fly requirements.",
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.flyRequirements,
+    required: true
+  },
+]

@@ -8,7 +8,7 @@ import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import SubmitLoader from "../ui/SubmitLoader";
-import { formCharacterLimits, destInfoFields, tripCostsFields, tripNotesFields, miscellaneousFields } from "./FormConfig";
+import { formCharacterLimits, destInfoFields, tripCostsFields, tripNotesFields, miscellaneousFields, gearRequirementsFields } from "./FormConfig";
 
 function ReusableTripForm(props) {
   const {
@@ -129,6 +129,8 @@ function ReusableTripForm(props) {
               formData={formData}
               setFormData={setFormData}
               formErrors={formErrors}
+              handleCharacterLimitCheck={handleCharacterLimitCheck}
+              formWarnings={formWarnings}
             />;
         }
         break;
@@ -216,6 +218,9 @@ function ReusableTripForm(props) {
       case 2:
         if (tripType === "Past") {
           errors = validateFields(formData, miscellaneousFields);
+        }
+        if (tripType === "Future") {
+          errors = validateFields(formData, gearRequirementsFields);
         }
         break;
       case 3:
