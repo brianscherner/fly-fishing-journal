@@ -17,7 +17,13 @@ export const formCharacterLimits = {
   tripInsurance: 100,
   evacInsurance: 100,
   cancellationPolicy: 100,
-  baggageLuggage: 100
+  baggageLuggage: 100,
+  licenses: 100,
+  access: 100,
+  timeOfDay: 56,
+  travelTime: 100,
+  communications: 100,
+  gratuity: 100
 };
 
 export const destInfoFields = [
@@ -162,6 +168,51 @@ export const tripCostsFields = [
     field: 'baggageLuggage',
     limitMessage: "Max character limit exceeded.",
     limit: formCharacterLimits.baggageLuggage,
+    required: false
+  },
+];
+
+export const miscellaneousFields = [
+  {
+    field: 'fliesUsed',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.fliesUsed,
+    required: false
+  },
+  {
+    field: 'licenses',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.licenses,
+    required: false
+  },
+  {
+    field: 'access',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.access,
+    required: false
+  },
+  {
+    field: 'timeOfDay',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.timeOfDay,
+    required: false
+  },
+  {
+    field: 'travelTime',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.travelTime,
+    required: false
+  },
+  {
+    field: 'gratuity',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.gratuity,
+    required: false
+  },
+  {
+    field: 'communications',
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.communications,
     required: false
   },
 ];

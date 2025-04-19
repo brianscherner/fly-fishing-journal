@@ -8,7 +8,8 @@ function TripNotesFields(props) {
       <h4 className="form-section-heading">Trip Notes</h4>
       <label>Flies Used<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
-        <input type="text"
+        <input
+          type="text"
           className={`${formErrors.fliesUsed ? "form-control invalid-field" : "form-control"}`}
           name="fliesUsed"
           placeholder="Example: Elk Hair Caddis (Size 16)"

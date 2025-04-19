@@ -8,7 +8,7 @@ import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import SubmitLoader from "../ui/SubmitLoader";
-import { formCharacterLimits, destInfoFields, tripCostsFields, tripNotesFields } from "./FormConfig";
+import { formCharacterLimits, destInfoFields, tripCostsFields, tripNotesFields, miscellaneousFields } from "./FormConfig";
 
 function ReusableTripForm(props) {
   const {
@@ -119,6 +119,9 @@ function ReusableTripForm(props) {
               tripType={tripType}
               formData={formData}
               setFormData={setFormData}
+              formErrors={formErrors}
+              handleCharacterLimitCheck={handleCharacterLimitCheck}
+              formWarnings={formWarnings}
             />;
         }
         if (tripType === "Future") {
@@ -144,6 +147,9 @@ function ReusableTripForm(props) {
               tripType={tripType}
               formData={formData}
               setFormData={setFormData}
+              formErrors={formErrors}
+              handleCharacterLimitCheck={handleCharacterLimitCheck}
+              formWarnings={formWarnings}
             />;
         }
         break;
@@ -160,6 +166,9 @@ function ReusableTripForm(props) {
             tripType={tripType}
             formData={formData}
             setFormData={setFormData}
+            formErrors={formErrors}
+            handleCharacterLimitCheck={handleCharacterLimitCheck}
+            formWarnings={formWarnings}
           />;
     }
   }
@@ -168,7 +177,7 @@ function ReusableTripForm(props) {
   // blocks user from advancing to next page if so
 
   // TO-DO:
-  // currently working on Misc validation
+  // currently working on
   // fix validation issue with date picker later
 
   const validateFields = (formFields, requiredFields) => {
@@ -205,10 +214,13 @@ function ReusableTripForm(props) {
         }
         break;
       case 2:
+        if (tripType === "Past") {
+          errors = validateFields(formData, miscellaneousFields);
+        }
+        break;
+      case 3:
         if (tripType === "Future") {
-          // if (!formData.clothingRequirements) errors.clothingRequirements = "Please enter clothing requirements.";
-          // if (!formData.gearRequirements) errors.gearRequirements = "Please enter fishing requirements.";
-          // if (!formData.flyRequirements) errors.flyRequirements = "Please enter fly requirements.";
+          errors = validateFields(formData, miscellaneousFields);
         }
         break;
       default:
