@@ -250,7 +250,8 @@ function ReusableTripForm(props) {
 
   // actively checks input length for form fields and shows warnings if exceeded
   const handleCharacterLimitCheck = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+    console.log("Type: ", type);
     if (value.length > formCharacterLimits[name]) {
       setFormWarnings(prev => ({
         ...prev,

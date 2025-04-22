@@ -36,7 +36,7 @@ function MiscellaneousFields(props) {
           <label>Water Fees</label>
           <select
             name="waterFees"
-            className={`${formErrors.waterFees ? "form-control invalid-field" : "form-control"}`}
+            className={`${formErrors.waterFees ? "form-select invalid-field" : "form-select"}`}
             defaultValue={formData.waterFees ??= ''}
             onChange={(e) =>
               setFormData({
@@ -130,7 +130,7 @@ function MiscellaneousFields(props) {
           <label>Guided?</label>
           <select
             name="guidedOrNot"
-            className={`${formErrors.guidedOrNot ? "form-control invalid-field" : "form-control"}`}
+            className={`${formErrors.guidedOrNot ? "form-select invalid-field" : "form-select"}`}
             defaultValue={formData.guidedOrNot ??= ''}
             onChange={(e) =>
             setFormData({

@@ -34,18 +34,18 @@ function NewTripsForm(props) {
 
   const [formData, setFormData] = useState({
     // mock data for past trip testing
-    destination: "test",
-    fishCaught: "x",
-    fishingTackleUsed: "x",
-    fliesUsed: "x",
-    season: "Winter",
-    species: "x",
-    startDate: "2025-01-22",
-    state: "x",
-    county: 'x',
-    country: "x",
-    tripType: "Past",
-    waterBodyType: "River",
+    // destination: "test",
+    // fishCaught: "x",
+    // fishingTackleUsed: "x",
+    // fliesUsed: "x",
+    // season: "Winter",
+    // species: "x",
+    // startDate: "2025-01-22",
+    // state: "x",
+    // county: 'x',
+    // country: "x",
+    // tripType: "Past",
+    // waterBodyType: "River",
     // images: mockImages
 
     // mock data for future trip testing

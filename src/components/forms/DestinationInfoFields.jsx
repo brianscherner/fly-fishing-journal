@@ -49,10 +49,16 @@ function DestinationInfoFields(props) {
       <label>Season<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <select
-          className={`${formErrors.season ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.season ? "form-select invalid-field" : "form-select"}`}
           name="season"
           defaultValue={formData.season ??= ''}
-          onChange={(e) => setFormData({...formData, season: e.target.value})}>
+          onChange={(e) => {
+            setFormData({
+              ...formData, season: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
+        >
           <option value="" disabled>Select one</option>
           <option value="Winter">Winter</option>
           <option value="Spring">Spring</option>
@@ -99,7 +105,7 @@ function DestinationInfoFields(props) {
       <label>Water Body Type<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">
         <select
-          className={`${formErrors.waterBodyType ? "form-control invalid-field" : "form-control"}`}
+          className={`${formErrors.waterBodyType ? "form-select invalid-field" : "form-select"}`}
           name="waterBodyType"
           defaultValue={formData.waterBodyType ??= ''}
           onChange={(e) => setFormData({...formData, waterBodyType: e.target.value})}>
