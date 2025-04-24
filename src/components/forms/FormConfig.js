@@ -48,6 +48,11 @@ export const destInfoFields = [
     required: true
   },
   {
+    field: "startDate",
+    emptyMessage: "A start date is required.",
+    required: true
+  },
+  {
     field: "waterBodyType",
     emptyMessage: "A water body type is required.",
     required: true

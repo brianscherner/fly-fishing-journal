@@ -76,8 +76,15 @@ function DestinationInfoFields(props) {
           className={`${formErrors.startDate ? "form-control invalid-field" : "form-control"}`}
           aria-label="Date"
           type="date"
+          name="startDate"
           defaultValue={formData.startDate ??= ''}
-          onChange={(e) => setFormData({...formData, startDate: e.target.value})}/>
+          onChange={(e) => {
+            setFormData({
+              ...formData, startDate: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
+        />
         {formErrors.startDate && (
           <small className="form-field-error" aria-live="polite">{formErrors.startDate}</small>
         )}
@@ -108,7 +115,13 @@ function DestinationInfoFields(props) {
           className={`${formErrors.waterBodyType ? "form-select invalid-field" : "form-select"}`}
           name="waterBodyType"
           defaultValue={formData.waterBodyType ??= ''}
-          onChange={(e) => setFormData({...formData, waterBodyType: e.target.value})}>
+          onChange={(e) => {
+            setFormData({
+              ...formData, waterBodyType: e.target.value
+            });
+            handleCharacterLimitCheck(e);
+          }}
+        >
           <option value="" disabled>Select one</option>
           <option value="River">River</option>
           <option value="Lake">Lake</option>
