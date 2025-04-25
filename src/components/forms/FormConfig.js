@@ -32,7 +32,7 @@ export const formCharacterLimits = {
 export const destInfoFields = [
   {
     field: "destination",
-    emptyMessage: "A fishing destination is required.",
+    emptyMessage: "A fishing location is required.",
     limitMessage: "Max character limit exceeded.",
     limit: formCharacterLimits.destination,
     required: true

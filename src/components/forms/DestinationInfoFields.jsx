@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from './inputs/TextField';
 
 function DestinationInfoFields(props) {
   const {
@@ -6,6 +7,7 @@ function DestinationInfoFields(props) {
     formData,
     setFormData,
     formErrors,
+    handleFormInput,
     handleCharacterLimitCheck,
     formWarnings
   } = props;
@@ -13,27 +15,17 @@ function DestinationInfoFields(props) {
   return (
     <React.Fragment>
       <h4 className="form-section-heading">Destination Info</h4>
-      <label>Fishing Destination<span className="required-asterik">&nbsp;*</span></label>
-      <input
+      <TextField
         type="text"
-        className={`${formErrors.destination ? "form-control invalid-field" : "form-control"}`}
+        value={formData.destination}
+        placeholder="Enter a location"
+        label="Location"
         name="destination"
-        defaultValue={formData.destination ??= ''}
-        onChange={(e) =>  {
-          setFormData({
-            ...formData, destination: e.target.value
-          });
-          handleCharacterLimitCheck(e);
-        }}
+        errors={formErrors.destination}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.destination}
       />
-      <div className="form-validation-wrapper">
-        {formErrors.destination && (
-          <small className="form-field-error" aria-live="polite">{formErrors.destination}</small>
-        )}
-        {formWarnings.destination && (
-          <small className="form-field-warning" aria-live="polite">{formWarnings.destination}</small>
-        )}
-      </div>
       <br/>
       <label>Destination Type</label>
       <select

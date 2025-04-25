@@ -90,6 +90,7 @@ function ReusableTripForm(props) {
             formData={formData}
             setFormData={setFormData}
             formErrors={formErrors}
+            handleFormInput={handleFormInput}
             handleCharacterLimitCheck={handleCharacterLimitCheck}
             formWarnings={formWarnings}
           />;
@@ -177,11 +178,6 @@ function ReusableTripForm(props) {
 
   // checks if required form fields are empty or exceed character limits when user clicks "Next"
   // blocks user from advancing to next page if so
-
-  // TO-DO:
-  // currently working on
-  // fix validation issue with date picker later
-
   const validateFields = (formFields, requiredFields) => {
     const errors = {};
 
@@ -263,6 +259,16 @@ function ReusableTripForm(props) {
         [name]: ""
       }));
     }
+  }
+
+  // handles form input and sets state of formData object
+  const handleFormInput = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    console.log("Form data obj: ", formData);
   }
 
   return (
