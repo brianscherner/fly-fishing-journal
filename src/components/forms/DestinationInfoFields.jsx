@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from './inputs/TextField';
+import Dropdown from './inputs/Dropdown';
 
 function DestinationInfoFields(props) {
   const {
@@ -27,16 +28,14 @@ function DestinationInfoFields(props) {
         warnings={formWarnings.destination}
       />
       <br/>
-      <label>Destination Type</label>
-      <select
-        className="form-select"
+      <Dropdown
+        type="select-one"
+        value={formData.destinationType}
         name="destinationType"
-        defaultValue={formData.destinationType ??= ''}
-        onChange={(e) => setFormData({...formData, destinationType: e.target.value})}>
-        <option value="" disabled>Select one</option>
-        <option value="Domestic">Domestic</option>
-        <option value="International">International</option>
-      </select>
+        handleFormInput={handleFormInput}
+        label="Location Type"
+        options={["Select one", "Domestic", "International"]}
+      />
       <br/>
       <label>Season<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">

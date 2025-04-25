@@ -38,6 +38,10 @@ export const destInfoFields = [
     required: true
   },
   {
+    field: "destinationType",
+    required: false
+  },
+  {
     field: "season",
     emptyMessage: "A season is required.",
     required: true

@@ -170,6 +170,7 @@ function ReusableTripForm(props) {
             formData={formData}
             setFormData={setFormData}
             formErrors={formErrors}
+            handleFormInput={handleFormInput}
             handleCharacterLimitCheck={handleCharacterLimitCheck}
             formWarnings={formWarnings}
           />;
@@ -268,7 +269,6 @@ function ReusableTripForm(props) {
       ...prev,
       [name]: value
     }));
-    console.log("Form data obj: ", formData);
   }
 
   return (
