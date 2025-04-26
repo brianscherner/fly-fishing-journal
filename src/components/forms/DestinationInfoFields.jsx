@@ -20,46 +20,36 @@ function DestinationInfoFields(props) {
         type="text"
         value={formData.destination}
         placeholder="Enter a location"
-        label="Location"
+        label="Fishing Location"
         name="destination"
         errors={formErrors.destination}
         handleFormInput={handleFormInput}
         handleCharacterLimitCheck={handleCharacterLimitCheck}
         warnings={formWarnings.destination}
+        required={true}
       />
       <br/>
       <Dropdown
         type="select-one"
         value={formData.destinationType}
         name="destinationType"
+        errors={formErrors.destinationType}
         handleFormInput={handleFormInput}
         label="Location Type"
-        options={["Select one", "Domestic", "International"]}
+        options={["None", "Domestic", "International"]}
+        required={false}
       />
       <br/>
-      <label>Season<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <select
-          className={`${formErrors.season ? "form-select invalid-field" : "form-select"}`}
-          name="season"
-          defaultValue={formData.season ??= ''}
-          onChange={(e) => {
-            setFormData({
-              ...formData, season: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        >
-          <option value="" disabled>Select one</option>
-          <option value="Winter">Winter</option>
-          <option value="Spring">Spring</option>
-          <option value="Summer">Summer</option>
-          <option value="Fall">Fall</option>
-        </select>
-        {formErrors.season && (
-          <small className="form-field-error" aria-live="polite">{formErrors.season}</small>
-        )}
-      </div>
+      <Dropdown
+        type="select-one"
+        value={formData.season}
+        name="season"
+        errors={formErrors.season}
+        handleFormInput={handleFormInput}
+        label="Season"
+        options={["Winter", "Spring", "Summer", "Fall"]}
+        required={true}
+      />
       <br/>
       <label>Start Date<span className="required-asterik">&nbsp;*</span></label>
       <div className="form-input-container">

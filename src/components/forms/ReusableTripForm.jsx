@@ -265,12 +265,20 @@ function ReusableTripForm(props) {
   // handles form input and sets state of formData object
   const handleFormInput = (e) => {
     const { name, value } = e.target;
+    if (value) {
+      setFormErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
+    }
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   }
 
+  // console.log("Form obj: ", formData);
+  // console.log("Form errors: ", formErrors);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>

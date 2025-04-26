@@ -7,24 +7,31 @@ function Dropdown(props) {
     name,
     handleFormInput,
     options,
-    type
+    type,
+    errors,
+    required
   } = props;
 
   return (
     <React.Fragment>
-      {label && <label>Location Type</label>}
+      <label>{label}{required && (<span className="required-asterik">&nbsp;*</span>)}</label>
       <select
         type={type}
-        className="form-select"
+        className={`${errors ? "form-select invalid-field" : "form-select"}`}
         name={name}
         value={value}
         onChange={(e) => handleFormInput(e)}
       >
-        {/* make first option disabled & greyed out so its just instructional (make first index disabled) */}
+        <option value="" disabled>Select one</option>
         {options.map((option, index) => (
           <option key={index} value={option}>{option}</option>
         ))}
       </select>
+      <div className="form-validation-wrapper">
+        {errors && (
+          <small className="form-field-error" aria-live="polite">{errors}</small>
+        )}
+      </div>
     </React.Fragment>
   )
 }
