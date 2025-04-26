@@ -63,6 +63,9 @@ function NewTripsForm(props) {
     // waterBodyType: "River",
     // images: mockImages
 
+    destination: "",
+    destinationType: "",
+    season: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();

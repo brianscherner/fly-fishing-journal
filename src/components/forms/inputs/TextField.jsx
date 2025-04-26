@@ -10,12 +10,13 @@ function TextField(props) {
     errors,
     handleFormInput,
     handleCharacterLimitCheck,
-    warnings
+    warnings,
+    required
   } = props;
 
   return (
     <React.Fragment>
-      {label && <label>Fishing Location<span className="required-asterik">&nbsp;*</span></label>}
+      <label>{label}{required && (<span className="required-asterik">&nbsp;*</span>)}</label>
       <input
         type={type}
         className={`${errors ? "form-control invalid-field" : "form-control"}`}
