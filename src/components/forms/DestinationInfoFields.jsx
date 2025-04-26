@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from './inputs/TextField';
 import Dropdown from './inputs/Dropdown';
+import DatePicker from './inputs/DatePicker';
 
 function DestinationInfoFields(props) {
   const {
@@ -51,25 +52,17 @@ function DestinationInfoFields(props) {
         required={true}
       />
       <br/>
-      <label>Start Date<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <input
-          className={`${formErrors.startDate ? "form-control invalid-field" : "form-control"}`}
-          aria-label="Date"
-          type="date"
-          name="startDate"
-          defaultValue={formData.startDate ??= ''}
-          onChange={(e) => {
-            setFormData({
-              ...formData, startDate: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        />
-        {formErrors.startDate && (
-          <small className="form-field-error" aria-live="polite">{formErrors.startDate}</small>
-        )}
-      </div>
+      <DatePicker
+        type="date"
+        value={formData.startDate}
+        name="startDate"
+        errors={formErrors.startDate}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.startDate}
+        label="Start Date"
+        required={true}
+      />
       <br/>
       <label>End Date</label>
       <input

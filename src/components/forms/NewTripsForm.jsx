@@ -66,6 +66,7 @@ function NewTripsForm(props) {
     destination: "",
     destinationType: "",
     season: "",
+    startDate: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();
