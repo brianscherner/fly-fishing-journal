@@ -248,6 +248,7 @@ function ReusableTripForm(props) {
   // actively checks input length for form fields and shows warnings if exceeded
   const handleCharacterLimitCheck = (e) => {
     const { name, value } = e.target;
+
     if (value.length > formCharacterLimits[name]) {
       setFormWarnings(prev => ({
         ...prev,
@@ -279,6 +280,7 @@ function ReusableTripForm(props) {
 
   // console.log("Form obj: ", formData);
   // console.log("Form errors: ", formErrors);
+  console.log("Form warnings: ", formWarnings);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>

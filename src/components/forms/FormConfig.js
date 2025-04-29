@@ -26,7 +26,8 @@ export const formCharacterLimits = {
   gratuity: 100,
   clothingRequirements: 100,
   gearRequirements: 100,
-  flyRequirements: 100
+  flyRequirements: 100,
+  startDate: 10
 };
 
 export const destInfoFields = [
@@ -49,6 +50,8 @@ export const destInfoFields = [
   {
     field: "startDate",
     emptyMessage: "A start date is required.",
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.startDate,
     required: true
   },
   {
