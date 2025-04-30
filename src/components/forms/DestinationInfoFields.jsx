@@ -64,13 +64,17 @@ function DestinationInfoFields(props) {
         required={true}
       />
       <br/>
-      <label>End Date</label>
-      <input
-        className="form-control"
-        aria-label="Date"
+      <DatePicker
         type="date"
-        defaultValue={formData.endDate ??= ''}
-        onChange={(e) => setFormData({...formData, endDate: e.target.value})}/>
+        value={formData.endDate}
+        name="endDate"
+        errors={formErrors.endDate}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.endDate}
+        label="End Date"
+        required={false}
+      />
       <br/>
       <label>Water Type</label>
       <select

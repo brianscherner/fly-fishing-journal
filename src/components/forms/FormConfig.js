@@ -27,7 +27,8 @@ export const formCharacterLimits = {
   clothingRequirements: 100,
   gearRequirements: 100,
   flyRequirements: 100,
-  startDate: 10
+  startDate: 10,
+  endDate: 10
 };
 
 export const destInfoFields = [
@@ -55,9 +56,10 @@ export const destInfoFields = [
     required: true
   },
   {
-    field: "startDate",
-    emptyMessage: "A start date is required.",
-    required: true
+    field: "endDate",
+    limitMessage: "Max character limit exceeded.",
+    limit: formCharacterLimits.endDate,
+    required: false
   },
   {
     field: "waterBodyType",

@@ -197,6 +197,7 @@ function ReusableTripForm(props) {
     return errors;
   }
 
+  // validates each individual page of the multi-step form
   const validatePage = () => {
     let errors = {};
 
