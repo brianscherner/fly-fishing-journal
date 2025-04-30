@@ -67,6 +67,14 @@ function NewTripsForm(props) {
     destinationType: "",
     season: "",
     startDate: "",
+    endDate: "",
+    waterType: "",
+    waterBodyType: "",
+    species: "",
+    county: "",
+    state: "",
+    country: "",
+    climate: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();

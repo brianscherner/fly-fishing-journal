@@ -88,7 +88,6 @@ function ReusableTripForm(props) {
         return <DestinationInfoFields
             tripType={tripType}
             formData={formData}
-            setFormData={setFormData}
             formErrors={formErrors}
             handleFormInput={handleFormInput}
             handleCharacterLimitCheck={handleCharacterLimitCheck}
@@ -168,7 +167,6 @@ function ReusableTripForm(props) {
         return <DestinationInfoFields
             tripType={tripType}
             formData={formData}
-            setFormData={setFormData}
             formErrors={formErrors}
             handleFormInput={handleFormInput}
             handleCharacterLimitCheck={handleCharacterLimitCheck}
@@ -279,9 +277,6 @@ function ReusableTripForm(props) {
     }));
   }
 
-  // console.log("Form obj: ", formData);
-  // console.log("Form errors: ", formErrors);
-  console.log("Form warnings: ", formWarnings);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
@@ -289,7 +284,6 @@ function ReusableTripForm(props) {
           <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
             <label className="form-instruction">Please select a trip type to get started.</label>
             <br/>
-            {/* <br/> */}
             <label>Trip Type</label>
             <select
               defaultValue=""

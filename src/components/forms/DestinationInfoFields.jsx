@@ -7,7 +7,6 @@ function DestinationInfoFields(props) {
   const {
     tripType,
     formData,
-    setFormData,
     formErrors,
     handleFormInput,
     handleCharacterLimitCheck,
@@ -76,165 +75,96 @@ function DestinationInfoFields(props) {
         required={false}
       />
       <br/>
-      <label>Water Type</label>
-      <select
-        className="form-select"
+      <Dropdown
+        type="select-one"
+        value={formData.waterType}
         name="waterType"
-        defaultValue={formData.waterType ??= ''}
-        onChange={(e) => setFormData({...formData, waterType: e.target.value})}>
-        <option value="" disabled>Select one</option>
-        <option value="Freshwater">Freshwater</option>
-        <option value="Saltwater">Saltwater</option>
-      </select>
+        errors={formErrors.waterType}
+        handleFormInput={handleFormInput}
+        label="Water Type"
+        options={["None", "Freshwater", "Saltwater"]}
+        required={false}
+      />
       <br/>
-      <label>Water Body Type<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <select
-          className={`${formErrors.waterBodyType ? "form-select invalid-field" : "form-select"}`}
-          name="waterBodyType"
-          defaultValue={formData.waterBodyType ??= ''}
-          onChange={(e) => {
-            setFormData({
-              ...formData, waterBodyType: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        >
-          <option value="" disabled>Select one</option>
-          <option value="River">River</option>
-          <option value="Lake">Lake</option>
-          <option value="Ocean">Ocean</option>
-          <option value="Mix">Mix</option>
-        </select>
-        {formErrors.waterBodyType && (
-          <small className="form-field-error" aria-live="polite">{formErrors.waterBodyType}</small>
-        )}
-      </div>
+      <Dropdown
+        type="select-one"
+        value={formData.waterBodyType}
+        name="waterBodyType"
+        errors={formErrors.waterBodyType}
+        handleFormInput={handleFormInput}
+        label="Water Body Type"
+        options={["River", "Lake", "Ocean", "Mix"]}
+        required={true}
+      />
       <br/>
-      <label>Fish Species<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <input
-          type="text"
-          className={`${formErrors.species ? "form-control invalid-field" : "form-control"}`}
-          name="species"
-          placeholder="Example: salmon"
-          defaultValue={formData.species ??= ''}
-          onChange={(e) => {
-            setFormData({
-              ...formData, species: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        />
-        <div className="form-validation-wrapper">
-          {formErrors.species && (
-            <small className="form-field-error" aria-live="polite">{formErrors.species}</small>
-          )}
-          {formWarnings.species && (
-            <small className="form-field-warning" aria-live="polite">{formWarnings.species}</small>
-          )}
-        </div>
-      </div>
-      <br/>
-      <label>County<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <input
+      <TextField
         type="text"
-        className={`${formErrors.county ? "form-control invalid-field" : "form-control"}`}
+        value={formData.species}
+        placeholder="Example: salmon"
+        label="Fish Species"
+        name="species"
+        errors={formErrors.species}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.species}
+        required={true}
+      />
+      <br/>
+      <TextField
+        type="text"
+        value={formData.county}
+        placeholder="Enter a county"
+        label="County"
         name="county"
-        defaultValue={formData.county ??= ''}
-        onChange={(e) => {
-            setFormData({
-              ...formData, county: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        />
-        <div className="form-validation-wrapper">
-          {formErrors.county && (
-            <small className="form-field-error" aria-live="polite">{formErrors.county}</small>
-          )}
-          {formWarnings.county && (
-            <small className="form-field-warning" aria-live="polite">{formWarnings.county}</small>
-          )}
-        </div>
-      </div>
+        errors={formErrors.county}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.county}
+        required={true}
+      />
       <br/>
-      <label>State<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <input
-          type="text"
-          className={`${formErrors.state ? "form-control invalid-field" : "form-control"}`}
-          name="state"
-          defaultValue={formData.state ??= ''}
-          onChange={(e) => {
-            setFormData({
-              ...formData, state: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        />
-        <div className="form-validation-wrapper">
-          {formErrors.state && (
-            <small className="form-field-error" aria-live="polite">{formErrors.state}</small>
-          )}
-          {formWarnings.state && (
-            <small className="form-field-warning" aria-live="polite">{formWarnings.state}</small>
-          )}
-        </div>
-      </div>
+      <TextField
+        type="text"
+        value={formData.state}
+        placeholder="Enter a state"
+        label="State"
+        name="state"
+        errors={formErrors.state}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.state}
+        required={true}
+      />
       <br/>
-      <label>Country<span className="required-asterik">&nbsp;*</span></label>
-      <div className="form-input-container">
-        <input
-          type="text"
-          className={`${formErrors.country ? "form-control invalid-field" : "form-control"}`}
-          name="country"
-          defaultValue={formData.country ??= ''}
-          onChange={(e) => {
-            setFormData({...formData, country: e.target.value
-            });
-            handleCharacterLimitCheck(e);
-          }}
-        />
-        <div className="form-validation-wrapper">
-          {formErrors.country && (
-            <small className="form-field-error" aria-live="polite">{formErrors.country}</small>
-          )}
-          {formWarnings.country && (
-            <small className="form-field-warning" aria-live="polite">{formWarnings.country}</small>
-          )}
-        </div>
-      </div>
+      <TextField
+        type="text"
+        value={formData.country}
+        placeholder="Enter a country"
+        label="Country"
+        name="country"
+        errors={formErrors.country}
+        handleFormInput={handleFormInput}
+        handleCharacterLimitCheck={handleCharacterLimitCheck}
+        warnings={formWarnings.country}
+        required={true}
+      />
       <br/>
       {tripType === "Future" && (
-        <React.Fragment>
-          <label>Climate</label>
-          <div className="form-input-container">
-            <input
-              type="text"
-              className="form-control"
-              name="climate"
-              placeholder="Example: desert"
-              defaultValue={formData.climate ??= ''}
-              onChange={(e) => {
-                setFormData({
-                  ...formData, climate: e.target.value
-                });
-                handleCharacterLimitCheck(e);
-              }}
-            />
-            <div className="form-validation-wrapper">
-              {formErrors.climate && (
-                <small className="form-field-error" aria-live="polite">{formErrors.climate}</small>
-              )}
-              {formWarnings.climate && (
-                <small className="form-field-warning" aria-live="polite">{formWarnings.climate}</small>
-              )}
-            </div>
-          </div>
+        <>
+          <TextField
+            type="text"
+            value={formData.climate}
+            placeholder="Example: desert"
+            label="Climate"
+            name="climate"
+            errors={formErrors.climate}
+            handleFormInput={handleFormInput}
+            handleCharacterLimitCheck={handleCharacterLimitCheck}
+            warnings={formWarnings.climate}
+            required={false}
+          />
           <br/>
-        </React.Fragment>
+        </>
       )}
     </React.Fragment>
   )
