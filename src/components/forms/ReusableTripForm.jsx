@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DestinationInfoFields from "./pages/DestinationInfoFields";
 import GearRequirementsFields from "./GearRequirementsFields";
-import MiscellaneousFields from "./MiscellaneousFields";
+import MiscellaneousFields from "./pages/MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
 import TripNotesFields from "./pages/TripNotesFields";
 import Images from './Images';
@@ -108,6 +108,7 @@ function ReusableTripForm(props) {
               formData={formData}
               setFormData={setFormData}
               formErrors={formErrors}
+              handleFormInput={handleFormInput}
               handleCharacterLimitCheck={handleCharacterLimitCheck}
               formWarnings={formWarnings}
             />;
@@ -118,8 +119,8 @@ function ReusableTripForm(props) {
           return <MiscellaneousFields
               tripType={tripType}
               formData={formData}
-              setFormData={setFormData}
               formErrors={formErrors}
+              handleFormInput={handleFormInput}
               handleCharacterLimitCheck={handleCharacterLimitCheck}
               formWarnings={formWarnings}
             />;
@@ -148,8 +149,8 @@ function ReusableTripForm(props) {
           return <MiscellaneousFields
               tripType={tripType}
               formData={formData}
-              setFormData={setFormData}
               formErrors={formErrors}
+              handleFormInput={handleFormInput}
               handleCharacterLimitCheck={handleCharacterLimitCheck}
               formWarnings={formWarnings}
             />;

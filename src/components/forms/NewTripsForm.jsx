@@ -80,6 +80,14 @@ function NewTripsForm(props) {
     fishingTackleUsed: "",
     fishingMethod: "",
     riverFlowLevels: "",
+    licenses: "",
+    waterFees: "",
+    access: "",
+    timeOfDay: "",
+    travelTime: "",
+    guidedOrNot: "",
+    communications: "",
+    gratuity: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();
