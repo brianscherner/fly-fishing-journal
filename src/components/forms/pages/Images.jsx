@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
 import UploadIcon from '@mui/icons-material/Upload';
-import { useLoading } from "../context/LoadingContext";
+import { useLoading } from "../../context/LoadingContext";
 
 function Images(props) {
   const {

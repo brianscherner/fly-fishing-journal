@@ -4,7 +4,7 @@ import GearRequirementsFields from "./pages/GearRequirementsFields";
 import MiscellaneousFields from "./pages/MiscellaneousFields";
 import TripCostsFields from "./pages/TripCostsFields";
 import TripNotesFields from "./pages/TripNotesFields";
-import Images from './Images';
+import Images from './pages/Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
 import SubmitLoader from "../ui/SubmitLoader";
@@ -137,9 +137,7 @@ function ReusableTripForm(props) {
       case 3:
         if (tripType === "Past") {
           return <Images
-              tripType={tripType}
               formData={formData}
-              setFormData={setFormData}
               onChangingImage={handleImageChange}
               onDeletingImage={handleDeletingImage}
             />;
@@ -157,9 +155,7 @@ function ReusableTripForm(props) {
         break;
       case 4:
         return <Images
-            tripType={tripType}
             formData={formData}
-            setFormData={setFormData}
             onChangingImage={handleImageChange}
             onDeletingImage={handleDeletingImage}
           />;
