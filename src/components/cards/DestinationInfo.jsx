@@ -7,13 +7,17 @@ function DestinationInfo(props) {
   return (
     <React.Fragment>
       <div className="trip-card" id="dest-info-card">
-        <h4 className="category-header"><LocationOnIcon/> Destination Info</h4>
+        <h4 className="category-header"><LocationOnIcon/> Location Info</h4>
         <br/>
         <div className="dest-info-container">
           <div className="dest-info-details">
             <div className="dest-info-data">
-              <h5>Destination</h5>
+              <h5>Location</h5>
               <p>{trip.destination ? trip.destination : "N/A"}</p>
+            </div>
+            <div className="dest-info-data">
+              <h5>Location Type</h5>
+              <p>{trip.destinationType ? trip.destinationType : "N/A"}</p>
             </div>
             <div className="dest-info-data">
               <h5>Trip Type</h5>

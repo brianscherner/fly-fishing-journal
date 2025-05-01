@@ -1,7 +1,7 @@
 import React from "react";
-import TextField from './inputs/TextField';
-import Dropdown from './inputs/Dropdown';
-import DatePicker from './inputs/DatePicker';
+import TextField from '../inputs/TextField';
+import Dropdown from '../inputs/Dropdown';
+import DatePicker from '../inputs/DatePicker';
 
 function DestinationInfoFields(props) {
   const {
@@ -15,7 +15,7 @@ function DestinationInfoFields(props) {
 
   return (
     <React.Fragment>
-      <h4 className="form-section-heading">Destination Info</h4>
+      <h4 className="form-section-heading">Location Info</h4>
       <TextField
         type="text"
         value={formData.destination}

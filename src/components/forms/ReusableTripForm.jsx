@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import DestinationInfoFields from "./DestinationInfoFields";
+import DestinationInfoFields from "./pages/DestinationInfoFields";
 import GearRequirementsFields from "./GearRequirementsFields";
 import MiscellaneousFields from "./MiscellaneousFields";
 import TripCostsFields from "./TripCostsFields";
-import TripNotesFields from "./TripNotesFields";
+import TripNotesFields from "./pages/TripNotesFields";
 import Images from './Images';
 import { toast } from 'react-toastify';
 import ForwardIcon from '@mui/icons-material/Forward';
@@ -97,8 +97,8 @@ function ReusableTripForm(props) {
         if (tripType === "Past") {
           return <TripNotesFields
               formData={formData}
-              setFormData={setFormData}
               formErrors={formErrors}
+              handleFormInput={handleFormInput}
               handleCharacterLimitCheck={handleCharacterLimitCheck}
               formWarnings={formWarnings}
             />;

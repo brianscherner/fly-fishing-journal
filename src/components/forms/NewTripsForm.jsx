@@ -75,6 +75,11 @@ function NewTripsForm(props) {
     state: "",
     country: "",
     climate: "",
+    fliesUsed: "",
+    fishCaught: "",
+    fishingTackleUsed: "",
+    fishingMethod: "",
+    riverFlowLevels: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();
