@@ -88,6 +88,14 @@ function NewTripsForm(props) {
     guidedOrNot: "",
     communications: "",
     gratuity: "",
+    travelDocs: "",
+    travelCosts: "",
+    tripExpenses: "",
+    depositTerms: "",
+    tripInsurance: "",
+    evacInsurance: "",
+    cancellationPolicy: "",
+    baggageLuggage: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();
