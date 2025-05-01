@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DestinationInfoFields from "./pages/DestinationInfoFields";
-import GearRequirementsFields from "./GearRequirementsFields";
+import GearRequirementsFields from "./pages/GearRequirementsFields";
 import MiscellaneousFields from "./pages/MiscellaneousFields";
 import TripCostsFields from "./pages/TripCostsFields";
 import TripNotesFields from "./pages/TripNotesFields";
@@ -127,8 +127,8 @@ function ReusableTripForm(props) {
         if (tripType === "Future") {
           return <GearRequirementsFields
               formData={formData}
-              setFormData={setFormData}
               formErrors={formErrors}
+              handleFormInput={handleFormInput}
               handleCharacterLimitCheck={handleCharacterLimitCheck}
               formWarnings={formWarnings}
             />;

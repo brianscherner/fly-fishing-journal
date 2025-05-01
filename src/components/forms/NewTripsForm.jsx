@@ -96,6 +96,9 @@ function NewTripsForm(props) {
     evacInsurance: "",
     cancellationPolicy: "",
     baggageLuggage: "",
+    clothingRequirements: "",
+    gearRequirements: "",
+    flyRequirements: "",
     images: []
   });
   const { isLoading, setIsLoading } = useLoading();
