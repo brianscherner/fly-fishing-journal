@@ -224,10 +224,13 @@
 }
 
 .images-carousel {
-  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.image-wrapper {
+  position: relative;
 }
 
 .move-left,
@@ -248,15 +251,15 @@
 }
 
 .move-left {
-  left: 11.25rem;
+  left: 1rem;
 }
 
 .move-right {
-  right: 11.25rem;
+  right: 1rem;
 }
 
 .trip-details-img {
-  width: 80%;
+  width: 100%;
   height: auto;
   border-radius: 0.45rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -270,8 +273,6 @@
 
 .mobile-stepper {
   margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
 }
 
 .nav-item {
@@ -1017,21 +1018,9 @@ label {
     width: 50%;
   }
 
-  .trip-details-img {
-    width: 65%;
-  }
-
   .move-left, .move-right {
     transform: translateY(-50%);
     opacity: 1;
-  }
-
-  .move-left {
-    left: 9rem;
-  }
-
-  .move-right {
-    right: 9rem;
   }
 
   .delete-modal-card {
@@ -1045,21 +1034,9 @@ label {
 }
 
 @media (min-width: 820px) {
-  .trip-details-img {
-    width: 67.5%;
-  }
-
   .move-left, .move-right {
     transform: translateY(-50%);
     opacity: 1;
-  }
-
-  .move-left {
-    left: 9.5rem;
-  }
-
-  .move-right {
-    right: 9.5rem;
   }
 
 }
@@ -1074,21 +1051,9 @@ label {
     margin: 0 auto;
   }
 
-  .trip-details-img {
-    width: 85%;
-  }
-
   .move-left, .move-right {
     transform: translateY(-50%);
     opacity: 1;
-  }
-
-  .move-left {
-    left: 9.5rem;
-  }
-
-  .move-right {
-    right: 9.5rem;
   }
 
   .trip-filters {
@@ -1107,21 +1072,9 @@ label {
     width: 40%;
   }
 
-  .trip-details-img {
-    width: 73.5%;
-  }
-
   .move-left, .move-right {
     transform: translateY(-50%);
     opacity: 1;
-  }
-
-  .move-left {
-    left: 23.5rem;
-  }
-
-  .move-right {
-    right: 23.5rem;
   }
 
   .delete-modal-card {
@@ -1141,21 +1094,9 @@ label {
     width: 30%;
   }
 
-  .trip-details-img {
-    width: 63.5%;
-  }
-
   .move-left, .move-right {
     transform: translateY(-50%);
     opacity: 1;
-  }
-
-  .move-left {
-    left: 23.5rem;
-  }
-
-  .move-right {
-    right: 23.5rem;
   }
 
   .delete-modal-card {

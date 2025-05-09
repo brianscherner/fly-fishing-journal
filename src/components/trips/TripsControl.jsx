@@ -92,7 +92,6 @@ function TripsControl() {
   }
 
   // adds optimizations to the existing secure_url to modify how the images are displayed once uploaded
-  // images are still being displayed w/ inconsistent sizes
   const optimizeUrl = (url) => {
     let optimizations = 'upload/w_auto:800,h_450,c_pad,b_rgb:ffffff,f_auto,q_auto,dpr_auto/';
     let newUrl = url.replace(/\upload\//, optimizations);
