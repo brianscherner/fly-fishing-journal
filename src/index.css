@@ -206,13 +206,6 @@
 
 /* styling for trip details */
 
-.flex-column {
-  flex-direction: column !important;
-  align-items: center;
-  display: flex;
-  width: 100%;
-}
-
 .current-image {
   transition-duration: 0.5s ease;
   opacity: 0;
@@ -226,7 +219,7 @@
 .images-carousel {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .image-wrapper {
@@ -251,11 +244,11 @@
 }
 
 .move-left {
-  left: 1rem;
+  left: 0.25rem;
 }
 
 .move-right {
-  right: 1rem;
+  right: 0.25rem;
 }
 
 .trip-details-img {
@@ -275,32 +268,14 @@
   margin-top: 0.5rem;
 }
 
-.nav-item {
-  flex-direction: column;
-  display: flex;
-  width: 60%;
-  margin-bottom: 1rem;
-}
-
-.nav-link.details {
-  background-color: var(--background);
-  color: var(--primary-text);
-  border: 4px solid var(--accent-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 0.45rem;
-  padding: 0.75rem 1rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.nav-link.details:hover {
-  background-color: var(--accent-primary);
-  color: var(--background);
-}
-
 .detail-categories {
   font-family: "Open Sans", sans-serif;
   font-size: 1.075rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  flex-direction: column;
 }
 
 .trip-details-buttons, .form-buttons {
@@ -967,7 +942,7 @@ label {
     grid-template-columns: 1fr;
   }
 
-  .nav-item {
+  .detail-categories {
     width: 100%;
   }
 
@@ -996,12 +971,6 @@ label {
     width: 100%;
   }
 
-  .gear-details {
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-  }
-
   .dest-info-details,
   .trip-notes-details,
   .misc-details,
@@ -1028,6 +997,19 @@ label {
   }
 
   .trip-filters {
+    width: 100%;
+  }
+
+  .detail-categories {
+    width: 60%;
+  }
+
+  .dest-info-details,
+  .trip-notes-details,
+  .misc-details,
+  .trip-costs-details,
+  .gear-details {
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
   }
 
@@ -1060,6 +1042,19 @@ label {
     width: 95%;
   }
 
+  .detail-categories {
+    width: 50%;
+  }
+
+  .dest-info-details,
+  .trip-notes-details,
+  .misc-details,
+  .trip-costs-details,
+  .gear-details {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
 }
 
 @media (min-width: 1280px) {
@@ -1079,6 +1074,10 @@ label {
 
   .delete-modal-card {
     width: 41.5%;
+  }
+
+  .detail-categories {
+    width: 40%;
   }
 
 }

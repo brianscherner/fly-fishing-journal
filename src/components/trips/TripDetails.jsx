@@ -66,85 +66,77 @@ function TripDetails(props) {
           trip={trip}
         />
       )}
-      <ImageSlider
-        trip={trip}
-        onMovingLeft={moveLeft}
-        onMovingRight={moveRight}
-        currentImage={currentImage}
-      />
-      <div className="detail-categories">
-        <ul className="nav flex-column">
-          <li className="nav-item">
-            <DestinationInfo
-              trip={trip}
-            />
-          </li>
+      <div className="images-and-details-wrapper">
+        <div className="images-carousel">
+          <ImageSlider
+            trip={trip}
+            onMovingLeft={moveLeft}
+            onMovingRight={moveRight}
+            currentImage={currentImage}
+          />
+        </div>
+        <div className="detail-categories">
+          <DestinationInfo
+            trip={trip}
+          />
           {trip.tripType === "Future" && (
             <>
               <br/>
-              <li className="nav-item">
-                <TripCosts
-                  trip={trip}
-                  onTogglingTripCosts={toggleTripCosts}
-                  tripCostsToggled={tripCostsToggled}
-                />
-              </li>
+              <TripCosts
+                trip={trip}
+                onTogglingTripCosts={toggleTripCosts}
+                tripCostsToggled={tripCostsToggled}
+              />
               <br/>
-              <li className="nav-item">
-                <GearRequirements
-                  trip={trip}
-                  onTogglingGearRequirements={toggleGearRequirements}
-                  gearRequirementsToggled={gearRequirementsToggled}
-                />
-              </li>
+              <GearRequirements
+                trip={trip}
+                onTogglingGearRequirements={toggleGearRequirements}
+                gearRequirementsToggled={gearRequirementsToggled}
+              />
             </>
           )}
           {trip.tripType === "Past" && (
             <>
               <br/>
-              <li className="nav-item">
-                <TripNotes
-                  trip={trip}
-                  onTogglingTripNotes={toggleTripNotes}
-                  tripNotesToggled={tripNotesToggled}
-                />
-              </li>
+              <TripNotes
+                trip={trip}
+                onTogglingTripNotes={toggleTripNotes}
+                tripNotesToggled={tripNotesToggled}
+              />
             </>
           )}
           <br/>
-          <li className="nav-item">
-            <Miscellaneous
-              trip={trip}
-              onTogglingMiscellaneous={toggleMiscellaneous}
-              miscellaneousToggled={miscellaneousToggled}
-            />
-          </li>
-        </ul>
-      </div>
-      <br/>
-      <div className="trip-details-buttons">
-        <button
-          className="btn app-buttons"
-          onClick={() => onClickingEdit(trip.id)}
-        >
-          <EditIcon/> Edit
-        </button>
-        {trip.tripType === "Future" && (
+          <Miscellaneous
+            trip={trip}
+            onTogglingMiscellaneous={toggleMiscellaneous}
+            miscellaneousToggled={miscellaneousToggled}
+          />
+        </div>
+        <br/>
+        <div className="trip-details-buttons">
           <button
             className="btn app-buttons"
-            onClick={() => onMarkingTripAsPast(trip.id)}
-            id="mark-past-button"
+            onClick={() => onClickingEdit(trip.id)}
           >
-            <CheckCircleIcon/> Mark as Past
+            <EditIcon/> Edit
           </button>
-        )}
-        <button
-          className="btn back-button"
-          id="delete-button"
-          onClick={onOpeningDeleteModal}
-        >
-          <DeleteIcon/> Delete
-        </button>
+          {trip.tripType === "Future" && (
+            <button
+              className="btn app-buttons"
+              onClick={() => onMarkingTripAsPast(trip.id)}
+              id="mark-past-button"
+            >
+              <CheckCircleIcon/> Mark as Past
+            </button>
+          )}
+          <button
+            className="btn back-button"
+            id="delete-button"
+            onClick={onOpeningDeleteModal}
+          >
+            <DeleteIcon/> Delete
+          </button>
+        </div>
       </div>
     </div>
   );
