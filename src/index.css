@@ -271,10 +271,6 @@
 .detail-categories {
   font-family: "Open Sans", sans-serif;
   font-size: 1.075rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
   flex-direction: column;
 }
 
@@ -348,6 +344,13 @@
   flex-direction: row;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.images-and-details-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* styling for sign in page */
