@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -10,6 +10,13 @@ function ImageSlider(props) {
     onMovingRight,
     currentImage
   } = props;
+
+  useEffect(() => {
+    trip.images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
 
   return (
     <div className="image-wrapper">
