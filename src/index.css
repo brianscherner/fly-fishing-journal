@@ -207,13 +207,13 @@
 /* styling for trip details */
 
 .current-image {
-  transition-duration: 0.5s ease;
+  transition-duration: 0.75s ease;
   opacity: 0;
 }
 
 .active-current-image {
   opacity: 1;
-  transition-duration: 0.5s;
+  transition-duration: 0.75s ease;
 }
 
 .images-carousel {
@@ -224,6 +224,7 @@
 
 .image-wrapper {
   position: relative;
+  /* max-width: 521px; */
 }
 
 .move-left,
