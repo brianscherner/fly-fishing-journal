@@ -111,8 +111,8 @@ function TripDetails(props) {
             onTogglingMiscellaneous={toggleMiscellaneous}
             miscellaneousToggled={miscellaneousToggled}
           />
+          <br/>
         </div>
-        <br/>
         <div className="trip-details-buttons">
           <button
             className="btn app-buttons"
