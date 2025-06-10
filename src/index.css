@@ -207,13 +207,12 @@
 /* styling for trip details */
 
 .current-image {
-  transition-duration: 0.75s ease;
+  transition: 0.5s ease-in-out;
   opacity: 0;
 }
 
 .active-current-image {
   opacity: 1;
-  transition-duration: 0.75s ease;
 }
 
 .images-carousel {
@@ -224,7 +223,6 @@
 
 .image-wrapper {
   position: relative;
-  /* max-width: 521px; */
 }
 
 .move-left,
@@ -253,7 +251,6 @@
 }
 
 .trip-details-img {
-  width: 100%;
   height: auto;
   border-radius: 0.45rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1017,12 +1014,20 @@ label {
     width: 100%;
   }
 
+  .trip-details-img {
+    max-width: 435px;
+  }
+
 }
 
 @media (min-width: 820px) {
   .move-left, .move-right {
     transform: translateY(-50%);
     opacity: 1;
+  }
+
+  .trip-details-img {
+    max-width: 455px;
   }
 
 }
@@ -1057,6 +1062,10 @@ label {
   .gear-details {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+  }
+
+  .trip-details-img {
+    max-width: 521px;
   }
 
 }
