@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Trip from './Trip';
 import Switch from '@mui/material/Switch';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -7,6 +7,7 @@ import WaterIcon from '@mui/icons-material/Water';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import EventIcon from '@mui/icons-material/Event';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
+import GoTop from '../ui/GoTop';
 
 function TripsList(props) {
   const { tripsList } = props;
@@ -18,6 +19,12 @@ function TripsList(props) {
     tripType: "",
     images: false
   });
+  const [showGoTop, setShowGoTop] = useState(false);
+  const mobileThreshold = 1800;
+  const desktopThreshold = 3000;
+  // can use state variables to toggle when thresholds are reached
+  // pass down as props to GoTop btn
+  // based on T/F, apply different classes that have different positions for where the button will be placed
 
   const filteredTripsList = tripsList.filter(trip => {
     return (
@@ -68,6 +75,25 @@ function TripsList(props) {
     }));
   };
 
+  const showGoTopButton = () => {
+    if (window.pageYOffset >= mobileThreshold) {
+      setShowGoTop(true);
+    } else if (window.pageYOffset >= desktopThreshold) {
+      setShowGoTop(true);
+    } else {
+      setShowGoTop(false);
+    }
+  }
+
+  const handleGoTop = () => {
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', showGoTopButton);
+  }, []);
+
+  console.log("Show go top: ", showGoTop);
   return (
     <React.Fragment>
       {tripsList.length > 0 && (
@@ -150,6 +176,8 @@ function TripsList(props) {
       {(tripsList.length === 0 || filteredTripsList.length === 0) && (
         <p className="empty-trip-list-msg">No trips to show. Add a trip to get started!</p>
       )}
+
+      {showGoTop ? <GoTop goTop={handleGoTop}/> : null}
 
       <div className="trips-list-container">
         <div className="trips-list">
