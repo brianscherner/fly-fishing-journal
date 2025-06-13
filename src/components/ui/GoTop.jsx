@@ -6,7 +6,7 @@ function GoTop(props) {
 
   return (
     <div className="go-top-wrapper">
-      <button className="btn go-top-btn" onClick={goTop}><ArrowUpwardIcon fontSize="large"/> Scroll To Top</button>
+      <button className="btn go-top-btn" onClick={goTop}><ArrowUpwardIcon className="go-top-icon"/> Scroll To Top</button>
     </div>
   )
 }

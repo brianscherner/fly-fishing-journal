@@ -22,9 +22,6 @@ function TripsList(props) {
   const [showGoTop, setShowGoTop] = useState(false);
   const mobileThreshold = 1800;
   const desktopThreshold = 3000;
-  // can use state variables to toggle when thresholds are reached
-  // pass down as props to GoTop btn
-  // based on T/F, apply different classes that have different positions for where the button will be placed
 
   const filteredTripsList = tripsList.filter(trip => {
     return (
@@ -93,7 +90,6 @@ function TripsList(props) {
     window.addEventListener('scroll', showGoTopButton);
   }, []);
 
-  console.log("Show go top: ", showGoTop);
   return (
     <React.Fragment>
       {tripsList.length > 0 && (
