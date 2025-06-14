@@ -215,7 +215,8 @@
   top: 2.5%;
   z-index: 1000;
   border: 3px solid #fff;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #333333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -224,7 +225,6 @@
   font-size: 1.2rem;
   cursor: pointer;
   animation: pulse 1.75s infinite;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6)
 }
 
 @keyframes pulse {
