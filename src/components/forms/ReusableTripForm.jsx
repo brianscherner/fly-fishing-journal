@@ -51,8 +51,8 @@ function ReusableTripForm(props) {
     const currentImages = [...formData.images];
     const remainingImageSlots = 6 - currentImages.length;
 
-    if (remainingImageSlots <= 0) {
-      toast.error("A maximum of 6 photos are allowed.", { position: "bottom-right" });
+    if (remainingImageSlots <= 0 || files.length > 6) {
+      toast.warning("A maximum of 6 photos are allowed.", { position: "bottom-right" });
     }
 
     const validFiles = files.slice(0, remainingImageSlots);
@@ -60,7 +60,13 @@ function ReusableTripForm(props) {
 
     validFiles.forEach((file) => {
       const reader = new FileReader();
-      reader.readAsDataURL(file);
+      reader.onerror = () => {
+        const errorMessage = reader.error?.message || "Unknown error.";
+        toast.error(`Photo upload failed: ${errorMessage}`, { position: "bottom-right" });
+      }
+      // for testing purposes only - not for production
+      // reader.dispatchEvent(new ProgressEvent('error'));
+
       reader.onload = () => {
         newImages.push({ file, preview: reader.result });
         if (newImages.length === validFiles.length) {
@@ -70,8 +76,8 @@ function ReusableTripForm(props) {
           }));
         }
       };
+      reader.readAsDataURL(file);
     });
-
   }
 
   const handleDeletingImage = (image) => {
@@ -273,6 +279,7 @@ function ReusableTripForm(props) {
     }));
   }
 
+  console.log("Form data imgs: ", formData.images);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
