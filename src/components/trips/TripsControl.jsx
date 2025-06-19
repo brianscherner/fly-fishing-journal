@@ -68,7 +68,7 @@ function TripsControl() {
     setEditing(true);
   }
 
-  // add error handling to this fn
+  // need to account for failed photo uploads
   const uploadImages = async (file) => {
     // API call with appropriate endpoint
     const url = 'https://api.cloudinary.com/v1_1/dn7tkwqfs/image/upload';
@@ -98,12 +98,14 @@ function TripsControl() {
     return newUrl;
   }
 
+  // what happens if there's an error uploading a trip?
+  // what should be returned/shown - toast notification
+  // should work for photo-less trips or trips with photos
   const handleCreatingNewTrip = async (newTripData) => {
     // creates new array from the formData images array
     const images = [...newTripData.images];
     // var which eventually stores the trip data with proper URLs for Firebase storage
     let tripDataToUpload = null;
-    // log this message if array is empty
     if (images.length === 0) {
       // simply pass the trip data to upload as the incoming newTripData
       tripDataToUpload = newTripData;
@@ -124,9 +126,18 @@ function TripsControl() {
     }
 
     // updated trip data with URLs from Cloudinary is passed to addDoc and trip is now stored properly in Firebase
-    await addDoc(collection(db, "Trips"), tripDataToUpload);
-    toast.success('Trip added.', { position: "bottom-right"});
-    setFormVisibleOnPage(false);
+    try {
+      // works as planned
+      await addDoc(collection(db, "Trips"), tripDataToUpload);
+      toast.success('Trip added.', { position: "bottom-right"});
+      setFormVisibleOnPage(false);
+      // if an error occurs, loading animation should be disabled and nothing should be greyed out, as the form submission should stop
+      // isLoading state not being switched back to false when error occurs
+      // check form submission handler for possible clues
+    } catch (error) {
+      console.log("Error: ", error);
+      toast.error(`Error adding trip: ${error}`, { position: "bottom-right"});
+    }
     setIsLoading(false);
   }
 
@@ -262,6 +273,7 @@ function TripsControl() {
         </button>
     }
 
+    console.log("Is loading state: ", isLoading);
     return (
       <React.Fragment>
         {isDataFetched ?

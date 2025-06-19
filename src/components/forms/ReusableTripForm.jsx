@@ -279,7 +279,6 @@ function ReusableTripForm(props) {
     }));
   }
 
-  console.log("Form data imgs: ", formData.images);
   return (
     <React.Fragment>
       <form onSubmit={formSubmissionHandler}>
