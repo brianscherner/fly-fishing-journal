@@ -135,11 +135,13 @@ function TripsControl() {
     try {
       setIsLoading(true);
       await addDoc(collection(db, "Trips"), tripDataToUpload);
+      // bad data for error handling testing
+      // await addDoc(collection(db), tripDataToUpload);
       toast.success('Trip added.', { position: "bottom-right"});
       setFormVisibleOnPage(false);
       setIsLoading(false);
     } catch (error) {
-      // setIsLoading(false);
+      setIsLoading(false);
       toast.error(`Error adding trip: ${error}`, { position: "bottom-right"});
     }
   }
