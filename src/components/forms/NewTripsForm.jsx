@@ -63,6 +63,7 @@ function NewTripsForm(props) {
     // waterBodyType: "River",
     // images: mockImages
 
+    // for production //
     // destination: "",
     // destinationType: "",
     // season: "",
@@ -101,15 +102,15 @@ function NewTripsForm(props) {
     // flyRequirements: "",
     images: []
   });
-  const { isLoading, setIsLoading } = useLoading();
+  const { isLoading } = useLoading();
 
   function handleNewTripFormSubmission(event) {
     event.preventDefault();
     formData.userId = auth.currentUser.uid;
     props.onNewTripCreation(formData);
-    setIsLoading(true);
   }
 
+  console.log("NewTripsForm loading: ", isLoading);
   return (
     <React.Fragment>
       <ReusableTripForm

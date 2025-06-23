@@ -54,6 +54,12 @@ function TripsControl() {
     setIsDeleteModalOpen(false);
   }, []);
 
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     console.log("Do something to re-render form.");
+  //   }
+  // }, [isLoading, setIsLoading]);
+
   const handleClick = () => {
     if (selectedTrip != null) {
       setFormVisibleOnPage(false);
@@ -70,6 +76,7 @@ function TripsControl() {
 
   // need to account for failed photo uploads
   const uploadImages = async (file) => {
+    setIsLoading(true);
     // API call with appropriate endpoint
     const url = 'https://api.cloudinary.com/v1_1/dn7tkwqfs/image/upload';
     // create FormData object so that Cloudinary can process the data
@@ -124,21 +131,17 @@ function TripsControl() {
       // trip data that will be uploaded is set to value of updatedTripData
       tripDataToUpload = updatedTripData;
     }
-
     // updated trip data with URLs from Cloudinary is passed to addDoc and trip is now stored properly in Firebase
     try {
-      // works as planned
+      setIsLoading(true);
       await addDoc(collection(db, "Trips"), tripDataToUpload);
       toast.success('Trip added.', { position: "bottom-right"});
       setFormVisibleOnPage(false);
-      // if an error occurs, loading animation should be disabled and nothing should be greyed out, as the form submission should stop
-      // isLoading state not being switched back to false when error occurs
-      // check form submission handler for possible clues
+      setIsLoading(false);
     } catch (error) {
-      console.log("Error: ", error);
+      // setIsLoading(false);
       toast.error(`Error adding trip: ${error}`, { position: "bottom-right"});
     }
-    setIsLoading(false);
   }
 
   const handleChangingSelectedTrip = (id) => {
@@ -273,7 +276,7 @@ function TripsControl() {
         </button>
     }
 
-    console.log("Is loading state: ", isLoading);
+    console.log("TripsControl state: ", isLoading);
     return (
       <React.Fragment>
         {isDataFetched ?
