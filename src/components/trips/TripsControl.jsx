@@ -68,10 +68,6 @@ function TripsControl() {
     setEditing(true);
   }
 
-  // need to account for failed photo uploads
-  // what happens if there's an error uploading photos?
-  // what if all of them fail? What if only one fails? What about several?
-  // what should be returned/shown - toast notification(s)
   const uploadImages = async (file) => {
     setIsLoading(true);
     // API call with appropriate endpoint
@@ -92,7 +88,6 @@ function TripsControl() {
       if (!response.ok) {
         setIsLoading(false);
         const errorMsg = `Error uploading photos: ${response.status}`;
-        toast.error(errorMsg, { position: "bottom-right"});
         throw new Error(errorMsg);
       }
       // when response is fetched, create JSON object
@@ -103,9 +98,6 @@ function TripsControl() {
       // return a Promise which results in an optimized secure_url when fulfilled
       return optimizedUrl;
     } catch (error) {
-      // what should be returned here?
-      // console.log("Error uploading photos: ", error);
-      toast.error(`Photo upload failed. Please try again.`, { position: "bottom-right" });
       throw error;
     }
   }
@@ -118,6 +110,7 @@ function TripsControl() {
   }
 
   const handleCreatingNewTrip = async (newTripData) => {
+    setIsLoading(true);
     // creates new array from the formData images array
     const images = [...newTripData.images];
     // var which eventually stores the trip data with proper URLs for Firebase storage
@@ -127,32 +120,36 @@ function TripsControl() {
       tripDataToUpload = newTripData;
     } else {
       // map through images array and create new array of the result of uploadImages, which is a promise
-      // need try catch for this to handle thrown Erros with Promise.all
-      const uploadImagesResult = images.map(index => {
-        return uploadImages(index.file);
-      });
-      // take in array of promises and return an array of the promise results
-      const imageURLsArray = await Promise.all(uploadImagesResult);
-      // newTripData needs to be updated with this array of image URLs
-      const updatedTripData = {
-        ...newTripData,
-        images: imageURLsArray
+      // need try catch for this to handle thrown Errors with Promise.all
+      try {
+        const uploadImagesResult = images.map(index => {
+          return uploadImages(index.file);
+        });
+        // take in array of promises and return an array of the promise results
+        const imageURLsArray = await Promise.all(uploadImagesResult);
+        // newTripData needs to be updated with this array of image URLs
+        const updatedTripData = {
+          ...newTripData,
+          images: imageURLsArray
+        }
+        // trip data that will be uploaded is set to value of updatedTripData
+        tripDataToUpload = updatedTripData;
+      } catch (error) {
+        toast.error(`Photo uploads failed: ${error.message || error}`, { position: "bottom-right" });
+        return;
       }
-      // trip data that will be uploaded is set to value of updatedTripData
-      tripDataToUpload = updatedTripData;
     }
     // updated trip data with URLs from Cloudinary is passed to addDoc and trip is now stored properly in Firebase
     try {
-      setIsLoading(true);
       await addDoc(collection(db, "Trips"), tripDataToUpload);
       // bad data for error handling testing
       // await addDoc(collection(db), tripDataToUpload);
       toast.success('Trip added.', { position: "bottom-right"});
       setFormVisibleOnPage(false);
-      setIsLoading(false);
     } catch (error) {
+      toast.error(`Error adding trip: ${error.message || error}`, { position: "bottom-right"});
+    } finally {
       setIsLoading(false);
-      toast.error(`Error adding trip: ${error}`, { position: "bottom-right"});
     }
   }
 
