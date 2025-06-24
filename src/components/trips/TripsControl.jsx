@@ -54,12 +54,6 @@ function TripsControl() {
     setIsDeleteModalOpen(false);
   }, []);
 
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     console.log("Do something to re-render form.");
-  //   }
-  // }, [isLoading, setIsLoading]);
-
   const handleClick = () => {
     if (selectedTrip != null) {
       setFormVisibleOnPage(false);
@@ -75,27 +69,45 @@ function TripsControl() {
   }
 
   // need to account for failed photo uploads
+  // what happens if there's an error uploading photos?
+  // what if all of them fail? What if only one fails? What about several?
+  // what should be returned/shown - toast notification(s)
   const uploadImages = async (file) => {
     setIsLoading(true);
     // API call with appropriate endpoint
     const url = 'https://api.cloudinary.com/v1_1/dn7tkwqfs/image/upload';
+    // bad URL for testing error handling
+    // const url = 'https://api.cloudinary.com/v1_1/dn7tkwqf/image/upload';
     // create FormData object so that Cloudinary can process the data
     const imagesFormData = new FormData();
     // append file and upload preset
     imagesFormData.append("file", file);
     imagesFormData.append("upload_preset", "uploaded_images");
     // make POST request using the FormData object which contains each 'file' key and file object
-    const response = await fetch(url, {
-      method: 'POST',
-      body: imagesFormData,
-    })
-    // when response is fetched, create JSON object
-    const data = await response.json();
-    // modify the secure_url for optimized display
-    const urlToOptimize = data.secure_url;
-    const optimizedUrl = optimizeUrl(urlToOptimize);
-    // return a Promise which results in an optimized secure_url when fulfilled
-    return optimizedUrl;
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: imagesFormData,
+      });
+      if (!response.ok) {
+        setIsLoading(false);
+        const errorMsg = `Error uploading photos: ${response.status}`;
+        toast.error(errorMsg, { position: "bottom-right"});
+        throw new Error(errorMsg);
+      }
+      // when response is fetched, create JSON object
+      const data = await response.json();
+      // modify the secure_url for optimized display
+      const urlToOptimize = data.secure_url;
+      const optimizedUrl = optimizeUrl(urlToOptimize);
+      // return a Promise which results in an optimized secure_url when fulfilled
+      return optimizedUrl;
+    } catch (error) {
+      // what should be returned here?
+      // console.log("Error uploading photos: ", error);
+      toast.error(`Photo upload failed. Please try again.`, { position: "bottom-right" });
+      throw error;
+    }
   }
 
   // adds optimizations to the existing secure_url to modify how the images are displayed once uploaded
@@ -105,9 +117,6 @@ function TripsControl() {
     return newUrl;
   }
 
-  // what happens if there's an error uploading a trip?
-  // what should be returned/shown - toast notification
-  // should work for photo-less trips or trips with photos
   const handleCreatingNewTrip = async (newTripData) => {
     // creates new array from the formData images array
     const images = [...newTripData.images];
@@ -118,6 +127,7 @@ function TripsControl() {
       tripDataToUpload = newTripData;
     } else {
       // map through images array and create new array of the result of uploadImages, which is a promise
+      // need try catch for this to handle thrown Erros with Promise.all
       const uploadImagesResult = images.map(index => {
         return uploadImages(index.file);
       });
