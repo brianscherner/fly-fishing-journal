@@ -5,13 +5,12 @@ import { useLoading } from "../context/LoadingContext";
 function EditTripForm(props) {
   const { trip } = props;
   const [editFormData, setEditFormData] = useState(trip);
-  const { isLoading, setIsLoading } = useLoading();
+  const { isLoading } = useLoading();
 
   function handleEditTripFormSubmission(event) {
     event.preventDefault();
     const updatedTrip = {...trip, ...editFormData};
     props.onEditingTrip(updatedTrip);
-    setIsLoading(true);
   }
 
   return (

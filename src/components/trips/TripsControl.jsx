@@ -177,30 +177,46 @@ function TripsControl() {
   }
 
   const handleEditingTrip = async (tripToEdit) => {
+    setIsLoading(true);
     const images = [...tripToEdit.images];
+    let editedTrip = null;
     // filter out images that are already URLs
     const initialImageURLs = images.filter(index => typeof index === "string");
     // filter out images that aren't URLs
     const nonURLImages = images.filter(index => typeof index !== "string");
-    // turn File objects into URLs via uploadImages
-    const newUploadedImages = nonURLImages.map(index => {
-      return uploadImages(index.file);
-    })
-    // store the URLs returned from Promises into array:
-    const newImageURLs = await Promise.all(newUploadedImages);
-    // merge the two URL arrays back into one
-    const newArrayOfImageURLs = [...initialImageURLs, ...newImageURLs];
-    // update the tripToEdit with this new array of URLs
-    const finalTripToEdit = {
-      ...tripToEdit,
-      images: newArrayOfImageURLs,
+    try {
+      // turn File objects into URLs via uploadImages
+      const newUploadedImages = nonURLImages.map(index => {
+        return uploadImages(index.file);
+      });
+      // store the URLs returned from Promises into array:
+      const newImageURLs = await Promise.all(newUploadedImages);
+      // merge the two URL arrays back into one
+      const newArrayOfImageURLs = [...initialImageURLs, ...newImageURLs];
+      // update the tripToEdit with this new array of URLs
+      const finalTripToEdit = {
+        ...tripToEdit,
+        images: newArrayOfImageURLs,
+      }
+      editedTrip = finalTripToEdit;
+    } catch (error) {
+      toast.error(`Error editing photos: ${error.message || error}`, { position: "bottom-right"});
+      return;
     }
-    const trip = doc(db, "Trips", tripToEdit.id);
-    await updateDoc(trip, finalTripToEdit);
-    toast.success('Trip edited.', { position: "bottom-right"});
-    setEditing(false);
-    setSelectedTrip(null);
-    setIsLoading(false);
+
+    try {
+      const trip = doc(db, "Trips", tripToEdit.id);
+      // bad data for error handling testing
+      // const trip = doc(db, tripToEdit.id);
+      await updateDoc(trip, editedTrip);
+      toast.success('Trip edited.', { position: "bottom-right"});
+      setEditing(false);
+      setSelectedTrip(null);
+    } catch (error) {
+      toast.error(`Error editing trip: ${error.message || error}`, { position: "bottom-right"});
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   const handleMarkingTripAsPast = async (tripToMark) => {
