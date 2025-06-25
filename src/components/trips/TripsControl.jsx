@@ -154,8 +154,19 @@ function TripsControl() {
   }
 
   const handleChangingSelectedTrip = (id) => {
-    const tripSelection = mainTripsList.filter(trip => trip.id === id)[0];
-    setSelectedTrip(tripSelection);
+    if (!id) {
+      toast.error("Could not view trip. Please try again.", { position: "bottom-right" });
+      return;
+    }
+
+    const tripSelection = mainTripsList.find(trip => trip.id === id);
+
+    if (!tripSelection) {
+      toast.error("Trip not found. Please try again.", { position: "bottom-right" });
+      return;
+    } else {
+      setSelectedTrip(tripSelection);
+    }
   }
 
   const openDeletionModal = () => {
