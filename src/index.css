@@ -465,8 +465,13 @@
   color: var(--primary-text);
 }
 
-#user-icon {
+.user-icon {
   color: var(--primary-text);
+}
+
+#last-sign-in {
+  text-align: left;
+  overflow-wrap: break-word;
 }
 
 /* card styling for trip details categories */
@@ -929,6 +934,21 @@ label {
   font-size: 1.675rem;
 }
 
+.MuiSvgIcon-root.user-icon {
+  font-size: 1.75rem;
+}
+
+/* .heading-break-wrapper {
+  justify-content: center;
+  display: flex;
+  border: none;
+}
+
+.heading-break {
+  width: 80%;
+  background-color: #333333;
+} */
+
 .disabled-wrapper {
   cursor: not-allowed;
 }
@@ -1086,7 +1106,7 @@ label {
 
 @media (min-width: 1024px) {
   .account {
-    width: 40%;
+    width: 32.5%;
   }
 
   .trips-list-container {
