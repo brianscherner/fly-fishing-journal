@@ -169,11 +169,18 @@ function TripsControl() {
   }
 
   const handleDeletingTrip = async (id) => {
-    await deleteDoc(doc(db, "Trips", id));
-    toast.success('Trip deleted.', { position: "bottom-right"});
-    setSelectedTrip(null);
-    setIsDeleteModalOpen(false);
-    document.body.style.overflow = 'auto';
+    try {
+      await deleteDoc(doc(db, "Trips", id));
+      // bad data for error handling testing
+      // await deleteDoc(doc(db));
+      toast.success('Trip deleted.', { position: "bottom-right"});
+      setSelectedTrip(null);
+    } catch (error) {
+      toast.error(`Error deleting trip: ${error.message || error}`, { position: "bottom-right" });
+    } finally {
+      setIsDeleteModalOpen(false);
+      document.body.style.overflow = 'auto';
+    }
   }
 
   const handleEditingTrip = async (tripToEdit) => {
@@ -301,7 +308,6 @@ function TripsControl() {
         </button>
     }
 
-    console.log("TripsControl state: ", isLoading);
     return (
       <React.Fragment>
         {isDataFetched ?
