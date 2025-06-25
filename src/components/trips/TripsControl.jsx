@@ -227,10 +227,17 @@ function TripsControl() {
   }
 
   const handleMarkingTripAsPast = async (tripToMark) => {
-    const trip = doc(db, "Trips", tripToMark);
-    await updateDoc(trip, { tripType: "Past" });
-    toast.success('Trip marked as "Past".', { position: "bottom-right"});
-    setSelectedTrip(null);
+    try {
+      const trip = doc(db, "Trips", tripToMark);
+      await updateDoc(trip, { tripType: "Past" });
+      // bad data for error handling testing
+      // const trip = doc(db);
+      // await updateDoc(trip, { tripTyp });
+      toast.success('Trip marked as "Past".', { position: "bottom-right"});
+      setSelectedTrip(null);
+    } catch (error) {
+      toast.error(`Error marking trip as past: ${error.message || error}`, { position: "bottom-right" });
+    }
   }
 
   if (!isAuthLoading && currentUser === null) {
