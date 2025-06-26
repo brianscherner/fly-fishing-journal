@@ -10,10 +10,10 @@ function WelcomeScreen() {
       <p className="intro-text">
         Plan, log, and revisit your favorite fly fishing adventures. Easily upload photos, track details, and keep all your travel memories in one place.
       </p>
-      <div className="button-group">
-        <button onClick={() => navigate('/trips')}>View Trips</button>
-        <button onClick={() => navigate('/account')}>Sign In</button>
-        <button onClick={() => navigate('/sign-up')}>Sign Up</button>
+      <div className="welcome-buttons-wrapper">
+        <button onClick={() => navigate('/trips')} className="btn explore-button">View Trips</button>
+        <button onClick={() => navigate('/account')} className="btn sign-in-button">Sign In</button>
+        <button onClick={() => navigate('/sign-up')} className="btn sign-up-button">Sign Up</button>
       </div>
     </div>
   );
