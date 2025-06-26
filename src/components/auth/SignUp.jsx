@@ -48,7 +48,6 @@ function SignUp() {
   return (
     <React.Fragment>
       <h2 className="sign-in-headings">Sign Up</h2>
-      {/* <br/> */}
       <div className="row justify-content-center">
         <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
           <form onSubmit={doSignUp}>

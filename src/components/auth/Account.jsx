@@ -68,7 +68,6 @@ function SignIn() {
           <div className="row justify-content-center">
             <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
               <h2 className="sign-in-headings">Sign In</h2>
-              {/* <br/> */}
               <form onSubmit={doSignIn}>
                 <label>Email</label>
                 <div className="form-input-container">
@@ -97,7 +96,6 @@ function SignIn() {
                         className="form-input-icon" id="password-icon"
                         onClick={handlePasswordIconClick}/>}
                 </div>
-                {/* <br/> */}
                 <button type="button" onClick={goToResetPassword} className="forgot-password">Forgot password?</button>
                 <br/>
                 <br/>
@@ -146,7 +144,6 @@ function SignIn() {
               </div>
             </div>
           </div>
-          {/* <br/> */}
           <button
             className="btn app-buttons"
             onClick={doSignOut}><LogoutIcon className="auth-button-icons"/> Sign Out
