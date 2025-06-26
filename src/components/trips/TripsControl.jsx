@@ -11,6 +11,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useLoading } from "../context/LoadingContext";
 import { useAuth } from '../context/AuthContext';
 import Spinner from '../ui/Spinner';
+import { Link } from 'react-router-dom';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -254,7 +255,8 @@ function TripsControl() {
   if (!isAuthLoading && currentUser === null) {
     return (
       <React.Fragment>
-        <h2 className='auth-message'>Please sign in to your account to start adding trips.</h2>
+        <h2 className='auth-message'>Please <Link to="/account">sign in</Link> to your account to start adding trips.</h2>
+        <h2 className='auth-message'>New here? <Link to="/sign-up">Sign up</Link> for a free account today!</h2>
       </React.Fragment>
     )
   } else if (isAuthLoading && currentUser !== null) {

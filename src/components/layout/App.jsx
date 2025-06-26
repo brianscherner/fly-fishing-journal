@@ -9,8 +9,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoadingProvider } from '../context/LoadingContext';
 import { AuthProvider } from '../context/AuthContext';
+import WelcomeScreen from '../ui/WelcomeScreen';
 
 function App() {
+
   return (
     <AuthProvider>
     <LoadingProvider>
@@ -19,6 +21,7 @@ function App() {
         <Header/>
         <br/>
         <Routes>
+          <Route path='' element={<WelcomeScreen/>}/>
           <Route path="/trips" element={<TripsControl/>}/>
           <Route path="/account" element={<Account/>}/>
           <Route path="/sign-up" element={<SignUp/>}/>
