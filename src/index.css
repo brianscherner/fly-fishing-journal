@@ -911,14 +911,42 @@ label {
 
 /* welcome screen */
 .welcome-container {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  padding: 2rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.welcome-video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.welcome-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .intro-text {
   margin: 1rem auto;
   max-width: 600px;
   font-size: 1.1rem;
-  color: #333333;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
 }
@@ -977,6 +1005,12 @@ label {
 
 .btn.sign-up-button:hover {
   background: #37495C;
+}
+
+.btn.explore-button,
+.btn.sign-in-button,
+.btn.sign-up-button {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* global styles */
