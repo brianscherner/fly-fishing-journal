@@ -917,9 +917,9 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
   text-align: center;
   padding: 2rem;
   color: white;
@@ -967,8 +967,8 @@ label {
   border-radius: 1.5rem;
   font-size: 1.25rem;
   padding: 16px 20px;
-  /* max-width: 255px; */
-  /* min-height: 65px; */
+  max-width: 255px;
+  min-height: 65px;
 }
 
 .btn.explore-button:hover {
@@ -983,8 +983,8 @@ label {
   border-radius: 1.5rem;
   font-size: 1.25rem;
   padding: 16px 20px;
-  /* max-width: 255px; */
-  /* min-height: 65px; */
+  max-width: 255px;
+  min-height: 65px;
 }
 
 .btn.sign-in-button:hover {
@@ -999,8 +999,8 @@ label {
   border-radius: 1.5rem;
   font-size: 1.25rem;
   padding: 16px 20px;
-  /* max-width: 255px; */
-  /* min-height: 65px; */
+  max-width: 255px;
+  min-height: 65px;
 }
 
 .btn.sign-up-button:hover {
