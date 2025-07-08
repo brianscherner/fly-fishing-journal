@@ -34,7 +34,6 @@ function App() {
             currentUser ? <Navigate to="/trips" replace /> : <SignUp />
           }
         />
-        {/* <Route path="/sign-up" element={<SignUp/>}/> */}
         <Route path="/reset-password" element={<ResetPassword/>}/>
       </Routes>
       <ToastContainer/>

@@ -5,12 +5,8 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PublicIcon from '@mui/icons-material/Public';
 import WelcomeVideo from './WelcomeVideo';
 
-function WelcomeScreen({onEnter}) {
+function WelcomeScreen() {
   const navigate = useNavigate();
-  // const handleNavigate = (path) => {
-  //   onEnter();
-  //   navigate(path);
-  // }
 
   return (
     <div className='welcome-section'>
