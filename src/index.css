@@ -99,19 +99,15 @@
 /* styling for message telling user to sign in to access app */
 .auth-message {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
-  color: var(--primary-text);
-}
-
-.auth-prompt {
-  text-align: center;
-}
-
-.auth-message {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   margin-top: 1rem;
   color: #333333;
+  font-weight: 600;
+}
+
+.auth-prompt {
+  text-align: center;
 }
 
 .auth-button-row {
@@ -592,9 +588,10 @@
 
 /* trip list styling */
 .empty-trip-list-msg {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--primary-text);
   font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
 
 .trip-header-in-list {
