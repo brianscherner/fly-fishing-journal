@@ -910,16 +910,21 @@ label {
 }
 
 /* welcome screen */
-.welcome-container {
-  position: relative;
-  z-index: 1000;
+.welcome-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.welcome-container {
+  position: relative;
+  z-index: 3;
   text-align: center;
   padding: 2rem;
   color: white;
@@ -933,6 +938,7 @@ label {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: 1;
 }
 
 .welcome-video {
@@ -959,7 +965,9 @@ label {
   margin-top: 1.5rem;
 }
 
-.btn.explore-button {
+.btn.explore-button,
+.btn.sign-in-button,
+.btn.sign-up-button {
   font-family: "Open Sans", sans-serif;
   background: var(--accent-primary);
   color: var(--background);
@@ -967,8 +975,9 @@ label {
   border-radius: 1.5rem;
   font-size: 1.25rem;
   padding: 16px 20px;
-  max-width: 255px;
+  min-width: 186px;
   min-height: 65px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn.explore-button:hover {
@@ -976,15 +985,8 @@ label {
 }
 
 .btn.sign-in-button {
-  font-family: "Open Sans", sans-serif;
   background: #38b000;
   color: var(--background);
-  font-weight: 700;
-  border-radius: 1.5rem;
-  font-size: 1.25rem;
-  padding: 16px 20px;
-  max-width: 255px;
-  min-height: 65px;
 }
 
 .btn.sign-in-button:hover {
@@ -992,25 +994,12 @@ label {
 }
 
 .btn.sign-up-button {
-  font-family: "Open Sans", sans-serif;
   background: #4A6782;
   color: var(--background);
-  font-weight: 700;
-  border-radius: 1.5rem;
-  font-size: 1.25rem;
-  padding: 16px 20px;
-  max-width: 255px;
-  min-height: 65px;
 }
 
 .btn.sign-up-button:hover {
   background: #37495C;
-}
-
-.btn.explore-button,
-.btn.sign-in-button,
-.btn.sign-up-button {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* global styles */
@@ -1152,6 +1141,22 @@ label {
     width: 85%;
   }
 
+  .btn.explore-button,
+  .btn.sign-in-button,
+  .btn.sign-up-button {
+    min-width: 330px;
+  }
+
+  .welcome-header {
+    font-size: 3rem;
+    margin-bottom: 1.65rem;
+  }
+
+  .intro-text {
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -1192,6 +1197,16 @@ label {
   .btn.go-top-btn {
     top: 2.5%;
     width: 50%;
+  }
+
+  .welcome-header {
+    font-size: 3rem;
+    margin-bottom: 1.65rem;
+  }
+
+  .intro-text {
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
   }
 
 }

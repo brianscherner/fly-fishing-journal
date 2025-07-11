@@ -12,7 +12,7 @@ function WelcomeScreen() {
     <div className='welcome-section'>
       <WelcomeVideo/>
       <div className='welcome-container'>
-        <h1>Welcome!</h1>
+        <h1 className='welcome-header'>Welcome!</h1>
         <p className="intro-text">
           Plan, log, and revisit your favorite fly fishing adventures. Easily upload photos, track details, and keep all your travel memories in one place.
         </p>
