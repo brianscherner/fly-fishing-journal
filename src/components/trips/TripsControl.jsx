@@ -11,7 +11,9 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useLoading } from "../context/LoadingContext";
 import { useAuth } from '../context/AuthContext';
 import Spinner from '../ui/Spinner';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import LoginIcon from '@mui/icons-material/Login';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 function TripsControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -23,6 +25,7 @@ function TripsControl() {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const { isLoading, setIsLoading } = useLoading();
   const { currentUser, auth, isAuthLoading, setIsAuthLoading } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -254,10 +257,13 @@ function TripsControl() {
 
   if (!isAuthLoading && currentUser === null) {
     return (
-      <React.Fragment>
-        <h2 className='auth-message'>Please <Link to="/account">sign in</Link> to your account to start adding trips.</h2>
-        <h2 className='auth-message'>New here? <Link to="/sign-up">Sign up</Link> for a free account today!</h2>
-      </React.Fragment>
+      <div className="auth-prompt">
+        <h2 className="auth-message">Please sign in to your account to start adding trips.</h2>
+        <div className="auth-button-row">
+          <button onClick={() => navigate('/account')} className="btn sign-in-button" ><LoginIcon className="auth-button-icons"/> Sign In</button>
+          <button onClick={() => navigate('/sign-up')} className="btn sign-up-button"><PersonAddIcon className="auth-button-icons"/> Sign Up</button>
+        </div>
+      </div>
     )
   } else if (isAuthLoading && currentUser !== null) {
     return (

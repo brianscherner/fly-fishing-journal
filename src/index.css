@@ -103,6 +103,24 @@
   color: var(--primary-text);
 }
 
+.auth-prompt {
+  text-align: center;
+}
+
+.auth-message {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  color: #333333;
+}
+
+.auth-button-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 /* styling for app buttons */
 .btn.app-buttons {
   font-family: "Open Sans", sans-serif;
@@ -1157,6 +1175,10 @@ label {
     margin-bottom: 2.5rem;
   }
 
+  .auth-button-row .btn {
+    min-width: 325px;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -1207,6 +1229,10 @@ label {
   .intro-text {
     font-size: 1.35rem;
     margin-bottom: 2.5rem;
+  }
+
+  .auth-button-row .btn {
+    min-width: 235px;
   }
 
 }
