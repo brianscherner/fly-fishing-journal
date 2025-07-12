@@ -100,7 +100,7 @@ function SignIn() {
                 <br/>
                 <br/>
                 <button
-                  className="btn app-buttons"
+                  className="btn auth-buttons"
                   type="submit"><LoginIcon className="auth-button-icons"/> Sign In
                 </button>
               </form>
@@ -145,7 +145,7 @@ function SignIn() {
             </div>
           </div>
           <button
-            className="btn app-buttons"
+            className="btn auth-buttons"
             onClick={doSignOut}><LogoutIcon className="auth-button-icons"/> Sign Out
           </button>
         </React.Fragment>

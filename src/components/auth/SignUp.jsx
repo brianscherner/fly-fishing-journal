@@ -96,7 +96,7 @@ function SignUp() {
             </div>
             <br/>
             <button
-              className="btn app-buttons"
+              className="btn auth-buttons"
               type="submit"><PersonAddIcon className="auth-button-icons"/> Sign Up
             </button>
           </form>

@@ -118,7 +118,8 @@
 }
 
 /* styling for app buttons */
-.btn.app-buttons {
+.btn.app-buttons,
+.btn.auth-buttons {
   font-family: "Open Sans", sans-serif;
   background: var(--accent-primary);
   color: var(--background);
@@ -130,7 +131,8 @@
 
 .btn.app-buttons:hover,
 .btn.back-button:hover,
-.btn.submit-button:hover {
+.btn.submit-button:hover,
+.btn.auth-buttons:hover {
   background: #003f81;
 }
 
@@ -562,6 +564,10 @@
   justify-content: center;
 }
 
+.trip-card:hover {
+  cursor: pointer;
+}
+
 .category-header {
   font-weight: 700;
 }
@@ -636,7 +642,13 @@
 
 .trip {
   border-radius: 0.45rem;
-  background: #0077B6;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 182, 0.8),
+    rgba(0, 119, 182, 0.6)
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -723,6 +735,7 @@
   display: flex;
   justify-content: center;
   color: var(--primary);
+  margin-top: -1.5rem;
 }
 
 .form-section-heading {
@@ -992,7 +1005,7 @@ label {
   padding: 16px 20px;
   min-width: 186px;
   min-height: 65px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
 }
 
 .btn.explore-button:hover {
@@ -1159,7 +1172,7 @@ label {
   .btn.explore-button,
   .btn.sign-in-button,
   .btn.sign-up-button {
-    min-width: 330px;
+    width: 100%;
   }
 
   .welcome-header {
@@ -1173,8 +1186,21 @@ label {
   }
 
   .auth-button-row .btn {
-    min-width: 325px;
+    width: 100%;
   }
+
+  .btn.auth-buttons {
+    width: 100%;
+  }
+
+  /* .trip-details-buttons {
+    flex-direction: column;
+  }
+
+  .trip-details-buttons .btn {
+    width: 100%;
+    max-width: 400px;
+  } */
 
 }
 
