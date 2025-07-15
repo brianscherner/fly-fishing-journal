@@ -129,6 +129,10 @@
   font-size: 1.2rem;
 }
 
+.btn.auth-buttons {
+  width: 100%;
+}
+
 .btn.app-buttons:hover,
 .btn.back-button:hover,
 .btn.submit-button:hover,

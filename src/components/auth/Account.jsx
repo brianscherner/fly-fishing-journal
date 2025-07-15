@@ -144,10 +144,14 @@ function SignIn() {
               </div>
             </div>
           </div>
-          <button
-            className="btn auth-buttons"
-            onClick={doSignOut}><LogoutIcon className="auth-button-icons"/> Sign Out
-          </button>
+          <div className="row justify-content-center">
+            <div className="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
+              <button
+                className="btn auth-buttons"
+                onClick={doSignOut}><LogoutIcon className="auth-button-icons"/> Sign Out
+              </button>
+            </div>
+          </div>
         </React.Fragment>
       )}
 
